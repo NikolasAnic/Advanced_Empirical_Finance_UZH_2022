@@ -390,7 +390,7 @@ That is, the risk of a portfolio depends on both the <em>variation of the indivi
 <span id="cb384-11"><a href="beta.html#cb384-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>)),</span>
 <span id="cb384-12"><a href="beta.html#cb384-12" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>)),</span>
 <span id="cb384-13"><a href="beta.html#cb384-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-201-1.png" width="672" /></p>
 <p>The time plots of returns show some common movements among the stocks that are similar to movements of the SMI. The figure shows further that individual stock returns are more volatile than the SMI returns, and that the movement in stock returns tends to follow the movements in the SMI returns indicating positive covariance and correlations.</p>
 <p>Let’s examine this more thoroughly.</p>
 <div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="beta.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and display the codependence structure</span></span>
@@ -398,7 +398,7 @@ That is, the risk of a portfolio depends on both the <em>variation of the indivi
 <span id="cb385-3"><a href="beta.html#cb385-3" aria-hidden="true" tabindex="-1"></a>corr_bigfour_smi <span class="ot">&lt;-</span> <span class="fu">cov2cor</span>(vcov_bigfour_smi)</span>
 <span id="cb385-4"><a href="beta.html#cb385-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb385-5"><a href="beta.html#cb385-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(corr_bigfour_smi, <span class="at">upper=</span><span class="st">&quot;ellipse&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
 <p>All returns are positively correlated and each stock return has the highest positive correlation with the SMI.</p>
 <p>Further, we can plot the relation between both the individual security return and the SMI and assess to what extent it is linear.</p>
 <div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="beta.html#cb386-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a list with names of the companies</span></span>
@@ -439,7 +439,7 @@ That is, the risk of a portfolio depends on both the <em>variation of the indivi
 <span id="cb386-36"><a href="beta.html#cb386-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb386-37"><a href="beta.html#cb386-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Take them together in a multi-plot</span></span>
 <span id="cb386-38"><a href="beta.html#cb386-38" aria-hidden="true" tabindex="-1"></a>Rmisc<span class="sc">::</span><span class="fu">multiplot</span>(figure_Nestle, figure_Novartis, figure_Roche, figure_UBS, <span class="at">cols =</span> <span class="dv">2</span>)  </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
 <p>The scatterplots show that as the market return increases, the returns on each stock increase in a linear way.</p>
 </div>
 <div id="sharpes-single-index-model" class="section level4" number="6.1.1.2">
@@ -1056,7 +1056,7 @@ R_{i,t} = c_i + d\hat{\beta}_{i,t-1} + e_{i,t}
 ## Mean Returns   0.070158  0.090542  0.10774  0.155226   0.101657
 ## Std of Returns 9.865200 22.366272 35.99285 54.563412 130.832437</code></pre>
 <p>We can also <strong>plot the cumulative return of each quintile portfolio</strong>:</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-217-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-216-1.png" width="672" /></p>
 </div>
 <div id="working-with-robust-standard-errors" class="section level4" number="6.1.2.4">
 <h4><span class="header-section-number">6.1.2.4</span> Working with robust standard errors</h4>

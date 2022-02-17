@@ -9,7 +9,6 @@ packs.inst <- c("readxl","foreign","dplyr","tidyr","ggplot2","stargazer","haven"
            "roll", "rollRegres", "glmnet", "hdm", "broom", "RCurl", "learnr", "maps", "fGarch", "remotes", "RPostgreSQL", "wrds", "DBI", "RPostgreSQL", "remotes", "RPostgres", "Rmisc", "ggthemes", "splitstackshape", "gginference", "MASS", "corrplot", "quantmod")
 packs.load <- c("fGarch")
 # lapply(packs.load, install.packages, character.only = FALSE) 
-
 lapply(packs.inst, require, character.only = TRUE)
 ```
 

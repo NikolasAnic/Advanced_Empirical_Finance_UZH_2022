@@ -530,9 +530,9 @@ E(R_i) - r_f = \alpha_i + \beta_i(E(R_M) - r_f) + \gamma_iE[R_{SMB}] + \delta_iE
 <span id="cb466-112"><a href="factor-models.html#cb466-112" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span>
 <span id="cb466-113"><a href="factor-models.html#cb466-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb466-114"><a href="factor-models.html#cb466-114" aria-hidden="true" tabindex="-1"></a>plot_ret</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-260-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-259-1.png" width="672" /></p>
 <div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="factor-models.html#cb467-1" aria-hidden="true" tabindex="-1"></a>plot_cumret</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-260-2.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-259-2.png" width="672" /></p>
 <p>As we can see, there appears to be a strictly increasing trend based on the quintile portfolios. We can confirm this trend by looking at the average returns and their standard deviations.</p>
 <div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="factor-models.html#cb468-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean returns</span></span>
 <span id="cb468-2"><a href="factor-models.html#cb468-2" aria-hidden="true" tabindex="-1"></a>Mean_Return_EW_quintiles_ts <span class="ot">&lt;-</span> <span class="fu">xts</span>(<span class="at">x =</span> Mean_Return_EW_quintiles[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">order.by =</span> Dates)</span>
@@ -730,7 +730,7 @@ SMB = 1/4(R_{SLU} + R_{SHU} + R_{SLD} + R_{SHD}) -  1/4(R_{BLU} + R_{BHU} + R_{B
 <span id="cb473-12"><a href="factor-models.html#cb473-12" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb473-13"><a href="factor-models.html#cb473-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb473-14"><a href="factor-models.html#cb473-14" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-264-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-263-1.png" width="672" /></p>
 <p>Great! We were able to construct the size factor based on both single- and double-sorting strategy. Interestingly, we observe that the Fama-French factor shows lower cumulative returns compared to the single-sorted factor. We can assess this observation analytically. For instance, we could deconstruct the factor again into its individual constituents. Note that the main difference between both was the inclusion of a value characteristic through a B2M ratio. Apparently, this inclusion decreases the cumulative returns quite considerably from the 2000’s on. Let’s visualise this as well:</p>
 <div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="factor-models.html#cb474-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the Cumulative Product</span></span>
 <span id="cb474-2"><a href="factor-models.html#cb474-2" aria-hidden="true" tabindex="-1"></a>Dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">dmy</span>(Prices_Adj[,<span class="dv">1</span>][<span class="dv">14</span><span class="sc">:</span><span class="dv">361</span>]))</span>
@@ -764,7 +764,7 @@ SMB = 1/4(R_{SLU} + R_{SHU} + R_{SLD} + R_{SHD}) -  1/4(R_{BLU} + R_{BHU} + R_{B
 <span id="cb474-30"><a href="factor-models.html#cb474-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
 <pre><code>## Scale for &#39;colour&#39; is already present. Adding another scale for &#39;colour&#39;, which will replace the existing scale.</code></pre>
 <div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="factor-models.html#cb476-1" aria-hidden="true" tabindex="-1"></a>SMB_plot_comp</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-265-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-264-1.png" width="672" /></p>
 <p>As we can observe, by distributing the average return into its constituents, we see that average returns are mainly driven by High B2M ratios. Furthermore, we can observe that, throughout all B2M characteristics, assets with larger than median market caps outperform their smaller counterparts. Given this mononous behaviour, it is apparent that the Size factor appears to no longer hold, at least when considering the last 30 years. Furthermore, it can be shown that, although the value factor is still valid, its magnitude depends on the market capitalisation of the securities under consideration, as higher B2M ratios outperform their lower counterparts only when we control for size (for instance, the second best performing portfolio is small and high, and it greatly outperforms the big and medium B2M ratio portfolio).</p>
 </div>
 <div id="fama-macbeth-regression" class="section level4" number="8.4.2.2">
@@ -873,7 +873,7 @@ r_{i,t} - r_{ft} = \lambda_{i,0} + \sum_{k=1}^K \lambda_{i,k}\hat{\beta}_{i,k} +
 <span id="cb479-12"><a href="factor-models.html#cb479-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;tomato3&quot;</span>, <span class="st">&quot;khaki3&quot;</span>, <span class="st">&quot;lightsteelblue3&quot;</span>, </span>
 <span id="cb479-13"><a href="factor-models.html#cb479-13" aria-hidden="true" tabindex="-1"></a>                              <span class="st">&quot;dodgerblue4&quot;</span>, <span class="st">&quot;violetred4&quot;</span>)) <span class="sc">+</span> </span>
 <span id="cb479-14"><a href="factor-models.html#cb479-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-267-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-266-1.png" width="672" /></p>
 <p>We can observe that both factors behave somewhat dependently on each other. That is, they could potentially represent <strong>collinearity issues</strong>. Both factors compensate in an unclear aggregate effect. This highlights the usefulness of penalized estimates, a machine learning technique that is used to reduce dimensionality of a regression framework. However, it is not the aim of this course to dive into this chapter (yet).</p>
 </div>
 <div id="factor-competition" class="section level4" number="8.4.2.3">
@@ -1631,7 +1631,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb487-149"><a href="factor-models.html#cb487-149" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb487-150"><a href="factor-models.html#cb487-150" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb487-151"><a href="factor-models.html#cb487-151" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-273-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-272-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="factor-models.html#cb488-1" aria-hidden="true" tabindex="-1"></a>df_mom <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(Dates, EW_Return_Mom_d1, EW_Return_Mom_d2, EW_Return_Mom_d3, EW_Return_Mom_d4,</span>
 <span id="cb488-2"><a href="factor-models.html#cb488-2" aria-hidden="true" tabindex="-1"></a>                              EW_Return_Mom_d5, EW_Return_Mom_d6, EW_Return_Mom_d7, EW_Return_Mom_d8, EW_Return_Mom_d9, EW_Return_Mom_d10))</span>
@@ -1778,7 +1778,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb490-106"><a href="factor-models.html#cb490-106" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb490-107"><a href="factor-models.html#cb490-107" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb490-108"><a href="factor-models.html#cb490-108" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-275-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-274-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="factor-models.html#cb491-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret <span class="sc">%&gt;%</span> </span>
 <span id="cb491-2"><a href="factor-models.html#cb491-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(Decile <span class="sc">!=</span> <span class="st">&quot;NA&quot;</span>) <span class="sc">%&gt;%</span> </span>
@@ -1887,7 +1887,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb493-78"><a href="factor-models.html#cb493-78" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb493-79"><a href="factor-models.html#cb493-79" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb493-80"><a href="factor-models.html#cb493-80" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-277-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-276-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="factor-models.html#cb494-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_Size <span class="sc">%&gt;%</span> </span>
 <span id="cb494-2"><a href="factor-models.html#cb494-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decile) <span class="sc">%&gt;%</span> </span>
@@ -1996,7 +1996,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb496-80"><a href="factor-models.html#cb496-80" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb496-81"><a href="factor-models.html#cb496-81" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb496-82"><a href="factor-models.html#cb496-82" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-279-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-278-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="factor-models.html#cb497-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_Value <span class="sc">%&gt;%</span> </span>
 <span id="cb497-2"><a href="factor-models.html#cb497-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decile) <span class="sc">%&gt;%</span> </span>
@@ -2102,7 +2102,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb499-77"><a href="factor-models.html#cb499-77" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb499-78"><a href="factor-models.html#cb499-78" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb499-79"><a href="factor-models.html#cb499-79" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-281-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-280-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="factor-models.html#cb500-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_Profit <span class="sc">%&gt;%</span> </span>
 <span id="cb500-2"><a href="factor-models.html#cb500-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decile) <span class="sc">%&gt;%</span> </span>
@@ -2208,7 +2208,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb502-77"><a href="factor-models.html#cb502-77" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb502-78"><a href="factor-models.html#cb502-78" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb502-79"><a href="factor-models.html#cb502-79" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-283-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-282-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="factor-models.html#cb503-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_Invest <span class="sc">%&gt;%</span> </span>
 <span id="cb503-2"><a href="factor-models.html#cb503-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decile) <span class="sc">%&gt;%</span> </span>
@@ -2357,7 +2357,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb505-121"><a href="factor-models.html#cb505-121" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb505-122"><a href="factor-models.html#cb505-122" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb505-123"><a href="factor-models.html#cb505-123" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-285-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-284-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="factor-models.html#cb506-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_BAB <span class="sc">%&gt;%</span> </span>
 <span id="cb506-2"><a href="factor-models.html#cb506-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Decile) <span class="sc">%&gt;%</span> </span>
@@ -2602,7 +2602,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb508-213"><a href="factor-models.html#cb508-213" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb508-214"><a href="factor-models.html#cb508-214" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb508-215"><a href="factor-models.html#cb508-215" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-287-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-286-1.png" width="672" /></p>
 <p>As we can see, the SMB factor has declining cumulative returns throughout time, implying that there appears to be no market anomaly related to this specific factor.</p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="factor-models.html#cb509-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the three performance metrics</span></span>
@@ -2911,7 +2911,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb511-286"><a href="factor-models.html#cb511-286" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb511-287"><a href="factor-models.html#cb511-287" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb511-288"><a href="factor-models.html#cb511-288" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-289-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-288-1.png" width="672" /></p>
 <p>As we can see, the Profitability factor appears to be the strongest anomaly of the factors under consideration. The value factor also shows significant, positive, albeit less pronounced, returns for the period under consideration. On the other hand, both the Investment as well as the size factor appear to be no material anomaly in the Swiss market from the observational time horizon.</p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="factor-models.html#cb512-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the three performance metrics</span></span>
@@ -2925,9 +2925,9 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb512-9"><a href="factor-models.html#cb512-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb512-10"><a href="factor-models.html#cb512-10" aria-hidden="true" tabindex="-1"></a>df_factors</span></code></pre></div>
 <pre><code>##                            SMB        HML        RMW         CMA
-## Annualised Return  -0.04904802 0.03348513 0.05445392 -0.03304405
-## Standard Deviation  0.10969154 0.12855269 0.10800034  0.19648688
-## Sharpe Ratio       -0.44714498 0.26047783 0.50420136 -0.16817433</code></pre>
+## Annualised Return  -0.04904802 0.03323681 0.05414061 -0.03316582
+## Standard Deviation  0.10969154 0.12861379 0.10801873  0.19626799
+## Sharpe Ratio       -0.44714498 0.25842341 0.50121499 -0.16898234</code></pre>
 </div>
 <div id="up-minus-down" class="section level4" number="8.5.5.3">
 <h4><span class="header-section-number">8.5.5.3</span> Up Minus Down</h4>
@@ -3170,7 +3170,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb516-15"><a href="factor-models.html#cb516-15" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb516-16"><a href="factor-models.html#cb516-16" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb516-17"><a href="factor-models.html#cb516-17" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-293-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-292-1.png" width="672" /></p>
 <p>As we can see, there are slight differences in the cumulative return structures of both strategies, whereas it appears as if the factor construction of Jegadeesh and Titman (JT) delivers, on average, higher cumulative returns, especially after 2012.</p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="factor-models.html#cb517-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the three performance metrics</span></span>
@@ -3184,9 +3184,9 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb517-9"><a href="factor-models.html#cb517-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb517-10"><a href="factor-models.html#cb517-10" aria-hidden="true" tabindex="-1"></a>df_MOM</span></code></pre></div>
 <pre><code>##                    Momentum_Car Momentum_JT
-## Annualised Return     0.1329926   0.1587250
-## Standard Deviation    0.1716486   0.1797972
-## Sharpe Ratio          0.7747959   0.8828004</code></pre>
+## Annualised Return     0.1328486   0.1587250
+## Standard Deviation    0.1716447   0.1797972
+## Sharpe Ratio          0.7739741   0.8828004</code></pre>
 </div>
 <div id="betting-against-beta" class="section level4" number="8.5.5.4">
 <h4><span class="header-section-number">8.5.5.4</span> Betting Against Beta</h4>
@@ -3291,7 +3291,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb519-99"><a href="factor-models.html#cb519-99" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb519-100"><a href="factor-models.html#cb519-100" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb519-101"><a href="factor-models.html#cb519-101" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-295-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-294-1.png" width="672" /></p>
 <p>Finally, let’s calculate the summary statistics</p>
 <div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="factor-models.html#cb520-1" aria-hidden="true" tabindex="-1"></a>CH_data_EW_Ret_BAB_ts <span class="ot">&lt;-</span> <span class="fu">xts</span>(CH_data_EW_Ret_BAB<span class="sc">$</span>BAB, <span class="at">order.by =</span> <span class="fu">as.Date</span>(CH_data_EW_Ret_BAB<span class="sc">$</span>Date))</span>
 <span id="cb520-2"><a href="factor-models.html#cb520-2" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -3496,7 +3496,7 @@ w_{it} = k(z_{it} - \bar{z}_t)
 <span id="cb522-178"><a href="factor-models.html#cb522-178" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb522-179"><a href="factor-models.html#cb522-179" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>),</span>
 <span id="cb522-180"><a href="factor-models.html#cb522-180" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-297-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-296-1.png" width="672" /></p>
 <p>As we can see, although both appear to be correlated and follow the same paths throughout time, we can see that the data provided from Bloomberg (BL) delivers substantially larger factor returns than the data from Thompson Reuters. Let’s look at where these differences arise.</p>
 <div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="factor-models.html#cb523-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s check why the two HML differentiate that much </span></span>
 <span id="cb523-2"><a href="factor-models.html#cb523-2" aria-hidden="true" tabindex="-1"></a>CH_data_total_mont_check <span class="sc">%&gt;%</span> </span>

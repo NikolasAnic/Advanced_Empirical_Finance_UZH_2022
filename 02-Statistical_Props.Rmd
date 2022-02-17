@@ -18,7 +18,7 @@ Although we would advise you to use PDF as output, you can also choose HTML [to 
 
 Once you choose your desired output format, you will see that a new window pops up that looks like this: 
 
-![Figure 1: Markdown First file structure](~/Desktop/Empirical Asset Management/R/Images/Markdown_First_Look.jpg)  
+![Figure 1: Markdown First file structure](~/Desktop/Advanced_Empirical_Finance_UZH_2022/Images/Markdown_First_Look.jpg)  
 
 In order to comprehend the structure of a markdown file, it is firstly important to understand that a markdown file consists of white spaces and grey code Chunks The white spaces are used to write text, whereas the code Chunks are used to write code. Importantly, you won't need the part below the first code block, so just delete everything from the "## R Markdown"" title on. This will leave you with only the first code block.
 
@@ -32,19 +32,19 @@ The working directory is your source file from which R gets all data and to whic
 
 Once you enter your preferred working directory, you can continue to start entering the packages you want to use. For that, add a code block by clicking on the green tool box above and select the option "R", just as in the image below.
 
-![Figure 1: Markdown Select R Codeblock](~/Desktop/Empirical Asset Management/R/Images/Markdown_Select_Codeblock.jpg)
+![Figure 1: Markdown Select R Codeblock](~/Desktop/Advanced_Empirical_Finance_UZH_2022/Images/Markdown_Select_Codeblock.jpg)
 
 Once you have your codenblock, you can enter the packages you need to use. It is handy to define functions which either install the packages or load the packages for that:
 
-```{r, comment=NA}
-# packs.inst <- c("readxl","foreign","dplyr","tidyr","ggplot2","stargazer","haven","dummies","Hmisc", "lmtest","sandwich", "doBy", "multiwayvcov", "miceadds",  "car", "purrr", "knitr", "zoo", "readstata13", "tidyverse", "psych", "wesanderson", "lubridate","reporttools", "data.table", "devtools", "rmarkdown","estimatr", "ivpack", "Jmisc", "lfe", "plm", "tinytex", "xts", "psych", "PerformanceAnalytics", "roll", "rollRegres", "glmnet", "hdm", "broom", "RCurl", "learnr", "maps", "fGarch", "remotes", "RPostgreSQL", "wrds", "DBI", "RPostgreSQL", "remotes", "RPostgres")
+```{r, comment=NA, results = 'hide'}
+packs.inst <- c("readxl","foreign","dplyr","tidyr","ggplot2","stargazer","haven","dummies","Hmisc", "lmtest","sandwich", "doBy", "multiwayvcov", "miceadds",  "car", "purrr", "knitr", "zoo", "readstata13", "tidyverse", "psych", "wesanderson", "lubridate","reporttools", "data.table", "devtools", "rmarkdown","estimatr", "ivpack", "Jmisc", "lfe", "plm", "tinytex", "xts", "psych", "PerformanceAnalytics", "roll", "rollRegres", "glmnet", "hdm", "broom", "RCurl", "learnr", "maps", "fGarch", "remotes", "RPostgreSQL", "wrds", "DBI", "RPostgreSQL", "remotes", "RPostgres")
 
 
-# packs.inst <- c()
+ packs.inst <- c()
 
-# lapply(packs.load, require, character.only = TRUE)
+ lapply(packs.load, require, character.only = TRUE)
 
-# lapply(packs.inst, install.packages, character.only = FALSE) 
+ lapply(packs.inst, install.packages, character.only = FALSE) 
 
 ```
 

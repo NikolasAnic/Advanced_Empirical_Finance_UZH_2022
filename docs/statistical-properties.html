@@ -695,7 +695,7 @@ F_X(x) = P(X\leq x)
 <span id="cb220-11"><a href="statistical-properties.html#cb220-11" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb220-12"><a href="statistical-properties.html#cb220-12" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
 <span id="cb220-13"><a href="statistical-properties.html#cb220-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="statistical-properties.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
 <span id="cb221-2"><a href="statistical-properties.html#cb221-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> pnorm) <span class="sc">+</span> </span>
 <span id="cb221-3"><a href="statistical-properties.html#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for continuous distribution&quot;</span>) <span class="sc">+</span></span>
@@ -707,7 +707,7 @@ F_X(x) = P(X\leq x)
 <span id="cb221-9"><a href="statistical-properties.html#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb221-10"><a href="statistical-properties.html#cb221-10" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
 <span id="cb221-11"><a href="statistical-properties.html#cb221-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
 <div id="quantile-values-of-distributions" class="section level4" number="3.1.5.1">
 <h4><span class="header-section-number">3.1.5.1</span> Quantile values of Distributions</h4>
 <p>:</p>
@@ -781,8 +781,8 @@ f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}
 <span id="cb226-3"><a href="statistical-properties.html#cb226-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> Var2, <span class="at">color =</span> Var2)) <span class="sc">+</span></span>
 <span id="cb226-4"><a href="statistical-properties.html#cb226-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb226-5"><a href="statistical-properties.html#cb226-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 126 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<pre><code>## Warning: Removed 145 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 <p>A problem is that the distribution function cannot be solved for analytically and therefore has to be approximated numerically. That is:</p>
 <p><span class="math display">\[
 P(a \leq X \leq b) = \int^b_a \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx
@@ -828,7 +828,7 @@ S = \sum_{i=1}^n \textstyle X \sim \chi^2(n)
 <span id="cb228-12"><a href="statistical-properties.html#cb228-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb228-13"><a href="statistical-properties.html#cb228-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb228-14"><a href="statistical-properties.html#cb228-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 </div>
 <div id="students-t-distribution" class="section level4" number="3.1.6.3">
 <h4><span class="header-section-number">3.1.6.3</span> Student’s t-Distribution</h4>
@@ -865,8 +865,8 @@ Kurt(x) = \frac{6}{v-4}, v &gt; 4
 <span id="cb232-3"><a href="statistical-properties.html#cb232-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb232-4"><a href="statistical-properties.html#cb232-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb232-5"><a href="statistical-properties.html#cb232-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 12933 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+<pre><code>## Warning: Removed 13018 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
 </div>
 <div id="f-distribution" class="section level4" number="3.1.6.4">
 <h4><span class="header-section-number">3.1.6.4</span> F-Distribution</h4>
@@ -897,7 +897,7 @@ F(n_1, n_2) = \frac{Y/n_1}{X/n_2}
 <span id="cb234-12"><a href="statistical-properties.html#cb234-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb234-13"><a href="statistical-properties.html#cb234-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb234-14"><a href="statistical-properties.html#cb234-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 </div>
 <div id="log-normal-distribution" class="section level4" number="3.1.6.5">
 <h4><span class="header-section-number">3.1.6.5</span> Log-Normal Distribution</h4>
@@ -931,7 +931,7 @@ F(x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
 <span id="cb235-12"><a href="statistical-properties.html#cb235-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb235-13"><a href="statistical-properties.html#cb235-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb235-14"><a href="statistical-properties.html#cb235-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
 </div>
 <div id="functions-for-distribution-calculations-d-p-q-r" class="section level4" number="3.1.6.6">
 <h4><span class="header-section-number">3.1.6.6</span> Functions for distribution calculations (d, p, q, r)</h4>
@@ -958,7 +958,7 @@ F(x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
 <p><strong>rnorm</strong></p>
 <p>Lastly, the <code>rnorm()</code> is used to generate vector of numbers that follow a certain distribution and its characteristics. We used this function to generate an order of numbers to plot subsequently and show the plotted distributions.</p>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="statistical-properties.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>##  [1]  1.51234414  0.07228406 -0.79089105 -0.94620969  0.91276912 -0.08478393 -0.71939076 -0.10262776 -1.19267977 -0.56798016</code></pre>
+<pre><code>##  [1]  0.03306359 -0.96117096  0.26365043  0.64899801  1.92755954  0.55998601 -0.44375478  0.27437515  1.86605882 -0.05499930</code></pre>
 <p>Although we just showed the functions for the normal distribution, R offers a great amount of functions for other distributions that can be used identically as the normal case. To give you an overview:</p>
 <p>Neatly, nearly all of these functions can be used with the prefixes “d,p,q,r”. Thus, for instance, just write rlnorm to get the values of a log-normal distribution.</p>
 </div>
@@ -1162,7 +1162,7 @@ If X has a symmetric distribution, then skew(X) = 0, as values above and below t
 <span id="cb247-3"><a href="statistical-properties.html#cb247-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb247-4"><a href="statistical-properties.html#cb247-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb247-5"><a href="statistical-properties.html#cb247-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>,<span class="dv">15</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="kurtosis" class="section level4" number="3.1.8.4">
 <h4><span class="header-section-number">3.1.8.4</span> Kurtosis</h4>
@@ -1198,8 +1198,8 @@ kurt(X) = \frac{E[(X-\mu_x)^4]}{\sigma_x^4}
 <span id="cb251-3"><a href="statistical-properties.html#cb251-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
 <span id="cb251-4"><a href="statistical-properties.html#cb251-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb251-5"><a href="statistical-properties.html#cb251-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 593 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<pre><code>## Warning: Removed 578 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
 </div>
 </div>
 </div>
