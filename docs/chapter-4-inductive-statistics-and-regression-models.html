@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Chapter 4: Inductive Statistics and Regression Models | Empricial Finance and Statistical Analysis</title>
+  <meta name="description" content="Chapter 5 Chapter 4: Inductive Statistics and Regression Models | Empricial Finance and Statistical Analysis" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Chapter 4: Inductive Statistics and Regression Models | Empricial Finance and Statistical Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Chapter 4: Inductive Statistics and Regression Models | Empricial Finance and Statistical Analysis" />
+  
+  
+  
+
+<meta name="author" content="Nikolas Anic &amp; Lorenz Gassmann" />
+
+
+<meta name="date" content="2021-11-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-2-risk-and-return.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Empirical Finance and Statistical Analysis - Theory and Empirics Lab</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to the course objectives and organisation of the course</a></li>
+<li class="chapter" data-level="2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: The Programming Environment</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#markdown-files"><i class="fa fa-check"></i><b>2.1</b> Markdown Files</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#how-to-create-a-markdown-file"><i class="fa fa-check"></i><b>2.1.1</b> How to create a Markdown File</a></li>
+<li class="chapter" data-level="2.1.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#the-r-markdown-structure"><i class="fa fa-check"></i><b>2.1.2</b> The R Markdown Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#coding-in-r---a-concise-overview"><i class="fa fa-check"></i><b>2.2</b> Coding In R - A concise overview</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#introduction"><i class="fa fa-check"></i><b>2.2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#vectors"><i class="fa fa-check"></i><b>2.2.2</b> Vectors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-types"><i class="fa fa-check"></i><b>2.2.3</b> Data Types</a></li>
+<li class="chapter" data-level="2.2.4" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-frames"><i class="fa fa-check"></i><b>2.2.4</b> Data Frames</a></li>
+<li class="chapter" data-level="2.2.5" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#importing-data"><i class="fa fa-check"></i><b>2.2.5</b> Importing Data</a></li>
+<li class="chapter" data-level="2.2.6" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-manipulation"><i class="fa fa-check"></i><b>2.2.6</b> Data Manipulation</a></li>
+<li class="chapter" data-level="2.2.7" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-reshaping"><i class="fa fa-check"></i><b>2.2.7</b> Data Reshaping</a></li>
+<li class="chapter" data-level="2.2.8" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#beautiful-graphs-with-ggplot2"><i class="fa fa-check"></i><b>2.2.8</b> Beautiful Graphs with <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.2.9" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#dates-and-times"><i class="fa fa-check"></i><b>2.2.9</b> Dates and Times</a></li>
+<li class="chapter" data-level="2.2.10" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#string-manipulations-in-r-the-stringr-package"><i class="fa fa-check"></i><b>2.2.10</b> String Manipulations in R: The <code>stringr()</code> package</a></li>
+<li class="chapter" data-level="2.2.11" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#database-queries"><i class="fa fa-check"></i><b>2.2.11</b> Database Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html"><i class="fa fa-check"></i><b>3</b> Chapter 1: Statistical Properties</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#random-variables-and-probability-distributions-introdcution"><i class="fa fa-check"></i><b>3.1</b> Random Variables and Probability Distributions: Introdcution</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#the-concept-of-probability-important-notions-and-definitions"><i class="fa fa-check"></i><b>3.1.1</b> The concept of Probability: Important Notions and Definitions</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#random-variables"><i class="fa fa-check"></i><b>3.1.2</b> Random Variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#discrete-random-variables-and-distributions"><i class="fa fa-check"></i><b>3.1.3</b> Discrete Random Variables and Distributions</a></li>
+<li class="chapter" data-level="3.1.4" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#continuous-random-variables-and-distributions"><i class="fa fa-check"></i><b>3.1.4</b> Continuous Random Variables and Distributions</a></li>
+<li class="chapter" data-level="3.1.5" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#the-cumulative-distribution"><i class="fa fa-check"></i><b>3.1.5</b> The cumulative Distribution</a></li>
+<li class="chapter" data-level="3.1.6" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#continuous-distributions-with-appealing-properties"><i class="fa fa-check"></i><b>3.1.6</b> Continuous Distributions with Appealing Properties</a></li>
+<li class="chapter" data-level="3.1.7" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#moments-and-properties-of-bivariate-distributions"><i class="fa fa-check"></i><b>3.1.7</b> Moments and Properties of bivariate distributions</a></li>
+<li class="chapter" data-level="3.1.8" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#moments-of-probability-distributions"><i class="fa fa-check"></i><b>3.1.8</b> Moments of Probability Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#matrix-algebra-introduction"><i class="fa fa-check"></i><b>3.2</b> Matrix Algebra: Introduction</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#matrices-and-vectors"><i class="fa fa-check"></i><b>3.2.1</b> Matrices and Vectors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#basic-matrix-operations"><i class="fa fa-check"></i><b>3.2.2</b> Basic Matrix Operations</a></li>
+<li class="chapter" data-level="3.2.3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#summation-notation-in-matrix-form"><i class="fa fa-check"></i><b>3.2.3</b> Summation Notation in Matrix Form</a></li>
+<li class="chapter" data-level="3.2.4" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#systems-of-linear-equations"><i class="fa fa-check"></i><b>3.2.4</b> Systems of Linear Equations</a></li>
+<li class="chapter" data-level="3.2.5" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#positive-definite-pd-matrix"><i class="fa fa-check"></i><b>3.2.5</b> Positive Definite (PD) Matrix</a></li>
+<li class="chapter" data-level="3.2.6" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#multivariate-probability-distributions"><i class="fa fa-check"></i><b>3.2.6</b> Multivariate Probability Distributions</a></li>
+<li class="chapter" data-level="3.2.7" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#portfolio-construction-and-mathematical-properties-using-matrix-algebra"><i class="fa fa-check"></i><b>3.2.7</b> Portfolio Construction and Mathematical Properties using Matrix Algebra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html"><i class="fa fa-check"></i><b>4</b> Chapter 2: Risk and Return</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#the-time-series-of-returns---transformations-in-r-1"><i class="fa fa-check"></i><b>4.1</b> The time-series of Returns - Transformations in R</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#security-returns"><i class="fa fa-check"></i><b>4.2</b> Security Returns</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#simple-returns"><i class="fa fa-check"></i><b>4.2.1</b> Simple Returns</a></li>
+<li class="chapter" data-level="4.2.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#logarithmic-returns"><i class="fa fa-check"></i><b>4.2.2</b> Logarithmic Returns</a></li>
+<li class="chapter" data-level="4.2.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#accounting-for-dividends-total-returns"><i class="fa fa-check"></i><b>4.2.3</b> Accounting for Dividends: Total Returns</a></li>
+<li class="chapter" data-level="4.2.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#truncating-the-data"><i class="fa fa-check"></i><b>4.2.4</b> Truncating the data</a></li>
+<li class="chapter" data-level="4.2.5" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#arithmetic-vs.-geometric-returns"><i class="fa fa-check"></i><b>4.2.5</b> Arithmetic vs. Geometric Returns</a></li>
+<li class="chapter" data-level="4.2.6" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#cumulative-returns"><i class="fa fa-check"></i><b>4.2.6</b> Cumulative Returns</a></li>
+<li class="chapter" data-level="4.2.7" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#periodic-transformation-of-returns"><i class="fa fa-check"></i><b>4.2.7</b> Periodic Transformation of Returns</a></li>
+<li class="chapter" data-level="4.2.8" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#annualising-returns"><i class="fa fa-check"></i><b>4.2.8</b> Annualising Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-returns"><i class="fa fa-check"></i><b>4.3</b> Portfolio Returns</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#equal-weighted-returns"><i class="fa fa-check"></i><b>4.3.1</b> Equal-weighted Returns</a></li>
+<li class="chapter" data-level="4.3.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#value-weighted-returns"><i class="fa fa-check"></i><b>4.3.2</b> Value-weighted Returns</a></li>
+<li class="chapter" data-level="4.3.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#timing-of-returns"><i class="fa fa-check"></i><b>4.3.3</b> Timing of Returns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#nominal-vs.-real-returns"><i class="fa fa-check"></i><b>4.3.4</b> Nominal vs. Real Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#individual-security-risk"><i class="fa fa-check"></i><b>4.4</b> Individual Security Risk</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#standard-deviation-and-variance"><i class="fa fa-check"></i><b>4.4.1</b> Standard Deviation and Variance</a></li>
+<li class="chapter" data-level="4.4.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#rolling-risk-characteristics"><i class="fa fa-check"></i><b>4.4.2</b> Rolling Risk Characteristics</a></li>
+<li class="chapter" data-level="4.4.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-risk"><i class="fa fa-check"></i><b>4.4.3</b> Portfolio Risk</a></li>
+<li class="chapter" data-level="4.4.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-risk-for-multiple-assets"><i class="fa fa-check"></i><b>4.4.4</b> Portfolio Risk for Multiple Assets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#risk-in-extremes-and-alternative-risk-measures"><i class="fa fa-check"></i><b>4.5</b> Risk in Extremes and Alternative Risk Measures</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#value-at-risk-var"><i class="fa fa-check"></i><b>4.5.1</b> Value at Risk (VaR)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#plot-the-relationship"><i class="fa fa-check"></i><b>4.6</b> Plot the relationship</a></li>
+<li class="chapter" data-level="4.7" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#market-efficiency-and-independence-of-risk-and-return"><i class="fa fa-check"></i><b>4.7</b> Market Efficiency and independence of risk and return</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#variance-ratio-test"><i class="fa fa-check"></i><b>4.7.1</b> Variance Ratio Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-4-inductive-statistics-and-regression-models.html"><a href="chapter-4-inductive-statistics-and-regression-models.html"><i class="fa fa-check"></i><b>5</b> Chapter 4: Inductive Statistics and Regression Models</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter-4-inductive-statistics-and-regression-models.html"><a href="chapter-4-inductive-statistics-and-regression-models.html#inductive-statistics"><i class="fa fa-check"></i><b>5.1</b> Inductive Statistics</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="chapter-4-inductive-statistics-and-regression-models.html"><a href="chapter-4-inductive-statistics-and-regression-models.html#point-estimators"><i class="fa fa-check"></i><b>5.1.1</b> Point Estimators</a></li>
+<li class="chapter" data-level="5.1.2" data-path="chapter-4-inductive-statistics-and-regression-models.html"><a href="chapter-4-inductive-statistics-and-regression-models.html#confidence-intervals"><i class="fa fa-check"></i><b>5.1.2</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.1.3" data-path="chapter-4-inductive-statistics-and-regression-models.html"><a href="chapter-4-inductive-statistics-and-regression-models.html#hypothesis-testing"><i class="fa fa-check"></i><b>5.1.3</b> Hypothesis Testing</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Empricial Finance and Statistical Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-4-inductive-statistics-and-regression-models" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Chapter 4: Inductive Statistics and Regression Models</h1>
+<p>The third chapter covers Inductive Statistics and Regression modeling. Therein, we cover inductive properties of statistical distributions, such as confidence intervals and hypothesis tests, and dig into univariate Linear Regression based on correlation &amp; covariance properties we learned throughout the first weeks. Further, we introduce the connection of equity and <span class="math inline">\(\beta\)</span> in form of the equity risk premium, define certain options to calculate a <span class="math inline">\(\beta\)</span> factor, and use the concept of <span class="math inline">\(\beta\)</span> within a regression setting.</p>
+<div id="inductive-statistics" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Inductive Statistics</h2>
+<p>We now covered the theoretical founding stones of statistical analysis. Now, it is time to dig deeper into one of the major applications of these properties in inferential analysis. To do so, we will introduce the concept of inductive statistics.</p>
+<p>Inductive statistics is the branch of statistics dealing with conclusions, generalizations, predictions, and estimations based on data from samples. In essence, inductive statistics takes information from a representative sample and attempts to generalise it to a general population. Representative here means that we can assume that the population follows the same distributional properties as the sample, thereby implying that all properties that show to hold in a sample can be generalised to the true population. Consequently, we use the term inductive because we “induce” something from a given sample.</p>
+<p>Inductive statistics are very applied since it is generally infeasible or simply too involved to analyze the entire population in order to obtain full certainty as to the true environment. For instance, we can never rely on the entire time-series of observations to define a return. Consequently, to obtain insight about the true but unknown parameter value, we draw a sample from which we compute statistics or estimates for the parameter.</p>
+<p>In this chapter, we will cover three main parts: Point Estimators, Confidence Intervals and Hypotheses Testing.</p>
+<p>When considering Point Estimators, we learn about samples, statistics, and estimators. Most of the topics are built on the statistical properties used earlier.In particular, we present the linear estimator, explain quality criteria (such as the bias, mean-square error, and standard error) and the large-sample criteria. Related to the large-sample criteria, we present the fundamental theorem of consistency, for which we need the definition of convergence in probability and the law of large numbers. As another large-sample criterion, we introduce the unbiased efficiency, explaining the best linear unbiased estimator (BLUE) or, alternatively, the minimum variance linear unbiased estimator. We then discuss the maximum likelihood estimation technique, one of the most powerful tools in the context of parameter estimation.</p>
+<p>When using Confidence Intervals, we present the confidence interval. We then present the probability of error in the context of confidence intervals, which is related to the confidence level.</p>
+<p>We then conclude the chapter by performing hypotheses testing. To test for these, we develop a test statistic for which we set up a decision rule. For a specific sample, this test statistic then either assumes a value in the acceptance region or the rejection region, regions that we describe in this chapter. Furthermore, we see the two error types one can incur when testing. We see that the hypothesis test structure allows one to control the probability of error through what we see to be the test size or significance level. We discover that each observation has a certain p-value expressing its significance. As a quality criterion of a test, we introduce the power from which the uniformly most powerful test can be defined.</p>
+<div id="point-estimators" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Point Estimators</h3>
+<p>We use the information obtained from the sample, or better, the statistic, to infer about a point estimator of a certain parameter <span class="math inline">\(\theta\)</span>. Formally, if we do this, we refer to the estimation function as an estimator and denote it by:</p>
+<p><span class="math display">\[
+\hat{\theta} : X \rightarrow \Theta
+\]</span></p>
+<p>This means we take the sample space X and map it into the set space <span class="math inline">\(\Theta\)</span> (if you don’t know any more the distinction between these values, go to the book in Chapter 3.1). But, in general, this just means that we create an estimator of a parameter, that we usually denote with a “hat” sign, <span class="math inline">\(\hat{}\)</span>, from a sample we observe and that this estimator is valid for an unobservable population because we assume that we can “map” or “generalise” this sample to this population (set space) (b/c we assume it has the same attributes).</p>
+<p>The exact structure of the estimator is predetermined before the sample is realized. After the estimator has been defined, we simply need to enter the sample values accordingly.</p>
+<p>Due to the estimator’s dependence on the random sample, the <strong>estimator is itself random</strong>. A particular value of the estimator based on the realization of some sample is called an <strong>estimate</strong>. We will show you in simulation studies that, if we repeat the same draw multiple times, we will always receive slightly different moments of a probability distribution (but, if repeated sufficient times, the variance between these draws will diminish). For instance, if we realize 1000 samples of given length n, we obtain 1000 individual estimates. Sorting them by value—and possibly arranging them into classes—we can compute the distribution function of these realizations, which is similar to the empirical cumulative distribution function</p>
+<div id="estimators-for-the-mean" class="section level4" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Estimators for the mean</h4>
+<p>As an illustration, let’s create normally distributed returns with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> such that <span class="math inline">\(Y = N(\mu, \sigma^2)\)</span>. Let’s define that we have 10, 100, 1’000 and 10’000 individual samples for IID draws of X. Then, we compute the mean as:</p>
+<p><span class="math display">\[
+\hat{x_i} = \frac{1}{n}\sum_{i=1}^nX_i
+\]</span></p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a random seed</span></span>
+<span id="cb360-2"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">124</span>)</span>
+<span id="cb360-3"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-4"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw 10, 100, 1000 and 10000 distributions with random numbers </span></span>
+<span id="cb360-5"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-5" aria-hidden="true" tabindex="-1"></a>x_10 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb360-6"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x_10) <span class="ot">&lt;-</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb360-7"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-7" aria-hidden="true" tabindex="-1"></a>x_100 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb360-8"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x_100) <span class="ot">&lt;-</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb360-9"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-9" aria-hidden="true" tabindex="-1"></a>x_1000 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>))</span>
+<span id="cb360-10"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x_1000) <span class="ot">&lt;-</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb360-11"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-11" aria-hidden="true" tabindex="-1"></a>x_10000 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>))</span>
+<span id="cb360-12"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb360-12" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x_10000) <span class="ot">&lt;-</span> <span class="st">&quot;x&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plots</span></span>
+<span id="cb361-2"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-2" aria-hidden="true" tabindex="-1"></a>p10 <span class="ot">&lt;-</span> x_10 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;n = 10&quot;</span>)</span>
+<span id="cb361-3"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-3" aria-hidden="true" tabindex="-1"></a>p100 <span class="ot">&lt;-</span> x_100 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot; n = 100&quot;</span>)</span>
+<span id="cb361-4"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-4" aria-hidden="true" tabindex="-1"></a>p1000 <span class="ot">&lt;-</span> x_1000 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;n = 1000&quot;</span>)</span>
+<span id="cb361-5"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-5" aria-hidden="true" tabindex="-1"></a>p10000 <span class="ot">&lt;-</span> x_10000 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span><span class="dv">100</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;n = 10000&quot;</span>)</span>
+<span id="cb361-6"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge plots</span></span>
+<span id="cb361-7"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb361-7" aria-hidden="true" tabindex="-1"></a>Rmisc<span class="sc">::</span><span class="fu">multiplot</span>( p10 <span class="sc">+</span> <span class="fu">theme_fivethirtyeight</span>(), p1000 <span class="sc">+</span> <span class="fu">theme_fivethirtyeight</span>(), p100 <span class="sc">+</span> <span class="fu">theme_fivethirtyeight</span>(), p10000 <span class="sc">+</span> <span class="fu">theme_fivethirtyeight</span>(), <span class="at">cols =</span> <span class="dv">2</span>)  </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-195-1.png" width="672" /></p>
+<p>We see that the distribution of the sample means copy quite well the appearance of the theoretical sample distribution density function if we increase n. This is the first intuition behind what we call sampling statistics. As you’ve seen in earlier courses, this is one of the fundamental ideas behind inductive statistics.</p>
+</div>
+<div id="linear-estimators" class="section level4" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Linear Estimators</h4>
+<p>Let’s start introducing linearity into the concept of inductive statistics. To do so, we introduce the <strong>linear estimator</strong>. Suppose we have a sample of size n such that <span class="math inline">\(X = (X_1, X_2, \dots, X_n)\)</span>. The linear estimator then has the following form:</p>
+<p><span class="math display">\[
+\hat{\theta} = \sum^n_{i=1}a_iX_i
+\]</span>
+Where each draw of <span class="math inline">\(X_i\)</span> is weighted by some real number, <span class="math inline">\(a_i\)</span>.</p>
+<p>We know that the <strong>linear estimator is normally distributed</strong>. This understanding is based on two important properties introduced in basic statistics, if we assume <strong>independent and identically distributed draws (IID)</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Property 1 - location-scale invariance property: If we multiply X by b and add a where a and b are real numbers, the resulting <span class="math inline">\(a + b\cdotX\)</span> is again <strong>normally distributed</strong> with other units of measurement: <span class="math inline">\(N(a+\mu, b\sigma)\)</span></p></li>
+<li><p>Property 2 - stability under summation: The sum of an arbitrary number n of normal random variables (<span class="math inline">\(X_1,\dots,X_n\)</span>) is again <strong>normally distributed</strong></p></li>
+</ol>
+<p>Thus, <strong>any linear estimator will be normal</strong>. This is an extremely attractive feature of the linear estimator, as it allows us to draw inference based on Gaussian distribution properties. This is also the reason why we normally assume linearity in empirical, econometric models. As such, even if the underlying distribution is not the normal distribution, according to the Central Limit Theorem, the <strong>sample mean will be approximately normally distributed as the sample size increases</strong> within linear settings. This is what we have seen before when we have drawn multiple sample means and plotted them as a histogram. This result facilitates parameter estimation for most distributions. So, even though the exact value of the point estimator, with <span class="math inline">\((\mu, \sigma^2)\)</span>, is unknown, we observe the distribution of the sample means and try to find the location of the center.</p>
+<p>For instance, if we have a Bernoulli Distribution with <span class="math inline">\(\mu = 0\)</span>, we can use the formula for the sample mean and draw a large number of individual samples, calculate the mean from each sample and plot its distribution as a histogram. Accordingly, we then take the distributional properties and understand that it will follow an approximately normal distribution with <span class="math inline">\((\mu, \sigma^2)\)</span> and thus can infer that the “true” sample mean is at the location center of the distribution of the sample means. This is also known as <strong>Law of Large Numbers</strong> and will be introduced shortly.</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb362-1" aria-hidden="true" tabindex="-1"></a>p10000_normal_dist <span class="ot">&lt;-</span> x_10000 <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),<span class="at">bins =</span><span class="dv">100</span>) <span class="sc">+</span> <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x_10000<span class="sc">$</span>x), <span class="at">sd =</span> <span class="fu">sd</span>(x_10000<span class="sc">$</span>x)))</span>
+<span id="cb362-2"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb362-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb362-3"><a href="chapter-4-inductive-statistics-and-regression-models.html#cb362-3" aria-hidden="true" tabindex="-1"></a>p10000_normal_dist</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-196-1.png" width="672" /></p>
+</div>
+<div id="quality-criteria-of-estimators" class="section level4" number="5.1.1.3">
+<h4><span class="header-section-number">5.1.1.3</span> Quality Criteria of Estimators</h4>
+<p>The question related to each estimation problem should be what estimator would be best suited for the problem at hand. Estimators suitable for the very same parameters can vary quite remarkably when it comes to quality of their estimation. Here we will explain some of the most commonly em- ployed quality criteria.</p>
+<p><strong>Bias</strong></p>
+<p>An important consideration in the selection of an estimator is the average behavior of that estimator over all possible scenarios. Depending on the sample outcome, the estimator may not equal the parameter value and, instead, be quite remote from it. This is a natural consequence of the variability of the underlying sample. However, the average value of the estimator is something we can control.</p>
+<p>For that, we first consider the <em>sampling error</em>. This is the difference between the estimate and the population parameter. The expected value of the sampling error is defined as <strong>Bias</strong> and is given as:</p>
+<p><span class="math display">\[
+E(\hat{\theta} - \theta)
+\]</span></p>
+<p>If the expression is equal to zero, then we say this is an <strong>unbiased estimator</strong>.</p>
+<p>Let’s illustrate the concept of bias in the case of our <em>sample mean</em> and <em>sample variance</em>.</p>
+<p><em>Sample Mean</em></p>
+<p>Whenever a population mean has to be estimated, a natural estimator of choice is the sample mean. Let us examine its bias. This is given by:</p>
+<p><span class="math display">\[
+\begin{align*}
+E(\bar{X} - \mu) &amp;= E(\frac{1}{n}\sum_{i=1}^nX_i - \mu) \\
+&amp;= \frac{1}{n}\sum_{i=1}^nE(X_i) - \mu &amp;&amp; \text{the expected value of } \mu \text{ is } \mu \\
+&amp;= \frac{1}{n}\sum_{i=1}^n\mu - \mu &amp;&amp; \text{the expected value is } \mu \\
+&amp;= \frac{1}{n}n\mu - \mu \\
+&amp;= 0
+\end{align*}
+\]</span></p>
+<p>So the sample mean is unbiased.</p>
+<p><em>Sample Variance</em></p>
+<p>The sample variance is given as:</p>
+<p><span class="math display">\[
+s^2 = \frac{1}{n}\sum^n_{i=1}(x_i - \bar{x})^2
+\]</span>
+Then, we compute, but not show, the bias of the sample variance, as:</p>
+<p><span class="math display">\[
+\begin{align*}
+E(s^2-\sigma^2) &amp;= \sigma^2 - \frac{n-1}{n}\sigma^2 \\
+&amp;= \frac{1}{n}\sigma^2
+\end{align*}
+\]</span></p>
+<p>That is, the bias of the sample variance is negligible if n is sufficiently large.</p>
+<p><strong>Mean Squared Error</strong></p>
+<p>As just explained, bias as a quality criterion tells us about the expected deviation of the estimator from the parameter. However, the bias <strong>fails to inform us about the variability or spread of the estimator</strong>. For a reliable inference for the parameter value, we should prefer an estimator with rather small variability or, in other words, <strong>high precision</strong>. The Mean Squared Error incorporates both properties. It includes both a term to account for the bias, the expected deviation of the estimator, as well as the precision, the variability (variance) of the estimator.</p>
+<p>The sampling distribution provides us with both a theoretical measure of the mean as well as the spread of the estimator, that is its variance. The suqare root of the variance is also called <strong>standard error</strong> and is given as:</p>
+<p><span class="math display">\[
+\sqrt{Var(\hat{\theta_n})}
+\]</span>
+This value constitutes the spread, or variability, of the sample distribution.</p>
+<p>We use the mean squared error because, although we stated the bias as an ultimately preferable quality criterion, a bias of zero may be too restrictive a criterion if an estimator is only slightly biased but has a favorably small variance compared to all possible alternatives, biased or unbiased. So, we need some quality criterion accounting for both bias and variance.</p>
+<p>Taking squares rather than the loss itself incurred by the deviation, the MSE is defined as the expected square loss:</p>
+<p><span class="math display">\[
+MSE(\hat{\theta}) = E[(\theta - \hat{\theta})^2]
+\]</span></p>
+<p>If we reformulate this expression, we retrieve a very famous expression used in Machine Learning and Econometrics. This term is also known as the <strong>Bias-Variance Trade-Off</strong> and is derived as follows:</p>
+<p><span class="math display">\[
+\begin{align}
+E[(\theta - \hat{\theta})^2] &amp;= E[(\theta + \epsilon - \hat{\theta})^2] \\
+&amp;= E[(\theta + \epsilon - \hat{\theta} + E[\hat{\theta}] - E[\hat{\theta}])^2] \\
+&amp;= E[(\theta - \hat{\theta})^2] + E[\epsilon^2] + E[(E[\hat{\theta}]- \hat{\theta})^2] + 2E[(\theta - E[\hat{\theta}])\epsilon] + 2E[(E[\hat{\theta}]- \hat{\theta})\epsilon] + 2E[(E[\hat{\theta}]- \hat{\theta})(\hat{\theta} - E[\hat{\theta}])] \\
+&amp;= (\theta - \hat{\theta})^2 + E[\epsilon^2] + E[(E[\hat{\theta}]- \hat{\theta})^2] + \underbrace{2(\theta - E[\hat{\theta}])E[\epsilon] + 2E[(E[\hat{\theta}]- \hat{\theta})]E[\epsilon] + 2E[(E[\hat{\theta}]- \hat{\theta})](\hat{\theta} - E[\hat{\theta}])}_{\text{if written out, this will all cancel each other out, thereby = 0}} \\
+&amp;= \underbrace{(\theta - \hat{\theta})^2}_{\text{Bias term}} + E[\epsilon^2] + \underbrace{E[(E[\hat{\theta}]- \hat{\theta})^2]}_{\text{Variance term}} \\
+&amp;= Bias[\hat{\theta}]^2 + Var[\hat{\theta}] + Var[\epsilon]
+\end{align}
+\]</span></p>
+<p>So, we see that the mean-square error is decomposed into the variance of the estimator and a transform (i.e., square) of the bias, including a general, systematic bias term. This is a general dilemma of each estimation strategy. In the end, we want to minimise the MSE, implying that we want a model that is unbiased but not too variable, as an increased variation induces noise.</p>
+</div>
+<div id="large-sample-criteria" class="section level4" number="5.1.1.4">
+<h4><span class="header-section-number">5.1.1.4</span> Large Sample Criteria</h4>
+<p>Now, we have seen the properties of linear estimators and derived two important notions to define the accuracy of a sample estimator related to its population counterpart. However, another important characteristic in inductive statistics are <strong>asymptotic properties</strong>. That is, the behavior of the estimator if the sample size approaches infinity. The two most important concepts in this field are <strong>consistency</strong> and <strong>efficiency (unbiasedness)</strong></p>
+<p><strong>consistency</strong></p>
+<p>In order to think about consistency, we need to understand some aspects of the Central Limit Theorem. The asymptotic properties may facilitate deriving the large sample behavior of more complicated estimators. One of these aspects is given as <strong>convergence in probability</strong>. That means we consider whether the distribution of an estimator approaches some particular probability distribution as the sample sizes increase. To proceed, we state the following definition.</p>
+<p><span class="math display">\[
+\lim_{n \rightarrow \infty}P(|\hat{\theta}_n - c|&gt; \epsilon) = 0 
+\]</span>
+This property states that as the sample size becomes arbitrarily large, the probability that our estimator will assume a value that is more than <span class="math inline">\(\epsilon\)</span> away from c will become increasingly negligible, even as <span class="math inline">\(\epsilon\)</span> becomes smaller. That is, we say that <strong><span class="math inline">\(\hat{\theta}_n\)</span> converges in probability to c</strong>:</p>
+<p><span class="math display">\[
+plim\hat{\theta}_n = c
+\]</span></p>
+<p>Convergence in probability does not mean that an estimator will eventually be equal to c, and hence constant itself, but the <strong>chance of a deviation from it will become increasingly unlikely</strong>.</p>
+<p>Suppose now that we draw several samples of size n. Let the num- ber of these different samples be N. Consequently, we obtain N estimates, <span class="math inline">\(\hat{\theta}_n^{(i)}\)</span>. Utilizing the prior definition, we formulate the following law.</p>
+<p><span class="math display">\[
+plim \frac{1}{N}\sum_{i=1}^N \hat{\theta}_n^{(i)} = E(\hat{\theta}_n)
+\]</span></p>
+<p>This is a valuable property since when we have drawn many samples, we can assert that it will be highly unlikely that the average of the observed estimates will be a realization of a remote parameter. An important aspect of the convergence in probability becomes obvious now. Even if the expected value of <span class="math inline">\(\hat{\theta}_n\)</span> is not equal to <span class="math inline">\(\theta\)</span> in finite samples, it can still be that <span class="math inline">\(plim \hat{\theta}_n = \theta\)</span>. That is, the expected value may gradually become closer to and eventually indistinguishable from <span class="math inline">\(\theta\)</span>, as the sample size n increases. To account for these and all unbiased estimators, we introduce the definition of <strong>Consistency</strong>.</p>
+<p><span class="math display">\[
+plim\hat{\theta}_n = \theta
+\]</span></p>
+<p>This is exactly what we were able to portray in the histograms above. That is <strong>if we have a linear estimator and we draw N IID samples from this estimator, then we know that, as N approaches infinity, the estimator will (I) follow a Normal distribution property (=asymptotically normal) and (II) the average of all sample means will approach the expected value of the population mean (=consistent)</strong>, implying that, even if we have bias in finite samples, this bias will diminish in large samples.</p>
+<p><strong>Unbiased Efficiency</strong></p>
+<p>In the previous discussions in this section, we tried to determine where the estimator tends to. This analysis, however, left unanswered the question of <strong>how fast the estimator gets there</strong>. For this purpose, we introduce the notion of unbiased efficiency.</p>
+<p>For that, let us suppose we have two unbiased estimators, <span class="math inline">\(\hat{\theta}\)</span> and <span class="math inline">\(\hat{\theta}^*\)</span>. Then, we say that <span class="math inline">\(\hat{\theta}\)</span> is a more efficient estimator than <span class="math inline">\(\hat{\theta}^*\)</span> if it has a smaller variance; that is:</p>
+<p><span class="math display">\[
+Var_\theta(\hat{\theta}) &lt; Var_\theta(\hat{\theta}^*)
+\]</span></p>
+<p>Consequently, no matter what the true parameter value is, the standard error for the first estimator will always be smaller.</p>
+<p>In general, both properties are highly important in understanding the <strong>precision and pace of sample distribution convergence</strong>.</p>
+</div>
+<div id="maximum-likelihood-estimator" class="section level4" number="5.1.1.5">
+<h4><span class="header-section-number">5.1.1.5</span> Maximum Likelihood Estimator</h4>
+<p>The method we discuss next provides one of the most essential tools for parameter estimation. Due to its structure, it is very intuitive.</p>
+<p>For that, we first suppose that the distribution of some variable Y is characterised by <span class="math inline">\(\theta\)</span>. Then, we usually draw a random sample of n IID observations. Consequently, as we have seen, the <strong>joint probability distribution function</strong> of the random sample X is given by:</p>
+<p><span class="math display">\[
+f_X(x_1,\dots,x_n) = f_Y(x_1)\cdot \dots f_Y(x_n)
+\]</span>
+This is known as the <strong>likelihood function</strong>. This basically indicates that the <em>distribution of the sample X is governed by the parameter <span class="math inline">\(\theta\)</span></em> and is given by:</p>
+<p><span class="math display">\[
+L_X(\theta) = f_X(x)
+\]</span></p>
+<p>Usually, we write this as the <strong>log likelihood function</strong> due to its additivity principle, which makes computation easier:</p>
+<p><span class="math display">\[
+l_X(\theta) = \ln f_X(x)
+\]</span></p>
+<p>That means we now defined that the distribution of X is given by the parameter space in <span class="math inline">\(\theta\)</span>.</p>
+<p>Suppose we observe a particular value <span class="math inline">\(x = (x_1, x_2, \dots, x_n)\)</span> in our sample. The fundamental question here is which parameter values of <span class="math inline">\(\theta\)</span> best represent the observed relationship. Formally, that means we need to determine the very parameter value that <strong>maximizes the probability of the realized density function at x</strong> (if the distribution is continuous).</p>
+<p>That is, we need <strong>maximize the log-likelihood function with respect to all possible values of <span class="math inline">\(\theta\)</span></strong>.</p>
+<p>From baseline analysis, we know that we derive a maximum value of a parameter in a function by taking the <em>first derivative of the function w.r.t. that parameter</em> and set them equal to zero. In our case, this means for the log-likelihood function:</p>
+<p><span class="math display">\[
+\frac{\delta l_X(\theta)}{\delta \theta} = 0
+\]</span></p>
+<p>The resulting estimater of <span class="math inline">\(\theta\)</span> is then defined as the <strong>Maximum Likelihood Estimator</strong> (MLE), because it yields the parameter value with the <strong>greatest likelihood</strong> (probability if discrete, and density function if continuous) of the <strong>given observation x</strong>.</p>
+<p>The MLE method is extremely attractive since it often produces estimators that are <strong>consistent, asymptotically normally distributed, and asymptotically efficient</strong>, which means that, as the <em>sample size increases</em>, the estimators derived become <em>unbiased</em> and have the smallest <em>variance</em>.</p>
+<p>Let’s now look at the practical application of MLE’s related to specific distributions.</p>
+<p><strong>MLE of the Poisson Distribution</strong></p>
+<p>The likelihood function of the Poisson distribution is:</p>
+<p><span class="math display">\[
+L_x(\lambda) = \prod_{i=1}^n\frac{\lambda^{x_i}}{x_i!}e^{-\lambda}
+\]</span></p>
+<p>Then, the log-likelihood function is given as:</p>
+<p><span class="math display">\[
+\begin{align*}
+l_x(\lambda) &amp;= ln[e^{-n\lambda}\prod_{i=1}^n\frac{\lambda^{x_i}}{x_i!}e^{-\lambda}] \\
+&amp;= -n\lambda + ln[\prod_{i=1}^n\frac{\lambda^{x_i}}{x_i!}e^{-\lambda}] \\
+&amp;= -n\lambda + ln(\prod_{i=1}^n\lambda^{x_i}) - ln(\prod_{i=1}^n x_i!) \\
+&amp;= -n\lambda + \sum_{i=1}^n(x_iln(\lambda)) - \sum_{i=1}^n(ln(x_i!)) &amp;&amp; \text{product in ln transforms to sum, the rest is simple log rules}
+\end{align*}
+\]</span></p>
+<p>Now, differentiating w.r.t <span class="math inline">\(\lambda\)</span> and setting it equal to zero gives us:</p>
+<p><span class="math display">\[
+\begin{align}
+\frac{\delta l_x(\lambda)}{\lambda} = 0 &amp;= -n + \sum_{i=1}^n\frac{x_i}{\lambda} \\ 
+\lambda &amp;= \frac{1}{n}\sum_{i=1}^nx_i = \bar{x}
+\end{align}
+\]</span>
+So, we see that the MLE of the Poisson parameter equals the <strong>sample mean</strong>.</p>
+<p><strong>MLE of the Normal Distribution</strong></p>
+<p>We follow the same approach as before. For that, we first define the usual likelihood function of the normal distribution as:</p>
+<p><span class="math display">\[
+\begin{align*}
+L_x(\mu, \sigma^2) &amp;= \prod_{i=1}^nf_Y(x_i) \\
+&amp;= Y(x_1) * \dots * Y(x_n)  \\
+&amp;= \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x_1 - \mu)^2 / 2\sigma^2}  * \dots * \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x_n - \mu)^2 / 2\sigma^2} \\
+&amp;= (\frac{1}{\sqrt{2\pi\sigma^2}})^n\cdot e^{-\sum_{i=1}^n(x_i - \mu)^2 / 2\sigma^2}
+\end{align*}
+\]</span></p>
+<p>Now, taking the logarithm, we get:</p>
+<p><span class="math display">\[
+\begin{align*}
+l_x(\mu, \sigma^2) &amp;= n \ln(\frac{1}{\sqrt{2\pi\sigma^2}}) -\sum_{i=1}^n(x_i - \mu)^2 / 2\sigma^2 
+\end{align*}
+\]</span>
+Again, if we take the derivative of it w.r.t <span class="math inline">\(\mu\)</span>, we get:</p>
+<p><span class="math display">\[
+\begin{align*}
+\frac{l_x(\mu, \sigma^2)}{\mu} = 0 &amp;= \sum_{i=1}^n(x_i - \mu) / \sigma^2 \\
+\hat{\mu} &amp;= \sum_{i=1}^nx_i = \bar{x}
+\end{align*}
+\]</span></p>
+<p>And w.r.t <span class="math inline">\(\sigma^2\)</span>, we get:</p>
+<p><span class="math display">\[
+\begin{align*}
+\frac{l_x(\mu, \sigma^2)}{\mu} = 0 &amp;= -\frac{n}{2\sigma^2} + \frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^4} \\
+n &amp;= \frac{\sum_{i=1}^n(x_i-\mu)^2}{\sigma^2} \\
+\hat{\sigma}^2 &amp;= \frac{1}{n}\sum_{i=1}^n(x_i-\mu)^2
+\end{align*}
+\]</span>
+which, as we know, is unbiased for the population variance.</p>
+</div>
+</div>
+<div id="confidence-intervals" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Confidence Intervals</h3>
+<p>In the previous chapter, we dealt with the problem of unobservable true estimators by estimating the unknown parameter with a point estimator to obtain a single number from the information provided by a sample. It will be highly unlikely, however, that this estimate — obtained from a finite sample — will be exactly equal to the population parameter value even if the estimator is consistent. The reason is that estimates most likely <em>vary from sample to sample</em>. However, for any realization, we do not know by how much the estimate will be off.</p>
+<p>To overcome this uncertainty, one might think of computing an interval or, depending on the dimensionality of the parameter, an area that contains the true parameter with <strong>high probability</strong>. That is, we concentrate in this chapter on the construction of <strong>confidence intervals</strong>.</p>
+<div id="confidence-levels-and-confidence-interval" class="section level4" number="5.1.2.1">
+<h4><span class="header-section-number">5.1.2.1</span> Confidence Levels and Confidence Interval</h4>
+<p>When inferring on an unknown parameter, we previously resorted to a single estimate. The likelihood of exactly getting this true parameter may be very small in these cases. However, by estimating an interval, which we may denote by <span class="math inline">\(I_{\theta}\)</span>, we use a greater portion of the parameter space, that is, <span class="math inline">\(I_\theta \in \Theta\)</span>, and not just a single number. This may increase the likelihood that the true parameter is one of the many values included in the interval.</p>
+<p>Choosing an appropriate interval is subject to a trade-off between a high probability of the interval containing the true parameter and the precision of gained by narrow intervals.</p>
+<p>To construct these intervals, we should use the information provided by the sample. Thus, the interval bounds depend on the sample. This, technically, allows us to state that each interval bound is a function that <strong>maps the sample space, denoted by X, into the parameter space</strong> since the sample is some outcome in the sample space and the <strong>interval bound transforms the sample into a value in the parameter space</strong> representing the <strong>minimum or maximum parameter value</strong> suggested by the interval.</p>
+<p>Formally, we define l(x) as lower and u(x) as upper bound of some samples contained in x. Now comes an important notion. We can derive the probability of the interval lying beyond the true parameter (i.e., either completely below or above) from the sample distribution. These two possible errors occur exactly if either <span class="math inline">\(u(x) &lt; \theta\)</span> or <span class="math inline">\(\theta &lt; l(x)\)</span>. Our objective is then to construct an interval so as to minimize the probability of these errors occurring. That is:</p>
+<p><span class="math display">\[
+P(\theta \notin[l(X)u(X)]) = P(\theta &lt; l(X)) + P(u(X) &lt; \theta) = \alpha
+\]</span></p>
+<p>Mostly, we want this probability of error to be equal to a given parameter, <span class="math inline">\(\alpha\)</span>. We commonly know this from the distributional value of <span class="math inline">\(\alph = 0.05\)</span>, such that in 5 % of all outcomes, the true parameter will not be covered by the interval.</p>
+<p><strong>Definition of a Confidence Level</strong></p>
+<p>For some parameter <span class="math inline">\(\theta\)</span>, let the probability of the interval <strong>not containing the true parameter value</strong> be given by the probability of error <span class="math inline">\(\alpha\)</span>. Then, with probability <span class="math inline">\(1 - \alpha\)</span>, the true parameter is covered by the interval [l(X), u(X)]. This is called the <strong>confidence level</strong>. and is given by the probability:</p>
+<p><span class="math display">\[
+P(\theta \in [l(X) , u(X)]) \geq 1 − \alpha
+\]</span></p>
+<p><strong>Definition of a Confidence Interval</strong></p>
+<p>If the confidence level probability holds, we can refer to an interval [l(X), u(X)] as <span class="math inline">\(1-\alpha\)</span> <strong>confidence interval</strong> (CI) no matter what is the true but unknown parameter value <span class="math inline">\(\theta\)</span>.</p>
+<p>The interpretation of the confidence interval is that <strong>if we draw an increasing number of samples of constant size n and compute an interval from each sample, <span class="math inline">\(1-\alpha\)</span> of all intervals will eventually contain the true parameter value <span class="math inline">\(\theta\)</span>.</strong></p>
+<p>This is then directly related to the baseline statistical notions you heard about that 95 % of all CIs will contain the true parameter (or, conversely, we have an <span class="math inline">\(\alpha\)</span> error rate of 5%, meaning that in 5 100 CIs, we won’t contain the true parameter value <span class="math inline">\(\theta\)</span>) (PS: This is exactly how hypotheses testing is conducted, but more on this later).</p>
+<p>As we will see in the examples, the bounds of the confidence interval are often determined by some standardized random variable composed of both the parameter and <em>point estimator</em>, and whose <em>distribution</em> is known (e.g. mean and variance). Furthermore, for a symmetric density function such as that of the normal distribution, it can be shown that with given <span class="math inline">\(\alpha\)</span>, the confidence interval is the tightest if we have <span class="math inline">\(p_l = \alpha/2\)</span> and
+<span class="math inline">\(p_u = \alpha/2\)</span>. That corresponds to bounds l and u with distributions that are <em>symmetric to each other with respect to the the true parameter</em> <span class="math inline">\(\theta\)</span>.</p>
+</div>
+<div id="confidence-interval-for-the-mean-of-a-normal-random-variable" class="section level4" number="5.1.2.2">
+<h4><span class="header-section-number">5.1.2.2</span> Confidence Interval for the mean of a Normal Random Variable</h4>
+<p>We will only cover the CI for the Normal Distribution, as this distribution is by far the most commonly known. For that we first start with the normal random variable Y with known variance is known but whose mean is unknown. For the inference process, we draw a sample X of n IID observations. A sufficient and unbiased estimator for <span class="math inline">\(\mu\)</span> is given by the sample mean, which is distributed as:</p>
+<p><span class="math display">\[
+\bar{X} = \sum_{i=1}^n X_i \sim N(\mu, \frac{\sigma^2}{n})
+\]</span></p>
+<p>If we standardize the sample mean, we obtain the standard normally distributed random variable:</p>
+<p><span class="math display">\[
+Z = \sqrt{n}\frac{\bar{X}-\mu}{\sigma} \sim N(0,1)
+\]</span></p>
+<p>For this Z, it is true that:</p>
+<p><span class="math display">\[
+\begin{align}
+P(q_{a/2} \leq Z \leq q_{1-\alpha/2}) &amp;= P(q_{a/2} \leq \sqrt{n}\frac{\bar{X}-\mu}{\sigma} \leq q_{1-\alpha/2}) \\
+&amp;= P(\frac{\sigma}{\sqrt{n}}q_{a/2} \leq \bar{X} -\mu \leq \frac{\sigma }{\sqrt{n}}q_{1-\alpha/2}) \\
+&amp;= P(\frac{\sigma}{\sqrt{n}}q_{a/2} \leq \mu - \bar{X} \leq \frac{\sigma }{\sqrt{n}}q_{1-\alpha/2}) \\
+&amp;=  P(\bar{X} + \frac{\sigma}{\sqrt{n}}q_{a/2} \leq \mu \leq \bar{X} + \frac{\sigma }{\sqrt{n}}q_{1-\alpha/2}) \\
+&amp;=  P(\bar{X} - \frac{\sigma}{\sqrt{n}}q_{1-a/2} \leq \mu \leq \bar{X} + \frac{\sigma }{\sqrt{n}}q_{1-\alpha/2}) \\
+&amp;= P(l(X) \leq \mu \leq u(X)) = 1 - \alpha
+\end{align}
+\]</span></p>
+<p>Where <span class="math inline">\(q_{\alpha/2}\)</span> and <span class="math inline">\(q_{1- \alpha/2}\)</span> are the <span class="math inline">\(\alpha/2\)</span> and <span class="math inline">\(1-\alpha/2\)</span> quantiles of the standard normal distribution, respectively</p>
+<p>That is, by standardizing the distribution of the IID samples, we obtain the probability that the true mean parameter, <span class="math inline">\(\mu\)</span>, will be within the upper and lower bound of the CI when we repeatedly draw n samples is equal to <span class="math inline">\(1-\alpha\)</span>. In other words, in <span class="math inline">\(1-\alpha\)</span> percent of cases, the CI drawn will include the true parameter. That is:</p>
+<p><span class="math display">\[
+I_{1-\alpha} = [\bar{X} + \frac{\sigma}{\sqrt{n}}q_{1-a/2}, \bar{X} + \frac{\sigma}{\sqrt{n}}q_{1-a/2}]
+\]</span></p>
+</div>
+<div id="confidence-interval-for-the-mean-of-a-normal-random-variable-with-unknown-variance" class="section level4" number="5.1.2.3">
+<h4><span class="header-section-number">5.1.2.3</span> Confidence Interval for the mean of a Normal Random Variable with unknown Variance</h4>
+<p>Let us once again construct a confidence interval for a normal random variable Y but this time we assume that the variance and the mean are unknown. If we again take n IID samples, take their mean values and standardize the variables with an unknown variance and mean term, then we obtain the new standardized random variable as a <strong>student’s t distribution</strong> with n-1 DOF:</p>
+<p><span class="math display">\[
+t = \sqrt{n}\frac{\bar{X} - \mu}{s}
+\]</span></p>
+<p>Where <span class="math inline">\(s^2 = 1/(n-1)\sum_{i=1}^n(X_i - \bar{X})^2\)</span>.</p>
+<p>Therefore, we can state:</p>
+<p><span class="math display">\[
+P(t_{\alpha/2}(n-1) \leq t \leq t_{1 - \alpha/2}(n-1)) = 1-\alpha
+\]</span></p>
+<p>Where <span class="math inline">\(t_{\alpha/2}\)</span> and <span class="math inline">\(t_{1- \alpha/2}\)</span> are the <span class="math inline">\(\alpha/2\)</span> and <span class="math inline">\(1-\alpha/2\)</span> quantiles of the t-distribution with n-1 DOF, respectively.</p>
+<p>Using the same approach as before, we can derive the Confidence Interval of this distribution again as:</p>
+<p><span class="math display">\[
+\begin{align}
+P(t_{a/2}(n-1) \leq t \leq t_{1-\alpha/2}(n-1)) &amp;= P(t_{a/2}(n-1) \leq \sqrt{n}\frac{\bar{X} - \mu}{s} \leq t_{1-\alpha/2}(n-1)) \\
+&amp;= P(\frac{s}{\sqrt{n}}t_{a/2}(n-1) \leq \bar{X} -\mu \leq \frac{s }{\sqrt{n}}t_{1-\alpha/2}(n-1)) \\
+&amp;= P(\frac{s}{\sqrt{n}}t_{a/2}(n-1) \leq \mu - \bar{X} \leq \frac{s}{\sqrt{n}}t_{1-\alpha/2}(n-1)) \\
+&amp;= P(\bar{X} + \frac{s}{\sqrt{n}}t_{a/2}(n-1) \leq \mu \leq \bar{X} + \frac{s}{\sqrt{n}}t_{1-\alpha/2}(n-1)) \\
+&amp;= P(\bar{X} - \frac{s}{\sqrt{n}}t_{1-a/2}(n-1) \leq \mu \leq \bar{X} + \frac{s}{\sqrt{n}}t_{1-\alpha/2}(n-1)) \\
+&amp;= P(l(X) \leq \mu \leq u(X)) = 1 - \alpha
+\end{align}
+\]</span></p>
+<p>That is:</p>
+<p><span class="math display">\[
+I_{1-\alpha} = [\bar{X} - \frac{s}{\sqrt{n}}t_{1-a/2}(n-1), \bar{X} + \frac{s}{\sqrt{n}}t_{1-a/2}(n-1)]
+\]</span></p>
+</div>
+</div>
+<div id="hypothesis-testing" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Hypothesis Testing</h3>
+<p>Inference on some unknown parameter meant that we had no knowledge of its value and therefore we had to obtain an estimate. This could either be a single point estimate or an entire confidence interval. However, sometimes, one already has some idea of the value a parameter might have or used to have. Thus, it might not be important to obtain a particular single value or range of values for the parameter, but instead gain sufficient information to conclude that the parameter more likely either belongs to a particular part of the parameter space or not. So, instead we need to obtain information to verify whether some assumption concerning the parameter can be supported or has to be rejected.</p>
+<p>This brings us to the field of hypothesis testing. Next to parameter estimation that we covered in the last two parts, it constitutes the other important part of statistical inference; that is, the procedure for gaining information about some parameter. In essence, we use hypothesis testing to determine whether a certain parameter of interest, given its statistical properties and distribution, is, with a sufficient probability, equal to a pre-defined, or hypothesized, value of the parameter space.</p>
+<div id="hypotheses" class="section level4" number="5.1.3.1">
+<h4><span class="header-section-number">5.1.3.1</span> Hypotheses</h4>
+<p><strong>Setting up the hypotheses</strong></p>
+<p>Before we can test any hypothesis, we first need to understand what the term actually means. In the case of hypothesis testing, we have two competing statements to decide upon. These statements are the hypotheses of the test.</p>
+<p>Since in statistical inference we intend to gain information about some unknown parameter <span class="math inline">\(\theta\)</span>, the possible results of the test should refer to the parameter space <span class="math inline">\(\Theta\)</span> containing all possible values that <span class="math inline">\(\theta\)</span> can assume. More precisely, to form the hypotheses, we divide the parameter space into two disjoint sets, namely <span class="math inline">\(\Theta_0\)</span> and <span class="math inline">\(\Theta_1\)</span>. We assume that the unknown parameter is either in <span class="math inline">\(\Theta_0\)</span> and <span class="math inline">\(\Theta_1\)</span>. Now, with each of the two subsets we associate a hypothesis:</p>
+<ol style="list-style-type: decimal">
+<li>Null Hypothesis - <span class="math inline">\(H_0\)</span>: States that the parameter <span class="math inline">\(\theta\)</span> is in <span class="math inline">\(\Theta_0\)</span></li>
+<li>Alternative Hypothesis - <span class="math inline">\(H_1\)</span>: States that the parameter <span class="math inline">\(\theta\)</span> is in <span class="math inline">\(\Theta_2\)</span></li>
+</ol>
+<p>The null hypothesis may be interpreted as the <strong>assumption to be maintained if we do not find material evidence against it</strong>.</p>
+<p><strong>Decision Rule</strong></p>
+<p>The task of hypothesis testing is to make a decision about these hypotheses. So, we either <em>cannot reject the null hypothesis and, consequently, have to reject the alternative hypothesis</em>, or we <em>reject the null hypothesis and decide in favor of the alternative hypothesis</em>.</p>
+<p>A hypothesis test is designed such that the <em>null hypothesis is maintained until evidence provided by the sample is so significant</em> that we have to decide against it. This leads us to the two common ways of using the test.</p>
+<p>In general, the decision rule of any hypothesis test, and ergo the main idea behind hypotheses testing is the following. We want to test whether a sample estimate is equal to a true parameter. Since we can only observe the sample distribution, we need to make assumptions on the distribution and the asymptotic behavior of the parameters. We have seen how to ensure for consistency, asymptotic normality and efficiency under linear estimators. For these estimators, we now define a Null Hypothesis stating that they are equal to a true population parameter which we define individually (for instance, we usually state that the true parameter is 0 in a regression model). Then, we draw the n IID samples with the properties discussed above and we look at their parameter statistics (or moments), mostly in terms of their expected estimate and their variation. Based on both parameter statistics, we then draw the respective distribution and obtain the probability density curve. If the probability mass of this density curve is lower than the defined <span class="math inline">\(\alpha\)</span> benchmark, then we say can state with a sufficient certainty that, given the distributional characteristics, the hypothesized true value is incorrect and, thus, the Null Hypothesis that the true value is equal to the hypothesized value (e.g. 0) can be rejected.
+#### Error Types</p>
+<p>We have to be aware that no matter how we design our test, we are at risk of committing an error by making the wrong decision. In general we run risk of making two distinct errors.</p>
+<p><strong>Type 1 and Type 2 Error</strong></p>
+<ol style="list-style-type: decimal">
+<li>Type 1 Error: The error resulting from rejection of the null hypothesis given that it is actually true. This is known as False Negative</li>
+<li>Type 2 Error: The error resulting from failing to reject the null hypothesis given that the alternative holds. This is known as False Positive</li>
+</ol>
+<p>Unfortunately, however, we do not know whether we commit an error or not when we are testing. We do have some con- trol, though, as to the probability of error given a certain hypothesis as we explain next.</p>
+<p><strong>The P value</strong></p>
+<p>The p value is the notion we usually interact with when testing hypotheses. In essence, it displays the significance level for the respective t-statistic of our parameter statistics and thus tells us whether to reject the null hypothesis or not. In other words, it shows us at which significance level this value of t(x) would still lead to a decision of failing to reject the null hypothesis while any value greater than t(x) would result in its rejection.</p>
+<p>We can interpret the p-value as follows. Suppose we obtained a sample outcome x such that the test statistics assumed the corresponding value t(x). Now, the p value indicates the probability that, given our assumption about the true parameter, our hypothesized value is indeed the true value. In other words, it states how likely it is that the true value is indeed the hypothesized value, given the distribution of our parameters. If t(x) is a value pretty close to the median of the distribution of t(X), then the chance that the true value is indeed equal to the hypothesised value, given our distribution, is fairly feasible. Then, the p-value will be large. However, if, instead, the value t(x) is so extreme that the chances will be minimal under the null hypothesis that the true value equals the hypothesised value, this will lead to a very low p-value. If <strong>p is less than some given significance level <span class="math inline">\(\alpha\)</span></strong>, we <strong>reject the null hypothesis</strong> and we say that the <strong>test result is significant</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-2-risk-and-return.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/edit/master/04-beta.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/blob/master/04-beta.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

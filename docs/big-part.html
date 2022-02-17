@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Big Part | 01-Intro</title>
+  <meta name="description" content="Chapter 4 Big Part | 01-Intro" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Big Part | 01-Intro" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Big Part | 01-Intro" />
+  
+  
+  
+
+<meta name="author" content="Nikolas Anic" />
+
+
+<meta name="date" content="2021-10-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-1-statistical-properties.html"/>
+<link rel="next" href="week-2-risk-and-return.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/bootbox-4.4.0/bootbox.min.js"></script>
+<script src="libs/idb-keyvalue-3.2.0/idb-keyval-iife-compat.min.js"></script>
+<link href="libs/tutorial-0.10.1/tutorial.css" rel="stylesheet" />
+<script src="libs/tutorial-0.10.1/tutorial.js"></script>
+<script src="libs/tutorial-autocompletion-0.10.1/tutorial-autocompletion.js"></script>
+<script src="libs/tutorial-diagnostics-0.10.1/tutorial-diagnostics.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Empirical Finance and Statistical Analysis - Theory and Empirics Lab</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to the course objectives and organisation of the course</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r-markdown"><i class="fa fa-check"></i><b>1.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-plots"><i class="fa fa-check"></i><b>1.2</b> Including Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html"><i class="fa fa-check"></i><b>2</b> Week 1: The Programming Environment</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#markdown-files"><i class="fa fa-check"></i><b>2.1</b> Markdown Files</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#how-to-create-a-markdown-file"><i class="fa fa-check"></i><b>2.1.1</b> How to create a Markdown File</a></li>
+<li class="chapter" data-level="2.1.2" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#the-r-markdown-structure"><i class="fa fa-check"></i><b>2.1.2</b> The R Markdown Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#coding-in-r---a-concise-overview"><i class="fa fa-check"></i><b>2.2</b> Coding In R - A concise overview</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#introduction"><i class="fa fa-check"></i><b>2.2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2.2" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#vectors"><i class="fa fa-check"></i><b>2.2.2</b> Vectors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#data-types"><i class="fa fa-check"></i><b>2.2.3</b> Data Types</a></li>
+<li class="chapter" data-level="2.2.4" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#data-frames"><i class="fa fa-check"></i><b>2.2.4</b> Data Frames</a></li>
+<li class="chapter" data-level="2.2.5" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#importing-data"><i class="fa fa-check"></i><b>2.2.5</b> Importing Data</a></li>
+<li class="chapter" data-level="2.2.6" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#data-manipulation"><i class="fa fa-check"></i><b>2.2.6</b> Data Manipulation</a></li>
+<li class="chapter" data-level="2.2.7" data-path="week-1-the-programming-environment.html"><a href="week-1-the-programming-environment.html#data-reshaping"><i class="fa fa-check"></i><b>2.2.7</b> Data Reshaping</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-statistical-properties.html"><a href="week-1-statistical-properties.html"><i class="fa fa-check"></i><b>3</b> Week 1: Statistical Properties</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-statistical-properties.html"><a href="week-1-statistical-properties.html#random-variables-and-probability-distributions-introdcution"><i class="fa fa-check"></i><b>3.1</b> Random Variables and Probability Distributions: Introdcution</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="week-1-statistical-properties.html"><a href="week-1-statistical-properties.html#the-concept-of-probability-important-notions-and-definitions"><i class="fa fa-check"></i><b>3.1.1</b> The concept of Probability: Important Notions and Definitions</a></li>
+<li class="chapter" data-level="3.1.2" data-path="week-1-statistical-properties.html"><a href="week-1-statistical-properties.html#random-variables"><i class="fa fa-check"></i><b>3.1.2</b> Random Variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="week-1-statistical-properties.html"><a href="week-1-statistical-properties.html#discrete-random-variables-and-distributions"><i class="fa fa-check"></i><b>3.1.3</b> Discrete Random Variables and Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="big-part.html"><a href="big-part.html"><i class="fa fa-check"></i><b>4</b> Big Part</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="big-part.html"><a href="big-part.html#continuous-random-variables-and-distributions"><i class="fa fa-check"></i><b>4.0.1</b> Continuous Random Variables and Distributions</a></li>
+<li class="chapter" data-level="4.0.2" data-path="big-part.html"><a href="big-part.html#the-cumulative-distribution"><i class="fa fa-check"></i><b>4.0.2</b> The cumulative Distribution</a></li>
+<li class="chapter" data-level="4.0.3" data-path="big-part.html"><a href="big-part.html#continuous-distributions-with-appealing-properties"><i class="fa fa-check"></i><b>4.0.3</b> Continuous Distributions with Appealing Properties</a></li>
+<li class="chapter" data-level="4.0.4" data-path="big-part.html"><a href="big-part.html#moments-and-properties-of-bivariate-distributions"><i class="fa fa-check"></i><b>4.0.4</b> Moments and Properties of bivariate distributions</a></li>
+<li class="chapter" data-level="4.0.5" data-path="big-part.html"><a href="big-part.html#moments-of-probability-distributions"><i class="fa fa-check"></i><b>4.0.5</b> Moments of Probability Distributions</a></li>
+<li class="chapter" data-level="4.1" data-path="big-part.html"><a href="big-part.html#matrix-algebra-introduction"><i class="fa fa-check"></i><b>4.1</b> Matrix Algebra: Introduction</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="big-part.html"><a href="big-part.html#matrices-and-vectors"><i class="fa fa-check"></i><b>4.1.1</b> Matrices and Vectors</a></li>
+<li class="chapter" data-level="4.1.2" data-path="big-part.html"><a href="big-part.html#basic-matrix-operations"><i class="fa fa-check"></i><b>4.1.2</b> Basic Matrix Operations</a></li>
+<li class="chapter" data-level="4.1.3" data-path="big-part.html"><a href="big-part.html#summation-notation-in-matrix-form"><i class="fa fa-check"></i><b>4.1.3</b> Summation Notation in Matrix Form</a></li>
+<li class="chapter" data-level="4.1.4" data-path="big-part.html"><a href="big-part.html#systems-of-linear-equations"><i class="fa fa-check"></i><b>4.1.4</b> Systems of Linear Equations</a></li>
+<li class="chapter" data-level="4.1.5" data-path="big-part.html"><a href="big-part.html#positive-definite-pd-matrix"><i class="fa fa-check"></i><b>4.1.5</b> Positive Definite (PD) Matrix</a></li>
+<li class="chapter" data-level="4.1.6" data-path="big-part.html"><a href="big-part.html#multivariate-probability-distributions"><i class="fa fa-check"></i><b>4.1.6</b> Multivariate Probability Distributions</a></li>
+<li class="chapter" data-level="4.1.7" data-path="big-part.html"><a href="big-part.html#portfolio-construction-and-mathematical-properties-using-matrix-algebra"><i class="fa fa-check"></i><b>4.1.7</b> Portfolio Construction and Mathematical Properties using Matrix Algebra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html"><i class="fa fa-check"></i><b>5</b> Week 2: Risk and Return</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#the-time-series-of-returns---transformations-in-r"><i class="fa fa-check"></i><b>5.1</b> The time-series of Returns - Transformations in R</a></li>
+<li class="chapter" data-level="5.2" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#security-returns"><i class="fa fa-check"></i><b>5.2</b> Security Returns</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#simple-returns"><i class="fa fa-check"></i><b>5.2.1</b> Simple Returns</a></li>
+<li class="chapter" data-level="5.2.2" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#logarithmic-returns"><i class="fa fa-check"></i><b>5.2.2</b> Logarithmic Returns</a></li>
+<li class="chapter" data-level="5.2.3" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#accounting-for-dividends-total-returns"><i class="fa fa-check"></i><b>5.2.3</b> Accounting for Dividends: Total Returns</a></li>
+<li class="chapter" data-level="5.2.4" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#truncating-the-data"><i class="fa fa-check"></i><b>5.2.4</b> Truncating the data</a></li>
+<li class="chapter" data-level="5.2.5" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#arithmetic-vs.-geometric-returns"><i class="fa fa-check"></i><b>5.2.5</b> Arithmetic vs. Geometric Returns</a></li>
+<li class="chapter" data-level="5.2.6" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#cumulative-returns"><i class="fa fa-check"></i><b>5.2.6</b> Cumulative Returns</a></li>
+<li class="chapter" data-level="5.2.7" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#periodic-transformation-of-returns"><i class="fa fa-check"></i><b>5.2.7</b> Periodic Transformation of Returns</a></li>
+<li class="chapter" data-level="5.2.8" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#annualising-returns"><i class="fa fa-check"></i><b>5.2.8</b> Annualising Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#portfolio-returns"><i class="fa fa-check"></i><b>5.3</b> Portfolio Returns</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#equal-weighted-returns"><i class="fa fa-check"></i><b>5.3.1</b> Equal-weighted Returns</a></li>
+<li class="chapter" data-level="5.3.2" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#value-weighted-returns"><i class="fa fa-check"></i><b>5.3.2</b> Value-weighted Returns</a></li>
+<li class="chapter" data-level="5.3.3" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#timing-of-returns"><i class="fa fa-check"></i><b>5.3.3</b> Timing of Returns</a></li>
+<li class="chapter" data-level="5.3.4" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#nominal-vs.-real-returns"><i class="fa fa-check"></i><b>5.3.4</b> Nominal vs. Real Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#individual-security-risk"><i class="fa fa-check"></i><b>5.4</b> Individual Security Risk</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#standard-deviation-and-variance"><i class="fa fa-check"></i><b>5.4.1</b> Standard Deviation and Variance</a></li>
+<li class="chapter" data-level="5.4.2" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#rolling-risk-characteristics"><i class="fa fa-check"></i><b>5.4.2</b> Rolling Risk Characteristics</a></li>
+<li class="chapter" data-level="5.4.3" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#portfolio-risk"><i class="fa fa-check"></i><b>5.4.3</b> Portfolio Risk</a></li>
+<li class="chapter" data-level="5.4.4" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#portfolio-risk-for-multiple-assets"><i class="fa fa-check"></i><b>5.4.4</b> Portfolio Risk for Multiple Assets</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#risk-in-extremes-and-alternative-risk-measures"><i class="fa fa-check"></i><b>5.5</b> Risk in Extremes and Alternative Risk Measures</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#value-at-risk-var"><i class="fa fa-check"></i><b>5.5.1</b> Value at Risk (VaR)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#plot-the-relationship"><i class="fa fa-check"></i><b>5.6</b> Plot the relationship</a></li>
+<li class="chapter" data-level="5.7" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#market-efficiency-and-independence-of-risk-and-return"><i class="fa fa-check"></i><b>5.7</b> Market Efficiency and independence of risk and return</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="week-2-risk-and-return.html"><a href="week-2-risk-and-return.html#variance-ratio-test"><i class="fa fa-check"></i><b>5.7.1</b> Variance Ratio Test</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">01-Intro</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="big-part" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Big Part</h1>
+<p>whereas <span class="math inline">\(p_i\)</span> is the probability of the individual outcome <span class="math inline">\(\omega_i\)</span> in E.</p>
+<p>Let’s quickly assume and recreate a potential discrete distribution. For that, let’s assume return based probabilities we generate:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="big-part.html#cb126-1" aria-hidden="true" tabindex="-1"></a>ret <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="dv">0</span>, <span class="fl">0.15</span>, <span class="fl">0.35</span>, <span class="fl">0.7</span>)</span>
+<span id="cb126-2"><a href="big-part.html#cb126-2" aria-hidden="true" tabindex="-1"></a>probabs <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.14</span>, <span class="fl">0.46</span>, <span class="fl">0.25</span>, <span class="fl">0.1</span>)</span>
+<span id="cb126-3"><a href="big-part.html#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ret, probabs, <span class="at">lwd=</span><span class="dv">4</span>, <span class="at">xlab=</span><span class="st">&quot;Return&quot;</span>, </span>
+<span id="cb126-4"><a href="big-part.html#cb126-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Probability&quot;</span>, <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb126-5"><a href="big-part.html#cb126-5" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span>ret)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/check%20chunk-1.png" width="672" /></p>
+<div id="bernoulli-distribution" class="section level4" number="4.0.0.1">
+<h4><span class="header-section-number">4.0.0.1</span> Bernoulli Distribution</h4>
+<p>Suppose, we have a random variable X with two possible outcomes. As such, the state space is <span class="math inline">\(\Omega&#39; \in {x_1, x_2}\)</span>.</p>
+<p>In general, the Bernoulli distribution is associated with random variables that assume the values <span class="math inline">\(x_1 = 1\)</span> and <span class="math inline">\(x_2 = 0\)</span>. The distribution of X is given by the probability for the two outcomes, that is:</p>
+<p><span class="math display">\[
+p(X = 1) = p_1 = \pi\\
+p(X=0) = p_2 = (1-\pi)
+\]</span></p>
+<p>Having both the probability and values, we can describe the model as:</p>
+<p><span class="math display">\[
+p(x) = \pi^x(1-\pi)^{1-x} 
+\]</span></p>
+<p>Consequently, the mean of the Bernoulli Distribution is:</p>
+<p><span class="math display">\[
+0*(1-\pi) + 1*\pi = \pi
+\]</span></p>
+<p>And its variance is gien by:</p>
+<p><span class="math display">\[
+(1-p)^2p+(0-p)^2(1-p) = p(1-p)
+\]</span></p>
+</div>
+<div id="binomial-distribution" class="section level4" number="4.0.0.2">
+<h4><span class="header-section-number">4.0.0.2</span> Binomial Distribution</h4>
+<p>A binomial distribution is basically n linked single Bernoulli trials. In other words, we perform a random experiment with n “independent” and identically distributed Bernoulli random variables, which we denote by B(p).</p>
+<p></p>
+<p>We just assumed Independence and Identical Distribution. This is also known as “IID” assumption. Although we do not cover this in detail, it’s important to understand that  means that the outcome of a certain item does not influence the outcome of any others. By  we mean that the two random variables’ distributions are the same.</p>
+<p>This experiment is as if one draws an item from a bin and replaces it into the bin before drawing the next item. As such, we speak of .</p>
+<p>In general, a binomial random variable X counts the number of “successes” in n repeated Bernoulli trials, denoted as <span class="math inline">\(X \sim B(n,\pi)\)</span>. To define the probability of X being equal to k, we need to define two concepts.</p>
+<p>The first determines many different samples of size n are there to yield a i realizations of the outcome. It is called as the  and is given by:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+n \\
+k
+\end{pmatrix} = 
+\frac{n!}{(n-k)!k!}
+\]</span></p>
+<p>The second defines the probability measure. Since in each sample the n individual B(p) distributed items are drawn independently, the probability of the sum over these n items is the product of the probabilities of the outcomes of the individual items, given by:</p>
+<p><span class="math display">\[
+\pi^k(1-\pi)^{n-k}
+\]</span></p>
+<p>Combined, we obtain the probability under a Binomial Distribution, as product of both terms:</p>
+<p><span class="math display">\[
+P(x = k) = \begin{pmatrix}
+n \\
+k
+\end{pmatrix}
+\pi^k(1-\pi)^{n-k}
+\]</span></p>
+<p>The mean of a Binomial random variable is:</p>
+<p><span class="math display">\[
+E(x) = np
+\]</span></p>
+<p>and its variance is:</p>
+<p><span class="math display">\[
+var(x) = np(1− p)
+\]</span></p>
+<p></p>
+<p>We can easily extend this idea to financial applications. Let’s assume that in each period the stock price can either increase or decrease by i = 10%. Here, probability of increase is given by 0.6 and probability of decline by 0.4.</p>
+<p>We start with an initial price of 20. According to this outcome, the stock price in t+1 will either be 20(1+0.1) = 22 or 20(1-0.1) = 18. In the third period, the stock price will further deviate according to the same principle and thus we will obtain:</p>
+<p><span class="math display">\[
+22*1.1 = 24.20\\
+22*0.9 = 19.80\\
+18*1.1 = 19.80\\
+18*0.9 = 16.20
+\]</span></p>
+<p>At t=2, we obtain a new state space, <span class="math inline">\(\Omega&#39;\)</span>, consisting of {16.2, 19.8, 24.2}. In that case, the probability distribution of <span class="math inline">\(S_2\)</span> is given as follows:</p>
+<p><span class="math display">\[
+P(S_2 = 24.20) = \begin{pmatrix} 2 \\ 2 \end{pmatrix}\pi^2(1-\pi)^0 = 0.6^2 = 0.36 \\
+P(S_2 = 19.80) = \begin{pmatrix} 2 \\ 1 \end{pmatrix}\pi^1(1-\pi)^{2-1} = 0.48 \\
+P(S_2 = 16.20) = \begin{pmatrix} 2 \\ 0 \end{pmatrix}\pi^0(1-\pi)^{2-0} = 0.4^2 = 0.16
+\]</span></p>
+<p>To get the respective stock returns in t=2, we can use the formula:</p>
+<p><span class="math display">\[
+S_2 = S_0*1.1^n*0.9^{n-k}
+\]</span></p>
+<p><span class="math display">\[
+S_t = S_0*(1+i)^k*(1-i)^{n-k}
+\]</span></p>
+</div>
+<div id="multinomial-distribution" class="section level4" number="4.0.0.3">
+<h4><span class="header-section-number">4.0.0.3</span> Multinomial Distribution</h4>
+<p>A multinomial distribution follows the same concept as a binomial distribution, with the difference that the outcomes are more than 2. In general cases, we follow n outcomes. Formally, we have that <span class="math inline">\(x = {x_1, \dots, x_n}\)</span>. Whereas the respective probabilities are denoted as <span class="math inline">\(p(x) = {p(x_1), \dots, p(x_n)}\)</span>.</p>
+<p>As with the Binomial Distribution, we have two distinct components. The first is the  and it is given by:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+&amp; &amp; n\\
+n_1 &amp; n_2 &amp; n_3 &amp; \dots &amp; n_k
+\end{pmatrix}
+\]</span></p>
+<p>The second term is again the probability of each event occurring. However, we can no longer find the complement(s), as only one probability of events can be expressed by the others. Thus, we just work with occurrences:</p>
+<p><span class="math display">\[
+\pi_1^{n_1} * \pi_2^{n_2} * \pi_3^{n_3} * \dots * \pi_k^{n_k}
+\]</span></p>
+<p>Together, we obtain the Multinomial probability for a given event:</p>
+<p><span class="math display">\[
+P(x_1 = n_1, x_2 = n_2, x_3 = n_3, \dots, x_k = n_k) = \begin{pmatrix}
+&amp; &amp; n\\
+n_1 &amp; n_2 &amp; n_3 &amp; \dots &amp; n_k
+\end{pmatrix}
+\pi_1^{n_1} * \pi_2^{n_2} * \pi_3^{n_3} * \dots * \pi_k^{n_k}
+\]</span></p>
+<p>Here, the respective Expected Value is:</p>
+<p><span class="math display">\[
+E(x_k) = p_k*n
+\]</span></p>
+<p>and the correspoding Variance:</p>
+<p><span class="math display">\[
+var(x_k) = p_k*(1-p_k)*n
+\]</span></p>
+<p></p>
+<p>We can easily replicate the ideas formed in the stock price movements to multinomial perspectives. For that, let’s assume that we have now three distinct outcomes. That is, the stock can either increase by 10%, stay the same or decline by 10%. As such, we define the respective movements as <span class="math inline">\(Y_u = 1.1, Y_s = 1.0, Y_d = 0.9\)</span>. The respective probabilities are said to be <span class="math inline">\(p_u = 0.25, p_s = 0.5, p_d = 0.25\)</span>.</p>
+<p>Our new state space consists of six possible outcomes:</p>
+<p><span class="math display">\[
+\Omega &#39; = [(u,s,d)] = [(2,0,0), (0,2,0), (0,0,2), (1,1,0), (1,0,1), (0,1,1)]
+\]</span></p>
+<p>And the corresponding prices are:</p>
+<p><span class="math display">\[
+S_2 = S_0*p_u^{n_u}*p_s^{n_s}*p_d^{n_d} \in [16.2, 18, 19.8, 20, 22, 24.2]
+\]</span></p>
+<p>These are the multinomial coefficients we use for calculation of the probability for x being equal to some value. Consequently, we get the following probabilities:</p>
+<p><span class="math display">\[
+P(S = 24.4) = \begin{pmatrix} &amp; 2 \\ 2 &amp; 0 &amp; 0\end{pmatrix}p_up_u = 0.0625 \\
+P(S = 22) = \begin{pmatrix} &amp; 2 \\ 1 &amp; 1 &amp; 0\end{pmatrix}p_up_s = 0.25 \\
+P(S = 20) = \begin{pmatrix} &amp; 2 \\ 0 &amp; 2 &amp; 0\end{pmatrix}p_sp_s = 0.25 \\
+P(S = 19.8) = \begin{pmatrix} &amp; 2 \\ 1 &amp; 0 &amp; 1\end{pmatrix}p_up_d = 0.125 \\
+P(S = 18) = \begin{pmatrix} &amp; 2 \\  0 &amp; 1 &amp; 1 \end{pmatrix}p_sp_d = 0.25 \\
+P(S = 16.2) = \begin{pmatrix} &amp; 2 \\ 0 &amp; 0 &amp; 2 \end{pmatrix}p_dp_d = 0.0625 \\
+\]</span></p>
+</div>
+<div id="continuous-random-variables-and-distributions" class="section level3" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Continuous Random Variables and Distributions</h3>
+<p>As previously mentioned, within the scope of continuous distributions, we no longer have a countable space <span class="math inline">\(\Omega\)</span> we can rely on. That is, the different outcomes, <span class="math inline">\(\omega\)</span> are uncountable. Technically, without limitations caused by rounding to a certain number of digits, we could imagine that any real number could provide a feasible outcome, thereby the subsets is given by the Borel <span class="math inline">\(\sigma\)</span>-algebra, <span class="math inline">\(\mathbb{B}\)</span>, which is based on all half-open intervals from <span class="math inline">\((-\infty, a]\)</span> for any <span class="math inline">\(a \in \mathbb{R}\)</span>.</p>
+<p>As the space set is uncountable, we need a unique way to assign a probability to a certain event. Recall that, as just described, the subsets in an uncountable space are given by all half-open intervals from <span class="math inline">\((-\infty, a]\)</span>. We can make use of this property by introducing a  which expresses the  <span class="math inline">\((-\infty, a]\)</span> occurs. That is, the probability that a . In said case, F(a) states the .</p>
+<p>To be a little more concise, we assume that the Continuous Distribution Function, F(a), has the following properties:</p>
+<p> <span class="math inline">\(\lim_{x \rightarrow -\infty} \rightarrow 0\)</span> \
+ <span class="math inline">\(\lim_{x \rightarrow \infty} \rightarrow 1\)</span> \
+ <span class="math inline">\(F(b) - F(a) \geq 0 for b \geq a\)</span> \
+ <span class="math inline">\(\lim_{x \downarrow a} F(x) = F(a)\)</span></p>
+<p>These Properties state (I) Behaviour in Extremes (II) Monotonically Increasing behaviour (III) Right-Continuity</p>
+<p>As the set of events in real numbers are uncountably many, pinning down an exact number is zero. As such, we generally assign probabilities in the following way:</p>
+<p><span class="math display">\[
+P((a,b)) = F(b) - F(a)
+\]</span></p>
+<p>Whereas <span class="math inline">\(F(b) = P((-\infty, b]))\)</span> and <span class="math inline">\(F(a) = P((-\infty, a]))\)</span>. That is, the entire probability that an outcome of at most a occurs is subtracted from the greater event that an outcome of at most b occurs, implying:</p>
+<p><span class="math display">\[
+(a,b] = (-\infty, b) / (-\infty, a]
+\]</span>
+To assign probabilities in the continuous way, however, we need to define certain knowledge of the distribution function F.</p>
+<div id="density-function-general-case" class="section level4" number="4.0.1.1">
+<h4><span class="header-section-number">4.0.1.1</span> Density Function: General Case</h4>
+<p>The continuous distribution function F of a probability measure P on <span class="math inline">\(\mathbb{R}, \mathbb{B}\)</span> is defined as follows:</p>
+<p><span class="math display">\[
+F(x) = \int^x_{-\infty}f(t) dt
+\]</span></p>
+<p>where f(t) is the  of the probability measure P.</p>
+<p>We interpret the density function equation accordingly: Since, at any real value x the distribution function uniquely equals the probability that an outcome of at most x is realized (<span class="math inline">\(F(x) = P((-\infty, x])\)</span>), the density function states that this probability is obtained by  <span class="math inline">\(-\infty\)</span> .</p>
+<p>We interpret this function as the . This follows the subsequent logic. We know that with continuous distribution functions, the probability of exactly a value of x occurring is zero. However, the probability of observing a value  between x and some very small step to the right, denoted as <span class="math inline">\(\triangle\)</span> x (i.e. [x, x+<span class="math inline">\(\triangle\)</span> x]), is  necessarily zero.</p>
+<p>As such, between this increment of x and <span class="math inline">\(\triangle\)</span> x, the distribution function F increases by exactly this probability. That is, the increment is:</p>
+<p><span class="math display">\[
+F(x + \triangle x) - F(x) = P(X \in [x, x + \triangle x))
+\]</span></p>
+<p>Now, dividing this equation by the width of the interval, denoted as <span class="math inline">\(\trianlge\)</span> x, we obtain the  per unit step on this interval. If we reduce the step size <span class="math inline">\(\triangle\)</span> x to an infinitesimally small step, <span class="math inline">\(\delta x\)</span>, this average approaches the , which we denote f. This is the .</p>
+<p><span class="math display">\[
+\lim_{\triangle \rightarrow 0} \frac{F(x+\triangle x) - F(x)}{\triangle x} = \frac{\delta F(x)}{\delta(x)} = f(x)
+\]</span></p>
+<p>This equation is quite fundamental for continuous probability. Here, ee divide the probability that some realization should be inside of the small interval by that interval step. And, by letting that interval shrink to width zero, we obtain the marginal rate of growth or, equivalently, the derivative of F. Hence, we call f the probability density function or simply the density function. Commonly, it is abbreviated as pdf.</p>
+<p>From the equation above, we understand that the probability of some occurrence of at most x is given by integration of the density function f over the interval <span class="math inline">\((-\infty, x]\)</span>. This follows the respective steps:</p>
+<ol style="list-style-type: decimal">
+<li>For a given outcome, calculate the increment of x and <span class="math inline">\(\triangle\)</span> x, and divide this equation by the width of the interval to get the marginal rate of growth</li>
+<li>At each value t, we multiply the corresponding density f(t) by the infinitesimally small interval width dt.</li>
+<li>Finally, we integrate all values of f (weighted by dt) up to x to obtain the probability for <span class="math inline">\((-\infty, x]\)</span></li>
+</ol>
+<p>In the end, the integral of this marginal rate of growth of F in the interval at x is exactly how the probability <span class="math inline">\(P((-\infty, x])\)</span> is derived through integrating the marginal rate f over the interval <span class="math inline">\((-\infty, x]\)</span> with respect to the values. The resulting total probability is then given by the area under the curve in the below figure.</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="big-part.html#cb127-1" aria-hidden="true" tabindex="-1"></a>mean<span class="ot">=</span><span class="dv">80</span>; sd<span class="ot">=</span><span class="dv">10</span></span>
+<span id="cb127-2"><a href="big-part.html#cb127-2" aria-hidden="true" tabindex="-1"></a>lb<span class="ot">=</span><span class="dv">60</span>; ub<span class="ot">=</span><span class="dv">100</span></span>
+<span id="cb127-3"><a href="big-part.html#cb127-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-4"><a href="big-part.html#cb127-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span><span class="dv">100</span>)<span class="sc">*</span>sd <span class="sc">+</span> mean</span>
+<span id="cb127-5"><a href="big-part.html#cb127-5" aria-hidden="true" tabindex="-1"></a>hx <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,mean,sd)</span>
+<span id="cb127-6"><a href="big-part.html#cb127-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-7"><a href="big-part.html#cb127-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, hx, <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;pdf&quot;</span>)</span>
+<span id="cb127-8"><a href="big-part.html#cb127-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-9"><a href="big-part.html#cb127-9" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> x <span class="sc">&gt;=</span> lb <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> ub</span>
+<span id="cb127-10"><a href="big-part.html#cb127-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, hx)</span>
+<span id="cb127-11"><a href="big-part.html#cb127-11" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(lb,x[i],ub), <span class="fu">c</span>(<span class="dv">0</span>,hx[i],<span class="dv">0</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/second%20heck%20chunk-1.png" width="672" /></p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="big-part.html#cb128-1" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(mean, sd) <span class="sc">-</span> <span class="fu">pnorm</span>(lb, mean)</span>
+<span id="cb128-2"><a href="big-part.html#cb128-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;P(&quot;</span>,lb,<span class="st">&quot;&lt; IQ &lt;&quot;</span>,ub,<span class="st">&quot;) =&quot;</span>,</span>
+<span id="cb128-3"><a href="big-part.html#cb128-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">signif</span>(area, <span class="at">digits=</span><span class="dv">3</span>))</span></code></pre></div>
+<p>The area representing the value of the interval is indicated by the red block. So, the probability of some occurrence of at least a and at most b is given by the area inside red.</p>
+<p>Based on the notions above, the probability of <span class="math inline">\(X \in {a,b}\)</span> is given by:</p>
+<p><span class="math display">\[
+P(X \in (a,b]) = \int^b_{a}f(t) dt
+\]</span></p>
+</div>
+</div>
+<div id="the-cumulative-distribution" class="section level3" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> The cumulative Distribution</h3>
+<p>Before we dig into distributions with appealing properties for our statistical analysis, we first define some important concepts of distribution functions.</p>
+<p>The first is related ot the cumulative distribution. In general, the cumulative distribution function (CDF) of a random variable assigns the probability of a random variable X to be smaller than or equal to a given threshold. It can be also interpreted as a half-closed interval consisting of the entire space left to a certain threshold. Formally:</p>
+<p><span class="math display">\[
+F_X(x) = P(X\leq x)
+\]</span></p>
+<p>The most important properties are:</p>
+<p><span class="math display">\[
+\text{Property 1: } \text{If } x_1 &lt; x_2, \text{then } F(x_1) &lt; F(x_2) \\
+\text{Property 2: } F_X(-\infty) = 0 \\
+\text{Property 3: } F_X(\infty) = 1 \\
+\text{Property 4: } P(X &gt; x) = 1 - F_X(x) \\
+\text{Property 5: } P(x_1 &lt; X \leq x_2) = F_X(x_2) - F_X(x_1) 
+\]</span></p>
+<p>We can easily show an example for both discrete as well as continuous distributions:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="big-part.html#cb129-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">10</span>), <span class="at">cdf=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fl">0.2</span>,<span class="fl">0.3</span>,<span class="fl">0.5</span>,<span class="fl">0.6</span>,<span class="fl">0.7</span>,<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb129-2"><a href="big-part.html#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb129-3"><a href="big-part.html#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_step</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">direction=</span><span class="st">&quot;vh&quot;</span>, <span class="at">linetype=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb129-4"><a href="big-part.html#cb129-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">color=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb129-5"><a href="big-part.html#cb129-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for discrete distribution&quot;</span>) <span class="sc">+</span></span>
+<span id="cb129-6"><a href="big-part.html#cb129-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
+<span id="cb129-7"><a href="big-part.html#cb129-7" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
+<span id="cb129-8"><a href="big-part.html#cb129-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb129-9"><a href="big-part.html#cb129-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb129-10"><a href="big-part.html#cb129-10" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb129-11"><a href="big-part.html#cb129-11" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb129-12"><a href="big-part.html#cb129-12" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
+<span id="cb129-13"><a href="big-part.html#cb129-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="big-part.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb130-2"><a href="big-part.html#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> pnorm) <span class="sc">+</span> </span>
+<span id="cb130-3"><a href="big-part.html#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for continuous distribution&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-4"><a href="big-part.html#cb130-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
+<span id="cb130-5"><a href="big-part.html#cb130-5" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
+<span id="cb130-6"><a href="big-part.html#cb130-6" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb130-7"><a href="big-part.html#cb130-7" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb130-8"><a href="big-part.html#cb130-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb130-9"><a href="big-part.html#cb130-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb130-10"><a href="big-part.html#cb130-10" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
+<span id="cb130-11"><a href="big-part.html#cb130-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<div id="quantile-values-of-distributions" class="section level4" number="4.0.2.1">
+<h4><span class="header-section-number">4.0.2.1</span> Quantile values of Distributions</h4>
+<p>:</p>
+<p>Given a random variable X with a continuous CDF F_X(x), for any <span class="math inline">\(\alpha\)</span>, where 0 <span class="math inline">\(\leq \alpha \leq 1\)</span>, the <span class="math inline">\(100*\alpha\)</span> % quantile of the distribution for X is given as the value <span class="math inline">\(q_\alpha\)</span> that satisfies:</p>
+<p><span class="math display">\[
+F_X(q_a) = P(X \leq q_\alpha) = \alpha
+\]</span></p>
+<p>In essence, the definition implies that the quantile distribution incorporates all values of a distribution up to a specific threshold such that exactly <span class="math inline">\(\alpha\)</span> % of the entire distribution are included within that range.</p>
+<p>Important examples that are often used in statistics include the 25% quantile, the median (50% quantile), the 75% quantile as well as minimum and maximum values. For instance, the median of the distribution, <span class="math inline">\(q_{0.5}\)</span> satisfies the following:</p>
+<p><span class="math display">\[
+F_X(q_{0.5}) = P(X \leq q_{0.5}) = 0.5
+\]</span></p>
+<p>In the case that <span class="math inline">\(F_X\)</span> is invertible, then <span class="math inline">\(q_{\alpha}\)</span> can be determined as:</p>
+<p><span class="math display">\[
+q_\alpha = F_X^{-1}(\alpha)
+\]</span></p>
+<p>That is, by using the inverse cdf <span class="math inline">\(F_X^{-1}\)</span>, one can determine the quantile value for a given threshold of the underlying distribution. Looking again at the median example, the 50% quantile value can be determined as:</p>
+<p><span class="math display">\[
+q_{0.5} = F_X^{1}(0.5)
+\]</span></p>
+<p>This inverse is also called .</p>
+<p></p>
+<p>Applying this in R is relatively straight-forward. Given the standard normal distribution, the quantile value can be determined by solving:</p>
+<p><span class="math display">\[
+q_\alpha = \Phi^{-1}(\alpha)
+\]</span></p>
+<p>Where <span class="math inline">\(\Phi^{-1}\)</span> denotes the inverse of the cdf of the standard normal distribution with the function <code>qnorm()</code>. Let’s use it to print the critical values of our normal distribution that we usually use for significance tests.</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="big-part.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the functions </span></span>
+<span id="cb131-2"><a href="big-part.html#cb131-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-3"><a href="big-part.html#cb131-3" aria-hidden="true" tabindex="-1"></a>critical_10 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb131-4"><a href="big-part.html#cb131-4" aria-hidden="true" tabindex="-1"></a>critical_5 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb131-5"><a href="big-part.html#cb131-5" aria-hidden="true" tabindex="-1"></a>critical_1 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb131-6"><a href="big-part.html#cb131-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-7"><a href="big-part.html#cb131-7" aria-hidden="true" tabindex="-1"></a>criticals <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">cbind</span>(critical_10, critical_5, critical_1),<span class="dv">2</span>)</span>
+<span id="cb131-8"><a href="big-part.html#cb131-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-9"><a href="big-part.html#cb131-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(criticals) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;10% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;5% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;1% Significance 21 Tailed)&quot;</span>)</span>
+<span id="cb131-10"><a href="big-part.html#cb131-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-11"><a href="big-part.html#cb131-11" aria-hidden="true" tabindex="-1"></a>criticals</span></code></pre></div>
+<pre><code>##      10% Significance (2 Tailed) 5% Significance (2 Tailed) 1% Significance 21 Tailed)
+## [1,]                        1.64                       1.96                       2.58</code></pre>
+<p>Accordingly, with the quantile function, we can obtain critical values of given distributions.</p>
+</div>
+</div>
+<div id="continuous-distributions-with-appealing-properties" class="section level3" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> Continuous Distributions with Appealing Properties</h3>
+<p>Next, we discuss the more commonly used distributions with appealing statistical properties that are used in finance. These are the normal distribution, the student’s t distribution, chi-2 distribution, Fisher F distribution and log-normal distribution.</p>
+<div id="the-normal-distribution" class="section level4" number="4.0.3.1">
+<h4><span class="header-section-number">4.0.3.1</span> The Normal Distribution</h4>
+<p>The normal distribution, or Gaussian, is the most common distribution used in finance. It is defined by two parameters: its mean <span class="math inline">\(\mu\)</span> as well as its standard deviation <span class="math inline">\(\sigma\)</span>. It is denoted by <span class="math inline">\(N(\mu, \sigma)\)</span>.</p>
+<p>The PDF of the normal distribution is given by:</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}
+\]</span></p>
+<p>We can easily print the pdf of the normal distribution using the function <code>rnorm()</code></p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="big-part.html#cb133-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">text =</span> <span class="st">&quot;info mean sd</span></span>
+<span id="cb133-2"><a href="big-part.html#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="st">info1 0 1</span></span>
+<span id="cb133-3"><a href="big-part.html#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="st">info2 1 0.5</span></span>
+<span id="cb133-4"><a href="big-part.html#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="st">info3 2 1</span></span>
+<span id="cb133-5"><a href="big-part.html#cb133-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb133-6"><a href="big-part.html#cb133-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-7"><a href="big-part.html#cb133-7" aria-hidden="true" tabindex="-1"></a>densities <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat[, <span class="sc">-</span><span class="dv">1</span>], <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100000</span>, <span class="at">mean =</span> x[<span class="dv">1</span>], <span class="at">sd =</span> x[<span class="dv">2</span>]))</span>
+<span id="cb133-8"><a href="big-part.html#cb133-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(densities) <span class="ot">&lt;-</span> dat<span class="sc">$</span>info</span>
+<span id="cb133-9"><a href="big-part.html#cb133-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-10"><a href="big-part.html#cb133-10" aria-hidden="true" tabindex="-1"></a>densities.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(densities)</span></code></pre></div>
+<pre><code>## Warning in melt(densities): The melt generic in data.table has been passed a matrix and will attempt to redirect to the relevant reshape2 method;
+## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
+## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(densities). In the next version, this warning will become
+## an error.</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="big-part.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb135-2"><a href="big-part.html#cb135-2" aria-hidden="true" tabindex="-1"></a>densities.m <span class="sc">%&gt;%</span></span>
+<span id="cb135-3"><a href="big-part.html#cb135-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> Var2, <span class="at">color =</span> Var2)) <span class="sc">+</span></span>
+<span id="cb135-4"><a href="big-part.html#cb135-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb135-5"><a href="big-part.html#cb135-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 170 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p>A problem is that the distribution function cannot be solved for analytically and therefore has to be approximated numerically. That is:</p>
+<p><span class="math display">\[
+P(a \leq X \leq b) = \int^b_a \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx
+\]</span>
+does not have a closed form solution.</p>
+<p>In the particular case of the standard normal distribution, the values are tabulated. Standard statistical software provides the values for the standard normal distribution. Some useful approximations are:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(X \in [\mu \pm \sigma]) \approx 0.68\\
+P(X \in [\mu \pm 2\sigma]) \approx 0.95\\
+P(X \in [\mu \pm 3\sigma]) \approx 0.99
+\end{align*}
+\]</span></p>
+<p>The above states that approximately 68% of the probability is given to values that lie in an interval of one standard deviation around the mean of the distribution.</p>
+</div>
+<div id="chi-2-distribution" class="section level4" number="4.0.3.2">
+<h4><span class="header-section-number">4.0.3.2</span> Chi-2 Distribution</h4>
+<p>In this distribution, let Z be a standard normal random variable, in brief <span class="math inline">\(Z \sim N(0,1)\)</span>, and <span class="math inline">\(X = Z^2\)</span>. Then X is distributed chi-square with one degree of freedom, denoted as <span class="math inline">\(X \sim \chi^2(1)\)</span>.</p>
+<p>The PDF of the Chi-2 Distribution is given as:</p>
+<p><span class="math display">\[
+f(X) = \frac{1}{2^{n/2}\Gamma(\frac{n}{2})}e^{-\frac{x}{2}}x^{(\frac{n}{2}-1)}
+\]</span>
+for any x <span class="math inline">\(\geq\)</span> 0. Here <span class="math inline">\(\Gamma(z) = \int^\infty_0 t^{z-1}e^{-t}dt\)</span> denotes the gamma function.</p>
+<p>In general, Degrees of Freedom (DOF) indicate how many independently behaving standard normal random variables the resulting variable is composed of. Here, X is only composed of one, called Z.</p>
+<p>In general, this distribution is characterised by its DOF. If we have n distributed random variables that are all independent of each other, then their sum is written as:</p>
+<p><span class="math display">\[
+S = \sum_{i=1}^n \textstyle X \sim \chi^2(n)
+\]</span></p>
+<p>The corresponding properties are: mean of E(x) = n and variance of Var(x) = 2n. So, the mean and variance are directly related to the degrees of freedom.</p>
+<p>An important feature of the <span class="math inline">\(chi^2\)</span> distribution is the degrees of freedom equal the number of independent <span class="math inline">\(\chi^2 (1)\)</span> distributed <span class="math inline">\(X_i\)</span> in the sum. Consequently, the summation of any two chi-squared distributed random variables is itself chi-square distributed.</p>
+<p>The <span class="math inline">\(chi^2\)</span> distribution is drawn with the function `rchisq()`` as follows:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="big-part.html#cb137-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">2</span>)</span>
+<span id="cb137-2"><a href="big-part.html#cb137-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">3</span>)</span>
+<span id="cb137-3"><a href="big-part.html#cb137-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">7</span>)</span>
+<span id="cb137-4"><a href="big-part.html#cb137-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb137-5"><a href="big-part.html#cb137-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-6"><a href="big-part.html#cb137-6" aria-hidden="true" tabindex="-1"></a>df_chi <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb137-7"><a href="big-part.html#cb137-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_chi) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;DOF=2&quot;</span>, <span class="st">&quot;DOF=3&quot;</span>, <span class="st">&quot;DOF=7&quot;</span>, <span class="st">&quot;DOF=10&quot;</span>)</span>
+<span id="cb137-8"><a href="big-part.html#cb137-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-9"><a href="big-part.html#cb137-9" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_chi)</span>
+<span id="cb137-10"><a href="big-part.html#cb137-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb137-11"><a href="big-part.html#cb137-11" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="sc">%&gt;%</span></span>
+<span id="cb137-12"><a href="big-part.html#cb137-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb137-13"><a href="big-part.html#cb137-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb137-14"><a href="big-part.html#cb137-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+</div>
+<div id="students-t-distribution" class="section level4" number="4.0.3.3">
+<h4><span class="header-section-number">4.0.3.3</span> Student’s t-Distribution</h4>
+<p>Basically, the Student’s t-distribution has a similar shape to the normal distribution, but thicker tails. For large degrees of freedom n, the Student’s t-distribution does not significantly differ from the standard normal distribution. If X has a Student’s t distribution with degrees of freedom parameter v, then the PDF has the form:</p>
+<p><span class="math display">\[
+f(x) = \frac{\Gamma(\frac{v+1}{2})}{\sqrt{v\pi}\Gamma(\frac{v}{2})}\left(1 + \frac{x^2}{v}\right)^{-\frac{(v+1)}{2}}
+\]</span></p>
+<p>where <span class="math inline">\(\Gamma(z) = \int^\infty_0 t^{z-1}e^{-t}dt\)</span> denotes the gamma function.</p>
+<p>Especially, it has the following properties:</p>
+<p><span class="math display">\[
+E[X] = 0\\
+Var(x) = \frac{v}{v-2}, v &gt; 2 \\
+Skew(x) = 0, v &gt; 3 \\
+Kurt(x) = \frac{6}{v-4}, v &gt; 4
+\]</span></p>
+<p>The parameter v controls the scale and tail thickness of the distribution. If v is close to four, then the kurtosis is large and the tails are thick. In general, the lower the degrees of freedom, the heavier the tails of the distribution, making extreme outcomes much more likely than for greater degrees of freedom or, in the limit, the normal distribution.</p>
+<p>The t-distribution is displayed with the function <code>r</code>t()` below. Note that we also add the normal distribution to show that the tails for both t distributions are fatter, but the fattest are for the t distribution with the lowest DOF.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="big-part.html#cb138-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb138-2"><a href="big-part.html#cb138-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb138-3"><a href="big-part.html#cb138-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">5</span>)</span>
+<span id="cb138-4"><a href="big-part.html#cb138-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb138-5"><a href="big-part.html#cb138-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-6"><a href="big-part.html#cb138-6" aria-hidden="true" tabindex="-1"></a>df_norm_t <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb138-7"><a href="big-part.html#cb138-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_norm_t) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;N(0,1)&quot;</span>, <span class="st">&quot;t, DOF=1&quot;</span>, <span class="st">&quot;t, DOF=5&quot;</span>, <span class="st">&quot;t, DOF=10&quot;</span>)</span>
+<span id="cb138-8"><a href="big-part.html#cb138-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-9"><a href="big-part.html#cb138-9" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_norm_t)</span></code></pre></div>
+<pre><code>## Warning in melt(df_norm_t): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2 method;
+## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
+## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(df_norm_t). In the next version, this warning will become
+## an error.</code></pre>
+<pre><code>## No id variables; using all as measure variables</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="big-part.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb141-2"><a href="big-part.html#cb141-2" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="sc">%&gt;%</span></span>
+<span id="cb141-3"><a href="big-part.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb141-4"><a href="big-part.html#cb141-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb141-5"><a href="big-part.html#cb141-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 13027 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+</div>
+<div id="f-distribution" class="section level4" number="4.0.3.4">
+<h4><span class="header-section-number">4.0.3.4</span> F-Distribution</h4>
+<p>The F-Distribution is similar to the <span class="math inline">\(\chi^2\)</span> distribution, but with two variables.</p>
+<p>The PDF of the F-Distribution is defined as:</p>
+<p><span class="math display">\[
+f(X) = \frac{F(\frac{n_1 + n_2}{2})}{F(\frac{n_1}{2}) + F(\frac{n_2}{2})}\cdot\left(\frac{n_1}{n_2}\right)^{n_1/2} \cdot \frac{x^{n_1/2 - 1}}{\left[1+x\cdot\frac{n_1}{2}\right]^{\frac{n_1+n_2}{2}}}
+\]</span>
+for any x <span class="math inline">\(\geq\)</span> 0.</p>
+<p>Here we let both <span class="math inline">\(X \sim \chi^2(n_1)\)</span> and <span class="math inline">\(Y \sim \chi^2(n_2)\)</span> and then <span class="math inline">\(F(n_1, n_2)\)</span> is defined as:</p>
+<p><span class="math display">\[
+F(n_1, n_2) = \frac{Y/n_1}{X/n_2}
+\]</span></p>
+<p>This ratio has an F-distribution with <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> DOF from the underlying <span class="math inline">\(\chi^2\)</span> distribution for X and Y, respectively. Also like the chi-square distribution, the F-distribution is skewed to the right.</p>
+<p>The first two moments of the F-distribution are the following: The mean is given by E(X) = <span class="math inline">\(\frac{n_2}{n_2 - 2}\)</span> for <span class="math inline">\(n_2 &gt; 2\)</span>, and the variance is given by Var(X) = <span class="math inline">\(\frac{2n_2^2(n_1 + n_2 -2)}{n_1(n_2 - 2)^2(n_2 - 4)}\)</span> for <span class="math inline">\(n_2 &gt; 4\)</span>.</p>
+<p>The F-Distribution values can be determined with the function <code>r(f)</code> and looks like this:</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="big-part.html#cb143-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
+<span id="cb143-2"><a href="big-part.html#cb143-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
+<span id="cb143-3"><a href="big-part.html#cb143-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
+<span id="cb143-4"><a href="big-part.html#cb143-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">100</span>)</span>
+<span id="cb143-5"><a href="big-part.html#cb143-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-6"><a href="big-part.html#cb143-6" aria-hidden="true" tabindex="-1"></a>df_F <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb143-7"><a href="big-part.html#cb143-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_F) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;n1=4, n2=4&quot;</span>, <span class="st">&quot;n1=4, n2=10&quot;</span>, <span class="st">&quot;n1=10, n2=4&quot;</span>,<span class="st">&quot;n1=10, n2=100&quot;</span>)</span>
+<span id="cb143-8"><a href="big-part.html#cb143-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb143-9"><a href="big-part.html#cb143-9" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_F)</span>
+<span id="cb143-10"><a href="big-part.html#cb143-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb143-11"><a href="big-part.html#cb143-11" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="sc">%&gt;%</span></span>
+<span id="cb143-12"><a href="big-part.html#cb143-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb143-13"><a href="big-part.html#cb143-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb143-14"><a href="big-part.html#cb143-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+</div>
+<div id="log-normal-distribution" class="section level4" number="4.0.3.5">
+<h4><span class="header-section-number">4.0.3.5</span> Log-Normal Distribution</h4>
+<p>The last important function we look at is the log-normal distribution. It is directly linked to the standard normal distribution. To see this, let X be a normally distributed random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Then the random variable</p>
+<p><span class="math display">\[
+X = e^Y
+\]</span></p>
+<p>is log-normally distributed also with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>This distribution is denoted as <span class="math inline">\(X \sim Ln(\mu, \sigma^2)\)</span>. The support of the log-normal distribution is on the positive half of the real line, as the exponential function can only take up positive values.</p>
+<p>Accordingly, the PDF of the log-normal distribution is given by:</p>
+<p><span class="math display">\[
+f(X) = \frac{1}{x\sigma\sqrt{2\pi}}e^{\frac{(\ln x - \mu)^2}{2\sigma^2}}
+\]</span></p>
+<p>for any x &gt; 0.</p>
+<p>The density function is also similar to the normal distribution and results in the log-normal distribution function:</p>
+<p><span class="math display">\[
+F(x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
+\]</span></p>
+<p>The log-normal distribution values can be calculate using the <code>rlnorm()</code> function:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="big-part.html#cb144-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
+<span id="cb144-2"><a href="big-part.html#cb144-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="fl">0.5</span>)</span>
+<span id="cb144-3"><a href="big-part.html#cb144-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">2</span>)</span>
+<span id="cb144-4"><a href="big-part.html#cb144-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">1</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
+<span id="cb144-5"><a href="big-part.html#cb144-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-6"><a href="big-part.html#cb144-6" aria-hidden="true" tabindex="-1"></a>df_lnorm <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb144-7"><a href="big-part.html#cb144-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_lnorm) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;mean=0, sd=1&quot;</span>, <span class="st">&quot;mean=0, sd=0.5&quot;</span>, <span class="st">&quot;mean=0, sd=2&quot;</span>,<span class="st">&quot;mean=1,sd=1&quot;</span>)</span>
+<span id="cb144-8"><a href="big-part.html#cb144-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-9"><a href="big-part.html#cb144-9" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_lnorm)</span>
+<span id="cb144-10"><a href="big-part.html#cb144-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb144-11"><a href="big-part.html#cb144-11" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="sc">%&gt;%</span></span>
+<span id="cb144-12"><a href="big-part.html#cb144-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb144-13"><a href="big-part.html#cb144-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb144-14"><a href="big-part.html#cb144-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">7</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+</div>
+<div id="functions-for-distribution-calculations-d-p-q-r" class="section level4" number="4.0.3.6">
+<h4><span class="header-section-number">4.0.3.6</span> Functions for distribution calculations (d, p, q, r)</h4>
+<p>To create distributions of the forms above, we use distribution packages. In these distribution packages, we can make use of four distinct functions that can apply all the theory we just discussed.</p>
+<p>For that, we will look at the normal distribution. As previously, each statistical property of the distribution can be calculated using the functions <code>dnorm()</code>, <code>pnorm()</code>, <code>qnorm()</code> and <code>rnorm()</code>. We will now cover what each of these functions does.</p>
+<p><strong>dnorm</strong></p>
+<p>The <code>dnorm()</code> returns the value of of the probability density function for the distribution of interest, given the parameters x, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. That is, for a given input x with distributional moments of the mean and variance, we obtain the corresponding value on the y-axis, which indicates the density function of that value.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="big-part.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the largest density of the PDF given that we have the normal distribution with mean = 0 &amp; sd = 1</span></span>
+<span id="cb145-2"><a href="big-part.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<pre><code>## [1] 0.3989423</code></pre>
+<p><strong>pnorm</strong></p>
+<p>The <code>pnorm()</code> returns the integral from <span class="math inline">\(-\infty\)</span> to q of the pdf of a certain distribution, whereas q is a z-score. That is, for a given x, <code>pnorm()</code> returns the value of the y axis on the cdf, also known as probability density. Consequently, with this function you obtain the cdf functional value. In general, it is the function that replaces the table of probabilities and Z-scores at the back of the statistics textbook.</p>
+<p>In general, pnorm is used to get the probability that <span class="math inline">\(-\infty &lt; X \leq x\)</span>, and, as such, it gives the <strong>p-value for a distirbution</strong>.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="big-part.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the median value of the respective distribution. As such, it comprises of exactly half the overall density of the underlying distribution. This is intuitive, given that the value -1.96 in a normal distribution with mean = 0 and sd = 1 is exactly the middle value, thereby incorporating half of the entire area under the cdf. </span></span>
+<span id="cb147-2"><a href="big-part.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.96</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<pre><code>## [1] 0.0249979</code></pre>
+<p>We deliberately chose -1.96 b/c, in a two-sided test when assuming normal distribution, then <span class="math inline">\(-\infty &lt; -1.96 \leq x\)</span> and <span class="math inline">\(x \leq -1.96 &lt; \infty\)</span> constitute approximately 5% of the probability mass under the curve, or, in other words, 5% of the total probability.</p>
+<p><strong>qnorm</strong></p>
+<p>The <code>qnorm()</code> is the inverse of the <code>pnorm()</code> function. Looking at the quantiles part, it is the function that returns the inverse values of the cdf. You can use this function to determine the p’th quantile value of the underlying distribution (e.g. which value incorporates exactly half of the overall area under the curve).</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="big-part.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intuitively, pnorm() inverse for a value of 0.5 indicates what value the 50% quantile must have under the given distribution characteristics. As such, we see that the 5% quantile here must have value -1.96! </span></span>
+<span id="cb149-2"><a href="big-part.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<pre><code>## [1] -1.959964</code></pre>
+<p>Consequently, it gives us the value for a given probability. That is, here a one-sided probability mass of 2.5% would require that the corresponding value is approximately -1.96, thereby stating that -1.96 is at the 2.5’th percentile of the distribution.</p>
+<p><strong>rnorm</strong></p>
+<p>Lastly, the <code>rnorm()</code> is used to generate vector of numbers that follow a certain distribution and its characteristics. We used this function to generate an order of numbers to plot subsequently and show the plotted distributions.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="big-part.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  1.65772497  1.86842085 -1.76361939 -0.73206349  0.67778321 -0.85928634 -0.51473437 -0.05023492  0.03220318 -0.15618091</code></pre>
+<p>Although we just showed the functions for the normal distribution, R offers a great amount of functions for other distributions that can be used identically as the normal case. To give you an overview:</p>
+<p>Neatly, nearly all of these functions can be used with the prefixes “d,p,q,r”. Thus, for instance, just write rlnorm to get the values of a log-normal distribution.</p>
+</div>
+</div>
+<div id="moments-and-properties-of-bivariate-distributions" class="section level3" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Moments and Properties of bivariate distributions</h3>
+<p>Bivariate and Multivariate distributions are important concepts in asset management settings. This is because each asset can be regarded as a random variable. In order to be able to form portfolios, we thus need to understand how different assets relate with each other and what their common covarying structure is.</p>
+<p>To do so, let’s look at the fundamental concepts and moments first.</p>
+<div id="bivariate-distributions-for-continuous-random-variables" class="section level4" number="4.0.4.1">
+<h4><span class="header-section-number">4.0.4.1</span> Bivariate Distributions for continuous random variables</h4>
+<p>The joint probability for two random variables is characterised using their  (PDF), called f(x,y), such that:</p>
+<p><span class="math display">\[
+\int^\infty_{-\infty}\int^\infty_{-\infty}f(x,y)dxdy = 1
+\]</span></p>
+<p>Note that the joint probability distribution is plotted in a three-dimensional space. To find the joint probabilities of <span class="math inline">\(x_1 \leq X \leq x_2\)</span> and <span class="math inline">\(y_1 \leq Y \leq y_2\)</span>, we must find the volume nder the probability surface over the grid where the intervals <span class="math inline">\([x_1, x_2]\)</span> and <span class="math inline">\([y_1, y_2]\)</span> are overlapping. That is:</p>
+<p><span class="math display">\[
+P(x_1 \leq X \leq x_2, y_1 \leq Y \leq y_2) = \int^{x_2}_{x_1}\int^{y_2}_{y_1}f(x,y)dxdy
+\]</span></p>
+</div>
+<div id="standard-bivariate-normal-distribution" class="section level4" number="4.0.4.2">
+<h4><span class="header-section-number">4.0.4.2</span> Standard bivariate normal distribution</h4>
+<p>An important bivariate distribution constitutes the standard bivariate normal distribution. It has the fofm:</p>
+<p><span class="math display">\[
+f(x,y) = \frac{1}{2\pi}e^{-\frac{1}{2}(x^2+y^2)} dx dy
+\]</span></p>
+</div>
+<div id="marginal-distributions" class="section level4" number="4.0.4.3">
+<h4><span class="header-section-number">4.0.4.3</span> Marginal Distributions</h4>
+<p>The marginal distribution treats the data as if only the one component was observed while a detailed joint distribution in connection with the other component is of no interest. In other words, the joint frequencies are projected into the frequency dimension of that particular component.</p>
+<p>The frequency of certain values of the component of interest is measured by the <strong>marginal frequency</strong>. The marginal frequency of X is calculated as sum of all frequencies of X given that Y takes on a particular value. Thus, we obtain the row sum as the marginal frequency of this component X. That is, for each value <span class="math inline">\(X_i\)</span>, we sum the joint frequencies over all pairs (<span class="math inline">\(X_i\)</span>, <span class="math inline">\(Y_j\)</span>) where <span class="math inline">\(Y_j\)</span> is held fix.</p>
+<p>Formally, this is:</p>
+<p><span class="math display">\[
+f_x(X_i) = \sum_jf(X_i, Y_j)
+\]</span></p>
+<p>where the sum is over all values <span class="math inline">\(W_j\)</span> of the component Y.</p>
+<p>Lastly, the marginal pdf of X is found by integrating y out of the joint PDF f(X,Y):</p>
+<p><span class="math display">\[
+f(x) = \int^\infty_{-\infty} f(x,y)dy
+\]</span></p>
+</div>
+<div id="conditional-distributions" class="section level4" number="4.0.4.4">
+<h4><span class="header-section-number">4.0.4.4</span> Conditional Distributions</h4>
+<p>The conditional probability that X = x given that Y = y is defined as:</p>
+<p><span class="math display">\[
+f(x|y) = f(X=x|Y=y) = \frac{f(x,y)}{f(y)}
+\]</span></p>
+<p>Whereas an analogous principle holds for the conditional probability of y on x.</p>
+<p>The use of conditional distributions reduces the original space to a subset determined by the value of the conditioning variable.</p>
+<p>In general, we need conditional distributions, or probability, to define what value x takes given that y takes a certain value. Consequently, we no longer are within a field of independence between two variables when we include conditional probability.</p>
+<p>Conditional moments are different to unconditional ones. As such, the conditional expectation and variance are defined as follows.</p>
+<p></p>
+<p>For discrete random variables, X and Y, the conditional expectation is given as:</p>
+<p><span class="math display">\[
+E[X|Y=y] = \sum_{x\in S_X}x\cdot P(X=x|Y=y)
+\]</span></p>
+<p>For discrete random variables, X and Y, the conditional variance is given as:</p>
+<p><span class="math display">\[
+var(X|Y=y) = \sum_{x\in S_X}(x-E[X|Y=y])^2\cdot P(X=x|Y=y)
+\]</span></p>
+<p>To do so, we first look at the properties of covariance and correlation</p>
+</div>
+<div id="independence" class="section level4" number="4.0.4.5">
+<h4><span class="header-section-number">4.0.4.5</span> Independence</h4>
+<p>The previous discussion raised the issue that a component may have influence on the occurrence of values of the other component. This can be analyzed by comparison of the joint frequencies of x and y with the value in one component fixed, say x = X. If these frequencies vary for different values of y, then the occurrence of values x is not independent of the value of y.</p>
+<p>This is equivalent to check whether a certain value of x occurs more frequently given a certain value of y. That is, check the conditional frequency of x conditional on y, and compare this conditional frequency with the marginal frequency at this particular value of x. If the conditional frequency is not equal to the marginal frequency, then there is no independence.</p>
+<p>Formally, two random variables are <strong>independent</strong> if:</p>
+<p><span class="math display">\[
+f_{x|y}(x,y) = f(x)\cdot f(y)
+\]</span></p>
+<p>That is, the joint frequency is the mathematical product of their respective marginals. Independence is a handy feature as it allows us to compare marginal and conditional distribution properties of random variables.</p>
+</div>
+<div id="correlation-and-covariance" class="section level4" number="4.0.4.6">
+<h4><span class="header-section-number">4.0.4.6</span> Correlation and Covariance</h4>
+<p>Covariance and correlation describe properties of the combined variation of two or more assets. As the term describes, they measure to what extent assets covary. Thereby, they quantify the level of similarity of of movements over time for different variables.</p>
+<p></p>
+<p>The covariance between two random variables, X and Y, is given as:</p>
+<p><span class="math display">\[
+\sigma_{XY} = cov(X,Y) =E[(X - E(X))(Y - E(Y))] 
+\]</span></p>
+<p></p>
+<p>The correlation between two random variables, X and Y, is given as:</p>
+<p><span class="math display">\[
+\rho_{XY} = cor(X,Y) = \frac{\sigma_{XY}}{\sigma_X\sigma_Y}
+\]</span></p>
+<p>Covariance and Correlations have certain nice properties we can use.</p>
+<p>Important properties of the  are:</p>
+<ol style="list-style-type: decimal">
+<li>cov(X,X) = var(X)</li>
+<li>cov(X,Y) = cov(Y,X)</li>
+<li>cov(X,Y) = E[XY] -E[X]E[Y]</li>
+<li>cov(aX,bY) = abcov(X,Y)</li>
+<li>cov(X,Y) = 0 if X and Y independent</li>
+</ol>
+<p>Let’s quickly show the third and fourth property:</p>
+<p><span class="math display">\[
+\begin{align}
+cov(X,Y) &amp;= E[(X-E(X))(Y-E(Y))] \\
+&amp;= E[XY -E(X)Y -E(Y)X +E(X)E(Y)] \\
+&amp;= E[XY] - E(X)E(Y) - E(X)E(Y) + E(X)E(Y)\\
+&amp;= E[XY] - E(X)E(Y) 
+\end{align}
+\]</span>
+<span class="math display">\[
+\begin{align}
+cov(aX,bY) &amp;= E[(aX - aE(X))(bY - bE(Y))] \\
+&amp;= a\cdot b\cdot E[(X-E(X))(Y-E(Y))] \\
+&amp;= a\cdot b\cdot cov(X,Y)
+\end{align}
+\]</span>
+Important properties of the  are:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(-1\leq \rho_{xy} \leq 1\)</span></li>
+<li>$_{xy} = 1 $: Perfect positive linear relation</li>
+<li>$_{xy} = -1 $: Perfect negative linear relation</li>
+</ol>
+</div>
+<div id="expectation-and-variance-of-the-sum-of-two-random-variables" class="section level4" number="4.0.4.7">
+<h4><span class="header-section-number">4.0.4.7</span> Expectation and variance of the sum of two random variables</h4>
+<p>Joint distributions are important when considering asset prices. They define how to compute important properties when considering multiple assets. When considering joint distributions, two important properties can be shown.</p>
+<p>The first relates to the expected value of a linear combination. Especially, it holds that, for two random variables with defined means and covariance matrices:</p>
+<p><span class="math display">\[
+\begin{align}
+E[aX + bY] &amp;= \sum_{x\in S_X}\sum_{y \in S_Y} (ax + by)P(X=x, Y=y) \\
+&amp;= \sum_{x\in S_X}\sum_{y \in S_Y} (ax)P(X=x, Y=y) + \sum_{y\in S_Y}\sum_{x \in S_X} (by)P(X=x, Y=y) \\
+&amp;= a\sum_{x\in S_X}x\sum_{y \in S_Y}P(X=x, Y=y) + b\sum_{y\in S_Y}y\sum_{x \in S_X}P(X=x, Y=y)\\
+&amp;= a\sum_{x\in S_X}xP(X=x) + b\sum_{y\in S_y}yP(Y=y) &amp;&amp; \text{sum of all y options renders condition = 1}\\
+&amp;= aE[X] + bE[Y] \\
+&amp;= a\mu_X + b\mu_Y
+\end{align}
+\]</span>
+This means that expectation is additive.</p>
+<p>The second result relates to the variance of a linear combination. Especially, it holds that, for two random variables with defined means and covariance matrices:</p>
+<p><span class="math display">\[
+\begin{align}
+var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
+&amp;= E[((aX - E(aX)) + (bY - E(bY)))^2] \\
+&amp;= E[(a(X-E(X)) + b(Y-E(Y)))^2] \\
+&amp;= a^2E[X-E(X)]^2 + b^2(Y-E(Y))^2 + 2 ab(X-E(X))(Y-E(Y))\\
+&amp;= a^2\cdot var(X) + b^2\cdot var(Y) + 2\cdot a \cdot b \cdot cov(X,Y)
+\end{align}
+\]</span></p>
+<p>That is, the variance of a linear combination of random variables is itself not linear. This is due to the covariance term when computing the variance of the sum of two random variables that are not independent.</p>
+<p>This means that the variance is not additive.</p>
+<p>Both properties are inherently important when considering both portfolio return as well as risk characteristics.</p>
+</div>
+</div>
+<div id="moments-of-probability-distributions" class="section level3" number="4.0.5">
+<h3><span class="header-section-number">4.0.5</span> Moments of Probability Distributions</h3>
+<p>Moments of a distribution generally tell us things about the center, spread, the distribution as well as the shape behaviour of the underlying distribution. As such, they are important to understand the baseline configuration of a distribution. In our case, we will look at four moments:</p>
+<ol style="list-style-type: decimal">
+<li>Expected Value (mean)</li>
+<li>Variance</li>
+<li>Skewness</li>
+<li>Kurtosis</li>
+</ol>
+<div id="expected-value-mean" class="section level4" number="4.0.5.1">
+<h4><span class="header-section-number">4.0.5.1</span> Expected Value (Mean)</h4>
+<p>The expected value of a random variable X measures the center of mass for the underlying PDF.</p>
+<p></p>
+<p>The expected value of a random variable X is given by:</p>
+<p><span class="math display">\[
+\mu_x = E[X] = \sum x\cdot P(X=x) 
+\]</span></p>
+</div>
+<div id="variance-and-standard-deviation" class="section level4" number="4.0.5.2">
+<h4><span class="header-section-number">4.0.5.2</span> Variance and Standard Deviation</h4>
+<p>The variance of a random variable X measures the spread around the mean. As such, it measures the spread of the distribution.</p>
+<p></p>
+<p>The variance and standard deviation of a random variable X are given by:</p>
+<p><span class="math display">\[
+\sigma_X^2 = E[(X-\mu_x)^2]\\
+\sigma_X = \sqrt{\sigma_X^2}
+\]</span></p>
+</div>
+<div id="skewness" class="section level4" number="4.0.5.3">
+<h4><span class="header-section-number">4.0.5.3</span> Skewness</h4>
+<p></p>
+<p>The skewness of a random variable X measures the symmetry of a distribution around its mean. It is given by:</p>
+<p><span class="math display">\[
+skew(X) = \frac{E[(X-\mu_x)^3]}{\sigma_X^3}
+\]</span>
+If X has a symmetric distribution, then skew(X) = 0, as values above and below the mean cancel each other out. There are two special cases:</p>
+<ol style="list-style-type: decimal">
+<li>For skew(X) &gt; 0, the distribution has a long right tail.</li>
+<li>For skew(X) &lt; 0, the distribution has a long left tail.</li>
+</ol>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="big-part.html#cb153-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="dv">2</span>)</span>
+<span id="cb153-2"><a href="big-part.html#cb153-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb153-3"><a href="big-part.html#cb153-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-4"><a href="big-part.html#cb153-4" aria-hidden="true" tabindex="-1"></a>skew <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
+<span id="cb153-5"><a href="big-part.html#cb153-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(skew) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Right Skewed&quot;</span>, <span class="st">&quot;Left Skewed&quot;</span>)</span>
+<span id="cb153-6"><a href="big-part.html#cb153-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-7"><a href="big-part.html#cb153-7" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(skew)</span></code></pre></div>
+<pre><code>## Warning in melt(skew): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2 method;
+## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
+## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(skew). In the next version, this warning will become an
+## error.</code></pre>
+<pre><code>## No id variables; using all as measure variables</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="big-part.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb156-2"><a href="big-part.html#cb156-2" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="sc">%&gt;%</span></span>
+<span id="cb156-3"><a href="big-part.html#cb156-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb156-4"><a href="big-part.html#cb156-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb156-5"><a href="big-part.html#cb156-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>,<span class="dv">15</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+</div>
+<div id="kurtosis" class="section level4" number="4.0.5.4">
+<h4><span class="header-section-number">4.0.5.4</span> Kurtosis</h4>
+<p></p>
+<p>The Kurtosis of X measures the thickness in the tails of a distribution. It is given as:</p>
+<p><span class="math display">\[
+kurt(X) = \frac{E[(X-\mu_x)^4]}{\sigma_x^4}
+\]</span></p>
+<p>Kurtosis is the average of the standardized data raised to the fourth power. Any standardized values that are less than 1 (i.e., data within one standard deviation of the mean) contributes very little to the overall Kurtosis. This is due to the fact that raising a value less than 1 to the fourth power shrinks the value itself (e.g. 0.5^4 = 0.0625). However, since kurtosis is based on deviations from the mean raised to the fourth power, . Consequently, large Kurtosis values indicate that extreme values are likely to be present in the data.</p>
+<p>Consequently, there are three types of Kurtosis we need to be familiar with:</p>
+<ol style="list-style-type: decimal">
+<li>Mesokurtic: This is the normal distribution</li>
+<li>Leptokurtic: This distribution has fatter tails and a sharper peak. The kurtosis is “positive” with a value greater than 3</li>
+<li>Platykurtic: The distribution has a lower and wider peak and thinner tails. The kurtosis is “negative” with a value greater than 3</li>
+</ol>
+<p>To visualise this, we need to</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="big-part.html#cb157-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb157-2"><a href="big-part.html#cb157-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.45</span>)</span>
+<span id="cb157-3"><a href="big-part.html#cb157-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.55</span>)</span>
+<span id="cb157-4"><a href="big-part.html#cb157-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-5"><a href="big-part.html#cb157-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-6"><a href="big-part.html#cb157-6" aria-hidden="true" tabindex="-1"></a>df_kurt <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c))</span>
+<span id="cb157-7"><a href="big-part.html#cb157-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_kurt) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Mesokurtic&quot;</span>, <span class="st">&quot;Platykurtic&quot;</span>, <span class="st">&quot;Leptokurtic&quot;</span>)</span>
+<span id="cb157-8"><a href="big-part.html#cb157-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-9"><a href="big-part.html#cb157-9" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_kurt)</span></code></pre></div>
+<pre><code>## Warning in melt(df_kurt): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2 method;
+## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
+## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(df_kurt). In the next version, this warning will become an
+## error.</code></pre>
+<pre><code>## No id variables; using all as measure variables</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="big-part.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb160-2"><a href="big-part.html#cb160-2" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="sc">%&gt;%</span></span>
+<span id="cb160-3"><a href="big-part.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb160-4"><a href="big-part.html#cb160-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb160-5"><a href="big-part.html#cb160-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 571 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+</div>
+</div>
+<div id="matrix-algebra-introduction" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Matrix Algebra: Introduction</h2>
+<p>In this chapter, we will repeat the basic matrix algebra concepts used throughout the lecture. Matrices are the simplest and most useful way to organise data sets. Using matrix algebra makes manipulation and transformation of multidimensional data sets easier, as it can summarise many steps that would be needed if we worked with each constituent individually. Especially, understanding the functioning of matrix algebra especially helps us in comprehending general concepts of the lecture. For instance, portfolio construction with either two or more assets as well as risk and return calculations can be simplified and generalised using matrix algebra. Further, systems of linear equations to define the first order conditions of mean-variance optimised portfolios can be created using matrix algebra. In general, this form of data manipulation is the most straight-forward when being applied to programming languages such as R, as the syntax of the program largely follows the syntax of textbook linear algebra discussions. Thus, copying theory into programming language is not that hard when using matrix manipulation techniques. Lastly, many R calculations can be efficiently evaluated if they are vectorized - that is, if they operate on vectors of elements instead of looping over individual elements.</p>
+<p>The chapter will be organised as follows: Section 1 introduces the basic definitions and concepts of matrix algebra, much like you have already seen in Empirical Methods. Section 2 reviews basic operations and manipulation techniques. In Section 3, we look at how to represent summation notation with matrix algebra. Section 4 presents systems of linear equations that constitute the cornerstones of portfolio math. Then, Section 5 introduces the concept of Positive Semi-Definite (PSD) matrices, before we dive into multivariate probability distribution representations using matrix algebra. We conclude the chapter by having a discusssion on portfolio mathematics using matrix algebra as well as how to use derivatives of simple matrix functions.</p>
+<div id="matrices-and-vectors" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Matrices and Vectors</h3>
+<p>A vector is a one-dimensional array of numbers. For instance,</p>
+<p><span class="math display">\[
+\underset{n \times 1}{\textbf{x}} = 
+\begin{bmatrix}
+x_{1}\\
+x_{2} \\
+\vdots\\
+x_{n} 
+\end{bmatrix}
+\]</span></p>
+<p>is an <span class="math inline">\(n \times 1\)</span> vector of entries x. This is also known as <span class="math inline">\(\textbf{Column Vector}\)</span></p>
+<p>If we transpose a vector, it becomes a <span class="math inline">\(\textbf{row vector}\)</span>. For instance:</p>
+<p><span class="math display">\[
+\underset{n \times 1}{\textbf{x}&#39;} = 
+\begin{bmatrix}
+x_{1} &amp; x_2 &amp; \dots &amp; x_n
+\end{bmatrix}
+\]</span></p>
+<p>A <span class="math inline">\(\textbf{matrix}\)</span> is a two-dimensional array of numbers. Each matrix consists of rows and columns, whereas both make up the dimension of a matrix. A general form of a matrix is the following:</p>
+<p><span class="math display">\[
+\underset{n \times k}{\textbf{A}} = 
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k}\\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{bmatrix}
+\]</span></p>
+<p>where <span class="math inline">\(a_{ij}\)</span> denotes the element in the <span class="math inline">\(i^{th}\)</span> row and <span class="math inline">\(j^{th}\)</span> column of the matrix <span class="math inline">\(\textbf{A}\)</span>. Just as with vectors, we can also transpose the matrix:</p>
+<p><span class="math display">\[
+\underset{n \times k}{\textbf{A}&#39;} = 
+\begin{bmatrix}
+a_{11} &amp; a_{21} &amp; \dots &amp; a_{n1}\\
+a_{12} &amp; a_{22} &amp; \dots &amp; a_{n2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
+\end{bmatrix}
+\]</span></p>
+<p>An important concept in matrices is <span class="math inline">\(\textit{symmetric}\)</span> and <span class="math inline">\(\textit{square}\)</span>. A <span class="math inline">\(\textit{symmetric}\)</span> matrix <span class="math inline">\(\textbf{A}\)</span> is defined such that <span class="math inline">\(\textbf{A} = \textbf{A&#39;}\)</span>. This can only be the case if the matrix is already <span class="math inline">\(\textit{square}\)</span>, implying that the number of rows equals the number of columns.</p>
+<p><span class="math inline">\(\textbf{Example: Creating Vectors and Matrices in R}\)</span></p>
+<p>In R, to construct <span class="math inline">\(\textbf{vectors}\)</span>, the easiest way is to use the combine function <code>c()</code>:</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="big-part.html#cb162-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb162-2"><a href="big-part.html#cb162-2" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<p>Vectors of numbers in R are of class <code>numeric</code> and do not have a dimension attribute:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="big-part.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(xvec)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="big-part.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(xvec)</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>The elements of a vector can be assigned names using the <code>names()</code> function:</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="big-part.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(xvec) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;x1&quot;</span>, <span class="st">&quot;x2&quot;</span>, <span class="st">&quot;x3&quot;</span>)</span>
+<span id="cb168-2"><a href="big-part.html#cb168-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-3"><a href="big-part.html#cb168-3" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
+<pre><code>## x1 x2 x3 
+##  1  2  3</code></pre>
+<p>Lastly, to create a <span class="math inline">\(\textbf{matrix}\)</span> from a vector, we use the <code>as.matrix()</code> function</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="big-part.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.matrix</span>(xvec)</span></code></pre></div>
+<pre><code>##    [,1]
+## x1    1
+## x2    2
+## x3    3</code></pre>
+<p>In R, matrix objects are created using the matrix() function. For example, we can create a <span class="math inline">\(2 \times 3\)</span> matrix using:</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="big-part.html#cb172-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">FALSE</span>)</span>
+<span id="cb172-2"><a href="big-part.html#cb172-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<p>Looking for the “class” object, we can see if it’s really a matrix:</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="big-part.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(matA)</span></code></pre></div>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
+<p>If we want to transpose the matrix, we can use the <code>byrow=TRUE</code> command:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="big-part.html#cb176-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb176-2"><a href="big-part.html#cb176-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<p>In order to get the dimension of a matrix, we use the <code>dim()</code> command:</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="big-part.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA)</span></code></pre></div>
+<pre><code>## [1] 2 3</code></pre>
+<p>This indicates the <span class="math inline">\(n \times k\)</span> structure, which is <span class="math inline">\(2 \times 3\)</span>.</p>
+<p>Further, we can define names of the rows and columns using the <code>colnames()</code> and <code>rownames()</code> arguments:</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="big-part.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;row1&quot;</span>, <span class="st">&quot;row2&quot;</span>)</span>
+<span id="cb180-2"><a href="big-part.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;col1&quot;</span>, <span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>)</span>
+<span id="cb180-3"><a href="big-part.html#cb180-3" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<pre><code>##      col1 col2 col3
+## row1    1    2    3
+## row2    4    5    6</code></pre>
+<p>Lastly, matrix manipulation starts with <span class="math inline">\(\textbf{slicing operations}\)</span>. Thus, the elements of a matrix can be extracted or subsetted as follows:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="big-part.html#cb182-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>This defines the elements which should be extracted from the matrix. In our case, we told the program to only take the <code>first row and second column</code> element of the matrix.</p>
+<p>If we only want to select according to one dimension, we do so accordingly:</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="big-part.html#cb184-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>,]</span></code></pre></div>
+<pre><code>## col1 col2 col3 
+##    1    2    3</code></pre>
+<p>This takes </p>
+<p>We can take  accordingly:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="big-part.html#cb186-1" aria-hidden="true" tabindex="-1"></a>matA[,<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## row1 row2 
+##    1    4</code></pre>
+<p>Lastly, we can <span class="math inline">\(\textbf{transpose}\)</span> a matrix by using the <code>t()</code> function:</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="big-part.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(matA)</span></code></pre></div>
+<pre><code>##      row1 row2
+## col1    1    4
+## col2    2    5
+## col3    3    6</code></pre>
+</div>
+<div id="basic-matrix-operations" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Basic Matrix Operations</h3>
+<div id="addition-and-subtraction" class="section level4" number="4.1.2.1">
+<h4><span class="header-section-number">4.1.2.1</span> Addition and Subtraction</h4>
+<p>Matrices are additive. That means, given the same dimensions of two matrices, you can add and subtract the respective row-column elements from each other.</p>
+<p>For instance, if we have:</p>
+<p><span class="math display">\[
+\textbf{A} = 
+\begin{bmatrix}
+3 &amp; 4\\
+8 &amp; 5
+\end{bmatrix}, 
+\textbf{B} = 
+\begin{bmatrix}
+9 &amp; 1\\
+5 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<p>Then:</p>
+<p><span class="math display">\[
+\textbf{A} + \textbf{B} = 
+\begin{bmatrix}
+3 &amp; 4\\
+8 &amp; 5
+\end{bmatrix} + 
+\begin{bmatrix}
+9 &amp; 1\\
+5 &amp; 2
+\end{bmatrix} = 
+\begin{bmatrix}
+3+9 &amp; 4+1\\
+8+5 &amp; 5+2
+\end{bmatrix} = 
+\begin{bmatrix}
+12 &amp; 5\\
+13 &amp; 7
+\end{bmatrix}\\
+\textbf{A} - \textbf{B} = 
+\begin{bmatrix}
+3 &amp; 4\\
+8 &amp; 5
+\end{bmatrix} -
+\begin{bmatrix}
+9 &amp; 1\\
+5 &amp; 2
+\end{bmatrix} = 
+\begin{bmatrix}
+3-9 &amp; 4-1\\
+8-5 &amp; 5-2
+\end{bmatrix} = 
+\begin{bmatrix}
+-6 &amp; 3\\
+3 &amp; 3
+\end{bmatrix}
+\]</span>
+In R, this is quite easily done:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="big-part.html#cb190-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>) <span class="co"># Note that we do not indicate nrow = ... &amp; ncol = ... but just write 2 at both places. As long as the </span></span>
+<span id="cb190-2"><a href="big-part.html#cb190-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># order of the commands is correct, R automatically interprets the second entry as nrow and the third as </span></span>
+<span id="cb190-3"><a href="big-part.html#cb190-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># ncol. </span></span>
+<span id="cb190-4"><a href="big-part.html#cb190-4" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb190-5"><a href="big-part.html#cb190-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-6"><a href="big-part.html#cb190-6" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">+</span> matB</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   12    5
+## [2,]   13    7</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="big-part.html#cb192-1" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">-</span> matB</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   -6    3
+## [2,]    3    3</code></pre>
+</div>
+<div id="scalar-and-vector-multiplication" class="section level4" number="4.1.2.2">
+<h4><span class="header-section-number">4.1.2.2</span> Scalar and Vector Multiplication</h4>
+<p>Matrices are also <span class="math inline">\(\textbf{multiplicative}\)</span>. That is, they can be multiplied by a scalar or by another matrix that is <span class="math inline">\(\textbf{conformable}\)</span>.</p>
+<p>For instance, if we take a scalar <code>c = 2</code> and use the same matrices again, we get:</p>
+<p><span class="math display">\[
+c * \textbf{A} = 2*
+\begin{bmatrix}
+3 &amp; 4\\
+8 &amp; 5
+\end{bmatrix} = 
+\begin{bmatrix}
+6 &amp; 8\\
+16 &amp; 10
+\end{bmatrix}
+\]</span></p>
+<p>Matrix multiplication only applies to conformable matrices. <span class="math inline">\(\textbf{A}\)</span> and <span class="math inline">\(\textbf{B}\)</span> are said to be conformable if the <span class="math inline">\(\textbf{number of columns in A equals the number of rows in B}\)</span>. If Matrix <span class="math inline">\(\textbf{A}\)</span> has the dimension of <span class="math inline">\(n \times k\)</span> and <span class="math inline">\(\textbf{B}\)</span> the dimension of <span class="math inline">\(k \times p\)</span>, then they are conformable with dimension of <span class="math inline">\(n \times p\)</span>.</p>
+<p><span class="math display">\[
+\underset{2\times 2}{\textbf{A}} \cdot\underset{2\times 3}{\textbf{B}} = 
+\begin{bmatrix}
+3 &amp; 4\\
+8 &amp; 5
+\end{bmatrix} \cdot
+\begin{bmatrix}
+9 &amp; 1 &amp; 7\\
+5 &amp; 2 &amp; 3
+\end{bmatrix} = 
+\begin{bmatrix}
+3*9 + 4*5 &amp; 3*1 + 4*2 &amp; 3*7+4*3 \\
+8*9+5*5 &amp; 8*1+5*2 &amp; 8*7+5*3
+\end{bmatrix}=
+\begin{bmatrix}
+47 &amp; 11 &amp; 33\\
+97 &amp; 18 &amp; 71
+\end{bmatrix} = 
+\underset{2\times 3}{\textbf{C}}
+\]</span></p>
+<p>Here, each element of the matrix <span class="math inline">\(\textbf{C}\)</span> is the <code>dot product</code> of the resulting from the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\textbf{A}\)</span> and the <span class="math inline">\(j^{th}\)</span> column of <span class="math inline">\(\textbf{B}\)</span>.</p>
+<p><span class="math inline">\(\textbf{Example: Matrix Multiplication in R}\)</span></p>
+<p>To do this in R, we can simply use the <code>%*%</code> operator:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="big-part.html#cb194-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb194-2"><a href="big-part.html#cb194-2" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>,<span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb194-3"><a href="big-part.html#cb194-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-4"><a href="big-part.html#cb194-4" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">%*%</span> matB</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   47   11   33
+## [2,]   97   18   71</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="big-part.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA <span class="sc">%*%</span> matB)</span></code></pre></div>
+<pre><code>## [1] 2 3</code></pre>
+<p>As we can see, the dimensions are now <span class="math inline">\(2 \times 3\)</span>.</p>
+</div>
+<div id="miscellaneous-matrix-properties" class="section level4" number="4.1.2.3">
+<h4><span class="header-section-number">4.1.2.3</span> Miscellaneous Matrix Properties</h4>
+<p>Some important properties of matrices that we will use for financial applications are the <span class="math inline">\(\textbf{associative property}\)</span> as well as <span class="math inline">\(\textbf{transpose product property}\)</span>.</p>
+<p>That is, if three matrices are conformable (number of columns of the first is number of rows of the latter), then:</p>
+<p><span class="math display">\[
+\textbf{A}(\textbf{B} + \textbf{C}) = \textbf{A}\textbf{B} + \textbf{A}\textbf{C}
+\]</span></p>
+<p>Further, the transpose of the product of two matrices is the product of the transposes in opposite order</p>
+<p><span class="math display">\[
+(\textbf{A}\textbf{B})&#39; = \textbf{B}&#39;\textbf{A}&#39;
+\]</span></p>
+</div>
+<div id="identity-diagonal-as-well-as-lower-and-upper-triangle-matrices" class="section level4" number="4.1.2.4">
+<h4><span class="header-section-number">4.1.2.4</span> Identity, Diagonal as well as Lower and Upper Triangle Matrices</h4>
+<p>Some pre-defined matrices are quite common in financial applications.</p>
+<p>The first is called <span class="math inline">\(\textbf{Identity Matrix}\)</span>. An identity matrix is a matrix with all zero elements and only diagonal elements consisting of 1’s.</p>
+<p>In matrix algebra, pre-multiplying or post-multiplying a matrix by a conformable identity matrix gives back the matrix. Consequently, the matrix must consist of only non-zero diagonal entries. To illustrate, assume that:</p>
+<p><span class="math display">\[
+\textbf{I} =
+\begin{bmatrix}
+1&amp;0\\
+0&amp;1
+\end{bmatrix}
+\]</span></p>
+<p>is the identity matrix and</p>
+<p><span class="math display">\[
+\textbf{A} =
+\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21} &amp; a_{22}
+\end{bmatrix}
+\]</span></p>
+<p>Then, multiplying <span class="math inline">\(\textbf{A}\)</span> and <span class="math inline">\(\textbf{I}\)</span> equals:</p>
+<p><span class="math display">\[
+\textbf{A} \cdot \textbf{I} =
+\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21} &amp; a_{22}
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1&amp;0\\
+0&amp;1
+\end{bmatrix} =
+\begin{bmatrix}
+a_{11}*1 + a_{12} * 0 &amp; 0*a_{11}+ a_{12}*1\\
+a_{21}*1 + a_{22} * 0 &amp; 0*a_{21}+ a_{22}*1
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{11}&amp;a_{12}\\
+a_{21} &amp; a_{22}
+\end{bmatrix} = \textbf{A}
+\]</span></p>
+<p>In R, an identity matrix is constructed using the <code>diag()</code> function:</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="big-part.html#cb198-1" aria-hidden="true" tabindex="-1"></a>matI <span class="ot">=</span> <span class="fu">diag</span>(<span class="dv">2</span>)</span>
+<span id="cb198-2"><a href="big-part.html#cb198-2" aria-hidden="true" tabindex="-1"></a>matI</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    0
+## [2,]    0    1</code></pre>
+<p>Further, we can have a <span class="math inline">\(\textbf{Diagonal matrix}\)</span>, <span class="math inline">\(\textbf{Upper-Triangle matrix}\)</span> as well as a <span class="math inline">\(\textbf{Lower-Triangle matrix}\)</span>. For that, consider the following matrix:</p>
+<p><span class="math display">\[
+\textbf{A} = 
+\begin{bmatrix}
+d_1 &amp; u_{12} &amp; u_{13} &amp; \dots &amp; u_{1n} \\
+l_{21} &amp; d_2 &amp; u_{23} &amp; \dots &amp; u_{2n} \\
+l_{31} &amp; l_{32} &amp; d_3 &amp; \dots &amp; l_{3n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+l_{n1} &amp; l_{n2} &amp; l_{n3} &amp; \dots &amp; d_{n}
+\end{bmatrix}
+\]</span></p>
+<p>Here, d defines the diagonal, u the upper-triangle and l the lower-triangle entries. The diagonal consists of n elements, whereas both the lower- and upper-triangle consist of n(n-1)/2 entries. Then, we have the following matrices:</p>
+<p>A Diagonal Matrix <span class="math inline">\(\textbf{D}\)</span> is a <span class="math inline">\(n \times n\)</span> square matrix with <span class="math inline">\(n \times 1\)</span> vector of diagonal entries and zero else:</p>
+<p><span class="math display">\[
+\textbf{D} = 
+\begin{bmatrix}
+d_1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; d_2 &amp; 0 &amp; \dots &amp;0\\
+0 &amp; 0 &amp; d_3 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; d_{n}
+\end{bmatrix}
+\]</span></p>
+<p>An upper-triangle matrix <span class="math inline">\(\textbf{U}\)</span> has all values below the main diagonal equal to zero:</p>
+<p><span class="math display">\[
+\textbf{U} = 
+\begin{bmatrix}
+d_1 &amp; u_{12} &amp; u_{13} &amp; \dots &amp; u_{1n} \\
+0 &amp; d_2 &amp; u_{23} &amp; \dots &amp; u_{2n} \\
+0 &amp; l_{32} &amp; d_3 &amp; \dots &amp; l_{3n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; d_{n}
+\end{bmatrix}
+\]</span>
+A lower-triangle matrix <span class="math inline">\(\textbf{L}\)</span> has all values above the main diagonal equal to zero:</p>
+<p><span class="math display">\[
+\textbf{L} = 
+\begin{bmatrix}
+d_1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
+l_{21} &amp; d_2 &amp; 0 &amp; \dots &amp; 0 \\
+l_{31} &amp; l_{32} &amp; d_3 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+l_{n1} &amp; l_{n2} &amp; l_{n3} &amp; \dots &amp; d_{n}
+\end{bmatrix}
+\]</span></p>
+<p>We can apply these matrices easily in R:</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="big-part.html#cb200-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb200-2"><a href="big-part.html#cb200-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="big-part.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the lower elements from the matrix:</span></span>
+<span id="cb202-2"><a href="big-part.html#cb202-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-3"><a href="big-part.html#cb202-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">lower.tri</span>(matA)]</span></code></pre></div>
+<pre><code>## [1] 2 3 6</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="big-part.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the upper elements from the matrix:</span></span>
+<span id="cb204-2"><a href="big-part.html#cb204-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-3"><a href="big-part.html#cb204-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">upper.tri</span>(matA)]</span></code></pre></div>
+<pre><code>## [1] 4 7 8</code></pre>
+</div>
+</div>
+<div id="summation-notation-in-matrix-form" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Summation Notation in Matrix Form</h3>
+<p>Imagine we have the sum:</p>
+<p><span class="math display">\[
+\sum^{n}_{k=1} x_k = x_1 + ... + x_n
+\]</span></p>
+<p>Then, this sum can be represented by a matrix multiplication of a vector <span class="math inline">\(\textbf{x} = [x_1,..,x_n]\)</span> and a $n  $ vector of ones:</p>
+<p><span class="math display">\[
+\textbf{x&#39;}\textbf{1} = [x_1,..,x_n] \cdot 
+\begin{bmatrix}
+1 \\
+\vdots \\
+1
+\end{bmatrix} = 
+x_1 + \dots + x_n = \sum^{n}_{k=1} x_k
+\]</span></p>
+<p>Next, we can have a squared sum:</p>
+<p><span class="math display">\[
+\sum^{n}_{k=1} x_k^2 = x_1^2 + ... + x_n^2
+\]</span></p>
+<p>Then, this sum can be represented by a matrix multiplication:</p>
+<p><span class="math display">\[
+\textbf{x&#39;}\textbf{x} = [x_1,..,x_n] \cdot 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix} = 
+x_1^2 + \dots + x_n^2 = \sum^{n}_{k=1} x_k^2
+\]</span></p>
+<p>Last, we can have cross-products:</p>
+<p><span class="math display">\[
+\sum^{n}_{k=1} x_ky_k = x_1y_1 + ... + x_ny_n
+\]</span></p>
+<p>Then, this sum can be represented by a matrix multiplication:</p>
+<p><span class="math display">\[
+\textbf{x&#39;}\textbf{y} = [x_1,..,x_n] \cdot 
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix} = 
+x_1y_1 + \dots + x_ny_n = \sum^{n}_{k=1} x_ky_k
+\]</span></p>
+<p>In R, this can easily be facilitated:</p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="big-part.html#cb206-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb206-2"><a href="big-part.html#cb206-2" aria-hidden="true" tabindex="-1"></a>onevec <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb206-3"><a href="big-part.html#cb206-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(xvec)<span class="sc">%*%</span>onevec</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    6</code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="big-part.html#cb208-1" aria-hidden="true" tabindex="-1"></a>yvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>)</span>
+<span id="cb208-2"><a href="big-part.html#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crossprod</span>(xvec, yvec)</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]   25</code></pre>
+</div>
+<div id="systems-of-linear-equations" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Systems of Linear Equations</h3>
+<div id="inverse-of-a-matrix" class="section level4" number="4.1.4.1">
+<h4><span class="header-section-number">4.1.4.1</span> Inverse of a Matrix</h4>
+<p>Systems of linear equations and matrix algebra are indisputably linked. One of such links comes in the form of the <span class="math inline">\(\textbf{inverse of a matrix}\)</span> properties.</p>
+<p>To see how, let’s consider the two linear equations:</p>
+<p><span class="math display">\[
+x + y = 1\\
+2x - y = 1
+\]</span></p>
+<p>Considering both functions, we can find their intersection points as <span class="math inline">\(x = 2/3\)</span> and <span class="math inline">\(y = 1/3\)</span>.</p>
+<p>Note that these two linear equations can also be written in terms of matrix notation:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 1\\
+2 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+\]</span></p>
+<p>Check yourself that with matrix multiplication you would obtain the same two equations as above.</p>
+<p>In general, this implies <span class="math inline">\(\textbf{A}\cdot\textbf{z} = \textbf{b}\)</span>, where</p>
+<p><span class="math display">\[
+\textbf{A} = 
+\begin{bmatrix}
+1 &amp; 1\\
+2 &amp; -1
+\end{bmatrix}, \textbf{z} = 
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}, \textbf{b} = 
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+\]</span></p>
+<p>If, in this equation, we had a <span class="math inline">\(2 \times 2\)</span> matrix <span class="math inline">\(\textbf{B}\)</span> with elements such that <span class="math inline">\(\textbf{B}\cdot\textbf{A} = \textbf{I_2}\)</span> (<span class="math inline">\(\textbf{I_2}\)</span> being the identity matrix), then we can <span class="math inline">\(\textbf{solve for elements in z}\)</span> as follows:</p>
+<p><span class="math display">\[
+\begin{align*}
+\textbf{B}\cdot\textbf{A}\cdot\textbf{z} &amp;= \textbf{B}\cdot\textbf{b} \\
+\textbf{I}\cdot\textbf{z} &amp;= \textbf{B}\cdot\textbf{b} \\
+\textbf{z} &amp;= \textbf{B}\cdot\textbf{b}
+\end{align*}
+\]</span></p>
+<p>or, in matrix notation:</p>
+<p>$$
+ =
+
+
+$$</p>
+<p>If such a matrix <span class="math inline">\(\textbf{B}\)</span> exists, it is called <span class="math inline">\(\textbf{inverse of A}\)</span> and is denoted as <span class="math inline">\(\textbf{A}^{-1}\)</span>.</p>
+<p>This is the same as when we want to solve the system of linear equation <span class="math inline">\(\textbf{A}\textbf{x} = \textbf{b}\)</span>, we just take the <span class="math inline">\(\textbf{A}\)</span> to the other side and get: <span class="math inline">\(\textbf{x} = \textbf{A}^{-1}\textbf{b}\)</span>.</p>
+<p>As long as we can determine the elements in <span class="math inline">\(\textbf{A}^{-1}\)</span>, then we can solve for the values of x and y in the linear equations system of the vector <span class="math inline">\(\textbf{z}\)</span>. The system of linear equations has a solution as long as the <span class="math inline">\(\textbf{two lines intersect}\)</span>. If the two lines are parallel, then one of the equations is a multiple of the other. In this case, we say that <span class="math inline">\(\textbf{A}\)</span> is NOT INVERTIBLE.</p>
+<p>There are general rules in R how to solve for such a system of linear equations. One is in the form of the <code>solve()</code> function:</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="big-part.html#cb210-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb210-2"><a href="big-part.html#cb210-2" aria-hidden="true" tabindex="-1"></a>vecB <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb210-3"><a href="big-part.html#cb210-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-4"><a href="big-part.html#cb210-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First we solve for the inverse of A: A^-1</span></span>
+<span id="cb210-5"><a href="big-part.html#cb210-5" aria-hidden="true" tabindex="-1"></a>matA.inv <span class="ot">=</span> <span class="fu">solve</span>(matA) </span>
+<span id="cb210-6"><a href="big-part.html#cb210-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-7"><a href="big-part.html#cb210-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, we can easily solve for the vector z:</span></span>
+<span id="cb210-8"><a href="big-part.html#cb210-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-9"><a href="big-part.html#cb210-9" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> matA.inv<span class="sc">%*%</span>vecB</span>
+<span id="cb210-10"><a href="big-part.html#cb210-10" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<pre><code>##           [,1]
+## [1,] 0.6666667
+## [2,] 0.3333333</code></pre>
+</div>
+<div id="linear-independence-and-rank-of-a-matrix" class="section level4" number="4.1.4.2">
+<h4><span class="header-section-number">4.1.4.2</span> Linear Independence and Rank of a Matrix</h4>
+<p>Consider again the <span class="math inline">\(n \times k\)</span>:</p>
+<p><span class="math display">\[
+\underset{n \times k}{\textbf{A}} = 
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k}\\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{bmatrix} = [\textbf{a}_1, \textbf{a}_2, \dots, \textbf{a}_k]
+\]</span></p>
+<p>Where each vector <span class="math inline">\(\textbf{a}\)</span> is a <span class="math inline">\(n \times 1\)</span> column vector.</p>
+<p>In that case, k vectors <span class="math inline">\(\textbf{a}_1, \textbf{a}_2, \dots \textbf{a}_k\)</span> are <span class="math inline">\(\textbf{linearily independent}\)</span> if <span class="math inline">\(\textbf{a}_1c_1 + \textbf{a}_2c_2 + \dots + \textbf{a}_kc_k = 0\)</span>.</p>
+<p>That is, no vector can be expressed as a <span class="math inline">\(\textbf{non-trivial linear combination}\)</span> of the other vectors.</p>
+<p>For us of importance is the <span class="math inline">\(\textbf{Rank of a Matrix}\)</span>. The column rank of matrix, denoted <span class="math inline">\(\textbf{rank()}\)</span>, is equal to the <span class="math inline">\(\textbf{maximum number of linearly independent columns}\)</span>. If rank(A) = m, then we say the matrix has <span class="math inline">\(\textbf{full rank}\)</span>.</p>
+<p>In R, we figure the rank of a matrix accordingly with the <code>rankMatrix()</code> function:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="big-part.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
+<span id="cb212-2"><a href="big-part.html#cb212-2" aria-hidden="true" tabindex="-1"></a>Amat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dv">2</span>, <span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb212-3"><a href="big-part.html#cb212-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">rankMatrix</span>(Amat))</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+</div>
+<div id="positive-definite-pd-matrix" class="section level3" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Positive Definite (PD) Matrix</h3>
+<p>Another important concept in matrix algebra is positive definiteness. We consider a matrix  to be  if for any <span class="math inline">\(n \times 1\)</span> x <span class="math inline">\(\neq\)</span> 0:</p>
+<p><span class="math display">\[
+\begin{equation}
+\textbf{x}&#39;\textbf{A}\textbf{x} &gt; 0
+\end{equation}
+\]</span></p>
+<p>Therein, we consider a matrix <span class="math inline">\(\textbf{A}\)</span> to be <span class="math inline">\(\textbf{positive semi-definite}\)</span> if for any <span class="math inline">\(n \times 1\)</span> x <span class="math inline">\(\neq\)</span> 0:</p>
+<p><span class="math display">\[
+\begin{equation}
+\textbf{x}&#39;\textbf{A}\textbf{x} \geq 0
+\end{equation}
+\]</span>
+Hence, if a matrix is positive semi-definite then there exists some vector x such that <span class="math inline">\(\textbf{A}\textbf{x} = 0\)</span>, which implies that .</p>
+</div>
+<div id="multivariate-probability-distributions" class="section level3" number="4.1.6">
+<h3><span class="header-section-number">4.1.6</span> Multivariate Probability Distributions</h3>
+<div id="covariance-and-correlation-matrix" class="section level4" number="4.1.6.1">
+<h4><span class="header-section-number">4.1.6.1</span> Covariance and Correlation Matrix</h4>
+<p>Covariance and Correlation Matrices are fundamental concepts in financial applications.</p>
+<p>The covariance matrix is denoted as a sum sign, <span class="math inline">\(\scriptstyle\sum\)</span>. It summarizes the variances and covariances of the elements of the random vector .</p>
+<p>Generally, the covariance matrix of a random vector <span class="math inline">\(\textbf{X}\)</span> with mean vector <span class="math inline">\(\mu\)</span> is defined as:</p>
+<p><span class="math display">\[
+\begin{equation}
+cov(\textbf{X}) = E[(\textbf{X}- \mu)(\textbf{X}- \mu)&#39;] = \scriptstyle\sum
+\end{equation}
+\]</span></p>
+<p>If <span class="math inline">\(\textbf{X}\)</span> has n elements, then <span class="math inline">\(\scriptstyle\sum\)</span> will be the symmetric and positive semi-definite n <span class="math inline">\(\times\)</span> n matrix:</p>
+<p><span class="math display">\[
+\scriptstyle\sum_{n \times n} = 
+\begin{bmatrix}
+\sigma_1^2 &amp; \sigma_{12} &amp; \dots &amp; \sigma_{1n}\\
+\sigma_{12} &amp; \sigma_2^2 &amp; \dots &amp; \sigma_{2n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\sigma_{1n} &amp; \sigma_{2n} &amp; \dots &amp; \sigma_n^2
+\end{bmatrix}
+\]</span></p>
+<p>To understand the mathematics behind a variance-covariance matrix, let’s quickly look at the composition of a 2 <span class="math inline">\(\times\)</span> 2 case:</p>
+<p><span class="math display">\[
+\begin{align*}
+E[(\textbf{X}- \mu)(\textbf{X}- \mu)&#39;] &amp;= E\left[(\begin{matrix} X_1 - \mu_1 \\ X_2 - \mu_2\end{matrix})(X_1 - \mu_1, X_2 - \mu_2)\right]\\
+&amp;= E\left[(\begin{matrix}(X_1 - \mu_1)(X_1 - \mu_1) &amp; (X_1 - \mu_1)(X_2 - \mu_2) \\ (X_1 - \mu_1)(X_2 - \mu_2) &amp; (X_2 - \mu_2)(X_2 - \mu_2)\end{matrix})\right] \\
+&amp;= \left(\begin{matrix}E[(X_1 - \mu_1)^2] &amp; E[(X_1 - \mu_1)(X_2 - \mu_2)] \\ E[(X_1 - \mu_1)(X_2 - \mu_2)] &amp; E[(X_2 - \mu_2)^2\end{matrix}\right) \\
+&amp;= \left(\begin{matrix} var(X_1) &amp; cov(X_1,X_2) \\ cov(X_2, X_1) &amp; var(X_2) \end{matrix}\right) \\
+&amp;= \left(\begin{matrix} \sigma_1^2 &amp; \sigma_{12} \\ \sigma_{12} &amp; \sigma_2^2 \end{matrix}\right)
+\end{align*}
+\]</span></p>
+<p>In contrast to the covariance matrix, the correlation matrix <span class="math inline">\(\textbf{C}\)</span> summarizes all pairwise correlations between the elements of the n <span class="math inline">\(\times\)</span> 1 random vector <span class="math inline">\(\textbf{X}\)</span> is given by:</p>
+<p><span class="math display">\[
+\begin{equation}
+\textbf{C} = 
+\left(
+\begin{matrix}
+1 &amp; \rho_{12} &amp; \dots &amp; \rho_{1n} \\
+\rho_{12} &amp; 1 &amp; \dots &amp; \rho{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\rho_{1n} &amp; \rho_{2n} &amp; \dots &amp; 1
+\end{matrix}
+\right)
+\end{equation}
+\]</span></p>
+<p>In general, the correlation matrix can be computed from the covariance matrix. For that, we understand that:</p>
+<p><span class="math display">\[
+\begin{equation}
+\textbf{C} = \textbf{D}^{-1}\scriptstyle\sum\textstyle\textbf{D}^{-1}
+\end{equation}
+\]</span></p>
+<p>Whereas <span class="math inline">\(\textbf{D}\)</span> is an n <span class="math inline">\(\times\)</span> n diagonal matrix with the standard deviations of the elements of <span class="math inline">\(\textbf{X}\)</span> along the main diagonal:</p>
+<p><span class="math display">\[
+\textbf{D} = \left(
+\begin{matrix}
+\sigma_1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; \sigma_2 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; \sigma_n
+\end{matrix} \right)
+\]</span></p>
+<p>In R, a covariance matrix is calculated using usual matrix formulation:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="big-part.html#cb214-1" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="fl">2.3</span></span>
+<span id="cb214-2"><a href="big-part.html#cb214-2" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="fl">1.8</span></span>
+<span id="cb214-3"><a href="big-part.html#cb214-3" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span></span>
+<span id="cb214-4"><a href="big-part.html#cb214-4" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> rho12<span class="sc">*</span>sigma1<span class="sc">*</span>sigma2</span>
+<span id="cb214-5"><a href="big-part.html#cb214-5" aria-hidden="true" tabindex="-1"></a>cov_m <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), </span>
+<span id="cb214-6"><a href="big-part.html#cb214-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb214-7"><a href="big-part.html#cb214-7" aria-hidden="true" tabindex="-1"></a>cov_m</span></code></pre></div>
+<pre><code>##       [,1]  [,2]
+## [1,] 5.290 1.449
+## [2,] 1.449 3.240</code></pre>
+<p>Then, we can transform this into a correlation matrix using the <code>cov2cor()</code> function:</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="big-part.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(cov_m)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,] 1.00 0.35
+## [2,] 0.35 1.00</code></pre>
+<p>Note that this makes absolutely sense, as the rho12 = 0.35, which is nothing else than the correlation between sigma1 and sigma2 as we defined it above.</p>
+</div>
+<div id="variance-of-a-linear-combination-of-random-vectors" class="section level4" number="4.1.6.2">
+<h4><span class="header-section-number">4.1.6.2</span> Variance of a linear combination of random vectors</h4>
+<p>Another important property are transformations with linear combinations. That is, we add an n <span class="math inline">\(\times\)</span> 1 vector called <span class="math inline">\(\textbf{a}\)</span> = <span class="math inline">\((a_1, \dots, a_n)\)</span> to the random vector <span class="math inline">\(\textbf{X}\)</span>.</p>
+<p>If we assume that a random variables <span class="math inline">\(\textbf{Y}\)</span> exists which is a  of the form <span class="math inline">\(Y = \textbf{a}&#39;\textbf{X} = a_1X_1 + \dots + a_nX_n\)</span>, then the expected values is:</p>
+<p><span class="math display">\[
+\mu_y = E[Y] = E[\textbf{a}&#39;\textbf{X}] = \textbf{a}&#39;E[\textbf{X}] = \textbf{a}&#39;\mu
+\]</span></p>
+<p>and the corresponding variance is:</p>
+<p><span class="math display">\[
+var(Y) = var(\textbf{a}&#39;\textbf{X}) = E[(\textbf{a}&#39;\textbf{X} - \textbf{a}&#39;\mu)^2] = E[(\textbf{a}&#39;(\textbf{X} - \mu))^2]
+\]</span></p>
+<p>We can now use a simple definition from matrix algebra. If z is a scalar, then we know that <span class="math inline">\(z&#39;z = zz&#39; = z^2\)</span>. We know that <span class="math inline">\(\textbf{a}&#39;(\textbf{X} - \mu)\)</span> is a scalar, as such we can compute the variance as:</p>
+<p><span class="math display">\[
+\begin{align*}
+var(Y) &amp;= E[z^2] = E[z \cdot z&#39;] \\
+&amp;= E[\textbf{a}&#39;(\textbf{X} - \mu)\textbf{a}(\textbf{X} - \mu)&#39;] \\
+&amp;= \textbf{a}&#39;E[(\textbf{X} - \mu)(\textbf{X} - \mu)&#39;]\textbf{a} \\
+&amp;= \textbf{a}&#39;cov(\textbf{X})\textbf{a} \\
+&amp;= \textbf{a}&#39;\scriptstyle\sum\textstyle\textbf{a}
+\end{align*}
+\]</span></p>
+<p>Consequently, we know that the variance of a linear combination of a random variable and a constant is just the inverse of the constant multiplied with the covariance of the random variable multiplied with the constant.</p>
+</div>
+<div id="covariance-between-linear-combination-of-two-random-vectors" class="section level4" number="4.1.6.3">
+<h4><span class="header-section-number">4.1.6.3</span> Covariance between linear combination of two random vectors</h4>
+<p>If we consider two different constants, <span class="math inline">\(\textbf{a}\)</span> = <span class="math inline">\((a_1, \dots, a_n)\)</span> as well as <span class="math inline">\(\textbf{b}\)</span> = <span class="math inline">\((b_1, \dots, b_n)\)</span> to the random vector <span class="math inline">\(\textbf{X}\)</span>, and <span class="math inline">\(Y = \textbf{a}&#39;\textbf{X} = a_1X_1 + \dots + a_nX_n\)</span> as well as <span class="math inline">\(Z = \textbf{b}&#39;\textbf{X} = b_1X_1 + \dots + b_nX_n\)</span>, we can write the covariance in matrix notation as:</p>
+<p><span class="math display">\[
+\begin{align*}
+cov(Y,Z) &amp;= E[(Y - E[Y])(Z-E[Z])] \\
+cov(\textbf{a}&#39;\textbf{X}, \textbf{b}&#39;\textbf{X}) &amp;= E[(\textbf{a}&#39;\textbf{X} - E[\textbf{a}&#39;\textbf{X}])(\textbf{b}&#39;\textbf{X}-E[\textbf{b}&#39;\textbf{X}])] \\
+&amp;= E[(\textbf{a}&#39;\textbf{X} - \textbf{a}&#39;\mu])(\textbf{b}&#39;\textbf{X}-\textbf{b}&#39;\mu])] \\
+&amp;= E[\textbf{a}&#39;(\textbf{X} - \mu)\textbf{b}&#39;(\textbf{X} - \mu)] \\
+&amp;= \textbf{a}&#39;E[(\textbf{X} - \mu)(\textbf{X} - \mu)&#39;]\textbf{b}&#39;\\
+&amp;= \textbf{a}&#39;\scriptstyle\sum\textstyle\textbf{b}&#39;
+\end{align*}
+\]</span></p>
+</div>
+<div id="multivariate-normal-distribution" class="section level4" number="4.1.6.4">
+<h4><span class="header-section-number">4.1.6.4</span> Multivariate Normal Distribution</h4>
+<p>Now, let’s start to combine the usual assumptions of distribution functions we use in daily statistic life with the properties of the matrix algebra notations we derived in this chapter.</p>
+<p>For that, we define: n random variables <span class="math inline">\(\textbf{X_1}, \dots, \textbf{X_n}\)</span> that are <span class="math inline">\(\textbf{jointly normally distributed}\)</span>. Then, we have n <span class="math inline">\(\times\)</span> 1 vectors <span class="math inline">\(\textbf{X}\)</span> = <span class="math inline">\((X_1,\dots,X_n)&#39;\)</span>, <span class="math inline">\(\textbf{x}\)</span> = <span class="math inline">\((x_1,\dots,x_n)&#39;\)</span> as well as <span class="math inline">\(\mu = (\mu_1,\dots,\mu_n)&#39;\)</span> and</p>
+<p><span class="math display">\[
+\scriptstyle\sum_{n \times n} = 
+\begin{bmatrix}
+\sigma_1^2 &amp; \sigma_{12} &amp; \dots &amp; \sigma_{1n}\\
+\sigma_{12} &amp; \sigma_2^2 &amp; \dots &amp; \sigma_{2n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\sigma_{1n} &amp; \sigma_{2n} &amp; \dots &amp; \sigma_n^2
+\end{bmatrix}
+\]</span></p>
+<p>Under these properties, we understand that <span class="math inline">\(\textbf{X} \sim N(\textstyle\mu, \scriptstyle\sum)\)</span> means that the random vector <span class="math inline">\(\textbf{X}\)</span> has a  <span class="math inline">\(\mu\)</span> and covariance matrix <span class="math inline">\(\scriptstyle \sum\)</span>.</p>
+<p>We can show that under the assumptions of iid (independently and identically distributed) standard normal random variables, we can create a random vector with the properties of <span class="math inline">\(\textbf{X} \sim N(\textstyle\mu, \scriptstyle\sum)\)</span>.</p>
+<p>For that, let’s assume that <span class="math inline">\(\textbf{Z} = (Z_1, \dots, Z_n)&#39;\)</span>. In this case, <span class="math inline">\(\textbf{Z} \sim N(0, I_n)\)</span> where <span class="math inline">\(I_n\)</span> denotes the identity matrix. Given  we can create  with the desired properties, if we define</p>
+<p><span class="math display">\[
+\textbf{X} = \mu + \scriptstyle\sum^{1/2}\textstyle\textbf{Z}
+\]</span></p>
+<p>where <span class="math inline">\(\scriptstyle\sum^{1/2}\)</span> is the upper-triangle matrix defined previously where <span class="math inline">\(\scriptstyle\sum = \sum^{1/2}&#39;\sum^{1/2}\)</span> . In that case:</p>
+<p><span class="math display">\[
+E[\textbf{X}] = E[\mu + \scriptstyle\sum^{1/2}\textstyle\textbf{Z}] = \mu + \scriptstyle\sum^{1/2}\textstyle E[\textbf{Z}] \mu + \scriptstyle\sum^{1/2}\textstyle E[\textbf{0}] = \mu
+\]</span></p>
+<p>and:</p>
+<p><span class="math display">\[
+\begin{align*}
+var(\textbf{X}) &amp;= E[\textbf{X} - E[\textbf{X}]]\\
+&amp;= E[\mu + \scriptstyle\sum^{1/2}\textstyle\textbf{Z} - \mu] \\
+&amp;= E[\scriptstyle\sum^{1/2}\textstyle\textbf{Z}] \\
+&amp;= var(\scriptstyle\sum^{1/2}\textstyle\textbf{Z}) \\
+&amp;= \scriptstyle\sum^{1/2}&#39;var(\textstyle\textbf{Z})\scriptstyle\sum^{1/2}\\
+&amp;= \scriptstyle\sum^{1/2}&#39;I_n\scriptstyle\sum^{1/2} \\
+&amp;= \scriptstyle\sum
+\end{align*} 
+\]</span></p>
+<p>Thus, <span class="math inline">\(\textbf{X} \sim N(\mu, \scriptstyle\sum)\)</span></p>
+<p><span class="math inline">\(\textbf{Example: Simulation of a multivariate normal random vectors in R}\)</span></p>
+<p>We can easily simulate the that <span class="math inline">\(\textbf{X} \sim N(\mu, \scriptstyle\sum)\)</span> where <span class="math inline">\(\mu = (1,1)&#39;\)</span> and</p>
+<p><span class="math display">\[
+\scriptstyle\sum = \textstyle
+\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; 3
+\end{bmatrix}
+\]</span></p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="big-part.html#cb218-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># Specify the mu vector </span></span>
+<span id="cb218-2"><a href="big-part.html#cb218-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-3"><a href="big-part.html#cb218-3" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb218-4"><a href="big-part.html#cb218-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="dv">2</span> <span class="co"># Specify both standard deviations </span></span>
+<span id="cb218-5"><a href="big-part.html#cb218-5" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span> <span class="co"># Specify the correlation coefficient</span></span>
+<span id="cb218-6"><a href="big-part.html#cb218-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-7"><a href="big-part.html#cb218-7" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> sigma1<span class="sc">*</span>sigma2<span class="sc">*</span>rho12 <span class="co"># Define the covariance  </span></span>
+<span id="cb218-8"><a href="big-part.html#cb218-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-9"><a href="big-part.html#cb218-9" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Create the covariance matrix </span></span>
+<span id="cb218-10"><a href="big-part.html#cb218-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-11"><a href="big-part.html#cb218-11" aria-hidden="true" tabindex="-1"></a>Sigma_0<span class="fl">.5</span> <span class="ot">=</span> <span class="fu">chol</span>(Sigma) <span class="co"># the Cholesky factorization of the covariance matrix to only get the upper-triangular form </span></span>
+<span id="cb218-12"><a href="big-part.html#cb218-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-13"><a href="big-part.html#cb218-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb218-14"><a href="big-part.html#cb218-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb218-15"><a href="big-part.html#cb218-15" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">=</span> <span class="fu">rnorm</span>(n) <span class="co"># Compute the random variable Z ~ N(mu, I_2)</span></span>
+<span id="cb218-16"><a href="big-part.html#cb218-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-17"><a href="big-part.html#cb218-17" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> mu <span class="sc">*</span> Sigma_0<span class="fl">.5</span><span class="sc">%*%</span>Z <span class="co"># Compute X from the of 2 iid standard normal random variables</span></span></code></pre></div>
+<p>Now, the vector  stems from a vector of iid standard normal random variables  and has the properties of (is proportional to) <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\scriptstyle\sum\)</span> as first two moments (mean and variance).</p>
+</div>
+</div>
+<div id="portfolio-construction-and-mathematical-properties-using-matrix-algebra" class="section level3" number="4.1.7">
+<h3><span class="header-section-number">4.1.7</span> Portfolio Construction and Mathematical Properties using Matrix Algebra</h3>
+<p>As we now covered the main baseline principles of matrix algebra, we can utilise this knowledge and combine it with the fundamentals of portfolio theory.</p>
+<p>For that, we assume that we have a portfolio consisting of . These all are  with means, variances and covariances:</p>
+<p><span class="math display">\[
+E[R_i] = \mu_i \\ 
+var(R_i) = \sigma_i^2\\
+cov(R_i, R_j) =  \sigma_{ij}
+\]</span></p>
+<p>Furthermore, we consider portfolio weights <span class="math inline">\(x_i\)</span> within our setting, whereas <span class="math inline">\(\sum x_i = 1\)</span>. That is, the entire portfolio consists of only these three assets. . As such, the  is given as:</p>
+<p><span class="math display">\[
+R_{p,x} = x_1\mu_1 + x_2\mu_2 + x_3\mu_3
+\]</span></p>
+<p>And the portfolio variance is given as:</p>
+<p><span class="math display">\[
+\begin{align*}
+\sigma_{p,x}^2 &amp;= \sigma_1^2x_1^2 + \sigma_2^2x_2^2 + \sigma_3^2x_3^2 + 2\sigma_{1,2}x_1x_2 + 2\sigma_{2,3}x_2x_3 + 2\sigma_{13x_1x_3} \\
+&amp;= \sigma_1^2x_1^2 + \sigma_2^2x_2^2 + \sigma_3^2x_3^2 + 2\sigma_1\sigma_2\rho_{1,2}x_1x_2 + 2\sigma_2\sigma_3\rho_{2,3}x_2x_3 + 2\sigma_1\sigma_3\rho_{13}x_1x_3
+\end{align*}
+\]</span></p>
+<p>Please remember that <span class="math inline">\(\sigma_{i,j} = \sigma_i\sigma_j\rho_{i,j}\)</span>.</p>
+<p>We can now substantially simplify this expression by using matrix algebra:</p>
+<p><span class="math display">\[
+\textbf{R} = 
+\begin{bmatrix}
+R_1 \\
+R_2 \\
+R_3
+\end{bmatrix}, 
+\textbf{x} = 
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
+\]</span></p>
+<p>As all of the variables are perfectly characterised, by assumptions, through their mean, variance and covariance structures, we can easily characterise them by using:</p>
+<p><span class="math display">\[
+E[\textbf{R}] = E\left(\begin{bmatrix}
+R_1 \\
+R_2 \\
+R_3
+\end{bmatrix}\right) = 
+\begin{bmatrix}
+\mu_1 \\
+\mu_2 \\
+\mu_3
+\end{bmatrix} = \mu 
+\]</span>
+<span class="math display">\[
+var(R) = 
+\begin{bmatrix}
+\sigma_1^2 &amp; \sigma_{12} &amp; \sigma_{13}\\
+\sigma_{21} &amp; \sigma_2^2 &amp; \sigma_{23}\\
+\sigma_{31} &amp; \sigma_{32} &amp; \sigma_3^2
+\end{bmatrix} = \scriptstyle\sum
+\]</span></p>
+<p>Here, the covariance is  per definition. That is, upper-left triangle values equal lower-left triangle values and the matrix transposed is identical to the original matrix.</p>
+<p>We can easily see how to write the portfolio expected returns and variances in matrix notation. The expected return of the portfolio is given by:</p>
+<p><span class="math display">\[
+E[R_{pf}] = \begin{bmatrix} x_1 &amp; x_2 &amp; x_3 \end{bmatrix} \begin{bmatrix} \mu_1 \\ \mu_2 \\ \mu_3 \end{bmatrix} = x_1\mu_1 + x_2\mu_2 + x_3\mu_3
+\]</span>
+And the portfolio variance is given by:</p>
+<p><span class="math display">\[
+\begin{align*}
+var(R_{p,x}) 
+&amp;= var(\textbf{x}&#39;\textbf{R}) \\
+&amp;=\textbf{x}&#39; \textbf{R} \textbf{x}\\
+&amp;= 
+\begin{bmatrix} x_1, &amp; x_2, &amp; x_3 \end{bmatrix} 
+\begin{bmatrix}
+\sigma_1^2 &amp; \sigma_{12} &amp; \sigma_{13}\\
+\sigma_{21} &amp; \sigma_2^2 &amp; \sigma_{23}\\
+\sigma_{31} &amp; \sigma_{32} &amp; \sigma_3^2
+\end{bmatrix} 
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix} \\ &amp;= 
+\begin{bmatrix}
+x_1\sigma_1^2 + x_2\sigma_{21} + x_3\sigma_{31}, &amp; x_1\sigma_{12} + x_2\sigma_2^2 + x_3\sigma_{32}, &amp;  x_1\sigma_{13} + x_2\sigma_{23} + x_3\sigma_3^2
+\end{bmatrix} \begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix} \\
+&amp;= \sigma_1^2x_1^2 + \sigma_2^2x_2^2 + \sigma_3^2x_3^2 + 2\sigma_{1,2}x_1x_2 + 2\sigma_{2,3}x_2x_3 + 2\sigma_{13}x_1x_3
+\end{align*}
+\]</span></p>
+<p>This is a very easy expression. Accordingly, we can also compute the covariance between the return on portfolio <span class="math inline">\(\textbf{x}\)</span> and <span class="math inline">\(\textbf{y}\)</span> using matrix algebra:</p>
+<p><span class="math display">\[
+\begin{align*}
+\sigma_{xy} = cov(R_{p,x},R_{p,y}) &amp;= cov(\textbf{x}&#39;\textbf{R}, \textbf{y}&#39;\textbf{R}) \\
+&amp;= E[(\textbf{x}&#39;\textbf{R} - E[\textbf{x}&#39;\textbf{R}]), (\textbf{y}&#39;\textbf{R} - E[\textbf{y}&#39;\textbf{R}])] \\
+&amp;= E[(\textbf{x}&#39;\textbf{R} - \textbf{x}&#39;\mu_x)(\textbf{y}&#39;\textbf{R} - \textbf{y}&#39;\mu_y)] \\ 
+&amp;= E[\textbf{x}&#39;(\textbf{R} - \mu_x)(\textbf{R} - \mu_y)&#39;\textbf{y}] \\
+&amp;= \textbf{x}&#39;E[(\textbf{R} - \mu_x)(\textbf{R} - \mu_y)]\textbf{y}\\
+&amp;= \textbf{x}&#39;\scriptstyle\sum_{xy}\textstyle\textbf{y}
+\end{align*}
+\]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-1-statistical-properties.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-risk-and-return.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/edit/master/02-tears.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/blob/master/02-tears.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

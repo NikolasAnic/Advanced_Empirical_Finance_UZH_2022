@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Chapter 5: Beta | Empricial Finance and Statistical Analysis</title>
+  <meta name="description" content="Chapter 6 Chapter 5: Beta | Empricial Finance and Statistical Analysis" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Chapter 5: Beta | Empricial Finance and Statistical Analysis" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Chapter 5: Beta | Empricial Finance and Statistical Analysis" />
+  
+  
+  
+
+<meta name="author" content="Nikolas Anic &amp; Lorenz Gassmann" />
+
+
+<meta name="date" content="2021-11-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Empirical Finance and Statistical Analysis - Theory and Empirics Lab</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to the course objectives and organisation of the course</a></li>
+<li class="chapter" data-level="2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: The Programming Environment</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#markdown-files"><i class="fa fa-check"></i><b>2.1</b> Markdown Files</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#how-to-create-a-markdown-file"><i class="fa fa-check"></i><b>2.1.1</b> How to create a Markdown File</a></li>
+<li class="chapter" data-level="2.1.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#the-r-markdown-structure"><i class="fa fa-check"></i><b>2.1.2</b> The R Markdown Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#coding-in-r---a-concise-overview"><i class="fa fa-check"></i><b>2.2</b> Coding In R - A concise overview</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#introduction"><i class="fa fa-check"></i><b>2.2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#vectors"><i class="fa fa-check"></i><b>2.2.2</b> Vectors</a></li>
+<li class="chapter" data-level="2.2.3" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-types"><i class="fa fa-check"></i><b>2.2.3</b> Data Types</a></li>
+<li class="chapter" data-level="2.2.4" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-frames"><i class="fa fa-check"></i><b>2.2.4</b> Data Frames</a></li>
+<li class="chapter" data-level="2.2.5" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#importing-data"><i class="fa fa-check"></i><b>2.2.5</b> Importing Data</a></li>
+<li class="chapter" data-level="2.2.6" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-manipulation"><i class="fa fa-check"></i><b>2.2.6</b> Data Manipulation</a></li>
+<li class="chapter" data-level="2.2.7" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#data-reshaping"><i class="fa fa-check"></i><b>2.2.7</b> Data Reshaping</a></li>
+<li class="chapter" data-level="2.2.8" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#beautiful-graphs-with-ggplot2"><i class="fa fa-check"></i><b>2.2.8</b> Beautiful Graphs with <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.2.9" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#dates-and-times"><i class="fa fa-check"></i><b>2.2.9</b> Dates and Times</a></li>
+<li class="chapter" data-level="2.2.10" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#string-manipulations-in-r-the-stringr-package"><i class="fa fa-check"></i><b>2.2.10</b> String Manipulations in R: The <code>stringr()</code> package</a></li>
+<li class="chapter" data-level="2.2.11" data-path="chapter-1-the-programming-environment.html"><a href="chapter-1-the-programming-environment.html#database-queries"><i class="fa fa-check"></i><b>2.2.11</b> Database Queries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html"><i class="fa fa-check"></i><b>3</b> Chapter 1: Statistical Properties</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#random-variables-and-probability-distributions-introdcution"><i class="fa fa-check"></i><b>3.1</b> Random Variables and Probability Distributions: Introdcution</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#the-concept-of-probability-important-notions-and-definitions"><i class="fa fa-check"></i><b>3.1.1</b> The concept of Probability: Important Notions and Definitions</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#random-variables"><i class="fa fa-check"></i><b>3.1.2</b> Random Variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#discrete-random-variables-and-distributions"><i class="fa fa-check"></i><b>3.1.3</b> Discrete Random Variables and Distributions</a></li>
+<li class="chapter" data-level="3.1.4" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#continuous-random-variables-and-distributions"><i class="fa fa-check"></i><b>3.1.4</b> Continuous Random Variables and Distributions</a></li>
+<li class="chapter" data-level="3.1.5" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#the-cumulative-distribution"><i class="fa fa-check"></i><b>3.1.5</b> The cumulative Distribution</a></li>
+<li class="chapter" data-level="3.1.6" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#continuous-distributions-with-appealing-properties"><i class="fa fa-check"></i><b>3.1.6</b> Continuous Distributions with Appealing Properties</a></li>
+<li class="chapter" data-level="3.1.7" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#moments-and-properties-of-bivariate-distributions"><i class="fa fa-check"></i><b>3.1.7</b> Moments and Properties of bivariate distributions</a></li>
+<li class="chapter" data-level="3.1.8" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#moments-of-probability-distributions"><i class="fa fa-check"></i><b>3.1.8</b> Moments of Probability Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#matrix-algebra-introduction"><i class="fa fa-check"></i><b>3.2</b> Matrix Algebra: Introduction</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#matrices-and-vectors"><i class="fa fa-check"></i><b>3.2.1</b> Matrices and Vectors</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#basic-matrix-operations"><i class="fa fa-check"></i><b>3.2.2</b> Basic Matrix Operations</a></li>
+<li class="chapter" data-level="3.2.3" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#summation-notation-in-matrix-form"><i class="fa fa-check"></i><b>3.2.3</b> Summation Notation in Matrix Form</a></li>
+<li class="chapter" data-level="3.2.4" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#systems-of-linear-equations"><i class="fa fa-check"></i><b>3.2.4</b> Systems of Linear Equations</a></li>
+<li class="chapter" data-level="3.2.5" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#positive-definite-pd-matrix"><i class="fa fa-check"></i><b>3.2.5</b> Positive Definite (PD) Matrix</a></li>
+<li class="chapter" data-level="3.2.6" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#multivariate-probability-distributions"><i class="fa fa-check"></i><b>3.2.6</b> Multivariate Probability Distributions</a></li>
+<li class="chapter" data-level="3.2.7" data-path="chapter-1-statistical-properties.html"><a href="chapter-1-statistical-properties.html#portfolio-construction-and-mathematical-properties-using-matrix-algebra"><i class="fa fa-check"></i><b>3.2.7</b> Portfolio Construction and Mathematical Properties using Matrix Algebra</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html"><i class="fa fa-check"></i><b>4</b> Chapter 2: Risk and Return</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#the-time-series-of-returns---transformations-in-r-1"><i class="fa fa-check"></i><b>4.1</b> The time-series of Returns - Transformations in R</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#security-returns"><i class="fa fa-check"></i><b>4.2</b> Security Returns</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#simple-returns"><i class="fa fa-check"></i><b>4.2.1</b> Simple Returns</a></li>
+<li class="chapter" data-level="4.2.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#logarithmic-returns"><i class="fa fa-check"></i><b>4.2.2</b> Logarithmic Returns</a></li>
+<li class="chapter" data-level="4.2.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#accounting-for-dividends-total-returns"><i class="fa fa-check"></i><b>4.2.3</b> Accounting for Dividends: Total Returns</a></li>
+<li class="chapter" data-level="4.2.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#truncating-the-data"><i class="fa fa-check"></i><b>4.2.4</b> Truncating the data</a></li>
+<li class="chapter" data-level="4.2.5" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#arithmetic-vs.-geometric-returns"><i class="fa fa-check"></i><b>4.2.5</b> Arithmetic vs. Geometric Returns</a></li>
+<li class="chapter" data-level="4.2.6" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#cumulative-returns"><i class="fa fa-check"></i><b>4.2.6</b> Cumulative Returns</a></li>
+<li class="chapter" data-level="4.2.7" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#periodic-transformation-of-returns"><i class="fa fa-check"></i><b>4.2.7</b> Periodic Transformation of Returns</a></li>
+<li class="chapter" data-level="4.2.8" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#annualising-returns"><i class="fa fa-check"></i><b>4.2.8</b> Annualising Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-returns"><i class="fa fa-check"></i><b>4.3</b> Portfolio Returns</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#equal-weighted-returns"><i class="fa fa-check"></i><b>4.3.1</b> Equal-weighted Returns</a></li>
+<li class="chapter" data-level="4.3.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#value-weighted-returns"><i class="fa fa-check"></i><b>4.3.2</b> Value-weighted Returns</a></li>
+<li class="chapter" data-level="4.3.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#timing-of-returns"><i class="fa fa-check"></i><b>4.3.3</b> Timing of Returns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#nominal-vs.-real-returns"><i class="fa fa-check"></i><b>4.3.4</b> Nominal vs. Real Returns</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#individual-security-risk"><i class="fa fa-check"></i><b>4.4</b> Individual Security Risk</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#standard-deviation-and-variance"><i class="fa fa-check"></i><b>4.4.1</b> Standard Deviation and Variance</a></li>
+<li class="chapter" data-level="4.4.2" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#rolling-risk-characteristics"><i class="fa fa-check"></i><b>4.4.2</b> Rolling Risk Characteristics</a></li>
+<li class="chapter" data-level="4.4.3" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-risk"><i class="fa fa-check"></i><b>4.4.3</b> Portfolio Risk</a></li>
+<li class="chapter" data-level="4.4.4" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#portfolio-risk-for-multiple-assets"><i class="fa fa-check"></i><b>4.4.4</b> Portfolio Risk for Multiple Assets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#risk-in-extremes-and-alternative-risk-measures"><i class="fa fa-check"></i><b>4.5</b> Risk in Extremes and Alternative Risk Measures</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#value-at-risk-var"><i class="fa fa-check"></i><b>4.5.1</b> Value at Risk (VaR)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#plot-the-relationship"><i class="fa fa-check"></i><b>4.6</b> Plot the relationship</a></li>
+<li class="chapter" data-level="4.7" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#market-efficiency-and-independence-of-risk-and-return"><i class="fa fa-check"></i><b>4.7</b> Market Efficiency and independence of risk and return</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="chapter-2-risk-and-return.html"><a href="chapter-2-risk-and-return.html#variance-ratio-test"><i class="fa fa-check"></i><b>4.7.1</b> Variance Ratio Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><i class="fa fa-check"></i><b>5</b> Chapter 4: Inductive Statistics and Regression Analysis Fundamentals</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#inductive-statistics"><i class="fa fa-check"></i><b>5.1</b> Inductive Statistics</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#point-estimators"><i class="fa fa-check"></i><b>5.1.1</b> Point Estimators</a></li>
+<li class="chapter" data-level="5.1.2" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#confidence-intervals"><i class="fa fa-check"></i><b>5.1.2</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="5.1.3" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#hypothesis-testing"><i class="fa fa-check"></i><b>5.1.3</b> Hypothesis Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#introduction-to-regression-analysis"><i class="fa fa-check"></i><b>5.2</b> Introduction to Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#the-role-of-correlation"><i class="fa fa-check"></i><b>5.2.1</b> The role of correlation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#the-simple-univariate-regression-model"><i class="fa fa-check"></i><b>5.2.2</b> The simple / univariate regression model</a></li>
+<li class="chapter" data-level="5.2.3" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#the-multivariate-regression-model"><i class="fa fa-check"></i><b>5.2.3</b> The multivariate regression model</a></li>
+<li class="chapter" data-level="5.2.4" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#goodness-of-fit"><i class="fa fa-check"></i><b>5.2.4</b> Goodness of Fit</a></li>
+<li class="chapter" data-level="5.2.5" data-path="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html"><a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html#assumption-and-diagnostic-tests-of-ols"><i class="fa fa-check"></i><b>5.2.5</b> Assumption and diagnostic tests of OLS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chapter-5-beta.html"><a href="chapter-5-beta.html"><i class="fa fa-check"></i><b>6</b> Chapter 5: Beta</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chapter-5-beta.html"><a href="chapter-5-beta.html#application-of-regression-analysis-and-beta-analysis-in-financial-market-settings"><i class="fa fa-check"></i><b>6.1</b> Application of Regression Analysis and <span class="math inline">\(\beta\)</span> analysis in Financial Market Settings</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chapter-5-beta.html"><a href="chapter-5-beta.html#the-single-index-model"><i class="fa fa-check"></i><b>6.1.1</b> The Single Index Model</a></li>
+<li class="chapter" data-level="6.1.2" data-path="chapter-5-beta.html"><a href="chapter-5-beta.html#estimation-of-the-sim"><i class="fa fa-check"></i><b>6.1.2</b> Estimation of the SIM</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Empricial Finance and Statistical Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-5-beta" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Chapter 5: Beta</h1>
+<div id="application-of-regression-analysis-and-beta-analysis-in-financial-market-settings" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Application of Regression Analysis and <span class="math inline">\(\beta\)</span> analysis in Financial Market Settings</h2>
+<p>We now covered the theoretical fundamentals of both the statistical and algebraic properties and defined a method to apply these properties into a coherent cause-and-effect analysis. We also understand the idea of co-movements and variation within a this framework and can depict how to account for the pure covariation of two variables within a multi-dimensional setting. Lastly, we do understand the sample properties of the estimators at hand and derive how to check for both the assumptions made within the regression settings as well as the model fit. Now, we are eager to apply our knowledge within a financial domain.</p>
+<p>In essence, we understand that the term <span class="math inline">\(\beta\)</span>, in statistics, is simply the coefficient of an explanatory variable <span class="math inline">\(x_i\)</span> within a regression setting. It states the <strong>average change in the dependent variable when, keeping all other variables constant, the explanatory variable changes by one unit</strong>, whereas unit is a measurement indicator (such as percentage points, price in dollars, years etc.). This holds true for many applications within financial econometric settings, which combines financial and economic theory with statistical quantification. However, within financial economics, we usually think of <span class="math inline">\(\beta\)</span> in terms of the <strong>sensitivity of the security return relative to variations in the market return</strong>. Most famously, we associate <span class="math inline">\(\beta\)</span> with the following formula:</p>
+<p><span class="math display">\[
+\hat{\beta} = \frac{cov(r_i,r_m)}{var(r_m)}
+\]</span></p>
+<p>Mathematically speaking, in financial economics, we usually define <span class="math inline">\(\beta\)</span> as the covariance of the individual security return with the market return relative to the variance of the market return (= the covariance of the market return with itself). We can see that this is solely a specification of the general <span class="math inline">\(\beta\)</span> factor that associates co-movements of any dependent and explanatory variable with the variation of the explanatory variable itself. Within the general OLS setting, we simply defined the former as <span class="math inline">\(x_i\)</span> and the latter as <span class="math inline">\(y_i\)</span>. As such, the general regression coefficient states nothing else than the variation of a variable based on the relational variation with a different variable. In the case of financial economics, we derive from economic theory that a covariation between individual returns and underlying market returns may be likely. However, from an econometric point of view, this is identical to the derivation of the general regression coefficient within a simple OLS framework.</p>
+<p>Consequently, the method of finding a <span class="math inline">\(\beta\)</span> factor that explains security returns is coherent with the general regression framework technique. In this chapter, we start exploring how researchers came to this result, what it implies and whether it actually reflects market settings. Further, we obtain a more econometric setting and want to understand how we can use econometric functions through regression techniques based on financial economics relationships in R.</p>
+<div id="the-single-index-model" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> The Single Index Model</h3>
+<p>The relationship portrayed above is the key factor of one of the most fundamental asset pricing models: The <strong>Single-Index Model</strong>. The Single-Index model (SIM) is a simple asset pricing model to measure both the risk and the return of a stock as well as their interconnections. The model has been developed by William Sharpe in 1963. In essence, it assumes that variations of individual securities are linearly related to variations of a common underlying market structure, or factor. In this case, market structure is defined as an index to which the security belongs.</p>
+<p>The SIM thus builds on the previous notions of risk we encountered when assessing the security variance as tool to measure risk. Remember, in Chapter 4.4.4 as well as in the Linear Algebra repetition we have shown that the portfolio variance in the general case of N (not perfectly correlated) assets is:</p>
+<p><span class="math display">\[
+var(w&#39;\textbf{R}) = \frac{1}{n}\bar{\sigma}^2_i + (1-\frac{1}{n})\bar{\sigma}_{ij}
+\]</span>
+That is, the risk of a portfolio depends on both the <em>variation of the individual securities</em> as well as their <em>covariation with the underlying assets</em>. In general notion, these two terms are the <em>Idiosyncratic</em> as well as the <em>Systematic</em> part of portfolio risk. As we showed, the variance of a portfolio decreases with an increasing amount of imperfectly correlated assets. This process, known as diversification, cancels out the idiosyncratic part of risk, leaving only the systematic part of risk left within a portfolio. As such, each well-diversified portfolio solely depends on the covariation between the underlying assets. In order to measure said systematic risk component, we need to capture the common components of the covariation properties of the underlying assets. In essence, we need to quantify a common component on which the set of security returns jointly depends and which captures the required compensation to risk within a portfolio setting.</p>
+<p>In order to do so, the SIM explains the covariance and correlation structure among asset returns as resulting from common exposures to an underlying market index. That is, it quantifies the security’s risk as its covariation properties relative to the underlying, common variation of a market factor. In other words, it measures risk by the co-movements of a security and market return relative to the variation of the underlying market. This relative co-dependence to a common factor is measured by the <span class="math inline">\(\beta\)</span> factor we have encountered before.</p>
+<div id="assessing-the-co-dependence-of-security-returns-and-a-common-factor" class="section level4" number="6.1.1.1">
+<h4><span class="header-section-number">6.1.1.1</span> Assessing the co-dependence of security returns and a common factor</h4>
+<p>To understand the intuition behind the SIM, we make use of the co-dependence of the security returns to a common, underlying factor. To see why we hypothesize this relationship, let’s look at the prices and returns of the Big Four companies and a common index, the Swiss Market Index (SM)</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="chapter-5-beta.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the datasets</span></span>
+<span id="cb362-2"><a href="chapter-5-beta.html#cb362-2" aria-hidden="true" tabindex="-1"></a>stocks <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Desktop/Master UZH/Data/A2_dataset_01.txt&quot;</span>, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb362-3"><a href="chapter-5-beta.html#cb362-3" aria-hidden="true" tabindex="-1"></a>SMI <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Desktop/Master UZH/Data/A2_dataset_03.txt&quot;</span>, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb362-4"><a href="chapter-5-beta.html#cb362-4" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Desktop/Master UZH/Data/A2_dataset_02.txt&quot;</span>, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb362-5"><a href="chapter-5-beta.html#cb362-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb362-6"><a href="chapter-5-beta.html#cb362-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the columns of interest</span></span>
+<span id="cb362-7"><a href="chapter-5-beta.html#cb362-7" aria-hidden="true" tabindex="-1"></a>stocks <span class="ot">&lt;-</span> stocks <span class="sc">%&gt;%</span> </span>
+<span id="cb362-8"><a href="chapter-5-beta.html#cb362-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(Date, Nestle_PS, Roche_Holding, Novartis_N, UBS_N)) <span class="sc">%&gt;%</span> </span>
+<span id="cb362-9"><a href="chapter-5-beta.html#cb362-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Date <span class="sc">&gt;</span> <span class="st">&quot;1997-08-29&quot;</span>)</span>
+<span id="cb362-10"><a href="chapter-5-beta.html#cb362-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb362-11"><a href="chapter-5-beta.html#cb362-11" aria-hidden="true" tabindex="-1"></a>SMI <span class="ot">&lt;-</span> SMI <span class="sc">%&gt;%</span> </span>
+<span id="cb362-12"><a href="chapter-5-beta.html#cb362-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(Date, SMI)) <span class="sc">%&gt;%</span> </span>
+<span id="cb362-13"><a href="chapter-5-beta.html#cb362-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Date <span class="sc">&gt;</span> <span class="st">&quot;1997-08-29&quot;</span>)</span>
+<span id="cb362-14"><a href="chapter-5-beta.html#cb362-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb362-15"><a href="chapter-5-beta.html#cb362-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Bind both together</span></span>
+<span id="cb362-16"><a href="chapter-5-beta.html#cb362-16" aria-hidden="true" tabindex="-1"></a>stocks_SMI <span class="ot">&lt;-</span> <span class="fu">cbind</span>(stocks, SMI)</span>
+<span id="cb362-17"><a href="chapter-5-beta.html#cb362-17" aria-hidden="true" tabindex="-1"></a>stocks_SMI <span class="ot">&lt;-</span> <span class="fu">subset</span>(stocks_SMI[, <span class="sc">-</span><span class="dv">6</span>])</span>
+<span id="cb362-18"><a href="chapter-5-beta.html#cb362-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb362-19"><a href="chapter-5-beta.html#cb362-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform all into xts objects</span></span>
+<span id="cb362-20"><a href="chapter-5-beta.html#cb362-20" aria-hidden="true" tabindex="-1"></a>stocks_SMI_ts <span class="ot">&lt;-</span> <span class="fu">xts</span>(stocks_SMI[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">order.by =</span> <span class="fu">as.Date</span>(stocks_SMI[,<span class="dv">1</span>]))</span>
+<span id="cb362-21"><a href="chapter-5-beta.html#cb362-21" aria-hidden="true" tabindex="-1"></a>stocks_SMI_ts_ret <span class="ot">&lt;-</span> <span class="fu">Return.calculate</span>(stocks_SMI_ts, <span class="at">method =</span> <span class="st">&quot;discrete&quot;</span>)[<span class="sc">-</span><span class="dv">1</span>,]</span></code></pre></div>
+<p>First, let’s look at the returns of the companies and index</p>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="chapter-5-beta.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(stocks_SMI_ts_ret) <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>index,<span class="at">y=</span> value, <span class="at">color=</span>series)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb363-2"><a href="chapter-5-beta.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;Returns&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Time&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Return of the Big Four and SMI from 1988 to 2000&quot;</span>) <span class="sc">+</span></span>
+<span id="cb363-3"><a href="chapter-5-beta.html#cb363-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color=</span><span class="st">&#39;Cumulative Return&#39;</span>) <span class="sc">+</span></span>
+<span id="cb363-4"><a href="chapter-5-beta.html#cb363-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
+<span id="cb363-5"><a href="chapter-5-beta.html#cb363-5" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.3</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">15</span>,<span class="dv">0</span>,<span class="dv">15</span>,<span class="dv">45</span>)), </span>
+<span id="cb363-6"><a href="chapter-5-beta.html#cb363-6" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb363-7"><a href="chapter-5-beta.html#cb363-7" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb363-8"><a href="chapter-5-beta.html#cb363-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb363-9"><a href="chapter-5-beta.html#cb363-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb363-10"><a href="chapter-5-beta.html#cb363-10" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
+<span id="cb363-11"><a href="chapter-5-beta.html#cb363-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>)),</span>
+<span id="cb363-12"><a href="chapter-5-beta.html#cb363-12" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>)),</span>
+<span id="cb363-13"><a href="chapter-5-beta.html#cb363-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-447-1.png" width="672" /></p>
+<p>The time plots of returns show some common movements among the stocks that are similar to movements of the SMI. The figure shows further that individual stock returns are more volatile than the SMI returns, and that the movement in stock returns tends to follow the movements in the SMI returns indicating positive covariance and correlations.</p>
+<p>Let’s examine this more thoroughly.</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="chapter-5-beta.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and display the codependence structure</span></span>
+<span id="cb364-2"><a href="chapter-5-beta.html#cb364-2" aria-hidden="true" tabindex="-1"></a>vcov_bigfour_smi <span class="ot">&lt;-</span> <span class="fu">cov</span>(stocks_SMI_ts_ret)</span>
+<span id="cb364-3"><a href="chapter-5-beta.html#cb364-3" aria-hidden="true" tabindex="-1"></a>corr_bigfour_smi <span class="ot">&lt;-</span> <span class="fu">cov2cor</span>(vcov_bigfour_smi)</span>
+<span id="cb364-4"><a href="chapter-5-beta.html#cb364-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb364-5"><a href="chapter-5-beta.html#cb364-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(corr_bigfour_smi, <span class="at">upper=</span><span class="st">&quot;ellipse&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-448-1.png" width="672" /></p>
+<p>All returns are positively correlated and each stock return has the highest positive correlation with the SMI.</p>
+<p>Further, we can plot the relation between both the individual security return and the SMI and assess to what extent it is linear.</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="chapter-5-beta.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a list with names of the companies</span></span>
+<span id="cb365-2"><a href="chapter-5-beta.html#cb365-2" aria-hidden="true" tabindex="-1"></a>names <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;UBS&quot;</span>)</span>
+<span id="cb365-3"><a href="chapter-5-beta.html#cb365-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb365-4"><a href="chapter-5-beta.html#cb365-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Redefine a data frame</span></span>
+<span id="cb365-5"><a href="chapter-5-beta.html#cb365-5" aria-hidden="true" tabindex="-1"></a>stocks_SMI_df_ret <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(stocks_SMI_ts_ret)</span>
+<span id="cb365-6"><a href="chapter-5-beta.html#cb365-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(stocks_SMI_df_ret) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;UBS&quot;</span>, <span class="st">&quot;SMI&quot;</span>)</span>
+<span id="cb365-7"><a href="chapter-5-beta.html#cb365-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb365-8"><a href="chapter-5-beta.html#cb365-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create another for loop to plot multiple relationships </span></span>
+<span id="cb365-9"><a href="chapter-5-beta.html#cb365-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(stocks_SMI_df_ret)<span class="sc">-</span><span class="dv">1</span>)){</span>
+<span id="cb365-10"><a href="chapter-5-beta.html#cb365-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(<span class="fu">paste</span>(<span class="st">&quot;figure_&quot;</span>, names[i], <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), </span>
+<span id="cb365-11"><a href="chapter-5-beta.html#cb365-11" aria-hidden="true" tabindex="-1"></a>         stocks_SMI_df_ret <span class="sc">%&gt;%</span> </span>
+<span id="cb365-12"><a href="chapter-5-beta.html#cb365-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes_string</span>(<span class="at">x =</span> <span class="st">&quot;SMI&quot;</span>, <span class="at">y =</span> names[[i]])) <span class="sc">+</span></span>
+<span id="cb365-13"><a href="chapter-5-beta.html#cb365-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">&quot;deepskyblue4&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb365-14"><a href="chapter-5-beta.html#cb365-14" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F, <span class="at">col =</span> <span class="st">&quot;deeppink4&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb365-15"><a href="chapter-5-beta.html#cb365-15" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="fu">paste</span>(<span class="st">&quot;Returns&quot;</span>, names[i], <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;SMI Returns&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb365-16"><a href="chapter-5-beta.html#cb365-16" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Title string</span></span>
+<span id="cb365-17"><a href="chapter-5-beta.html#cb365-17" aria-hidden="true" tabindex="-1"></a>           <span class="co"># ggtitle(&quot;Relationship of SMI and Big Four Company Return&quot;) +</span></span>
+<span id="cb365-18"><a href="chapter-5-beta.html#cb365-18" aria-hidden="true" tabindex="-1"></a>           <span class="fu">labs</span>(<span class="at">color=</span><span class="st">&#39;Factor Portfolios&#39;</span>) <span class="sc">+</span></span>
+<span id="cb365-19"><a href="chapter-5-beta.html#cb365-19" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme</span>(</span>
+<span id="cb365-20"><a href="chapter-5-beta.html#cb365-20" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Title Elements</span></span>
+<span id="cb365-21"><a href="chapter-5-beta.html#cb365-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">hjust=</span><span class="fl">0.3</span>,<span class="at">lineheight=</span><span class="fl">0.4</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">15</span>,<span class="dv">0</span>,<span class="dv">15</span>,<span class="dv">0</span>)),</span>
+<span id="cb365-22"><a href="chapter-5-beta.html#cb365-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>)),</span>
+<span id="cb365-23"><a href="chapter-5-beta.html#cb365-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color=</span><span class="st">&quot;grey26&quot;</span>, <span class="at">size=</span><span class="dv">12</span>, <span class="at">margin=</span><span class="fu">margin</span>(<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>)),</span>
+<span id="cb365-24"><a href="chapter-5-beta.html#cb365-24" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Background colour and fill</span></span>
+<span id="cb365-25"><a href="chapter-5-beta.html#cb365-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb365-26"><a href="chapter-5-beta.html#cb365-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb365-27"><a href="chapter-5-beta.html#cb365-27" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Major Panel Grids</span></span>
+<span id="cb365-28"><a href="chapter-5-beta.html#cb365-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb365-29"><a href="chapter-5-beta.html#cb365-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb365-30"><a href="chapter-5-beta.html#cb365-30" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Minor Panel Grids</span></span>
+<span id="cb365-31"><a href="chapter-5-beta.html#cb365-31" aria-hidden="true" tabindex="-1"></a>           <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb365-32"><a href="chapter-5-beta.html#cb365-32" aria-hidden="true" tabindex="-1"></a>           <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb365-33"><a href="chapter-5-beta.html#cb365-33" aria-hidden="true" tabindex="-1"></a>           <span class="co"># Line colour of the x and y axis</span></span>
+<span id="cb365-34"><a href="chapter-5-beta.html#cb365-34" aria-hidden="true" tabindex="-1"></a>           <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)))</span>
+<span id="cb365-35"><a href="chapter-5-beta.html#cb365-35" aria-hidden="true" tabindex="-1"></a>}  </span>
+<span id="cb365-36"><a href="chapter-5-beta.html#cb365-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb365-37"><a href="chapter-5-beta.html#cb365-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Take them together in a multi-plot</span></span>
+<span id="cb365-38"><a href="chapter-5-beta.html#cb365-38" aria-hidden="true" tabindex="-1"></a>Rmisc<span class="sc">::</span><span class="fu">multiplot</span>(figure_Nestle, figure_Novartis, figure_Roche, figure_UBS, <span class="at">cols =</span> <span class="dv">2</span>)  </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-449-1.png" width="672" /></p>
+<p>The scatterplots show that as the market return increases, the returns on each stock increase in a linear way.</p>
+</div>
+<div id="sharpes-single-index-model" class="section level4" number="6.1.1.2">
+<h4><span class="header-section-number">6.1.1.2</span> Sharpe’s Single-Index Model</h4>
+<p>Based on the observations made above, William Sharpe hypothesized that a single security’s return is described by</p>
+<ul>
+<li>systematic (macroeconomic) uncertainty component (which is assumed to be well represented by a single index of stock returns)</li>
+<li>unique (microeconomic) uncertainty component (which is represented by a security-specific random component)</li>
+</ul>
+<p>And that these securities tend to move together driven by the same the same forces, which can be approximated by a single factor, or index.</p>
+<p>For that, let <span class="math inline">\(R_{it}\)</span> denote the simple return on asset i over the investment horizon between times t-1 and t. Further, let <span class="math inline">\(R_{mt}\)</span> denote the simple return on a well diversified market index portfolio (e.g. the SMI). The SIM has the form:</p>
+<p><span class="math display">\[
+R_{it} = \alpha_i + \beta_iR_{mt} + \epsilon_{it}
+\]</span></p>
+<p>Whereas:</p>
+<p><span class="math display">\[
+\begin{align}
+R_{mt} &amp;\sim iid N(0,\sigma_m^2) \\
+\epsilon_{it} &amp;\sim N(0, \sigma_{\epsilon,i}^2) \\
+cov(R_{mt}, \epsilon_{is}) &amp;= 0 &amp;&amp; \text{no co-dependence of any security&#39;s error term w/ market } \\
+cov(\epsilon_{it}, \epsilon_{is}) &amp;= 0 &amp;&amp; \text{no co-dependence of any security&#39;s error with others}
+\end{align}
+\]</span></p>
+<p>The SIM assumes that all individual asset returns, <span class="math inline">\(R_{it}\)</span>, are covariance stationary and are a linear function of the market index return (systematic uncertainty), <span class="math inline">\(R_{mt}\)</span> and an independent error term, <span class="math inline">\(\epsilon_{it}\)</span> (unique uncertainty).</p>
+</div>
+<div id="economic-interpretation-of-the-variables" class="section level4" number="6.1.1.3">
+<h4><span class="header-section-number">6.1.1.3</span> Economic Interpretation of the variables</h4>
+<p>First, let’s look at <span class="math inline">\(\beta_i\)</span>. It represents the slope coefficient in the linear relationship between <span class="math inline">\(R_{it}\)</span> and <span class="math inline">\(R_{mt}\)</span>. It is written as the partial derivative of the SIM w.r.t. the Market Index Return:</p>
+<p><span class="math display">\[
+\frac{\delta SIM}{\delta R_{mt}} = \beta_i
+\]</span></p>
+<p>That, is <span class="math inline">\(\beta_i\)</span> is the average effect on the security return, <span class="math inline">\(R_{it}\)</span>, when the market return, <span class="math inline">\(R_{mt}\)</span>, changes by one unit. The larger (smaller) <span class="math inline">\(\beta_i\)</span>, the more extreme (less extreme) is the variation of asset i relative to the variation of the market return.</p>
+<p>Further, we regard the coefficient in terms of portfolio risk budgeting. Given the formula for <span class="math inline">\(\hat{\beta}\)</span>, the covariance is a relative quantity proportional to the overall variation of the underlying index. Consequently, <span class="math inline">\(\hat{\beta}\)</span> is <em>proportional to the marginal volatility contribution of asset i to the volatility of the market portfolio</em>. Therefore, assets with large (small) values of <span class="math inline">\(\hat{\beta}\)</span> contribute more (less) heavily to the overall volatility of the market portfolio. From this point of view, <strong>the coefficient of the SIM can be interpreted as measure of portfolio risk</strong>. <strong>More allocations to assets with high (low) values will increase (decrease) portfolio risk (as measured by portfolio volatility)</strong> due to the relative volatility principle.</p>
+<p>The derivation of the coefficient is rather straightforward and displays clearly the covariation properties:</p>
+<p><span class="math display">\[
+\begin{align}
+cov(R_{it}, R_{mt}) &amp;= cov(\alpha_i + \beta_iR_{mt} + \epsilon_{it}, R_{mt}) \\
+&amp;= \underbrace{cov(\alpha_i, R_{mt})}_{=0} + \beta_i\underbrace{ cov(R_{mt}, R_{mt})}_{=var(R_{mt})} + \underbrace{cov(\epsilon_{it}, R_{mt})}_{=0} \\
+&amp;\rightarrow \beta_i = \frac{cov(R_{it}, R_{mt})}{var(R_{mt})}
+\end{align}
+\]</span></p>
+<p>In addition, we can think of <span class="math inline">\(R_{mt}\)</span> as capturing “market-wide” news at time t that is common to all assets and <span class="math inline">\(\beta_i\)</span> captures the sensitivity or exposure of asset i to this <em>market-wide news</em>. Further, we can think of <span class="math inline">\(\epsilon_{it}\)</span> as capturing specific news to asset i that is <em>unrelated to market news or to specific news to any other asset j</em>. Lastly, <span class="math inline">\(\alpha_i\)</span> can be interpreted as the expected return if the expected market return is exactly zero.</p>
+<p>Consequently, we see that:</p>
+<ul>
+<li><span class="math inline">\(\epsilon_{it}\)</span>: part of the return independent of the index</li>
+<li><span class="math inline">\(\beta_iR_{mt}\)</span>: part of the return due to index fluctuations</li>
+</ul>
+</div>
+<div id="statistical-properties-of-the-sim" class="section level4" number="6.1.1.4">
+<h4><span class="header-section-number">6.1.1.4</span> Statistical Properties of the SIM</h4>
+<p><strong>Single-Asset properties</strong></p>
+<p>The following statistical properties hold for the SIM:</p>
+<p><span class="math display">\[
+\begin{align}
+E[R_{it}] &amp;= \alpha_i + \beta_iR_{mt}\\
+var[R_{it}] &amp;= \beta_i^2var(R_{mt}^2) + \sigma_{\epsilon,i}^2 \\
+cov[R_{it}, R_{jt}] &amp;= \beta_i\beta_j\sigma_m^2
+\end{align}
+\]</span></p>
+<p>Looking more thoroughly at the overall security variance, we see that it consists of two parts:</p>
+<p><span class="math display">\[
+var[R_{it}] = \underbrace{\beta_i^2\sigma_{m}^2}_{\text{market variance (sytematic part)}} + \underbrace{\sigma_{\epsilon,i}^2}_{\text{asset specific variance (unique part)}}
+\]</span></p>
+<p><strong>Portfolio properties</strong></p>
+<p>A nice feature of the SI model for asset returns is that it also holds for a portfolio of asset returns. This property follows because asset returns are a linear function of the market return. To illustrate this, let’s look at a portfolio with two assets:</p>
+<p><span class="math display">\[
+\begin{align}
+R_{1t} &amp;= \alpha_1 + \beta_1R_{mt} + \epsilon_{1t} \\
+R_{2t} &amp;= \alpha_2 + \beta_2R_{mt} + \epsilon_{2t}
+\end{align}
+\]</span></p>
+<p>Then, the portfolio return with weights <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> is:</p>
+<p><span class="math display">\[
+\begin{align}
+R_{pt} &amp;= x_1(\alpha_1 + \beta_1R_{mt} + \epsilon_{1t}) + x_2(R_{2t} + \alpha_2 + \beta_2R_{mt} + \epsilon_{2t}) \\
+&amp;= (x_1\alpha_1)x_2\alpha_2) + (x_1\beta_1 + x_2\beta_2)R_{mt} + (x_1\epsilon_{1t} + x_2\epsilon_{2t}) \\
+&amp;= \alpha_{p} + \beta_pR_{mt} + \epsilon_{p,t}
+\end{align}
+\]</span>
+whereas <span class="math inline">\(\alpha_{p} = (x_1\alpha_1)x_2\alpha_2)\)</span>, <span class="math inline">\(\beta_p = (x_1\beta_1 + x_2\beta_2)\)</span> and <span class="math inline">\(\epsilon_{p,t} = (x_1\epsilon_{1t} + x_2\epsilon_{2t})\)</span>. Consequently, we see that the portfolio returns follow the same linear dependence as the single asset model returns.</p>
+<p>If we increase this to N assets, we obtain the following <em>expected return</em>:</p>
+<p><span class="math display">\[
+\begin{align}
+E[r_{it}] &amp;= \sum_{i=1}^nx_iR_{it} \\
+&amp;= \sum_{i=1}^n x_i(\alpha_i + \beta_iR_{mt} + \epsilon_{it})\\
+&amp;= \frac{1}{n}\sum_{i=1}^n \alpha_i + R_{mt}\frac{1}{n}\sum_{i=1}^n\beta_i + \frac{1}{n}\sum_{i=1}^n \epsilon_{it} \\
+&amp;= \bar{\alpha} + \bar{\beta}R_{mt} + \bar{\epsilon_t}
+\end{align}
+\]</span></p>
+<p>Which implies the return of the portfolio depends on the</p>
+<ul>
+<li>sensitivity of the portfolio to the market, given by <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\beta_i\)</span></li>
+<li>sensitivity to a non-market component, given by <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n \alpha_i\)</span></li>
+<li>error component, given by <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n \epsilon_{it}\)</span></li>
+</ul>
+<p>That said, the expected portfolio return depends on the same constituents as the single asset return.</p>
+<p>We can also draw the properties for the <em>variance</em> of the portfolio returns. The portfolio variance follows the <em>same properties</em> as we have already seen when considering the <em>diversification properties</em> earlier. That is, when increasing the portfolio by imperfectly correlated assets, the systematic component will stay but the idiosyncratic component will be diversified away:</p>
+<p><span class="math display">\[
+var(\bar{\epsilon_t}) = var(\frac{1}{n}\sum_{i=1}^n \epsilon_{it}) = \frac{1}{n^2}\sum_{i=1}^n var(\epsilon_{it}) = \frac{1}{n}(\frac{1}{n}\sum_{i=1}^n var(\epsilon_{it})) = \frac{1}{n}\sigma_{\epsilon,i}^2
+\]</span></p>
+<p>Now, as n increases, the idiosyncratic volatility part will approach zero (LLN property). Consequently, we get that:</p>
+<p><span class="math display">\[
+\begin{align}
+var[R_{pt}] &amp;= \bar{\beta}^2\sigma^2_{m} \\
+SD[R_{pt}] &amp;= |\bar{\beta}|\sigma_{m}
+\end{align}
+\]</span></p>
+<p>Hence, the portfolio volatility is <em>proportional to market volatility</em> where the factor of proportionality is the <em>absolute value of portfolio beta</em>.</p>
+<p>This helps us to understand the type of risk that gets diversified away and the type of risk that remains when we form diversified portfolios:</p>
+<ul>
+<li>Asset specific risk, which is uncorrelated across assets, gets diversified away</li>
+<li>Market risk, which is common to all assets, does not get diversified away</li>
+</ul>
+</div>
+<div id="the-sim-in-matrix-form" class="section level4" number="6.1.1.5">
+<h4><span class="header-section-number">6.1.1.5</span> The SIM in Matrix Form</h4>
+<p>Because we have always considered portfolios in matrix notation so far, let’s stick to this principle and try to understand the implications from it.</p>
+<p>For i = 1,…,n assets, stacking multiple returns provides us with the SIM in matrix notation form:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+R_{1t} \\ R_{2t} \\ \vdots \\ R_{nt} 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+\alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n
+\end{bmatrix} 
++
+\begin{bmatrix}
+\beta_{1} \\ \beta_{2} \\ \vdots \\ \beta_{n} 
+\end{bmatrix}
+R_{mt} 
++ 
+\begin{bmatrix}
+\epsilon_{1t} \\ \epsilon_{2t} \\ \vdots \\ \epsilon_{nt}
+\end{bmatrix} 
+\]</span></p>
+<p>Therein, we can re-write the statistical properties defined before in matrix notation as:</p>
+<p><span class="math display">\[
+\begin{align}
+E[\textbf{R}_t] &amp;= \alpha + \beta\mu_m \\
+var[\textbf{R}_t] &amp;= \Sigma = \beta var(R_{mt})\beta&#39; + \textbf{D}  = \sigma_m^2\beta\beta&#39; + \textbf{D} 
+\end{align}
+\]</span></p>
+<p>whereas <span class="math inline">\(\textbf{D}\)</span>:</p>
+<p><span class="math display">\[
+\textbf{D} = var(\epsilon_t) =
+\begin{bmatrix}
+\sigma_{\epsilon,1}^2 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; \sigma_{\epsilon,2}^2 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; \sigma_{\epsilon,n}^2
+\end{bmatrix}
+\]</span></p>
+<p>Note that, from linear algebra, we know that <span class="math inline">\(var(w\textbf{X}) = w\textbf{X}w&#39;\)</span>. The <span class="math inline">\(\textbf{D}\)</span> uses the assumption that the <strong>Market Return is uncorrelated with all asset-individual error terms</strong>. This implies that there is no covariance between the error terms of the individual asset returns, as they do not depend on any common factor.</p>
+<p>To comprehend this behaviour and the subsequent portfolio variance better, it is handy to look at the case with n = 3. In this case:</p>
+<p><span class="math display">\[
+\begin{align}
+\Sigma &amp;= 
+\begin{bmatrix}
+var(R_{1t}) &amp; cov(R_{1t}, R_{2t}) &amp; cov(R_{1t}, R_{3t}) \\
+cov(R_{2t}, R_{1t}) &amp; var(R_{2t}) &amp;  cov(R_{2t}, R_{3t})  \\
+cov(R_{3t}, R_{1t})  &amp; cov(R_{3t}, R_{2t})  &amp; var(R_{3t})
+\end{bmatrix} \\
+&amp;= 
+\begin{bmatrix}
+\sigma_1^2 &amp; \sigma_{12} &amp; \sigma_{13} \\
+\sigma_{21} &amp; \sigma_2^2 &amp; \sigma_{23} \\
+\sigma_{31} &amp; \sigma_{32} &amp; \sigma_3^2
+\end{bmatrix} \\
+&amp;= 
+\begin{bmatrix}
+\beta_1^2\sigma_m^2 + \sigma_{\epsilon, 1}^2 &amp; \sigma_m\beta_1\beta_2 &amp; \sigma_m^2\beta_1\beta_3 \\
+\sigma_m\beta_2\beta_1 &amp;  \beta_2^2\sigma_m^2 + \sigma_{\epsilon, 2}^2 &amp; \sigma_m^2\beta_1\beta_3 \\
+\sigma_m\beta_3\beta_1 &amp;  \sigma_m\beta_3\beta_2 &amp; \beta_3^2\sigma_m^2 + \sigma_{\epsilon, 3}^2
+\end{bmatrix} \\
+&amp;= \sigma_m^2
+\begin{bmatrix}
+\beta_1^2 &amp; \beta_1\beta_2 &amp; 2\beta_1\beta_3 \\
+\beta_2\beta_1 &amp;  \beta_2^2 &amp; \beta_1\beta_3 \\
+\beta_3\beta_1 &amp;  \beta_3\beta_2 &amp; \beta_3^2
+\end{bmatrix} 
++ 
+\begin{bmatrix} 
+\sigma_{\epsilon,1}^2 &amp; 0 &amp; 0 \\
+0 &amp; \sigma_{\epsilon,2}^2 &amp; 0 \\
+0 &amp; 0 &amp; \sigma_{\epsilon,n}^2
+\end{bmatrix} 
+\end{align}
+\]</span></p>
+<p>The first matrix shows the return variance and covariance contributions due to the market returns, and the second matrix shows the contributions due to the asset specific errors.</p>
+<p>As such, we again retrieved that the portfolio variance depends on both a systematic and an idiosyncratic part, which, due to its independence properties, will approach zero in case of imperfectly correlated portfolios.</p>
+</div>
+</div>
+<div id="estimation-of-the-sim" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Estimation of the SIM</h3>
+<p>In order to retrieve the SIM coefficients, we will use the <em>least squares estimate procedure</em> as well as the <em>manual computation principle</em>. Although we expect you to be familiar with regression-type analysis, we still made a chapter on it available within the part on Inductive Statistics. You can find the respective information and applications in the sub-chapter <em>theoretical Introduction to Regression Analysis</em>.</p>
+<div id="ordinary-least-squares-ols-procedure" class="section level4" number="6.1.2.1">
+<h4><span class="header-section-number">6.1.2.1</span> Ordinary Least Squares (OLS) procedure</h4>
+<p>Now, let’s look at the SIM. For that, we have time-series data of the big four companies in Switzerland from 2013-01-31 to 2017-12-31. Let’s dig into the regression setting. We start first by regressing the individual security returns on the market return. Note that we do not yet incorporate any risk-free return.</p>
+<p>As we know from the lecture, the traditional textbook recipe is:</p>
+<ol style="list-style-type: decimal">
+<li>Take 60 months of total return (including dividends) data of the stock (i) and the market (m)</li>
+<li>Run following time-series regression: <span class="math inline">\(R_{it} - r_f = \alpha_i + \beta_i(R_{mt} - r_f) + \epsilon_{it}\)</span></li>
+<li>Apply a ”Bloomberg” adjustment – shrink the beta towards 1: <span class="math inline">\(\beta_{BA} = (1-AF)\hat{\beta} + AF\)</span></li>
+</ol>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="chapter-5-beta.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Since we work with monthly observations, we need to change the risk-free rate accordingly. </span></span>
+<span id="cb366-2"><a href="chapter-5-beta.html#cb366-2" aria-hidden="true" tabindex="-1"></a>rf_ts <span class="ot">&lt;-</span> <span class="fu">xts</span>(rf[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">order.by =</span> <span class="fu">as.Date</span>(rf[,<span class="dv">1</span>]))</span>
+<span id="cb366-3"><a href="chapter-5-beta.html#cb366-3" aria-hidden="true" tabindex="-1"></a>rf_ts_yearly <span class="ot">&lt;-</span> rf_ts<span class="sc">$</span>SWISS.CONFEDERATION.BOND.<span class="fl">1.</span>YEAR...RED..YIELD <span class="sc">/</span> <span class="dv">100</span></span>
+<span id="cb366-4"><a href="chapter-5-beta.html#cb366-4" aria-hidden="true" tabindex="-1"></a>rf_ts_monthly <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">+</span> rf_ts_yearly)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>In R, the usual command for conducting regression is the following:</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="chapter-5-beta.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, define a different name for the rf</span></span>
+<span id="cb367-2"><a href="chapter-5-beta.html#cb367-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rf_ts_monthly) <span class="ot">&lt;-</span> <span class="st">&quot;rf_1_year&quot;</span></span>
+<span id="cb367-3"><a href="chapter-5-beta.html#cb367-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s run the simple OLS</span></span>
+<span id="cb367-4"><a href="chapter-5-beta.html#cb367-4" aria-hidden="true" tabindex="-1"></a>reg_Nestle <span class="ot">&lt;-</span> <span class="fu">lm</span>(stocks_SMI_ts_ret<span class="sc">$</span>Nestle_PS[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">~</span> stocks_SMI_ts_ret<span class="sc">$</span>SMI[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>])</span>
+<span id="cb367-5"><a href="chapter-5-beta.html#cb367-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb367-6"><a href="chapter-5-beta.html#cb367-6" aria-hidden="true" tabindex="-1"></a>reg_Novartis <span class="ot">&lt;-</span> <span class="fu">lm</span>(stocks_SMI_ts_ret<span class="sc">$</span>Novartis_N[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">~</span> stocks_SMI_ts_ret<span class="sc">$</span>SMI[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>])</span>
+<span id="cb367-7"><a href="chapter-5-beta.html#cb367-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb367-8"><a href="chapter-5-beta.html#cb367-8" aria-hidden="true" tabindex="-1"></a>reg_Roche <span class="ot">&lt;-</span> <span class="fu">lm</span>(stocks_SMI_ts_ret<span class="sc">$</span>Roche_Holding[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">~</span> stocks_SMI_ts_ret<span class="sc">$</span>SMI[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>])</span>
+<span id="cb367-9"><a href="chapter-5-beta.html#cb367-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb367-10"><a href="chapter-5-beta.html#cb367-10" aria-hidden="true" tabindex="-1"></a>reg_UBS <span class="ot">&lt;-</span> <span class="fu">lm</span>(stocks_SMI_ts_ret<span class="sc">$</span>UBS_N[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">~</span> stocks_SMI_ts_ret<span class="sc">$</span>SMI[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>] <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>])</span></code></pre></div>
+<p>The <code>~</code>sign is also called <code>tilde</code>. It is used to define the regression property. In essence it states for <strong>regress the dependent variable on the explanatory variable(s)</strong>. Note we also have to define the <code>data</code> argument, which is the indication from which dataset we take the variables.</p>
+<p>It is good to understand what this command actually provides us with. To do so, we can add a <code>$</code> sign after the created variable:</p>
+<ul>
+<li><code>coefficients</code>: Displays the coefficients of the intercept and the explanatory variables</li>
+<li><code>residuals</code>: Displays the residual values of the regression <span class="math inline">\((\hat{y}_i - y_i)\)</span></li>
+<li><code>fitted.values</code>: Displays the predicted y values</li>
+<li><code>df.residual</code>: Displays the DOF of the residuals</li>
+<li><code>model</code>: Displays the input parameters of the model</li>
+</ul>
+<p>We will need especially the residuals and the fitted values command to comprehend the computing behavior of the model.</p>
+<p>For us most important is the <code>summary()</code> argument. This is used to see the regression output.</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="chapter-5-beta.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_Nestle)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = stocks_SMI_ts_ret$Nestle_PS[&quot;2013-01-31/2017-12-31&quot;] - 
+##     rf_ts_monthly$rf_1_year[&quot;2013-01-31/2017-12-31&quot;] ~ stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] - 
+##     rf_ts_monthly$rf_1_year[&quot;2013-01-31/2017-12-31&quot;])
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.052956 -0.016822 -0.000448  0.016847  0.058989 
+## 
+## Coefficients:
+##                                                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                                    0.002192   0.003247   0.675    0.502    
+## stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] 0.762084   0.102810   7.413 5.94e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.02472 on 58 degrees of freedom
+## Multiple R-squared:  0.4865, Adjusted R-squared:  0.4776 
+## F-statistic: 54.95 on 1 and 58 DF,  p-value: 5.938e-10</code></pre>
+<p>It computes the following terms:</p>
+<ul>
+<li>Distribution characters of Residuals</li>
+<li>The Coefficient, Standard Errors, T-Values and P-Values of the Estimates</li>
+<li>Residual Standard Errors and the DOF of the Residuals</li>
+<li>R2 and Adjusted R2</li>
+<li>F Statistic of the model</li>
+</ul>
+<p>As such, we obtain everything we need from this output.</p>
+<p>In order to get it, we can use different specifications:</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="chapter-5-beta.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the summary for nestle</span></span>
+<span id="cb370-2"><a href="chapter-5-beta.html#cb370-2" aria-hidden="true" tabindex="-1"></a>sum_1 <span class="ot">&lt;-</span> <span class="fu">summary</span>(reg_Nestle)</span></code></pre></div>
+<p>If we use the <code>$</code> sign, we can retrieve some important options from the summary command:</p>
+<ul>
+<li><code>coefficients</code>: Returns a k <span class="math inline">\(\times\)</span> n matrix with the coefficients, standard errors, t-values and p-values</li>
+<li><code>cov.unscaled</code>: Returns the k <span class="math inline">\(\times\)</span> k variance-covariance matrix of the regressors</li>
+<li><code>df</code>: Returns the DOF</li>
+<li><code>r.squared</code>: Returns the R2 value</li>
+<li><code>adj.r.squared</code>: Returns the adjusted R2 value</li>
+<li><code>fstatistic</code>: Returns the F-Statistic of the model</li>
+</ul>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="chapter-5-beta.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The coefficient matrix looks like this: </span></span>
+<span id="cb371-2"><a href="chapter-5-beta.html#cb371-2" aria-hidden="true" tabindex="-1"></a>sum_1<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>##                                                   Estimate  Std. Error   t value     Pr(&gt;|t|)
+## (Intercept)                                    0.002192443 0.003246622 0.6752999 5.021687e-01
+## stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] 0.762084340 0.102810047 7.4125473 5.938184e-10</code></pre>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="chapter-5-beta.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can easily retrieve the coefficients, standard erros, t-values and p-values of the regression output. To do so, we just need to slice the matrix</span></span>
+<span id="cb373-2"><a href="chapter-5-beta.html#cb373-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb373-3"><a href="chapter-5-beta.html#cb373-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Get the coefficient for beta of the regression:</span></span>
+<span id="cb373-4"><a href="chapter-5-beta.html#cb373-4" aria-hidden="true" tabindex="-1"></a>coef_SMI <span class="ot">&lt;-</span> sum_1<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb373-5"><a href="chapter-5-beta.html#cb373-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the standard errors</span></span>
+<span id="cb373-6"><a href="chapter-5-beta.html#cb373-6" aria-hidden="true" tabindex="-1"></a>se_SMI <span class="ot">&lt;-</span> sum_1<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb373-7"><a href="chapter-5-beta.html#cb373-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the t value </span></span>
+<span id="cb373-8"><a href="chapter-5-beta.html#cb373-8" aria-hidden="true" tabindex="-1"></a>t_SMI <span class="ot">&lt;-</span> sum_1<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb373-9"><a href="chapter-5-beta.html#cb373-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the p-value</span></span>
+<span id="cb373-10"><a href="chapter-5-beta.html#cb373-10" aria-hidden="true" tabindex="-1"></a>p_SMI <span class="ot">&lt;-</span> sum_1<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">4</span>]</span></code></pre></div>
+<p>Accordingly, we can try to replicate all the results from the lecture:</p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="chapter-5-beta.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, define the individual dependent variables</span></span>
+<span id="cb374-2"><a href="chapter-5-beta.html#cb374-2" aria-hidden="true" tabindex="-1"></a>y_Ne <span class="ot">&lt;-</span> stocks_SMI_ts_ret<span class="sc">$</span>Nestle_PS<span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year</span>
+<span id="cb374-3"><a href="chapter-5-beta.html#cb374-3" aria-hidden="true" tabindex="-1"></a>y_No <span class="ot">&lt;-</span> stocks_SMI_ts_ret<span class="sc">$</span>Novartis_N <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year</span>
+<span id="cb374-4"><a href="chapter-5-beta.html#cb374-4" aria-hidden="true" tabindex="-1"></a>y_Ro <span class="ot">&lt;-</span> stocks_SMI_ts_ret<span class="sc">$</span>Roche_Holding <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year</span>
+<span id="cb374-5"><a href="chapter-5-beta.html#cb374-5" aria-hidden="true" tabindex="-1"></a>y_U <span class="ot">&lt;-</span>  stocks_SMI_ts_ret<span class="sc">$</span>UBS_N <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year</span>
+<span id="cb374-6"><a href="chapter-5-beta.html#cb374-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-7"><a href="chapter-5-beta.html#cb374-7" aria-hidden="true" tabindex="-1"></a>stocks_SMI_ts_ret_new <span class="ot">&lt;-</span> <span class="fu">merge.xts</span>(y_Ne, y_No, y_Ro, y_U)</span>
+<span id="cb374-8"><a href="chapter-5-beta.html#cb374-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-9"><a href="chapter-5-beta.html#cb374-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, define the explanatory variable and add a constant term. We need to add a constant in order to add the alpha term</span></span>
+<span id="cb374-10"><a href="chapter-5-beta.html#cb374-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> stocks_SMI_ts_ret<span class="sc">$</span>SMI <span class="sc">-</span> rf_ts_monthly<span class="sc">$</span>rf_1_year</span>
+<span id="cb374-11"><a href="chapter-5-beta.html#cb374-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-12"><a href="chapter-5-beta.html#cb374-12" aria-hidden="true" tabindex="-1"></a><span class="co"># And the names of the stocks</span></span>
+<span id="cb374-13"><a href="chapter-5-beta.html#cb374-13" aria-hidden="true" tabindex="-1"></a>Stonks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle_PS&quot;</span>, <span class="st">&quot;Novartis_N&quot;</span>, <span class="st">&quot;Roche_Holding&quot;</span>, <span class="st">&quot;UBS_N&quot;</span>)</span>
+<span id="cb374-14"><a href="chapter-5-beta.html#cb374-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-15"><a href="chapter-5-beta.html#cb374-15" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the same loop structure as was already used during the first assignment</span></span>
+<span id="cb374-16"><a href="chapter-5-beta.html#cb374-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> Stonks){</span>
+<span id="cb374-17"><a href="chapter-5-beta.html#cb374-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-18"><a href="chapter-5-beta.html#cb374-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We first create a column name variable</span></span>
+<span id="cb374-19"><a href="chapter-5-beta.html#cb374-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-20"><a href="chapter-5-beta.html#cb374-20" aria-hidden="true" tabindex="-1"></a>   col_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(i)</span>
+<span id="cb374-21"><a href="chapter-5-beta.html#cb374-21" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb374-22"><a href="chapter-5-beta.html#cb374-22" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Then, we fit the stock excess return on the market excess return</span></span>
+<span id="cb374-23"><a href="chapter-5-beta.html#cb374-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-24"><a href="chapter-5-beta.html#cb374-24" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(stocks_SMI_ts_ret_new[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>, i] <span class="sc">~</span> x<span class="sc">$</span>SMI[<span class="st">&#39;2013-01-31/2017-12-31&#39;</span>]))</span>
+<span id="cb374-25"><a href="chapter-5-beta.html#cb374-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-26"><a href="chapter-5-beta.html#cb374-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We calculate the respective values based on the fit variable created for each company of Stonks</span></span>
+<span id="cb374-27"><a href="chapter-5-beta.html#cb374-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-28"><a href="chapter-5-beta.html#cb374-28" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb374-29"><a href="chapter-5-beta.html#cb374-29" aria-hidden="true" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb374-30"><a href="chapter-5-beta.html#cb374-30" aria-hidden="true" tabindex="-1"></a>  R2 <span class="ot">&lt;-</span> fit<span class="sc">$</span>r.squared  </span>
+<span id="cb374-31"><a href="chapter-5-beta.html#cb374-31" aria-hidden="true" tabindex="-1"></a>  std_res <span class="ot">&lt;-</span> <span class="fu">sd</span>(fit<span class="sc">$</span>residuals, <span class="at">na.rm =</span> T)</span>
+<span id="cb374-32"><a href="chapter-5-beta.html#cb374-32" aria-hidden="true" tabindex="-1"></a>  beta_std_error <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb374-33"><a href="chapter-5-beta.html#cb374-33" aria-hidden="true" tabindex="-1"></a>  alpha_std_error <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb374-34"><a href="chapter-5-beta.html#cb374-34" aria-hidden="true" tabindex="-1"></a>  adjusted_BA <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>]<span class="sc">*</span><span class="dv">2</span><span class="sc">/</span><span class="dv">3</span> <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb374-35"><a href="chapter-5-beta.html#cb374-35" aria-hidden="true" tabindex="-1"></a>  t_alpha <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">/</span> fit<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb374-36"><a href="chapter-5-beta.html#cb374-36" aria-hidden="true" tabindex="-1"></a>  t_beta <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">/</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">2</span>]</span>
+<span id="cb374-37"><a href="chapter-5-beta.html#cb374-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-38"><a href="chapter-5-beta.html#cb374-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Use these lines of code to create temporary data frames which are being merged with each other in a subsequent step</span></span>
+<span id="cb374-39"><a href="chapter-5-beta.html#cb374-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-40"><a href="chapter-5-beta.html#cb374-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="st">&quot;Nestle_PS&quot;</span>){</span>
+<span id="cb374-41"><a href="chapter-5-beta.html#cb374-41" aria-hidden="true" tabindex="-1"></a>    df_final_beta <span class="ot">&lt;-</span> beta </span>
+<span id="cb374-42"><a href="chapter-5-beta.html#cb374-42" aria-hidden="true" tabindex="-1"></a>    df_final_alpha <span class="ot">&lt;-</span> alpha </span>
+<span id="cb374-43"><a href="chapter-5-beta.html#cb374-43" aria-hidden="true" tabindex="-1"></a>    df_final_R2 <span class="ot">&lt;-</span> R2</span>
+<span id="cb374-44"><a href="chapter-5-beta.html#cb374-44" aria-hidden="true" tabindex="-1"></a>    df_final_std_res <span class="ot">&lt;-</span> std_res</span>
+<span id="cb374-45"><a href="chapter-5-beta.html#cb374-45" aria-hidden="true" tabindex="-1"></a>    df_final_beta_std_error <span class="ot">&lt;-</span> beta_std_error</span>
+<span id="cb374-46"><a href="chapter-5-beta.html#cb374-46" aria-hidden="true" tabindex="-1"></a>    df_final_alpha_std_error <span class="ot">&lt;-</span> alpha_std_error</span>
+<span id="cb374-47"><a href="chapter-5-beta.html#cb374-47" aria-hidden="true" tabindex="-1"></a>    df_final_adjusted_BA <span class="ot">&lt;-</span> adjusted_BA</span>
+<span id="cb374-48"><a href="chapter-5-beta.html#cb374-48" aria-hidden="true" tabindex="-1"></a>    df_final_t_alpha <span class="ot">&lt;-</span> t_alpha</span>
+<span id="cb374-49"><a href="chapter-5-beta.html#cb374-49" aria-hidden="true" tabindex="-1"></a>    df_final_t_beta <span class="ot">&lt;-</span> t_beta</span>
+<span id="cb374-50"><a href="chapter-5-beta.html#cb374-50" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb374-51"><a href="chapter-5-beta.html#cb374-51" aria-hidden="true" tabindex="-1"></a>    col_name_final <span class="ot">&lt;-</span> col_name </span>
+<span id="cb374-52"><a href="chapter-5-beta.html#cb374-52" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb374-53"><a href="chapter-5-beta.html#cb374-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-54"><a href="chapter-5-beta.html#cb374-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This subsequent step is undertaken here</span></span>
+<span id="cb374-55"><a href="chapter-5-beta.html#cb374-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-56"><a href="chapter-5-beta.html#cb374-56" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb374-57"><a href="chapter-5-beta.html#cb374-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb374-58"><a href="chapter-5-beta.html#cb374-58" aria-hidden="true" tabindex="-1"></a>    df_final_beta <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_beta, beta)</span>
+<span id="cb374-59"><a href="chapter-5-beta.html#cb374-59" aria-hidden="true" tabindex="-1"></a>    df_final_alpha <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_alpha, alpha) </span>
+<span id="cb374-60"><a href="chapter-5-beta.html#cb374-60" aria-hidden="true" tabindex="-1"></a>    df_final_R2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_R2, R2)</span>
+<span id="cb374-61"><a href="chapter-5-beta.html#cb374-61" aria-hidden="true" tabindex="-1"></a>    df_final_std_res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_std_res, std_res)</span>
+<span id="cb374-62"><a href="chapter-5-beta.html#cb374-62" aria-hidden="true" tabindex="-1"></a>    df_final_beta_std_error <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_beta_std_error, beta_std_error)</span>
+<span id="cb374-63"><a href="chapter-5-beta.html#cb374-63" aria-hidden="true" tabindex="-1"></a>    df_final_alpha_std_error <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_alpha_std_error, alpha_std_error)</span>
+<span id="cb374-64"><a href="chapter-5-beta.html#cb374-64" aria-hidden="true" tabindex="-1"></a>    df_final_adjusted_BA <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_adjusted_BA, adjusted_BA)</span>
+<span id="cb374-65"><a href="chapter-5-beta.html#cb374-65" aria-hidden="true" tabindex="-1"></a>    df_final_t_alpha <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_t_alpha, t_alpha)</span>
+<span id="cb374-66"><a href="chapter-5-beta.html#cb374-66" aria-hidden="true" tabindex="-1"></a>    df_final_t_beta <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df_final_t_beta, t_beta)</span>
+<span id="cb374-67"><a href="chapter-5-beta.html#cb374-67" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb374-68"><a href="chapter-5-beta.html#cb374-68" aria-hidden="true" tabindex="-1"></a>    col_name_final <span class="ot">&lt;-</span> <span class="fu">cbind</span>(col_name_final, col_name)</span>
+<span id="cb374-69"><a href="chapter-5-beta.html#cb374-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb374-70"><a href="chapter-5-beta.html#cb374-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb374-71"><a href="chapter-5-beta.html#cb374-71" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb374-72"><a href="chapter-5-beta.html#cb374-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-73"><a href="chapter-5-beta.html#cb374-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Bind all values together for each company of Stonks and obtain a data frame with all required variables </span></span>
+<span id="cb374-74"><a href="chapter-5-beta.html#cb374-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-75"><a href="chapter-5-beta.html#cb374-75" aria-hidden="true" tabindex="-1"></a>data_frame_ratios <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(df_final_beta, df_final_alpha, df_final_R2, df_final_std_res, df_final_beta_std_error, df_final_alpha_std_error, df_final_adjusted_BA, df_final_t_alpha, df_final_t_beta))</span>
+<span id="cb374-76"><a href="chapter-5-beta.html#cb374-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-77"><a href="chapter-5-beta.html#cb374-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the according names for the dataframe (columns and rows)</span></span>
+<span id="cb374-78"><a href="chapter-5-beta.html#cb374-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-79"><a href="chapter-5-beta.html#cb374-79" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data_frame_ratios) <span class="ot">=</span> col_name_final</span>
+<span id="cb374-80"><a href="chapter-5-beta.html#cb374-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-81"><a href="chapter-5-beta.html#cb374-81" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(data_frame_ratios) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Beta&quot;</span>, <span class="st">&quot;Alpha&quot;</span>, <span class="st">&quot;R2&quot;</span>, <span class="st">&quot;Res.Std.Dev&quot;</span>, <span class="st">&quot;Std. Error Beta&quot;</span>, <span class="st">&quot;Std. Error Alpha&quot;</span>, <span class="st">&quot;Adj. Beta&quot;</span>, <span class="st">&quot;T Alpha&quot;</span>, <span class="st">&quot;T Beta&quot;</span>)</span>
+<span id="cb374-82"><a href="chapter-5-beta.html#cb374-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-83"><a href="chapter-5-beta.html#cb374-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Latex table (Hashed on purpose)</span></span>
+<span id="cb374-84"><a href="chapter-5-beta.html#cb374-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-85"><a href="chapter-5-beta.html#cb374-85" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(data_frame_ratios)</span></code></pre></div>
+<pre><code>##                    Beta         Alpha        R2 Res.Std.Dev Std. Error Beta Std. Error Alpha Adj. Beta     T Alpha   T Beta
+## Nestle_PS     0.7644739  1.913296e-03 0.4874485  0.02448622       0.1029326      0.003250561 0.8429826  0.58860488 7.426935
+## Novartis_N    1.0579713  7.321110e-04 0.6228580  0.02571500       0.1080980      0.003413682 1.0386475  0.21446373 9.787146
+## Roche_Holding 0.9805971  8.590951e-05 0.5230519  0.02924882       0.1229532      0.003882800 0.9870647  0.02212566 7.975370
+## UBS_N         1.2929343 -1.273317e-03 0.3222448  0.05856991       0.2462101      0.007775193 1.1952895 -0.16376668 5.251345</code></pre>
+<div id="manually-computing-the-estimates" class="section level5" number="6.1.2.1.1">
+<h5><span class="header-section-number">6.1.2.1.1</span> Manually computing the estimates</h5>
+<p>When running the regression, we do nothing more than applying the function of the covariance / variance we defined above. Consequently, we should be able to easily replicate the regression results. Let’s do this</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="chapter-5-beta.html#cb376-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here, define the explanatory variable and add a constant term. We need to add a constant in order to add the alpha term</span></span>
+<span id="cb376-2"><a href="chapter-5-beta.html#cb376-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>, x)</span>
+<span id="cb376-3"><a href="chapter-5-beta.html#cb376-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s calculate the beta coefficients manually</span></span>
+<span id="cb376-4"><a href="chapter-5-beta.html#cb376-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-5"><a href="chapter-5-beta.html#cb376-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Either with the formula for cov-var</span></span>
+<span id="cb376-6"><a href="chapter-5-beta.html#cb376-6" aria-hidden="true" tabindex="-1"></a>reg_Nestle_coef_manual <span class="ot">&lt;-</span> <span class="fu">cov</span>(y_Ne, x) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb376-7"><a href="chapter-5-beta.html#cb376-7" aria-hidden="true" tabindex="-1"></a>reg_Novartis_coef_manual <span class="ot">&lt;-</span> <span class="fu">cov</span>(y_No, x) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb376-8"><a href="chapter-5-beta.html#cb376-8" aria-hidden="true" tabindex="-1"></a>reg_Roche_coef_manual <span class="ot">&lt;-</span> <span class="fu">cov</span>(y_Ro, x) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb376-9"><a href="chapter-5-beta.html#cb376-9" aria-hidden="true" tabindex="-1"></a>reg_UBS_coef_manual <span class="ot">&lt;-</span> <span class="fu">cov</span>(y_U, x) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb376-10"><a href="chapter-5-beta.html#cb376-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-11"><a href="chapter-5-beta.html#cb376-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Or with the formula we retrieved from the chapter of linear algebra</span></span>
+<span id="cb376-12"><a href="chapter-5-beta.html#cb376-12" aria-hidden="true" tabindex="-1"></a>betaHat_Ne <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y_Ne</span>
+<span id="cb376-13"><a href="chapter-5-beta.html#cb376-13" aria-hidden="true" tabindex="-1"></a>betaHat_No <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y_No</span>
+<span id="cb376-14"><a href="chapter-5-beta.html#cb376-14" aria-hidden="true" tabindex="-1"></a>betaHat_Ro <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y_Ro</span>
+<span id="cb376-15"><a href="chapter-5-beta.html#cb376-15" aria-hidden="true" tabindex="-1"></a>betaHat_U <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span>X)<span class="sc">%*%</span><span class="fu">t</span>(X)<span class="sc">%*%</span>y_U</span>
+<span id="cb376-16"><a href="chapter-5-beta.html#cb376-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-17"><a href="chapter-5-beta.html#cb376-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Now, calculate the beta standard errors manually</span></span>
+<span id="cb376-18"><a href="chapter-5-beta.html#cb376-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-19"><a href="chapter-5-beta.html#cb376-19" aria-hidden="true" tabindex="-1"></a><span class="do">## First, we calculate the variance-covariance matrix (vcov) whereas:</span></span>
+<span id="cb376-20"><a href="chapter-5-beta.html#cb376-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-21"><a href="chapter-5-beta.html#cb376-21" aria-hidden="true" tabindex="-1"></a><span class="do">### var =  sum((y_Ne - X%*%betaHat_Ne)^2)</span></span>
+<span id="cb376-22"><a href="chapter-5-beta.html#cb376-22" aria-hidden="true" tabindex="-1"></a><span class="do">### 1/n     =  1/(nrow(X)-ncol(X))</span></span>
+<span id="cb376-23"><a href="chapter-5-beta.html#cb376-23" aria-hidden="true" tabindex="-1"></a><span class="do">### (X&#39;X)^-1 = chol2inv(chol(t(X)%*%X)) </span></span>
+<span id="cb376-24"><a href="chapter-5-beta.html#cb376-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-25"><a href="chapter-5-beta.html#cb376-25" aria-hidden="true" tabindex="-1"></a>vcov_Nestle <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_Ne <span class="sc">-</span> X<span class="sc">%*%</span>betaHat_Ne)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="fu">nrow</span>(X)<span class="sc">-</span><span class="fu">ncol</span>(X))<span class="sc">*</span><span class="fu">chol2inv</span>(<span class="fu">chol</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)) </span>
+<span id="cb376-26"><a href="chapter-5-beta.html#cb376-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-27"><a href="chapter-5-beta.html#cb376-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Then, we take the square root of the second element from the diagonal matrix (the diagonal elements are the variances in a vcov matrix), because the Standard Deviation of the estimates divided by the square root of n (we already incorporated n in the formula above)</span></span>
+<span id="cb376-28"><a href="chapter-5-beta.html#cb376-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-29"><a href="chapter-5-beta.html#cb376-29" aria-hidden="true" tabindex="-1"></a><span class="do">### SE(beta) = SD(beta) /sqrt(N) = sqrt(var(N)) / sqrt(N)</span></span>
+<span id="cb376-30"><a href="chapter-5-beta.html#cb376-30" aria-hidden="true" tabindex="-1"></a>se_Nestle <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(vcov_Nestle))[<span class="dv">2</span>]</span>
+<span id="cb376-31"><a href="chapter-5-beta.html#cb376-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-32"><a href="chapter-5-beta.html#cb376-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s do this for all of the estimates</span></span>
+<span id="cb376-33"><a href="chapter-5-beta.html#cb376-33" aria-hidden="true" tabindex="-1"></a>vcov_Novartis <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_No <span class="sc">-</span> X<span class="sc">%*%</span>betaHat_No)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="fu">nrow</span>(X)<span class="sc">-</span><span class="fu">ncol</span>(X))<span class="sc">*</span><span class="fu">chol2inv</span>(<span class="fu">chol</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)) </span>
+<span id="cb376-34"><a href="chapter-5-beta.html#cb376-34" aria-hidden="true" tabindex="-1"></a>se_Novartis <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(vcov_Novartis))[<span class="dv">2</span>]</span>
+<span id="cb376-35"><a href="chapter-5-beta.html#cb376-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-36"><a href="chapter-5-beta.html#cb376-36" aria-hidden="true" tabindex="-1"></a>vcov_Roche <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_Ro <span class="sc">-</span> X<span class="sc">%*%</span>betaHat_Ro)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="fu">nrow</span>(X)<span class="sc">-</span><span class="fu">ncol</span>(X))<span class="sc">*</span><span class="fu">chol2inv</span>(<span class="fu">chol</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)) </span>
+<span id="cb376-37"><a href="chapter-5-beta.html#cb376-37" aria-hidden="true" tabindex="-1"></a>se_Roche <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(vcov_Roche))[<span class="dv">2</span>]</span>
+<span id="cb376-38"><a href="chapter-5-beta.html#cb376-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-39"><a href="chapter-5-beta.html#cb376-39" aria-hidden="true" tabindex="-1"></a>vcov_UBS <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_U <span class="sc">-</span> X<span class="sc">%*%</span>betaHat_U)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="fu">nrow</span>(X)<span class="sc">-</span><span class="fu">ncol</span>(X))<span class="sc">*</span><span class="fu">chol2inv</span>(<span class="fu">chol</span>(<span class="fu">t</span>(X)<span class="sc">%*%</span>X)) </span>
+<span id="cb376-40"><a href="chapter-5-beta.html#cb376-40" aria-hidden="true" tabindex="-1"></a>se_UBS <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(vcov_UBS))[<span class="dv">2</span>]</span>
+<span id="cb376-41"><a href="chapter-5-beta.html#cb376-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-42"><a href="chapter-5-beta.html#cb376-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Now, we can create some dataframes</span></span>
+<span id="cb376-43"><a href="chapter-5-beta.html#cb376-43" aria-hidden="true" tabindex="-1"></a>coefs_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data_frame_ratios[<span class="dv">1</span>,<span class="dv">1</span>], reg_Nestle_coef_manual, data_frame_ratios[<span class="dv">1</span>,<span class="dv">2</span>], reg_Novartis_coef_manual, data_frame_ratios[<span class="dv">1</span>,<span class="dv">3</span>], reg_Roche_coef_manual, data_frame_ratios[<span class="dv">1</span>,<span class="dv">4</span>], reg_UBS_coef_manual)</span>
+<span id="cb376-44"><a href="chapter-5-beta.html#cb376-44" aria-hidden="true" tabindex="-1"></a>se_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data_frame_ratios[<span class="dv">5</span>,<span class="dv">1</span>], se_Nestle, data_frame_ratios[<span class="dv">5</span>,<span class="dv">2</span>], se_Novartis, data_frame_ratios[<span class="dv">5</span>,<span class="dv">3</span>], se_Roche, data_frame_ratios[<span class="dv">5</span>,<span class="dv">4</span>], se_UBS)</span>
+<span id="cb376-45"><a href="chapter-5-beta.html#cb376-45" aria-hidden="true" tabindex="-1"></a>coefs_se <span class="ot">&lt;-</span> <span class="fu">rbind</span>(coefs_compare, se_compare)</span>
+<span id="cb376-46"><a href="chapter-5-beta.html#cb376-46" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Nestle Manual&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Novartis Manual&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;Roche Manual&quot;</span>, <span class="st">&quot;UBS&quot;</span>, <span class="st">&quot;UBS Manual&quot;</span>)</span>
+<span id="cb376-47"><a href="chapter-5-beta.html#cb376-47" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Estimates&quot;</span>, <span class="st">&quot;Standard Errors&quot;</span>)</span>
+<span id="cb376-48"><a href="chapter-5-beta.html#cb376-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-49"><a href="chapter-5-beta.html#cb376-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the output</span></span>
+<span id="cb376-50"><a href="chapter-5-beta.html#cb376-50" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(coefs_se, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>##                 Nestle Nestle Manual Novartis Novartis Manual  Roche Roche Manual    UBS UBS Manual
+## Estimates       0.7645        0.5765   1.0580          0.7201 0.9806       0.7705 1.2929     1.6187
+## Standard Errors 0.1029        0.0467   0.1081          0.0513 0.1230       0.0611 0.2462     0.0993</code></pre>
+</div>
+</div>
+<div id="predicting-betas" class="section level4" number="6.1.2.2">
+<h4><span class="header-section-number">6.1.2.2</span> Predicting Betas</h4>
+<p>Instead of applying an arbitrary adjustment factor AF we could estimate a stock specific adjustment factor by running the following regression:</p>
+<p><span class="math display">\[
+\beta_{i,t} = a_i + b\beta_{i,t-1} + e_{i,t}
+\]</span></p>
+<p>in this case, the estimated factors <span class="math inline">\(\hat{a}\)</span> and <span class="math inline">\(\hat{b}\)</span> are used to forecast betas. The forecasted beta is then:</p>
+<p><span class="math display">\[
+\beta_{i,t+1} = \hat{a} + \hat{b}\beta_{i,t+1}
+\]</span></p>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="chapter-5-beta.html#cb378-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the SMI into the existing time-series object</span></span>
+<span id="cb378-2"><a href="chapter-5-beta.html#cb378-2" aria-hidden="true" tabindex="-1"></a>stocks_SMI_ts_ret_new_merged <span class="ot">&lt;-</span> <span class="fu">merge.xts</span>(stocks_SMI_ts_ret_new, x)</span>
+<span id="cb378-3"><a href="chapter-5-beta.html#cb378-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-4"><a href="chapter-5-beta.html#cb378-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> Stonks){</span>
+<span id="cb378-5"><a href="chapter-5-beta.html#cb378-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-6"><a href="chapter-5-beta.html#cb378-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Column names values</span></span>
+<span id="cb378-7"><a href="chapter-5-beta.html#cb378-7" aria-hidden="true" tabindex="-1"></a>  col_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(i)</span>
+<span id="cb378-8"><a href="chapter-5-beta.html#cb378-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-9"><a href="chapter-5-beta.html#cb378-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># run the rolling regression</span></span>
+<span id="cb378-10"><a href="chapter-5-beta.html#cb378-10" aria-hidden="true" tabindex="-1"></a>  fit_roll <span class="ot">&lt;-</span> <span class="fu">roll_regres</span>(stocks_SMI_ts_ret_new_merged[,i] <span class="sc">~</span> stocks_SMI_ts_ret_new_merged<span class="sc">$</span>SMI, <span class="at">width =</span> <span class="dv">60</span>)</span>
+<span id="cb378-11"><a href="chapter-5-beta.html#cb378-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-12"><a href="chapter-5-beta.html#cb378-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract the coefficients</span></span>
+<span id="cb378-13"><a href="chapter-5-beta.html#cb378-13" aria-hidden="true" tabindex="-1"></a>  fit_roll_coefs <span class="ot">&lt;-</span> fit_roll<span class="sc">$</span>coefs[<span class="dv">60</span><span class="sc">:</span><span class="fu">dim</span>(stocks_SMI_ts_ret_new_merged)[<span class="dv">1</span>],]</span>
+<span id="cb378-14"><a href="chapter-5-beta.html#cb378-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-15"><a href="chapter-5-beta.html#cb378-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate the respective alpha and beta hat values</span></span>
+<span id="cb378-16"><a href="chapter-5-beta.html#cb378-16" aria-hidden="true" tabindex="-1"></a>  predicted_alpha <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(fit_roll_coefs[,<span class="dv">2</span>] <span class="sc">~</span> <span class="fu">lag</span>(fit_roll_coefs[,<span class="dv">2</span>])))<span class="sc">$</span>coefficients[<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb378-17"><a href="chapter-5-beta.html#cb378-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-18"><a href="chapter-5-beta.html#cb378-18" aria-hidden="true" tabindex="-1"></a>  predicted_beta <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">lm</span>(fit_roll_coefs[,<span class="dv">2</span>] <span class="sc">~</span> <span class="fu">lag</span>(fit_roll_coefs[,<span class="dv">2</span>])))<span class="sc">$</span>coefficients[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb378-19"><a href="chapter-5-beta.html#cb378-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-20"><a href="chapter-5-beta.html#cb378-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Structure for creating the data frames</span></span>
+<span id="cb378-21"><a href="chapter-5-beta.html#cb378-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-22"><a href="chapter-5-beta.html#cb378-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="st">&quot;Nestle_PS&quot;</span>){</span>
+<span id="cb378-23"><a href="chapter-5-beta.html#cb378-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb378-24"><a href="chapter-5-beta.html#cb378-24" aria-hidden="true" tabindex="-1"></a>    predicted_alpha_final <span class="ot">&lt;-</span> predicted_alpha</span>
+<span id="cb378-25"><a href="chapter-5-beta.html#cb378-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-26"><a href="chapter-5-beta.html#cb378-26" aria-hidden="true" tabindex="-1"></a>    predicted_beta_final <span class="ot">&lt;-</span> predicted_beta</span>
+<span id="cb378-27"><a href="chapter-5-beta.html#cb378-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb378-28"><a href="chapter-5-beta.html#cb378-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb378-29"><a href="chapter-5-beta.html#cb378-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-30"><a href="chapter-5-beta.html#cb378-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb378-31"><a href="chapter-5-beta.html#cb378-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb378-32"><a href="chapter-5-beta.html#cb378-32" aria-hidden="true" tabindex="-1"></a>    predicted_alpha_final <span class="ot">&lt;-</span> <span class="fu">cbind</span>(predicted_alpha_final, predicted_alpha)</span>
+<span id="cb378-33"><a href="chapter-5-beta.html#cb378-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-34"><a href="chapter-5-beta.html#cb378-34" aria-hidden="true" tabindex="-1"></a>    predicted_beta_final <span class="ot">&lt;-</span> <span class="fu">cbind</span>(predicted_beta_final, predicted_beta)</span>
+<span id="cb378-35"><a href="chapter-5-beta.html#cb378-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb378-36"><a href="chapter-5-beta.html#cb378-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb378-37"><a href="chapter-5-beta.html#cb378-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb378-38"><a href="chapter-5-beta.html#cb378-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb378-39"><a href="chapter-5-beta.html#cb378-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-40"><a href="chapter-5-beta.html#cb378-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge all dataframes </span></span>
+<span id="cb378-41"><a href="chapter-5-beta.html#cb378-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-42"><a href="chapter-5-beta.html#cb378-42" aria-hidden="true" tabindex="-1"></a><span class="do">## rowbind command</span></span>
+<span id="cb378-43"><a href="chapter-5-beta.html#cb378-43" aria-hidden="true" tabindex="-1"></a>pred_alpha_beta <span class="ot">&lt;-</span> <span class="fu">rbind</span>(predicted_alpha_final, predicted_beta_final)</span>
+<span id="cb378-44"><a href="chapter-5-beta.html#cb378-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-45"><a href="chapter-5-beta.html#cb378-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Add the Beta_t variable (The ultimate Beta estimate from the previous exercise)</span></span>
+<span id="cb378-46"><a href="chapter-5-beta.html#cb378-46" aria-hidden="true" tabindex="-1"></a>all_pred_alpha_beta <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(pred_alpha_beta, df_final_beta))</span>
+<span id="cb378-47"><a href="chapter-5-beta.html#cb378-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-48"><a href="chapter-5-beta.html#cb378-48" aria-hidden="true" tabindex="-1"></a><span class="do">## Define names</span></span>
+<span id="cb378-49"><a href="chapter-5-beta.html#cb378-49" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_pred_alpha_beta) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;UBS&quot;</span>)</span>
+<span id="cb378-50"><a href="chapter-5-beta.html#cb378-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-51"><a href="chapter-5-beta.html#cb378-51" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(all_pred_alpha_beta) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;beta_t&quot;</span>)</span>
+<span id="cb378-52"><a href="chapter-5-beta.html#cb378-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-53"><a href="chapter-5-beta.html#cb378-53" aria-hidden="true" tabindex="-1"></a><span class="do">## Transpose the data frame</span></span>
+<span id="cb378-54"><a href="chapter-5-beta.html#cb378-54" aria-hidden="true" tabindex="-1"></a>all_pred_alpha_beta <span class="ot">&lt;-</span> <span class="fu">t</span>(all_pred_alpha_beta)</span>
+<span id="cb378-55"><a href="chapter-5-beta.html#cb378-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-56"><a href="chapter-5-beta.html#cb378-56" aria-hidden="true" tabindex="-1"></a><span class="do">## Calculate the Beta forecast value</span></span>
+<span id="cb378-57"><a href="chapter-5-beta.html#cb378-57" aria-hidden="true" tabindex="-1"></a>beta_forecast <span class="ot">&lt;-</span> all_pred_alpha_beta[,<span class="dv">1</span>] <span class="sc">+</span> all_pred_alpha_beta[,<span class="dv">2</span>] <span class="sc">*</span> all_pred_alpha_beta[,<span class="dv">3</span>]</span>
+<span id="cb378-58"><a href="chapter-5-beta.html#cb378-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-59"><a href="chapter-5-beta.html#cb378-59" aria-hidden="true" tabindex="-1"></a><span class="do">## Bind the Beta forecast variable with all other variables </span></span>
+<span id="cb378-60"><a href="chapter-5-beta.html#cb378-60" aria-hidden="true" tabindex="-1"></a>predicting_beta_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(all_pred_alpha_beta, beta_forecast)</span>
+<span id="cb378-61"><a href="chapter-5-beta.html#cb378-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb378-62"><a href="chapter-5-beta.html#cb378-62" aria-hidden="true" tabindex="-1"></a>predicting_beta_df</span></code></pre></div>
+<pre><code>##                    a         b    beta_t beta_forecast
+## Nestle   0.011128874 0.9835823 0.7644739     0.7630519
+## Novartis 0.001777507 1.0023047 1.0579713     1.0621871
+## Roche    0.038515121 0.9558142 0.9805971     0.9757837
+## UBS      0.021480237 0.9854612 1.2929343     1.2956168</code></pre>
+</div>
+<div id="working-with-robust-standard-errors" class="section level4" number="6.1.2.3">
+<h4><span class="header-section-number">6.1.2.3</span> Working with robust standard errors</h4>
+<p>We have introduced the assumptions we make when working in OLS settings and stated the estimator properties if these assumptions hold. Further, we have introduced some tests that can detect whether some assumptions do hold. For instance, when looking at the variance properties, we have claimed that there is no heteroskedasticity and no serial correlation present. However, this may be violated, as we have seen. In case of violation of assumtpions 3 and 4, the model still is unbiased, as is given by the derivation of the estimator’s expected value. However, the model won’t be consistent any longer because the t-statistics computed do not follow a standard normal distribution, even in large samples. This is because, if these assumptions do not hold, then the residual term matrix is no longer <span class="math inline">\(I_N\sigma^2\)</span>. Consequently, the variance of the estimator, which we derived as <span class="math inline">\(\sigma^2(X&#39;X)^{-1}\)</span> is incorrect if the assumptions do not hold. Based on this, also the standard errors will be incorrect, thereby deriving an inconsistent t-statistic.</p>
+<p>In order to address these concerns, we introduce the concept of <strong>robust standard errors</strong>. These are standard errors that incorporate the fact that either of these assumptions are violated and thus adjust the covariance matrix of the residuals accordingly. We will introduce R packages that create consistent standard errors even if these assumptions are violated. Note that a thorough discussion of the mathematical properties of the standard error adjustments would be too much for this course, but we refer you to <a href="https://cran.r-project.org/web/packages/sandwich/vignettes/sandwich.pdf">The fundamental discussion on Heteroskedasticity and Autocorrelated Standard Error applications in R</a> as well as the <a href="https://www.econometrics-with-r.org/15-4-hac-standard-errors.html">respective chapters of econometrics-with-R</a>.</p>
+<p><strong>Heteroskedasticity-Robust Standard Errors</strong></p>
+<p>In order to compute solely Heteroskedasticity-Robust Standard Errors, we can use consistent standard error estimates referred to as Eicker-Huber-White standard errors, the most frequently cited paper on this is White (1980). In order to implement these standard errors, we make use of the function <code>vcovHC()</code> from the package <code>sandwich</code>. This package can compute four distinct types of Heteroskedasticity-Consistent (HC) Standard Errors, namely <code>HC0</code>, <code>HC1</code>, <code>HC2</code>, <code>HC3</code> (HC1 is the default use in most statistics programs). We can quite easily use these standard errors with the following code:</p>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="chapter-5-beta.html#cb380-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the reg_Nestle output and use the following command</span></span>
+<span id="cb380-2"><a href="chapter-5-beta.html#cb380-2" aria-hidden="true" tabindex="-1"></a>vcovHC_Ne <span class="ot">&lt;-</span> <span class="fu">vcovHC</span>(reg_Nestle, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)</span>
+<span id="cb380-3"><a href="chapter-5-beta.html#cb380-3" aria-hidden="true" tabindex="-1"></a>vcovHC_Ne</span></code></pre></div>
+<pre><code>##                                                  (Intercept) stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;]
+## (Intercept)                                     1.161379e-05                                  -0.0001571461
+## stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] -1.571461e-04                                   0.0117222085</code></pre>
+<p>This will deliver us the HC consistent variance-covariance matrix of the first regression. Note that is of the same format as when we calculated the standard errors manually and saved it in <code>vcov_Nestle</code>. Now, as before, we are only interested in the square root of the diagonal values because these will give us the standard errors, indicated as standard deviation divided by the square root of n. </p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="chapter-5-beta.html#cb382-1" aria-hidden="true" tabindex="-1"></a>se_Nestle_robust <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(vcovHC_Ne))[<span class="dv">2</span>]</span>
+<span id="cb382-2"><a href="chapter-5-beta.html#cb382-2" aria-hidden="true" tabindex="-1"></a>se_Nestle_robust</span></code></pre></div>
+<pre><code>## stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] 
+##                                      0.1082691</code></pre>
+<p>In order to obtain the same summary output as for the non-robust estimates, we can use the <code>coeftest()</code> function.</p>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="chapter-5-beta.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(reg_Nestle, <span class="at">vcov =</span> vcovHC_Ne)</span></code></pre></div>
+<pre><code>## 
+## t test of coefficients:
+## 
+##                                                 Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept)                                    0.0021924  0.0034079  0.6433    0.5225    
+## stocks_SMI_ts_ret$SMI[&quot;2013-01-31/2017-12-31&quot;] 0.7620843  0.1082691  7.0388 2.523e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Let’s quickly compare the standard error estimates for all the big four firms:</p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="chapter-5-beta.html#cb386-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do the HC robust standard error formulas and obtain the standard errors</span></span>
+<span id="cb386-2"><a href="chapter-5-beta.html#cb386-2" aria-hidden="true" tabindex="-1"></a>se_Nestle_robust <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(reg_Nestle, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)))[<span class="dv">2</span>]</span>
+<span id="cb386-3"><a href="chapter-5-beta.html#cb386-3" aria-hidden="true" tabindex="-1"></a>se_Novartis_robust <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(reg_Novartis, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)))[<span class="dv">2</span>]</span>
+<span id="cb386-4"><a href="chapter-5-beta.html#cb386-4" aria-hidden="true" tabindex="-1"></a>se_Roche_robust <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(reg_Roche, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)))[<span class="dv">2</span>]</span>
+<span id="cb386-5"><a href="chapter-5-beta.html#cb386-5" aria-hidden="true" tabindex="-1"></a>se_UBS_robust <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(reg_UBS, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)))[<span class="dv">2</span>]</span>
+<span id="cb386-6"><a href="chapter-5-beta.html#cb386-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb386-7"><a href="chapter-5-beta.html#cb386-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now, we can create some dataframes</span></span>
+<span id="cb386-8"><a href="chapter-5-beta.html#cb386-8" aria-hidden="true" tabindex="-1"></a>coefs_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(reg_Nestle_coef, reg_Nestle_coef_manual, reg_Novartis_coef, reg_Novartis_coef_manual, reg_Roche_coef, reg_Roche_coef_manual, reg_UBS_coef, reg_UBS_coef_manual)</span>
+<span id="cb386-9"><a href="chapter-5-beta.html#cb386-9" aria-hidden="true" tabindex="-1"></a>se_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(reg_Nestle_se, se_Nestle_robust, reg_Novartis_se, se_Novartis_robust, reg_Roche_se, se_Roche_robust, reg_UBS_se, se_UBS_robust)</span>
+<span id="cb386-10"><a href="chapter-5-beta.html#cb386-10" aria-hidden="true" tabindex="-1"></a>coefs_se <span class="ot">&lt;-</span> <span class="fu">rbind</span>(coefs_compare, se_compare)</span>
+<span id="cb386-11"><a href="chapter-5-beta.html#cb386-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Nestle HC Robust&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Novartis HC Robust&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;Roche HC Robust&quot;</span>, <span class="st">&quot;UBS&quot;</span>, <span class="st">&quot;UBS HC Robust&quot;</span>)</span>
+<span id="cb386-12"><a href="chapter-5-beta.html#cb386-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Estimates&quot;</span>, <span class="st">&quot;Standard Errors&quot;</span>)</span>
+<span id="cb386-13"><a href="chapter-5-beta.html#cb386-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb386-14"><a href="chapter-5-beta.html#cb386-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the output</span></span>
+<span id="cb386-15"><a href="chapter-5-beta.html#cb386-15" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(coefs_se, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##                  Nestle Nestle HC Robust Novartis Novartis HC Robust   Roche Roche HC Robust     UBS UBS HC Robust
+## Estimates       0.76208          0.57649  1.05798            0.72012 0.97987         0.77050 1.28872       1.61872
+## Standard Errors 0.10281          0.10827  0.10748            0.10709 0.12250         0.08626 0.24582       0.19482</code></pre>
+<p>As we can see, the standard errors increase to a certain extent.</p>
+<p><strong>Heteroskedasticity and Autocorrelation robust Standard Errors</strong></p>
+<p>Within time-series regressions, we often work with lagged data as was covered previously. The error term in the distributed lag model may be serially correlated due to serially correlated determinants of <span class="math inline">\(Y_t\)</span> that are not included as regressors. When these factors are correlated with the regressors of the model, serially correlated errors violate the assumption of exogeneity. Autocorrelated standard errors render the usual homoskedasticity-only and heteroskedasticity-robust standard errors invalid and may cause misleading inference. HAC errors are a remedy.</p>
+<p>There are R functions like <code>vcovHAC()</code> or <code>NeweyWest()</code> from the package <code>sandwich</code> which are convenient for computation of such estimators.</p>
+<p>For further theoretical insight into how the transformations work, <a href="https://www.econometrics-with-r.org/15.4-hac-standard-errors.html">refer to the respective documentation here</a>.</p>
+<p>The principle behind the HAC standard errors is pretty much the same as with the HC standard errors. In essence, we usually employ Newey-West standard errors and add a correction factor that adjusts for serially correlated errors and involves estimates of m-1 autocorrelation coefficients. Usually this correction estimate has the following formula:</p>
+<p><span class="math display">\[
+m = 0.75\cdot T^{1/3}
+\]</span></p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="chapter-5-beta.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the adjustment factor</span></span>
+<span id="cb388-2"><a href="chapter-5-beta.html#cb388-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="fu">floor</span>(<span class="fl">0.75</span><span class="sc">*</span><span class="fu">length</span>(stocks_SMI_df_ret)<span class="sc">^</span>{<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>})</span>
+<span id="cb388-3"><a href="chapter-5-beta.html#cb388-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb388-4"><a href="chapter-5-beta.html#cb388-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the NeweyWest vcov matrix</span></span>
+<span id="cb388-5"><a href="chapter-5-beta.html#cb388-5" aria-hidden="true" tabindex="-1"></a>nw_vcov_Ne <span class="ot">&lt;-</span> <span class="fu">NeweyWest</span>(<span class="fu">lm</span>(y_Ne <span class="sc">~</span> X), </span>
+<span id="cb388-6"><a href="chapter-5-beta.html#cb388-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">lag =</span> m <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prewhite =</span> T, </span>
+<span id="cb388-7"><a href="chapter-5-beta.html#cb388-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">adjust =</span> T)</span>
+<span id="cb388-8"><a href="chapter-5-beta.html#cb388-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb388-9"><a href="chapter-5-beta.html#cb388-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the corrected Standard Error</span></span>
+<span id="cb388-10"><a href="chapter-5-beta.html#cb388-10" aria-hidden="true" tabindex="-1"></a>nw_se_Nestle <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(nw_vcov_Ne))[<span class="dv">2</span>]</span></code></pre></div>
+<p>Let’s again do this for all big four companies and compare the standard errors</p>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="chapter-5-beta.html#cb389-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate NW SE</span></span>
+<span id="cb389-2"><a href="chapter-5-beta.html#cb389-2" aria-hidden="true" tabindex="-1"></a>nw_se_Novartis <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">NeweyWest</span>(<span class="fu">lm</span>(y_No <span class="sc">~</span> X), </span>
+<span id="cb389-3"><a href="chapter-5-beta.html#cb389-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">lag =</span> m <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prewhite =</span> T, </span>
+<span id="cb389-4"><a href="chapter-5-beta.html#cb389-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">adjust =</span> T)))[<span class="dv">2</span>]</span>
+<span id="cb389-5"><a href="chapter-5-beta.html#cb389-5" aria-hidden="true" tabindex="-1"></a>nw_se_Roche <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">NeweyWest</span>(<span class="fu">lm</span>(y_Ro <span class="sc">~</span> X), </span>
+<span id="cb389-6"><a href="chapter-5-beta.html#cb389-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">lag =</span> m <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prewhite =</span> T, </span>
+<span id="cb389-7"><a href="chapter-5-beta.html#cb389-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">adjust =</span> T)))[<span class="dv">2</span>]</span>
+<span id="cb389-8"><a href="chapter-5-beta.html#cb389-8" aria-hidden="true" tabindex="-1"></a>nw_se_UBS <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">NeweyWest</span>(<span class="fu">lm</span>(y_U <span class="sc">~</span> X), </span>
+<span id="cb389-9"><a href="chapter-5-beta.html#cb389-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">lag =</span> m <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prewhite =</span> T, </span>
+<span id="cb389-10"><a href="chapter-5-beta.html#cb389-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">adjust =</span> T)))[<span class="dv">2</span>]</span>
+<span id="cb389-11"><a href="chapter-5-beta.html#cb389-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb389-12"><a href="chapter-5-beta.html#cb389-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the comparing frame</span></span>
+<span id="cb389-13"><a href="chapter-5-beta.html#cb389-13" aria-hidden="true" tabindex="-1"></a>coefs_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(reg_Nestle_coef, reg_Nestle_coef_manual, reg_Nestle_coef_manual, reg_Novartis_coef, reg_Novartis_coef_manual, reg_Nestle_coef_manual, reg_Roche_coef, reg_Roche_coef_manual, reg_Roche_coef_manual, reg_UBS_coef, reg_UBS_coef_manual, reg_UBS_coef_manual)</span>
+<span id="cb389-14"><a href="chapter-5-beta.html#cb389-14" aria-hidden="true" tabindex="-1"></a>se_compare <span class="ot">&lt;-</span> <span class="fu">cbind</span>(reg_Nestle_se, se_Nestle_robust, nw_se_Nestle, reg_Novartis_se, se_Novartis_robust, nw_se_Novartis, reg_Roche_se, se_Roche_robust, nw_se_Roche, reg_UBS_se, se_UBS_robust, nw_se_UBS)</span>
+<span id="cb389-15"><a href="chapter-5-beta.html#cb389-15" aria-hidden="true" tabindex="-1"></a>coefs_se <span class="ot">&lt;-</span> <span class="fu">rbind</span>(coefs_compare, se_compare)</span>
+<span id="cb389-16"><a href="chapter-5-beta.html#cb389-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Nestle&quot;</span>, <span class="st">&quot;Nestle HC Robust&quot;</span>, <span class="st">&quot;Nestle NW-HAC Robust&quot;</span>, <span class="st">&quot;Novartis&quot;</span>, <span class="st">&quot;Novartis HC Robust&quot;</span>, <span class="st">&quot;Novartis NW-HAC Robust&quot;</span>, <span class="st">&quot;Roche&quot;</span>, <span class="st">&quot;Roche HC Robust&quot;</span>, <span class="st">&quot;Roche NW-HAC Robust&quot;</span>, <span class="st">&quot;UBS&quot;</span>, <span class="st">&quot;UBS HC Robust&quot;</span>, <span class="st">&quot;UBS NW-HAC Robust&quot;</span>)</span>
+<span id="cb389-17"><a href="chapter-5-beta.html#cb389-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(coefs_se) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Estimates&quot;</span>, <span class="st">&quot;Standard Errors&quot;</span>)</span>
+<span id="cb389-18"><a href="chapter-5-beta.html#cb389-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb389-19"><a href="chapter-5-beta.html#cb389-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the output</span></span>
+<span id="cb389-20"><a href="chapter-5-beta.html#cb389-20" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">data.frame</span>(coefs_se), <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##                  Nestle Nestle.HC.Robust Nestle.NW.HAC.Robust Novartis Novartis.HC.Robust Novartis.NW.HAC.Robust   Roche Roche.HC.Robust
+## Estimates       0.76208          0.57649              0.57649  1.05798            0.72012                0.57649 0.97987         0.77050
+## Standard Errors 0.10281          0.10827              0.05425  0.10748            0.10709                0.07058 0.12250         0.08626
+##                 Roche.NW.HAC.Robust     UBS UBS.HC.Robust UBS.NW.HAC.Robust
+## Estimates                   0.77050 1.28872       1.61872           1.61872
+## Standard Errors             0.08537 0.24582       0.19482           0.12211</code></pre>
+<p>As we can see, further correcting for serial correlation again increases the standard errors to some extent.</p>
+</div>
+<div id="improving-table-design-with-stargazer" class="section level4" number="6.1.2.4">
+<h4><span class="header-section-number">6.1.2.4</span> Improving table design with stargazer</h4>
+<p>Now we have the basics to perform simple regression analysis. While we can learn more about running regressions only once we introduce more elaborate econometric tools (such as IV, RDD, Panel Data Methods etc.) we also want to be able to display the outputs we generated in a nice and easily readable fashion. To display charts and regression outputs in such a way, we make use of Marek Hlavac’s (2021) <code>stargazer</code> package. This package facilitates the use of nice looking outputs as we know them from academic journals. To understand how we can use the package, we will quickly introduce its main components:</p>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="chapter-5-beta.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s jump right into the application of stargazer and explain the individual commands </span></span>
+<span id="cb391-2"><a href="chapter-5-beta.html#cb391-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb391-3"><a href="chapter-5-beta.html#cb391-3" aria-hidden="true" tabindex="-1"></a>list_regs <span class="ot">&lt;-</span> <span class="fu">list</span>(reg_Nestle, reg_Novartis, reg_Roche, reg_UBS)</span>
+<span id="cb391-4"><a href="chapter-5-beta.html#cb391-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb391-5"><a href="chapter-5-beta.html#cb391-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(reg_Nestle, reg_Novartis, reg_Roche, reg_UBS,</span>
+<span id="cb391-6"><a href="chapter-5-beta.html#cb391-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb391-7"><a href="chapter-5-beta.html#cb391-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">report =</span> <span class="st">&quot;vcs*&quot;</span>,</span>
+<span id="cb391-8"><a href="chapter-5-beta.html#cb391-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">se=</span><span class="fu">lapply</span>(list_regs, <span class="cf">function</span>(x) <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(x, <span class="at">type =</span> <span class="st">&quot;HC1&quot;</span>)))), <span class="co"># This is a very handy feature!</span></span>
+<span id="cb391-9"><a href="chapter-5-beta.html#cb391-9" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Note that the lapply applies the calculation of the robust standard errors to each of the regression outputs we defined</span></span>
+<span id="cb391-10"><a href="chapter-5-beta.html#cb391-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">title=</span><span class="st">&quot;How standardized fertility measure is affected by socio-economic indicators?&quot;</span>,</span>
+<span id="cb391-11"><a href="chapter-5-beta.html#cb391-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Iter1&quot;</span>, <span class="st">&quot;Iter-2&quot;</span>, <span class="st">&quot;Iter-3&quot;</span>, <span class="st">&quot;Iter-4&quot;</span>, <span class="st">&quot;Iter-5&quot;</span>),</span>
+<span id="cb391-12"><a href="chapter-5-beta.html#cb391-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">&quot;Intercept&quot;</span>, <span class="st">&quot;SMI&quot;</span>),</span>
+<span id="cb391-13"><a href="chapter-5-beta.html#cb391-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">no.space =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb391-14"><a href="chapter-5-beta.html#cb391-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">header=</span>F,</span>
+<span id="cb391-15"><a href="chapter-5-beta.html#cb391-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">single.row =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb391-16"><a href="chapter-5-beta.html#cb391-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">font.size =</span> <span class="st">&quot;small&quot;</span>,</span>
+<span id="cb391-17"><a href="chapter-5-beta.html#cb391-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">intercept.bottom =</span> F,</span>
+<span id="cb391-18"><a href="chapter-5-beta.html#cb391-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.separate =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb391-19"><a href="chapter-5-beta.html#cb391-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb391-20"><a href="chapter-5-beta.html#cb391-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">float =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb391-21"><a href="chapter-5-beta.html#cb391-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">t.auto =</span> F,</span>
+<span id="cb391-22"><a href="chapter-5-beta.html#cb391-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">p.auto =</span> F,</span>
+<span id="cb391-23"><a href="chapter-5-beta.html#cb391-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes.align =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb391-24"><a href="chapter-5-beta.html#cb391-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes =</span> <span class="fu">c</span>(<span class="st">&quot;datasets::swiss&quot;</span>, <span class="st">&quot;lm() function with Robust SE&quot;</span>),</span>
+<span id="cb391-25"><a href="chapter-5-beta.html#cb391-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes.append =</span> <span class="cn">TRUE</span></span>
+<span id="cb391-26"><a href="chapter-5-beta.html#cb391-26" aria-hidden="true" tabindex="-1"></a>          )</span></code></pre></div>
+<pre><code>## 
+## How standardized fertility measure is affected by socio-economic indicators?
+## =========================================================================================================================================================================
+##                                                                                           Dependent variable:                                                            
+##                               -------------------------------------------------------------------------------------------------------------------------------------------
+##                               rf_1_year[&quot;2013-01-31/2017-12-31&quot;] rf_1_year[&quot;2013-01-31/2017-12-31&quot;] rf_1_year[&quot;2013-01-31/2017-12-31&quot;] rf_1_year[&quot;2013-01-31/2017-12-31&quot;]
+##                                             Iter1                              Iter-2                             Iter-3                             Iter-4              
+##                                              (1)                                (2)                                (3)                                (4)                
+## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Intercept                                   0.002                              0.001                              0.0004                             -0.001              
+##                                            (0.003)                            (0.003)                            (0.004)                             (0.01)              
+## SMI                                          0.76                               1.06                               0.98                               1.29               
+##                                           (0.11)***                          (0.11)***                          (0.09)***                          (0.19)***             
+## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Observations                                  60                                 60                                 60                                 60                
+## R2                                           0.49                               0.63                               0.52                               0.32               
+## Adjusted R2                                  0.48                               0.62                               0.52                               0.31               
+## Residual Std. Error (df = 58)                0.02                               0.03                               0.03                               0.06               
+## F Statistic (df = 1; 58)                   54.95***                           96.89***                           63.98***                           27.48***             
+## =========================================================================================================================================================================
+## Note:                         *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01                                                                                                                
+##                               datasets::swiss                                                                                                                            
+##                               lm() function with Robust SE</code></pre>
+<p>As we can see, we can report scientific regression outputs with ease. Let us now explore how we were able to create the output.</p>
+<p>First note that <code>stargazer</code> needs you to already have run the repsective regressions and assign them to a variable (such as reg_Nestle). Then, you just add the respective regression variables to your model.</p>
+<p>The function works with the following inputs:</p>
+<ul>
+<li><code>x</code>: We define as x the regression output variables we created in a previous step</li>
+<li><code>type</code>: This is the output type. You can choose between <code>text</code>, <code>latex</code> or <code>html</code>, depending on which program you want to show the output</li>
+<li>`<code>report</code>: A character string containing only elements of “v”, “c”, “s”,“t”, “p”, * that determines whether, and in which order, variable names (“v”), coefficients, (“c”), standard errors/confidence intervals (“s”), test statistics (“t”) and pvalues (“p”) should be reported in regression tables. If one of the aforementioned letters is followed by an asterisk ("*"), significance stars will be reported</li>
+<li>se: The reported standard errors. Here, we can add the HC or HAC (NW) standard errors to account for both heteroskedasticity and autocorrelation</li>
+<li>no.space / single row: No space between the individual entries / whether estimator and SE output should be printed on one row. This is needed to narrow down the outputs</li>
+<li>intercept.bottom: Indicates whether the intercept should be displayed as last covariate row or as first</li>
+<li>digits: Number of decimal digits</li>
+<li><ol start="20" style="list-style-type: lower-alpha">
+<li>/ p.auto: Indicates whether the t and p values should be automatically displayed</li>
+</ol></li>
+<li>omit.stat: Indicates whether you want to omit a statistic. Potential values to omit are: “all”, “adj.rsq”, “aic”, “bic”, “chi2”, “f”, “ll” (log-likelihood), “n”, “mills”, “res.dev”, “rsq”, “ser” (standard error of the regression), “sigma” or “wald”</li>
+</ul>
+<p>The remaining arguments are quite self-explanatory.</p>
+<p>Most importantly, we can use the adjusted, robust standard error configurations straight within an argument of the function. For instance, the HC robust Standard Errors are computed as:</p>
+<ul>
+<li><code>se = lapply(list_regs, function(x) sqrt(diag(vcovHC(x, type = "HC1"))))</code></li>
+<li><code>se = lapply(list_regs, function(x) sqrt(diag(NeweyWest(x, lag = m - 1, prewhite = T, adjust = T))))</code></li>
+</ul>
+<p>After deciding which HC robustness to take for the HC Robust Standard Errors or deciding what m should be in the HAC NW Robust Standard Errors, you can just use either of these commands and add them to the <code>se</code> argument of stargazer.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-4-inductive-statistics-and-regression-analysis-fundamentals.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/edit/master/05-beta.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/NikolasAnic/Empirical_Finance_R_Lab/blob/master/05-beta.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
