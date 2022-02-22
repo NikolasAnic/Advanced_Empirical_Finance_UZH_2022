@@ -463,11 +463,11 @@ p(x) = \sum_{w_i \in E} p_i
 \]</span></p>
 <p>whereas <span class="math inline">\(p_i\)</span> is the probability of the individual outcome <span class="math inline">\(\omega_i\)</span> in E.</p>
 <p>Let’s quickly assume and recreate a potential discrete distribution. For that, let’s assume return based probabilities we generate:</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="statistical-properties.html#cb405-1" aria-hidden="true" tabindex="-1"></a>ret <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="dv">0</span>, <span class="fl">0.15</span>, <span class="fl">0.35</span>, <span class="fl">0.7</span>)</span>
-<span id="cb405-2"><a href="statistical-properties.html#cb405-2" aria-hidden="true" tabindex="-1"></a>probabs <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.14</span>, <span class="fl">0.46</span>, <span class="fl">0.25</span>, <span class="fl">0.1</span>)</span>
-<span id="cb405-3"><a href="statistical-properties.html#cb405-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ret, probabs, <span class="at">lwd=</span><span class="dv">4</span>, <span class="at">xlab=</span><span class="st">&quot;Return&quot;</span>, </span>
-<span id="cb405-4"><a href="statistical-properties.html#cb405-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Probability&quot;</span>, <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
-<span id="cb405-5"><a href="statistical-properties.html#cb405-5" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span>ret)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="statistical-properties.html#cb404-1" aria-hidden="true" tabindex="-1"></a>ret <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>, <span class="dv">0</span>, <span class="fl">0.15</span>, <span class="fl">0.35</span>, <span class="fl">0.7</span>)</span>
+<span id="cb404-2"><a href="statistical-properties.html#cb404-2" aria-hidden="true" tabindex="-1"></a>probabs <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.14</span>, <span class="fl">0.46</span>, <span class="fl">0.25</span>, <span class="fl">0.1</span>)</span>
+<span id="cb404-3"><a href="statistical-properties.html#cb404-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ret, probabs, <span class="at">lwd=</span><span class="dv">4</span>, <span class="at">xlab=</span><span class="st">&quot;Return&quot;</span>, </span>
+<span id="cb404-4"><a href="statistical-properties.html#cb404-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Probability&quot;</span>, <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb404-5"><a href="statistical-properties.html#cb404-5" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span>ret)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/check%20chunk-1.png" width="672" /></p>
 </div>
 <div id="bernoulli-distribution" class="section level4" number="7.1.3.2">
@@ -644,21 +644,21 @@ F(x + \triangle x) - F(x) = P(X \in [x, x + \triangle x))
 <li>Finally, we integrate all values of f (weighted by dt) up to x to obtain the probability for <span class="math inline">\((-\infty, x]\)</span></li>
 </ol>
 <p>In the end, the integral of this marginal rate of growth of F in the interval at x is exactly how the probability <span class="math inline">\(P((-\infty, x])\)</span> is derived through integrating the marginal rate f over the interval <span class="math inline">\((-\infty, x]\)</span> with respect to the values. The resulting total probability is then given by the area under the curve in the below figure.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="statistical-properties.html#cb406-1" aria-hidden="true" tabindex="-1"></a>mean<span class="ot">=</span><span class="dv">80</span>; sd<span class="ot">=</span><span class="dv">10</span></span>
-<span id="cb406-2"><a href="statistical-properties.html#cb406-2" aria-hidden="true" tabindex="-1"></a>lb<span class="ot">=</span><span class="dv">60</span>; ub<span class="ot">=</span><span class="dv">100</span></span>
-<span id="cb406-3"><a href="statistical-properties.html#cb406-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb406-4"><a href="statistical-properties.html#cb406-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span><span class="dv">100</span>)<span class="sc">*</span>sd <span class="sc">+</span> mean</span>
-<span id="cb406-5"><a href="statistical-properties.html#cb406-5" aria-hidden="true" tabindex="-1"></a>hx <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,mean,sd)</span>
-<span id="cb406-6"><a href="statistical-properties.html#cb406-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb406-7"><a href="statistical-properties.html#cb406-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, hx, <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;pdf&quot;</span>)</span>
-<span id="cb406-8"><a href="statistical-properties.html#cb406-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb406-9"><a href="statistical-properties.html#cb406-9" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> x <span class="sc">&gt;=</span> lb <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> ub</span>
-<span id="cb406-10"><a href="statistical-properties.html#cb406-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, hx)</span>
-<span id="cb406-11"><a href="statistical-properties.html#cb406-11" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(lb,x[i],ub), <span class="fu">c</span>(<span class="dv">0</span>,hx[i],<span class="dv">0</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="statistical-properties.html#cb405-1" aria-hidden="true" tabindex="-1"></a>mean<span class="ot">=</span><span class="dv">80</span>; sd<span class="ot">=</span><span class="dv">10</span></span>
+<span id="cb405-2"><a href="statistical-properties.html#cb405-2" aria-hidden="true" tabindex="-1"></a>lb<span class="ot">=</span><span class="dv">60</span>; ub<span class="ot">=</span><span class="dv">100</span></span>
+<span id="cb405-3"><a href="statistical-properties.html#cb405-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb405-4"><a href="statistical-properties.html#cb405-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="at">length=</span><span class="dv">100</span>)<span class="sc">*</span>sd <span class="sc">+</span> mean</span>
+<span id="cb405-5"><a href="statistical-properties.html#cb405-5" aria-hidden="true" tabindex="-1"></a>hx <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,mean,sd)</span>
+<span id="cb405-6"><a href="statistical-properties.html#cb405-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb405-7"><a href="statistical-properties.html#cb405-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, hx, <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;pdf&quot;</span>)</span>
+<span id="cb405-8"><a href="statistical-properties.html#cb405-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb405-9"><a href="statistical-properties.html#cb405-9" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> x <span class="sc">&gt;=</span> lb <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> ub</span>
+<span id="cb405-10"><a href="statistical-properties.html#cb405-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, hx)</span>
+<span id="cb405-11"><a href="statistical-properties.html#cb405-11" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(lb,x[i],ub), <span class="fu">c</span>(<span class="dv">0</span>,hx[i],<span class="dv">0</span>), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/second%20heck%20chunk-1.png" width="672" /></p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="statistical-properties.html#cb407-1" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(mean, sd) <span class="sc">-</span> <span class="fu">pnorm</span>(lb, mean)</span>
-<span id="cb407-2"><a href="statistical-properties.html#cb407-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;P(&quot;</span>,lb,<span class="st">&quot;&lt; IQ &lt;&quot;</span>,ub,<span class="st">&quot;) =&quot;</span>,</span>
-<span id="cb407-3"><a href="statistical-properties.html#cb407-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">signif</span>(area, <span class="at">digits=</span><span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="statistical-properties.html#cb406-1" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(mean, sd) <span class="sc">-</span> <span class="fu">pnorm</span>(lb, mean)</span>
+<span id="cb406-2"><a href="statistical-properties.html#cb406-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;P(&quot;</span>,lb,<span class="st">&quot;&lt; IQ &lt;&quot;</span>,ub,<span class="st">&quot;) =&quot;</span>,</span>
+<span id="cb406-3"><a href="statistical-properties.html#cb406-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">signif</span>(area, <span class="at">digits=</span><span class="dv">3</span>))</span></code></pre></div>
 <p>The area representing the value of the interval is indicated by the red block. So, the probability of some occurrence of at least a and at most b is given by the area inside red.</p>
 <p>Based on the notions above, the probability of <span class="math inline">\(X \in {a,b}\)</span> is given by:</p>
 <p><span class="math display">\[
@@ -682,32 +682,32 @@ F_X(x) = P(X\leq x)
 \text{Property 5: } P(x_1 &lt; X \leq x_2) = F_X(x_2) - F_X(x_1) 
 \]</span></p>
 <p>We can easily show an example for both discrete as well as continuous distributions:</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="statistical-properties.html#cb408-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">10</span>), <span class="at">cdf=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fl">0.2</span>,<span class="fl">0.3</span>,<span class="fl">0.5</span>,<span class="fl">0.6</span>,<span class="fl">0.7</span>,<span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb408-2"><a href="statistical-properties.html#cb408-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb408-3"><a href="statistical-properties.html#cb408-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_step</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">direction=</span><span class="st">&quot;vh&quot;</span>, <span class="at">linetype=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb408-4"><a href="statistical-properties.html#cb408-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">color=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb408-5"><a href="statistical-properties.html#cb408-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for discrete distribution&quot;</span>) <span class="sc">+</span></span>
-<span id="cb408-6"><a href="statistical-properties.html#cb408-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
-<span id="cb408-7"><a href="statistical-properties.html#cb408-7" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
-<span id="cb408-8"><a href="statistical-properties.html#cb408-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
-<span id="cb408-9"><a href="statistical-properties.html#cb408-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
-<span id="cb408-10"><a href="statistical-properties.html#cb408-10" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb408-11"><a href="statistical-properties.html#cb408-11" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb408-12"><a href="statistical-properties.html#cb408-12" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
-<span id="cb408-13"><a href="statistical-properties.html#cb408-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-246-1.png" width="672" /></p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="statistical-properties.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb409-2"><a href="statistical-properties.html#cb409-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> pnorm) <span class="sc">+</span> </span>
-<span id="cb409-3"><a href="statistical-properties.html#cb409-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for continuous distribution&quot;</span>) <span class="sc">+</span></span>
-<span id="cb409-4"><a href="statistical-properties.html#cb409-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
-<span id="cb409-5"><a href="statistical-properties.html#cb409-5" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
-<span id="cb409-6"><a href="statistical-properties.html#cb409-6" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
-<span id="cb409-7"><a href="statistical-properties.html#cb409-7" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
-<span id="cb409-8"><a href="statistical-properties.html#cb409-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb409-9"><a href="statistical-properties.html#cb409-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb409-10"><a href="statistical-properties.html#cb409-10" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
-<span id="cb409-11"><a href="statistical-properties.html#cb409-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-247-1.png" width="672" /></p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="statistical-properties.html#cb407-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">10</span>), <span class="at">cdf=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fl">0.2</span>,<span class="fl">0.3</span>,<span class="fl">0.5</span>,<span class="fl">0.6</span>,<span class="fl">0.7</span>,<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb407-2"><a href="statistical-properties.html#cb407-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb407-3"><a href="statistical-properties.html#cb407-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_step</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">direction=</span><span class="st">&quot;vh&quot;</span>, <span class="at">linetype=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb407-4"><a href="statistical-properties.html#cb407-4" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data=</span>d, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>cdf), <span class="at">color=</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb407-5"><a href="statistical-properties.html#cb407-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for discrete distribution&quot;</span>) <span class="sc">+</span></span>
+<span id="cb407-6"><a href="statistical-properties.html#cb407-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
+<span id="cb407-7"><a href="statistical-properties.html#cb407-7" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
+<span id="cb407-8"><a href="statistical-properties.html#cb407-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb407-9"><a href="statistical-properties.html#cb407-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb407-10"><a href="statistical-properties.html#cb407-10" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb407-11"><a href="statistical-properties.html#cb407-11" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb407-12"><a href="statistical-properties.html#cb407-12" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
+<span id="cb407-13"><a href="statistical-properties.html#cb407-13" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-266-1.png" width="672" /></p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="statistical-properties.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb408-2"><a href="statistical-properties.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> pnorm) <span class="sc">+</span> </span>
+<span id="cb408-3"><a href="statistical-properties.html#cb408-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">&quot;CDF&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;x&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;CDF for continuous distribution&quot;</span>) <span class="sc">+</span></span>
+<span id="cb408-4"><a href="statistical-properties.html#cb408-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">color=</span><span class="st">&quot;grey26&quot;</span>,</span>
+<span id="cb408-5"><a href="statistical-properties.html#cb408-5" aria-hidden="true" tabindex="-1"></a><span class="at">hjust=</span><span class="fl">0.5</span>,<span class="at">lineheight=</span><span class="fl">2.4</span>), </span>
+<span id="cb408-6"><a href="statistical-properties.html#cb408-6" aria-hidden="true" tabindex="-1"></a><span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>),</span>
+<span id="cb408-7"><a href="statistical-properties.html#cb408-7" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="cb408-8"><a href="statistical-properties.html#cb408-8" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb408-9"><a href="statistical-properties.html#cb408-9" aria-hidden="true" tabindex="-1"></a><span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb408-10"><a href="statistical-properties.html#cb408-10" aria-hidden="true" tabindex="-1"></a><span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">&quot;#f7f7f7&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#f7f7f7&quot;</span>), </span>
+<span id="cb408-11"><a href="statistical-properties.html#cb408-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-267-1.png" width="672" /></p>
 <div id="quantile-values-of-distributions" class="section level4" number="7.1.5.1">
 <h4><span class="header-section-number">7.1.5.1</span> Quantile values of Distributions</h4>
 <p>:</p>
@@ -735,17 +735,17 @@ q_{0.5} = F_X^{1}(0.5)
 q_\alpha = \Phi^{-1}(\alpha)
 \]</span></p>
 <p>Where <span class="math inline">\(\Phi^{-1}\)</span> denotes the inverse of the cdf of the standard normal distribution with the function <code>qnorm()</code>. Let’s use it to print the critical values of our normal distribution that we usually use for significance tests.</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="statistical-properties.html#cb410-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the functions </span></span>
-<span id="cb410-2"><a href="statistical-properties.html#cb410-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb410-3"><a href="statistical-properties.html#cb410-3" aria-hidden="true" tabindex="-1"></a>critical_10 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb410-4"><a href="statistical-properties.html#cb410-4" aria-hidden="true" tabindex="-1"></a>critical_5 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb410-5"><a href="statistical-properties.html#cb410-5" aria-hidden="true" tabindex="-1"></a>critical_1 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb410-6"><a href="statistical-properties.html#cb410-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb410-7"><a href="statistical-properties.html#cb410-7" aria-hidden="true" tabindex="-1"></a>criticals <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">cbind</span>(critical_10, critical_5, critical_1),<span class="dv">2</span>)</span>
-<span id="cb410-8"><a href="statistical-properties.html#cb410-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb410-9"><a href="statistical-properties.html#cb410-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(criticals) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;10% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;5% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;1% Significance 21 Tailed)&quot;</span>)</span>
-<span id="cb410-10"><a href="statistical-properties.html#cb410-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb410-11"><a href="statistical-properties.html#cb410-11" aria-hidden="true" tabindex="-1"></a>criticals</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="statistical-properties.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the functions </span></span>
+<span id="cb409-2"><a href="statistical-properties.html#cb409-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-3"><a href="statistical-properties.html#cb409-3" aria-hidden="true" tabindex="-1"></a>critical_10 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb409-4"><a href="statistical-properties.html#cb409-4" aria-hidden="true" tabindex="-1"></a>critical_5 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb409-5"><a href="statistical-properties.html#cb409-5" aria-hidden="true" tabindex="-1"></a>critical_1 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
+<span id="cb409-6"><a href="statistical-properties.html#cb409-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-7"><a href="statistical-properties.html#cb409-7" aria-hidden="true" tabindex="-1"></a>criticals <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">cbind</span>(critical_10, critical_5, critical_1),<span class="dv">2</span>)</span>
+<span id="cb409-8"><a href="statistical-properties.html#cb409-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-9"><a href="statistical-properties.html#cb409-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(criticals) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;10% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;5% Significance (2 Tailed)&quot;</span>, <span class="st">&quot;1% Significance 21 Tailed)&quot;</span>)</span>
+<span id="cb409-10"><a href="statistical-properties.html#cb409-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-11"><a href="statistical-properties.html#cb409-11" aria-hidden="true" tabindex="-1"></a>criticals</span></code></pre></div>
 <pre><code>##      10% Significance (2 Tailed) 5% Significance (2 Tailed) 1% Significance 21 Tailed)
 ## [1,]                        1.64                       1.96                       2.58</code></pre>
 <p>Accordingly, with the quantile function, we can obtain critical values of given distributions.</p>
@@ -762,27 +762,23 @@ q_\alpha = \Phi^{-1}(\alpha)
 f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/2\sigma^2}
 \]</span></p>
 <p>We can easily print the pdf of the normal distribution using the function <code>rnorm()</code></p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="statistical-properties.html#cb412-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">text =</span> <span class="st">&quot;info mean sd</span></span>
-<span id="cb412-2"><a href="statistical-properties.html#cb412-2" aria-hidden="true" tabindex="-1"></a><span class="st">info1 0 1</span></span>
-<span id="cb412-3"><a href="statistical-properties.html#cb412-3" aria-hidden="true" tabindex="-1"></a><span class="st">info2 1 0.5</span></span>
-<span id="cb412-4"><a href="statistical-properties.html#cb412-4" aria-hidden="true" tabindex="-1"></a><span class="st">info3 2 1</span></span>
-<span id="cb412-5"><a href="statistical-properties.html#cb412-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb412-6"><a href="statistical-properties.html#cb412-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb412-7"><a href="statistical-properties.html#cb412-7" aria-hidden="true" tabindex="-1"></a>densities <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat[, <span class="sc">-</span><span class="dv">1</span>], <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100000</span>, <span class="at">mean =</span> x[<span class="dv">1</span>], <span class="at">sd =</span> x[<span class="dv">2</span>]))</span>
-<span id="cb412-8"><a href="statistical-properties.html#cb412-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(densities) <span class="ot">&lt;-</span> dat<span class="sc">$</span>info</span>
-<span id="cb412-9"><a href="statistical-properties.html#cb412-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb412-10"><a href="statistical-properties.html#cb412-10" aria-hidden="true" tabindex="-1"></a>densities.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(densities)</span></code></pre></div>
-<pre><code>## Warning in melt(densities): The melt generic in data.table has been passed a matrix and will attempt to redirect to the relevant reshape2 method;
-## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
-## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(densities). In the next version, this warning will become
-## an error.</code></pre>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="statistical-properties.html#cb414-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb414-2"><a href="statistical-properties.html#cb414-2" aria-hidden="true" tabindex="-1"></a>densities.m <span class="sc">%&gt;%</span></span>
-<span id="cb414-3"><a href="statistical-properties.html#cb414-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> Var2, <span class="at">color =</span> Var2)) <span class="sc">+</span></span>
-<span id="cb414-4"><a href="statistical-properties.html#cb414-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb414-5"><a href="statistical-properties.html#cb414-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 117 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-249-1.png" width="672" /></p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="statistical-properties.html#cb411-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">text =</span> <span class="st">&quot;info mean sd</span></span>
+<span id="cb411-2"><a href="statistical-properties.html#cb411-2" aria-hidden="true" tabindex="-1"></a><span class="st">info1 0 1</span></span>
+<span id="cb411-3"><a href="statistical-properties.html#cb411-3" aria-hidden="true" tabindex="-1"></a><span class="st">info2 1 0.5</span></span>
+<span id="cb411-4"><a href="statistical-properties.html#cb411-4" aria-hidden="true" tabindex="-1"></a><span class="st">info3 2 1</span></span>
+<span id="cb411-5"><a href="statistical-properties.html#cb411-5" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb411-6"><a href="statistical-properties.html#cb411-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-7"><a href="statistical-properties.html#cb411-7" aria-hidden="true" tabindex="-1"></a>densities <span class="ot">&lt;-</span> <span class="fu">apply</span>(dat[, <span class="sc">-</span><span class="dv">1</span>], <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100000</span>, <span class="at">mean =</span> x[<span class="dv">1</span>], <span class="at">sd =</span> x[<span class="dv">2</span>]))</span>
+<span id="cb411-8"><a href="statistical-properties.html#cb411-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(densities) <span class="ot">&lt;-</span> dat<span class="sc">$</span>info</span>
+<span id="cb411-9"><a href="statistical-properties.html#cb411-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-10"><a href="statistical-properties.html#cb411-10" aria-hidden="true" tabindex="-1"></a>densities.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(densities)</span>
+<span id="cb411-11"><a href="statistical-properties.html#cb411-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb411-12"><a href="statistical-properties.html#cb411-12" aria-hidden="true" tabindex="-1"></a>densities.m <span class="sc">%&gt;%</span></span>
+<span id="cb411-13"><a href="statistical-properties.html#cb411-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> Var2, <span class="at">color =</span> Var2)) <span class="sc">+</span></span>
+<span id="cb411-14"><a href="statistical-properties.html#cb411-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb411-15"><a href="statistical-properties.html#cb411-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 145 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-269-1.png" width="672" /></p>
 <p>A problem is that the distribution function cannot be solved for analytically and therefore has to be approximated numerically. That is:</p>
 <p><span class="math display">\[
 P(a \leq X \leq b) = \int^b_a \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx
@@ -814,21 +810,21 @@ S = \sum_{i=1}^n \textstyle X \sim \chi^2(n)
 <p>The corresponding properties are: mean of E(x) = n and variance of Var(x) = 2n. So, the mean and variance are directly related to the degrees of freedom.</p>
 <p>An important feature of the <span class="math inline">\(chi^2\)</span> distribution is the degrees of freedom equal the number of independent <span class="math inline">\(\chi^2 (1)\)</span> distributed <span class="math inline">\(X_i\)</span> in the sum. Consequently, the summation of any two chi-squared distributed random variables is itself chi-square distributed.</p>
 <p>The <span class="math inline">\(chi^2\)</span> distribution is drawn with the function `rchisq()`` as follows:</p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="statistical-properties.html#cb416-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">2</span>)</span>
-<span id="cb416-2"><a href="statistical-properties.html#cb416-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">3</span>)</span>
-<span id="cb416-3"><a href="statistical-properties.html#cb416-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">7</span>)</span>
-<span id="cb416-4"><a href="statistical-properties.html#cb416-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">10</span>)</span>
-<span id="cb416-5"><a href="statistical-properties.html#cb416-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb416-6"><a href="statistical-properties.html#cb416-6" aria-hidden="true" tabindex="-1"></a>df_chi <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
-<span id="cb416-7"><a href="statistical-properties.html#cb416-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_chi) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;DOF=2&quot;</span>, <span class="st">&quot;DOF=3&quot;</span>, <span class="st">&quot;DOF=7&quot;</span>, <span class="st">&quot;DOF=10&quot;</span>)</span>
-<span id="cb416-8"><a href="statistical-properties.html#cb416-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb416-9"><a href="statistical-properties.html#cb416-9" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_chi)</span>
-<span id="cb416-10"><a href="statistical-properties.html#cb416-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb416-11"><a href="statistical-properties.html#cb416-11" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="sc">%&gt;%</span></span>
-<span id="cb416-12"><a href="statistical-properties.html#cb416-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb416-13"><a href="statistical-properties.html#cb416-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb416-14"><a href="statistical-properties.html#cb416-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-250-1.png" width="672" /></p>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="statistical-properties.html#cb413-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">2</span>)</span>
+<span id="cb413-2"><a href="statistical-properties.html#cb413-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">3</span>)</span>
+<span id="cb413-3"><a href="statistical-properties.html#cb413-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">7</span>)</span>
+<span id="cb413-4"><a href="statistical-properties.html#cb413-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rchisq</span>(<span class="dv">100000</span>, <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb413-5"><a href="statistical-properties.html#cb413-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb413-6"><a href="statistical-properties.html#cb413-6" aria-hidden="true" tabindex="-1"></a>df_chi <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb413-7"><a href="statistical-properties.html#cb413-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_chi) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;DOF=2&quot;</span>, <span class="st">&quot;DOF=3&quot;</span>, <span class="st">&quot;DOF=7&quot;</span>, <span class="st">&quot;DOF=10&quot;</span>)</span>
+<span id="cb413-8"><a href="statistical-properties.html#cb413-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb413-9"><a href="statistical-properties.html#cb413-9" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_chi)</span>
+<span id="cb413-10"><a href="statistical-properties.html#cb413-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb413-11"><a href="statistical-properties.html#cb413-11" aria-hidden="true" tabindex="-1"></a>df_chi_melt <span class="sc">%&gt;%</span></span>
+<span id="cb413-12"><a href="statistical-properties.html#cb413-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb413-13"><a href="statistical-properties.html#cb413-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb413-14"><a href="statistical-properties.html#cb413-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-270-1.png" width="672" /></p>
 </div>
 <div id="students-t-distribution" class="section level4" number="7.1.6.3">
 <h4><span class="header-section-number">7.1.6.3</span> Student’s t-Distribution</h4>
@@ -846,27 +842,23 @@ Kurt(x) = \frac{6}{v-4}, v &gt; 4
 \]</span></p>
 <p>The parameter v controls the scale and tail thickness of the distribution. If v is close to four, then the kurtosis is large and the tails are thick. In general, the lower the degrees of freedom, the heavier the tails of the distribution, making extreme outcomes much more likely than for greater degrees of freedom or, in the limit, the normal distribution.</p>
 <p>The t-distribution is displayed with the function <code>r</code>t()` below. Note that we also add the normal distribution to show that the tails for both t distributions are fatter, but the fattest are for the t distribution with the lowest DOF.</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="statistical-properties.html#cb417-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb417-2"><a href="statistical-properties.html#cb417-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">1</span>)</span>
-<span id="cb417-3"><a href="statistical-properties.html#cb417-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">5</span>)</span>
-<span id="cb417-4"><a href="statistical-properties.html#cb417-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">10</span>)</span>
-<span id="cb417-5"><a href="statistical-properties.html#cb417-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb417-6"><a href="statistical-properties.html#cb417-6" aria-hidden="true" tabindex="-1"></a>df_norm_t <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
-<span id="cb417-7"><a href="statistical-properties.html#cb417-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_norm_t) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;N(0,1)&quot;</span>, <span class="st">&quot;t, DOF=1&quot;</span>, <span class="st">&quot;t, DOF=5&quot;</span>, <span class="st">&quot;t, DOF=10&quot;</span>)</span>
-<span id="cb417-8"><a href="statistical-properties.html#cb417-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb417-9"><a href="statistical-properties.html#cb417-9" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_norm_t)</span></code></pre></div>
-<pre><code>## Warning in melt(df_norm_t): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2
-## method; please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while
-## both libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(df_norm_t). In the next version, this warning will
-## become an error.</code></pre>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="statistical-properties.html#cb414-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb414-2"><a href="statistical-properties.html#cb414-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb414-3"><a href="statistical-properties.html#cb414-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">5</span>)</span>
+<span id="cb414-4"><a href="statistical-properties.html#cb414-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rt</span>(<span class="dv">100000</span>,  <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb414-5"><a href="statistical-properties.html#cb414-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb414-6"><a href="statistical-properties.html#cb414-6" aria-hidden="true" tabindex="-1"></a>df_norm_t <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb414-7"><a href="statistical-properties.html#cb414-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_norm_t) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;N(0,1)&quot;</span>, <span class="st">&quot;t, DOF=1&quot;</span>, <span class="st">&quot;t, DOF=5&quot;</span>, <span class="st">&quot;t, DOF=10&quot;</span>)</span>
+<span id="cb414-8"><a href="statistical-properties.html#cb414-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb414-9"><a href="statistical-properties.html#cb414-9" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_norm_t)</span></code></pre></div>
 <pre><code>## No id variables; using all as measure variables</code></pre>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="statistical-properties.html#cb420-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb420-2"><a href="statistical-properties.html#cb420-2" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="sc">%&gt;%</span></span>
-<span id="cb420-3"><a href="statistical-properties.html#cb420-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb420-4"><a href="statistical-properties.html#cb420-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb420-5"><a href="statistical-properties.html#cb420-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 13112 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-251-1.png" width="672" /></p>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="statistical-properties.html#cb416-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb416-2"><a href="statistical-properties.html#cb416-2" aria-hidden="true" tabindex="-1"></a>df_norm_t_melt <span class="sc">%&gt;%</span></span>
+<span id="cb416-3"><a href="statistical-properties.html#cb416-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb416-4"><a href="statistical-properties.html#cb416-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb416-5"><a href="statistical-properties.html#cb416-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 13018 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-271-1.png" width="672" /></p>
 </div>
 <div id="f-distribution" class="section level4" number="7.1.6.4">
 <h4><span class="header-section-number">7.1.6.4</span> F-Distribution</h4>
@@ -883,21 +875,21 @@ F(n_1, n_2) = \frac{Y/n_1}{X/n_2}
 <p>This ratio has an F-distribution with <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> DOF from the underlying <span class="math inline">\(\chi^2\)</span> distribution for X and Y, respectively. Also like the chi-square distribution, the F-distribution is skewed to the right.</p>
 <p>The first two moments of the F-distribution are the following: The mean is given by E(X) = <span class="math inline">\(\frac{n_2}{n_2 - 2}\)</span> for <span class="math inline">\(n_2 &gt; 2\)</span>, and the variance is given by Var(X) = <span class="math inline">\(\frac{2n_2^2(n_1 + n_2 -2)}{n_1(n_2 - 2)^2(n_2 - 4)}\)</span> for <span class="math inline">\(n_2 &gt; 4\)</span>.</p>
 <p>The F-Distribution values can be determined with the function <code>r(f)</code> and looks like this:</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="statistical-properties.html#cb422-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
-<span id="cb422-2"><a href="statistical-properties.html#cb422-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
-<span id="cb422-3"><a href="statistical-properties.html#cb422-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
-<span id="cb422-4"><a href="statistical-properties.html#cb422-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">100</span>)</span>
-<span id="cb422-5"><a href="statistical-properties.html#cb422-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb422-6"><a href="statistical-properties.html#cb422-6" aria-hidden="true" tabindex="-1"></a>df_F <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
-<span id="cb422-7"><a href="statistical-properties.html#cb422-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_F) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;n1=4, n2=4&quot;</span>, <span class="st">&quot;n1=4, n2=10&quot;</span>, <span class="st">&quot;n1=10, n2=4&quot;</span>,<span class="st">&quot;n1=10, n2=100&quot;</span>)</span>
-<span id="cb422-8"><a href="statistical-properties.html#cb422-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb422-9"><a href="statistical-properties.html#cb422-9" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_F)</span>
-<span id="cb422-10"><a href="statistical-properties.html#cb422-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb422-11"><a href="statistical-properties.html#cb422-11" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="sc">%&gt;%</span></span>
-<span id="cb422-12"><a href="statistical-properties.html#cb422-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb422-13"><a href="statistical-properties.html#cb422-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb422-14"><a href="statistical-properties.html#cb422-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-252-1.png" width="672" /></p>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="statistical-properties.html#cb418-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
+<span id="cb418-2"><a href="statistical-properties.html#cb418-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
+<span id="cb418-3"><a href="statistical-properties.html#cb418-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">4</span>)</span>
+<span id="cb418-4"><a href="statistical-properties.html#cb418-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rf</span>(<span class="dv">100000</span>, <span class="at">df1 =</span> <span class="dv">10</span>, <span class="at">df2 =</span> <span class="dv">100</span>)</span>
+<span id="cb418-5"><a href="statistical-properties.html#cb418-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb418-6"><a href="statistical-properties.html#cb418-6" aria-hidden="true" tabindex="-1"></a>df_F <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb418-7"><a href="statistical-properties.html#cb418-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_F) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;n1=4, n2=4&quot;</span>, <span class="st">&quot;n1=4, n2=10&quot;</span>, <span class="st">&quot;n1=10, n2=4&quot;</span>,<span class="st">&quot;n1=10, n2=100&quot;</span>)</span>
+<span id="cb418-8"><a href="statistical-properties.html#cb418-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb418-9"><a href="statistical-properties.html#cb418-9" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_F)</span>
+<span id="cb418-10"><a href="statistical-properties.html#cb418-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb418-11"><a href="statistical-properties.html#cb418-11" aria-hidden="true" tabindex="-1"></a>df_F_melt <span class="sc">%&gt;%</span></span>
+<span id="cb418-12"><a href="statistical-properties.html#cb418-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb418-13"><a href="statistical-properties.html#cb418-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb418-14"><a href="statistical-properties.html#cb418-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-272-1.png" width="672" /></p>
 </div>
 <div id="log-normal-distribution" class="section level4" number="7.1.6.5">
 <h4><span class="header-section-number">7.1.6.5</span> Log-Normal Distribution</h4>
@@ -917,21 +909,21 @@ f(X) = \frac{1}{x\sigma\sqrt{2\pi}}e^{\frac{(\ln x - \mu)^2}{2\sigma^2}}
 F(x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
 \]</span></p>
 <p>The log-normal distribution values can be calculate using the <code>rlnorm()</code> function:</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="statistical-properties.html#cb423-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
-<span id="cb423-2"><a href="statistical-properties.html#cb423-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="fl">0.5</span>)</span>
-<span id="cb423-3"><a href="statistical-properties.html#cb423-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">2</span>)</span>
-<span id="cb423-4"><a href="statistical-properties.html#cb423-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">1</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
-<span id="cb423-5"><a href="statistical-properties.html#cb423-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb423-6"><a href="statistical-properties.html#cb423-6" aria-hidden="true" tabindex="-1"></a>df_lnorm <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
-<span id="cb423-7"><a href="statistical-properties.html#cb423-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_lnorm) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;mean=0, sd=1&quot;</span>, <span class="st">&quot;mean=0, sd=0.5&quot;</span>, <span class="st">&quot;mean=0, sd=2&quot;</span>,<span class="st">&quot;mean=1,sd=1&quot;</span>)</span>
-<span id="cb423-8"><a href="statistical-properties.html#cb423-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb423-9"><a href="statistical-properties.html#cb423-9" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_lnorm)</span>
-<span id="cb423-10"><a href="statistical-properties.html#cb423-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb423-11"><a href="statistical-properties.html#cb423-11" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="sc">%&gt;%</span></span>
-<span id="cb423-12"><a href="statistical-properties.html#cb423-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb423-13"><a href="statistical-properties.html#cb423-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb423-14"><a href="statistical-properties.html#cb423-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-253-1.png" width="672" /></p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="statistical-properties.html#cb419-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
+<span id="cb419-2"><a href="statistical-properties.html#cb419-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="fl">0.5</span>)</span>
+<span id="cb419-3"><a href="statistical-properties.html#cb419-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">0</span>, <span class="at">sdlog =</span> <span class="dv">2</span>)</span>
+<span id="cb419-4"><a href="statistical-properties.html#cb419-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100000</span>, <span class="at">meanlog =</span> <span class="dv">1</span>, <span class="at">sdlog =</span> <span class="dv">1</span>)</span>
+<span id="cb419-5"><a href="statistical-properties.html#cb419-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb419-6"><a href="statistical-properties.html#cb419-6" aria-hidden="true" tabindex="-1"></a>df_lnorm <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c,d))</span>
+<span id="cb419-7"><a href="statistical-properties.html#cb419-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_lnorm) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;mean=0, sd=1&quot;</span>, <span class="st">&quot;mean=0, sd=0.5&quot;</span>, <span class="st">&quot;mean=0, sd=2&quot;</span>,<span class="st">&quot;mean=1,sd=1&quot;</span>)</span>
+<span id="cb419-8"><a href="statistical-properties.html#cb419-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb419-9"><a href="statistical-properties.html#cb419-9" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_lnorm)</span>
+<span id="cb419-10"><a href="statistical-properties.html#cb419-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb419-11"><a href="statistical-properties.html#cb419-11" aria-hidden="true" tabindex="-1"></a>df_lnorm_melt <span class="sc">%&gt;%</span></span>
+<span id="cb419-12"><a href="statistical-properties.html#cb419-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb419-13"><a href="statistical-properties.html#cb419-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb419-14"><a href="statistical-properties.html#cb419-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">7</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-273-1.png" width="672" /></p>
 </div>
 <div id="functions-for-distribution-calculations-d-p-q-r" class="section level4" number="7.1.6.6">
 <h4><span class="header-section-number">7.1.6.6</span> Functions for distribution calculations (d, p, q, r)</h4>
@@ -939,26 +931,26 @@ F(x) = \Phi\left(\frac{\ln x - \mu}{\sigma}\right)
 <p>For that, we will look at the normal distribution. As previously, each statistical property of the distribution can be calculated using the functions <code>dnorm()</code>, <code>pnorm()</code>, <code>qnorm()</code> and <code>rnorm()</code>. We will now cover what each of these functions does.</p>
 <p><strong>dnorm</strong></p>
 <p>The <code>dnorm()</code> returns the value of of the probability density function for the distribution of interest, given the parameters x, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. That is, for a given input x with distributional moments of the mean and variance, we obtain the corresponding value on the y-axis, which indicates the density function of that value.</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="statistical-properties.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the largest density of the PDF given that we have the normal distribution with mean = 0 &amp; sd = 1</span></span>
-<span id="cb424-2"><a href="statistical-properties.html#cb424-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="statistical-properties.html#cb420-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the largest density of the PDF given that we have the normal distribution with mean = 0 &amp; sd = 1</span></span>
+<span id="cb420-2"><a href="statistical-properties.html#cb420-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## [1] 0.3989423</code></pre>
 <p><strong>pnorm</strong></p>
 <p>The <code>pnorm()</code> returns the integral from <span class="math inline">\(-\infty\)</span> to q of the pdf of a certain distribution, whereas q is a z-score. That is, for a given x, <code>pnorm()</code> returns the value of the y axis on the cdf, also known as probability density. Consequently, with this function you obtain the cdf functional value. In general, it is the function that replaces the table of probabilities and Z-scores at the back of the statistics textbook.</p>
 <p>In general, pnorm is used to get the probability that <span class="math inline">\(-\infty &lt; X \leq x\)</span>, and, as such, it gives the <strong>p-value for a distirbution</strong>.</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="statistical-properties.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the median value of the respective distribution. As such, it comprises of exactly half the overall density of the underlying distribution. This is intuitive, given that the value -1.96 in a normal distribution with mean = 0 and sd = 1 is exactly the middle value, thereby incorporating half of the entire area under the cdf. </span></span>
-<span id="cb426-2"><a href="statistical-properties.html#cb426-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.96</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="statistical-properties.html#cb422-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the median value of the respective distribution. As such, it comprises of exactly half the overall density of the underlying distribution. This is intuitive, given that the value -1.96 in a normal distribution with mean = 0 and sd = 1 is exactly the middle value, thereby incorporating half of the entire area under the cdf. </span></span>
+<span id="cb422-2"><a href="statistical-properties.html#cb422-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.96</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## [1] 0.0249979</code></pre>
 <p>We deliberately chose -1.96 b/c, in a two-sided test when assuming normal distribution, then <span class="math inline">\(-\infty &lt; -1.96 \leq x\)</span> and <span class="math inline">\(x \leq -1.96 &lt; \infty\)</span> constitute approximately 5% of the probability mass under the curve, or, in other words, 5% of the total probability.</p>
 <p><strong>qnorm</strong></p>
 <p>The <code>qnorm()</code> is the inverse of the <code>pnorm()</code> function. Looking at the quantiles part, it is the function that returns the inverse values of the cdf. You can use this function to determine the p’th quantile value of the underlying distribution (e.g. which value incorporates exactly half of the overall area under the curve).</p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="statistical-properties.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intuitively, pnorm() inverse for a value of 0.5 indicates what value the 50% quantile must have under the given distribution characteristics. As such, we see that the 5% quantile here must have value -1.96! </span></span>
-<span id="cb428-2"><a href="statistical-properties.html#cb428-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="statistical-properties.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intuitively, pnorm() inverse for a value of 0.5 indicates what value the 50% quantile must have under the given distribution characteristics. As such, we see that the 5% quantile here must have value -1.96! </span></span>
+<span id="cb424-2"><a href="statistical-properties.html#cb424-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## [1] -1.959964</code></pre>
 <p>Consequently, it gives us the value for a given probability. That is, here a one-sided probability mass of 2.5% would require that the corresponding value is approximately -1.96, thereby stating that -1.96 is at the 2.5’th percentile of the distribution.</p>
 <p><strong>rnorm</strong></p>
 <p>Lastly, the <code>rnorm()</code> is used to generate vector of numbers that follow a certain distribution and its characteristics. We used this function to generate an order of numbers to plot subsequently and show the plotted distributions.</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="statistical-properties.html#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>##  [1]  0.7175373 -0.5227276 -0.8529029  0.4184272  0.5607154 -0.5526390  0.6421609 -1.8744686  0.2432041 -1.2057285</code></pre>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="statistical-properties.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##  [1]  0.03306359 -0.96117096  0.26365043  0.64899801  1.92755954  0.55998601 -0.44375478  0.27437515  1.86605882 -0.05499930</code></pre>
 <p>Although we just showed the functions for the normal distribution, R offers a great amount of functions for other distributions that can be used identically as the normal case. To give you an overview:</p>
 <p>Neatly, nearly all of these functions can be used with the prefixes “d,p,q,r”. Thus, for instance, just write rlnorm to get the values of a log-normal distribution.</p>
 </div>
@@ -1145,24 +1137,20 @@ If X has a symmetric distribution, then skew(X) = 0, as values above and below t
 <li>For skew(X) &gt; 0, the distribution has a long right tail.</li>
 <li>For skew(X) &lt; 0, the distribution has a long left tail.</li>
 </ol>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="statistical-properties.html#cb432-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="dv">2</span>)</span>
-<span id="cb432-2"><a href="statistical-properties.html#cb432-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="sc">-</span><span class="dv">2</span>)</span>
-<span id="cb432-3"><a href="statistical-properties.html#cb432-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-4"><a href="statistical-properties.html#cb432-4" aria-hidden="true" tabindex="-1"></a>skew <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
-<span id="cb432-5"><a href="statistical-properties.html#cb432-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(skew) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Right Skewed&quot;</span>, <span class="st">&quot;Left Skewed&quot;</span>)</span>
-<span id="cb432-6"><a href="statistical-properties.html#cb432-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb432-7"><a href="statistical-properties.html#cb432-7" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(skew)</span></code></pre></div>
-<pre><code>## Warning in melt(skew): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2 method;
-## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
-## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(skew). In the next version, this warning will become an
-## error.</code></pre>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="statistical-properties.html#cb428-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="dv">2</span>)</span>
+<span id="cb428-2"><a href="statistical-properties.html#cb428-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rsnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>, <span class="at">xi =</span> <span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb428-3"><a href="statistical-properties.html#cb428-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb428-4"><a href="statistical-properties.html#cb428-4" aria-hidden="true" tabindex="-1"></a>skew <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
+<span id="cb428-5"><a href="statistical-properties.html#cb428-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(skew) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Right Skewed&quot;</span>, <span class="st">&quot;Left Skewed&quot;</span>)</span>
+<span id="cb428-6"><a href="statistical-properties.html#cb428-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb428-7"><a href="statistical-properties.html#cb428-7" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(skew)</span></code></pre></div>
 <pre><code>## No id variables; using all as measure variables</code></pre>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="statistical-properties.html#cb435-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb435-2"><a href="statistical-properties.html#cb435-2" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="sc">%&gt;%</span></span>
-<span id="cb435-3"><a href="statistical-properties.html#cb435-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb435-4"><a href="statistical-properties.html#cb435-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb435-5"><a href="statistical-properties.html#cb435-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>,<span class="dv">15</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-257-1.png" width="672" /></p>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="statistical-properties.html#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb430-2"><a href="statistical-properties.html#cb430-2" aria-hidden="true" tabindex="-1"></a>skew_melt <span class="sc">%&gt;%</span></span>
+<span id="cb430-3"><a href="statistical-properties.html#cb430-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb430-4"><a href="statistical-properties.html#cb430-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb430-5"><a href="statistical-properties.html#cb430-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">15</span>,<span class="dv">15</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-277-1.png" width="672" /></p>
 </div>
 <div id="kurtosis" class="section level4" number="7.1.8.4">
 <h4><span class="header-section-number">7.1.8.4</span> Kurtosis</h4>
@@ -1179,27 +1167,23 @@ kurt(X) = \frac{E[(X-\mu_x)^4]}{\sigma_x^4}
 <li>Platykurtic: The distribution has a lower and wider peak and thinner tails. The kurtosis is “negative” with a value greater than 3</li>
 </ol>
 <p>To visualise this, we need to</p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="statistical-properties.html#cb436-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb436-2"><a href="statistical-properties.html#cb436-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.45</span>)</span>
-<span id="cb436-3"><a href="statistical-properties.html#cb436-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.55</span>)</span>
-<span id="cb436-4"><a href="statistical-properties.html#cb436-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb436-5"><a href="statistical-properties.html#cb436-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb436-6"><a href="statistical-properties.html#cb436-6" aria-hidden="true" tabindex="-1"></a>df_kurt <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c))</span>
-<span id="cb436-7"><a href="statistical-properties.html#cb436-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_kurt) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Mesokurtic&quot;</span>, <span class="st">&quot;Platykurtic&quot;</span>, <span class="st">&quot;Leptokurtic&quot;</span>)</span>
-<span id="cb436-8"><a href="statistical-properties.html#cb436-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb436-9"><a href="statistical-properties.html#cb436-9" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_kurt)</span></code></pre></div>
-<pre><code>## Warning in melt(df_kurt): The melt generic in data.table has been passed a data.frame and will attempt to redirect to the relevant reshape2 method;
-## please note that reshape2 is deprecated, and this redirection is now deprecated as well. To continue using melt methods from reshape2 while both
-## libraries are attached, e.g. melt.list, you can prepend the namespace like reshape2::melt(df_kurt). In the next version, this warning will become
-## an error.</code></pre>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="statistical-properties.html#cb431-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb431-2"><a href="statistical-properties.html#cb431-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.45</span>)</span>
+<span id="cb431-3"><a href="statistical-properties.html#cb431-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.55</span>)</span>
+<span id="cb431-4"><a href="statistical-properties.html#cb431-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-5"><a href="statistical-properties.html#cb431-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-6"><a href="statistical-properties.html#cb431-6" aria-hidden="true" tabindex="-1"></a>df_kurt <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b,c))</span>
+<span id="cb431-7"><a href="statistical-properties.html#cb431-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_kurt) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Mesokurtic&quot;</span>, <span class="st">&quot;Platykurtic&quot;</span>, <span class="st">&quot;Leptokurtic&quot;</span>)</span>
+<span id="cb431-8"><a href="statistical-properties.html#cb431-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-9"><a href="statistical-properties.html#cb431-9" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="ot">&lt;-</span> <span class="fu">melt</span>(df_kurt)</span></code></pre></div>
 <pre><code>## No id variables; using all as measure variables</code></pre>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="statistical-properties.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
-<span id="cb439-2"><a href="statistical-properties.html#cb439-2" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="sc">%&gt;%</span></span>
-<span id="cb439-3"><a href="statistical-properties.html#cb439-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
-<span id="cb439-4"><a href="statistical-properties.html#cb439-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb439-5"><a href="statistical-properties.html#cb439-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 577 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-258-1.png" width="672" /></p>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="statistical-properties.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot</span></span>
+<span id="cb433-2"><a href="statistical-properties.html#cb433-2" aria-hidden="true" tabindex="-1"></a>df_kurt_melt <span class="sc">%&gt;%</span></span>
+<span id="cb433-3"><a href="statistical-properties.html#cb433-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb433-4"><a href="statistical-properties.html#cb433-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb433-5"><a href="statistical-properties.html#cb433-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 578 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-278-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -1250,67 +1234,67 @@ a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
 <p>An important concept in matrices is <span class="math inline">\(\textit{symmetric}\)</span> and <span class="math inline">\(\textit{square}\)</span>. A <span class="math inline">\(\textit{symmetric}\)</span> matrix <span class="math inline">\(\textbf{A}\)</span> is defined such that <span class="math inline">\(\textbf{A} = \textbf{A&#39;}\)</span>. This can only be the case if the matrix is already <span class="math inline">\(\textit{square}\)</span>, implying that the number of rows equals the number of columns.</p>
 <p><span class="math inline">\(\textbf{Example: Creating Vectors and Matrices in R}\)</span></p>
 <p>In R, to construct <span class="math inline">\(\textbf{vectors}\)</span>, the easiest way is to use the combine function <code>c()</code>:</p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="statistical-properties.html#cb441-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb441-2"><a href="statistical-properties.html#cb441-2" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="statistical-properties.html#cb435-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb435-2"><a href="statistical-properties.html#cb435-2" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <p>Vectors of numbers in R are of class <code>numeric</code> and do not have a dimension attribute:</p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="statistical-properties.html#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(xvec)</span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="statistical-properties.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(xvec)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="statistical-properties.html#cb445-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(xvec)</span></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="statistical-properties.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(xvec)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>The elements of a vector can be assigned names using the <code>names()</code> function:</p>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="statistical-properties.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(xvec) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;x1&quot;</span>, <span class="st">&quot;x2&quot;</span>, <span class="st">&quot;x3&quot;</span>)</span>
-<span id="cb447-2"><a href="statistical-properties.html#cb447-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb447-3"><a href="statistical-properties.html#cb447-3" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="statistical-properties.html#cb441-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(xvec) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;x1&quot;</span>, <span class="st">&quot;x2&quot;</span>, <span class="st">&quot;x3&quot;</span>)</span>
+<span id="cb441-2"><a href="statistical-properties.html#cb441-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb441-3"><a href="statistical-properties.html#cb441-3" aria-hidden="true" tabindex="-1"></a>xvec</span></code></pre></div>
 <pre><code>## x1 x2 x3 
 ##  1  2  3</code></pre>
 <p>Lastly, to create a <span class="math inline">\(\textbf{matrix}\)</span> from a vector, we use the <code>as.matrix()</code> function</p>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="statistical-properties.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.matrix</span>(xvec)</span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="statistical-properties.html#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.matrix</span>(xvec)</span></code></pre></div>
 <pre><code>##    [,1]
 ## x1    1
 ## x2    2
 ## x3    3</code></pre>
 <p>In R, matrix objects are created using the matrix() function. For example, we can create a <span class="math inline">\(2 \times 3\)</span> matrix using:</p>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="statistical-properties.html#cb451-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">FALSE</span>)</span>
-<span id="cb451-2"><a href="statistical-properties.html#cb451-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="statistical-properties.html#cb445-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">FALSE</span>)</span>
+<span id="cb445-2"><a href="statistical-properties.html#cb445-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6</code></pre>
 <p>Looking for the “class” object, we can see if it’s really a matrix:</p>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="statistical-properties.html#cb453-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="statistical-properties.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(matA)</span></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
 <p>If we want to transpose the matrix, we can use the <code>byrow=TRUE</code> command:</p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="statistical-properties.html#cb455-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb455-2"><a href="statistical-properties.html#cb455-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="statistical-properties.html#cb449-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="at">nrow=</span><span class="dv">2</span>,<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb449-2"><a href="statistical-properties.html#cb449-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
 ## [2,]    4    5    6</code></pre>
 <p>In order to get the dimension of a matrix, we use the <code>dim()</code> command:</p>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="statistical-properties.html#cb457-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="statistical-properties.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA)</span></code></pre></div>
 <pre><code>## [1] 2 3</code></pre>
 <p>This indicates the <span class="math inline">\(n \times k\)</span> structure, which is <span class="math inline">\(2 \times 3\)</span>.</p>
 <p>Further, we can define names of the rows and columns using the <code>colnames()</code> and <code>rownames()</code> arguments:</p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="statistical-properties.html#cb459-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;row1&quot;</span>, <span class="st">&quot;row2&quot;</span>)</span>
-<span id="cb459-2"><a href="statistical-properties.html#cb459-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;col1&quot;</span>, <span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>)</span>
-<span id="cb459-3"><a href="statistical-properties.html#cb459-3" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="statistical-properties.html#cb453-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;row1&quot;</span>, <span class="st">&quot;row2&quot;</span>)</span>
+<span id="cb453-2"><a href="statistical-properties.html#cb453-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(matA) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;col1&quot;</span>, <span class="st">&quot;col2&quot;</span>, <span class="st">&quot;col3&quot;</span>)</span>
+<span id="cb453-3"><a href="statistical-properties.html#cb453-3" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##      col1 col2 col3
 ## row1    1    2    3
 ## row2    4    5    6</code></pre>
 <p>Lastly, matrix manipulation starts with <span class="math inline">\(\textbf{slicing operations}\)</span>. Thus, the elements of a matrix can be extracted or subsetted as follows:</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="statistical-properties.html#cb461-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="statistical-properties.html#cb455-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>, <span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>This defines the elements which should be extracted from the matrix. In our case, we told the program to only take the <code>first row and second column</code> element of the matrix.</p>
 <p>If we only want to select according to one dimension, we do so accordingly:</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="statistical-properties.html#cb463-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="statistical-properties.html#cb457-1" aria-hidden="true" tabindex="-1"></a>matA[<span class="dv">1</span>,]</span></code></pre></div>
 <pre><code>## col1 col2 col3 
 ##    1    2    3</code></pre>
 <p>This takes </p>
 <p>We can take  accordingly:</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="statistical-properties.html#cb465-1" aria-hidden="true" tabindex="-1"></a>matA[,<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="statistical-properties.html#cb459-1" aria-hidden="true" tabindex="-1"></a>matA[,<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## row1 row2 
 ##    1    4</code></pre>
 <p>Lastly, we can <span class="math inline">\(\textbf{transpose}\)</span> a matrix by using the <code>t()</code> function:</p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="statistical-properties.html#cb467-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(matA)</span></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="statistical-properties.html#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(matA)</span></code></pre></div>
 <pre><code>##      row1 row2
 ## col1    1    4
 ## col2    2    5
@@ -1372,16 +1356,16 @@ a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
 \end{bmatrix}
 \]</span>
 In R, this is quite easily done:</p>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="statistical-properties.html#cb469-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>) <span class="co"># Note that we do not indicate nrow = ... &amp; ncol = ... but just write 2 at both places. As long as the </span></span>
-<span id="cb469-2"><a href="statistical-properties.html#cb469-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># order of the commands is correct, R automatically interprets the second entry as nrow and the third as </span></span>
-<span id="cb469-3"><a href="statistical-properties.html#cb469-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># ncol. </span></span>
-<span id="cb469-4"><a href="statistical-properties.html#cb469-4" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb469-5"><a href="statistical-properties.html#cb469-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb469-6"><a href="statistical-properties.html#cb469-6" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">+</span> matB</span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="statistical-properties.html#cb463-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>) <span class="co"># Note that we do not indicate nrow = ... &amp; ncol = ... but just write 2 at both places. As long as the </span></span>
+<span id="cb463-2"><a href="statistical-properties.html#cb463-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># order of the commands is correct, R automatically interprets the second entry as nrow and the third as </span></span>
+<span id="cb463-3"><a href="statistical-properties.html#cb463-3" aria-hidden="true" tabindex="-1"></a>                                         <span class="co"># ncol. </span></span>
+<span id="cb463-4"><a href="statistical-properties.html#cb463-4" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb463-5"><a href="statistical-properties.html#cb463-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb463-6"><a href="statistical-properties.html#cb463-6" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">+</span> matB</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]   12    5
 ## [2,]   13    7</code></pre>
-<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="statistical-properties.html#cb471-1" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">-</span> matB</span></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="statistical-properties.html#cb465-1" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">-</span> matB</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]   -6    3
 ## [2,]    3    3</code></pre>
@@ -1425,14 +1409,14 @@ c * \textbf{A} = 2*
 <p>Here, each element of the matrix <span class="math inline">\(\textbf{C}\)</span> is the <code>dot product</code> of the resulting from the <span class="math inline">\(i^{th}\)</span> row of <span class="math inline">\(\textbf{A}\)</span> and the <span class="math inline">\(j^{th}\)</span> column of <span class="math inline">\(\textbf{B}\)</span>.</p>
 <p><span class="math inline">\(\textbf{Example: Matrix Multiplication in R}\)</span></p>
 <p>To do this in R, we can simply use the <code>%*%</code> operator:</p>
-<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="statistical-properties.html#cb473-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb473-2"><a href="statistical-properties.html#cb473-2" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>,<span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb473-3"><a href="statistical-properties.html#cb473-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb473-4"><a href="statistical-properties.html#cb473-4" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">%*%</span> matB</span></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="statistical-properties.html#cb467-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">5</span>),<span class="dv">2</span>,<span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb467-2"><a href="statistical-properties.html#cb467-2" aria-hidden="true" tabindex="-1"></a>matB <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>,<span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb467-3"><a href="statistical-properties.html#cb467-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb467-4"><a href="statistical-properties.html#cb467-4" aria-hidden="true" tabindex="-1"></a>matA <span class="sc">%*%</span> matB</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   47   11   33
 ## [2,]   97   18   71</code></pre>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="statistical-properties.html#cb475-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA <span class="sc">%*%</span> matB)</span></code></pre></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="statistical-properties.html#cb469-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(matA <span class="sc">%*%</span> matB)</span></code></pre></div>
 <pre><code>## [1] 2 3</code></pre>
 <p>As we can see, the dimensions are now <span class="math inline">\(2 \times 3\)</span>.</p>
 </div>
@@ -1489,8 +1473,8 @@ a_{21} &amp; a_{22}
 \end{bmatrix} = \textbf{A}
 \]</span></p>
 <p>In R, an identity matrix is constructed using the <code>diag()</code> function:</p>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="statistical-properties.html#cb477-1" aria-hidden="true" tabindex="-1"></a>matI <span class="ot">=</span> <span class="fu">diag</span>(<span class="dv">2</span>)</span>
-<span id="cb477-2"><a href="statistical-properties.html#cb477-2" aria-hidden="true" tabindex="-1"></a>matI</span></code></pre></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="statistical-properties.html#cb471-1" aria-hidden="true" tabindex="-1"></a>matI <span class="ot">=</span> <span class="fu">diag</span>(<span class="dv">2</span>)</span>
+<span id="cb471-2"><a href="statistical-properties.html#cb471-2" aria-hidden="true" tabindex="-1"></a>matI</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    0
 ## [2,]    0    1</code></pre>
@@ -1540,19 +1524,19 @@ l_{n1} &amp; l_{n2} &amp; l_{n3} &amp; \dots &amp; d_{n}
 \end{bmatrix}
 \]</span></p>
 <p>We can apply these matrices easily in R:</p>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="statistical-properties.html#cb479-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb479-2"><a href="statistical-properties.html#cb479-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="statistical-properties.html#cb473-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb473-2"><a href="statistical-properties.html#cb473-2" aria-hidden="true" tabindex="-1"></a>matA</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    7
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="statistical-properties.html#cb481-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the lower elements from the matrix:</span></span>
-<span id="cb481-2"><a href="statistical-properties.html#cb481-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb481-3"><a href="statistical-properties.html#cb481-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">lower.tri</span>(matA)]</span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="statistical-properties.html#cb475-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the lower elements from the matrix:</span></span>
+<span id="cb475-2"><a href="statistical-properties.html#cb475-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb475-3"><a href="statistical-properties.html#cb475-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">lower.tri</span>(matA)]</span></code></pre></div>
 <pre><code>## [1] 2 3 6</code></pre>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="statistical-properties.html#cb483-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the upper elements from the matrix:</span></span>
-<span id="cb483-2"><a href="statistical-properties.html#cb483-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb483-3"><a href="statistical-properties.html#cb483-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">upper.tri</span>(matA)]</span></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="statistical-properties.html#cb477-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the upper elements from the matrix:</span></span>
+<span id="cb477-2"><a href="statistical-properties.html#cb477-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb477-3"><a href="statistical-properties.html#cb477-3" aria-hidden="true" tabindex="-1"></a>matA[<span class="fu">upper.tri</span>(matA)]</span></code></pre></div>
 <pre><code>## [1] 4 7 8</code></pre>
 </div>
 </div>
@@ -1601,13 +1585,13 @@ y_n
 x_1y_1 + \dots + x_ny_n = \sum^{n}_{k=1} x_ky_k
 \]</span></p>
 <p>In R, this can easily be facilitated:</p>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="statistical-properties.html#cb485-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb485-2"><a href="statistical-properties.html#cb485-2" aria-hidden="true" tabindex="-1"></a>onevec <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb485-3"><a href="statistical-properties.html#cb485-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(xvec)<span class="sc">%*%</span>onevec</span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="statistical-properties.html#cb479-1" aria-hidden="true" tabindex="-1"></a>xvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb479-2"><a href="statistical-properties.html#cb479-2" aria-hidden="true" tabindex="-1"></a>onevec <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb479-3"><a href="statistical-properties.html#cb479-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(xvec)<span class="sc">%*%</span>onevec</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    6</code></pre>
-<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="statistical-properties.html#cb487-1" aria-hidden="true" tabindex="-1"></a>yvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>)</span>
-<span id="cb487-2"><a href="statistical-properties.html#cb487-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crossprod</span>(xvec, yvec)</span></code></pre></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="statistical-properties.html#cb481-1" aria-hidden="true" tabindex="-1"></a>yvec <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>)</span>
+<span id="cb481-2"><a href="statistical-properties.html#cb481-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crossprod</span>(xvec, yvec)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]   25</code></pre>
 </div>
@@ -1672,16 +1656,16 @@ $$</p>
 <p>This is the same as when we want to solve the system of linear equation <span class="math inline">\(\textbf{A}\textbf{x} = \textbf{b}\)</span>, we just take the <span class="math inline">\(\textbf{A}\)</span> to the other side and get: <span class="math inline">\(\textbf{x} = \textbf{A}^{-1}\textbf{b}\)</span>.</p>
 <p>As long as we can determine the elements in <span class="math inline">\(\textbf{A}^{-1}\)</span>, then we can solve for the values of x and y in the linear equations system of the vector <span class="math inline">\(\textbf{z}\)</span>. The system of linear equations has a solution as long as the <span class="math inline">\(\textbf{two lines intersect}\)</span>. If the two lines are parallel, then one of the equations is a multiple of the other. In this case, we say that <span class="math inline">\(\textbf{A}\)</span> is NOT INVERTIBLE.</p>
 <p>There are general rules in R how to solve for such a system of linear equations. One is in the form of the <code>solve()</code> function:</p>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="statistical-properties.html#cb489-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb489-2"><a href="statistical-properties.html#cb489-2" aria-hidden="true" tabindex="-1"></a>vecB <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb489-3"><a href="statistical-properties.html#cb489-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb489-4"><a href="statistical-properties.html#cb489-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First we solve for the inverse of A: A^-1</span></span>
-<span id="cb489-5"><a href="statistical-properties.html#cb489-5" aria-hidden="true" tabindex="-1"></a>matA.inv <span class="ot">=</span> <span class="fu">solve</span>(matA) </span>
-<span id="cb489-6"><a href="statistical-properties.html#cb489-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb489-7"><a href="statistical-properties.html#cb489-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, we can easily solve for the vector z:</span></span>
-<span id="cb489-8"><a href="statistical-properties.html#cb489-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb489-9"><a href="statistical-properties.html#cb489-9" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> matA.inv<span class="sc">%*%</span>vecB</span>
-<span id="cb489-10"><a href="statistical-properties.html#cb489-10" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="statistical-properties.html#cb483-1" aria-hidden="true" tabindex="-1"></a>matA <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb483-2"><a href="statistical-properties.html#cb483-2" aria-hidden="true" tabindex="-1"></a>vecB <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb483-3"><a href="statistical-properties.html#cb483-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb483-4"><a href="statistical-properties.html#cb483-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First we solve for the inverse of A: A^-1</span></span>
+<span id="cb483-5"><a href="statistical-properties.html#cb483-5" aria-hidden="true" tabindex="-1"></a>matA.inv <span class="ot">=</span> <span class="fu">solve</span>(matA) </span>
+<span id="cb483-6"><a href="statistical-properties.html#cb483-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb483-7"><a href="statistical-properties.html#cb483-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Then, we can easily solve for the vector z:</span></span>
+<span id="cb483-8"><a href="statistical-properties.html#cb483-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb483-9"><a href="statistical-properties.html#cb483-9" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> matA.inv<span class="sc">%*%</span>vecB</span>
+<span id="cb483-10"><a href="statistical-properties.html#cb483-10" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
 <pre><code>##           [,1]
 ## [1,] 0.6666667
 ## [2,] 0.3333333</code></pre>
@@ -1703,9 +1687,9 @@ a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
 <p>That is, no vector can be expressed as a <span class="math inline">\(\textbf{non-trivial linear combination}\)</span> of the other vectors.</p>
 <p>For us of importance is the <span class="math inline">\(\textbf{Rank of a Matrix}\)</span>. The column rank of matrix, denoted <span class="math inline">\(\textbf{rank()}\)</span>, is equal to the <span class="math inline">\(\textbf{maximum number of linearly independent columns}\)</span>. If rank(A) = m, then we say the matrix has <span class="math inline">\(\textbf{full rank}\)</span>.</p>
 <p>In R, we figure the rank of a matrix accordingly with the <code>rankMatrix()</code> function:</p>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="statistical-properties.html#cb491-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
-<span id="cb491-2"><a href="statistical-properties.html#cb491-2" aria-hidden="true" tabindex="-1"></a>Amat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dv">2</span>, <span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb491-3"><a href="statistical-properties.html#cb491-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">rankMatrix</span>(Amat))</span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="statistical-properties.html#cb485-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
+<span id="cb485-2"><a href="statistical-properties.html#cb485-2" aria-hidden="true" tabindex="-1"></a>Amat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dv">2</span>, <span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb485-3"><a href="statistical-properties.html#cb485-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">rankMatrix</span>(Amat))</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 </div>
 </div>
@@ -1788,18 +1772,18 @@ E[(\textbf{X}- \mu)(\textbf{X}- \mu)&#39;] &amp;= E\left[(\begin{matrix} X_1 - \
 \end{matrix} \right)
 \]</span></p>
 <p>In R, a covariance matrix is calculated using usual matrix formulation:</p>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="statistical-properties.html#cb493-1" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="fl">2.3</span></span>
-<span id="cb493-2"><a href="statistical-properties.html#cb493-2" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="fl">1.8</span></span>
-<span id="cb493-3"><a href="statistical-properties.html#cb493-3" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span></span>
-<span id="cb493-4"><a href="statistical-properties.html#cb493-4" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> rho12<span class="sc">*</span>sigma1<span class="sc">*</span>sigma2</span>
-<span id="cb493-5"><a href="statistical-properties.html#cb493-5" aria-hidden="true" tabindex="-1"></a>cov_m <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), </span>
-<span id="cb493-6"><a href="statistical-properties.html#cb493-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb493-7"><a href="statistical-properties.html#cb493-7" aria-hidden="true" tabindex="-1"></a>cov_m</span></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="statistical-properties.html#cb487-1" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="fl">2.3</span></span>
+<span id="cb487-2"><a href="statistical-properties.html#cb487-2" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="fl">1.8</span></span>
+<span id="cb487-3"><a href="statistical-properties.html#cb487-3" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span></span>
+<span id="cb487-4"><a href="statistical-properties.html#cb487-4" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> rho12<span class="sc">*</span>sigma1<span class="sc">*</span>sigma2</span>
+<span id="cb487-5"><a href="statistical-properties.html#cb487-5" aria-hidden="true" tabindex="-1"></a>cov_m <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), </span>
+<span id="cb487-6"><a href="statistical-properties.html#cb487-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb487-7"><a href="statistical-properties.html#cb487-7" aria-hidden="true" tabindex="-1"></a>cov_m</span></code></pre></div>
 <pre><code>##       [,1]  [,2]
 ## [1,] 5.290 1.449
 ## [2,] 1.449 3.240</code></pre>
 <p>Then, we can transform this into a correlation matrix using the <code>cov2cor()</code> function:</p>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="statistical-properties.html#cb495-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(cov_m)</span></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="statistical-properties.html#cb489-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov2cor</span>(cov_m)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,] 1.00 0.35
 ## [2,] 0.35 1.00</code></pre>
@@ -1887,23 +1871,23 @@ var(\textbf{X}) &amp;= E[\textbf{X} - E[\textbf{X}]]\\
 1 &amp; 3
 \end{bmatrix}
 \]</span></p>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="statistical-properties.html#cb497-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># Specify the mu vector </span></span>
-<span id="cb497-2"><a href="statistical-properties.html#cb497-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-3"><a href="statistical-properties.html#cb497-3" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb497-4"><a href="statistical-properties.html#cb497-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="dv">2</span> <span class="co"># Specify both standard deviations </span></span>
-<span id="cb497-5"><a href="statistical-properties.html#cb497-5" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span> <span class="co"># Specify the correlation coefficient</span></span>
-<span id="cb497-6"><a href="statistical-properties.html#cb497-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-7"><a href="statistical-properties.html#cb497-7" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> sigma1<span class="sc">*</span>sigma2<span class="sc">*</span>rho12 <span class="co"># Define the covariance  </span></span>
-<span id="cb497-8"><a href="statistical-properties.html#cb497-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-9"><a href="statistical-properties.html#cb497-9" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Create the covariance matrix </span></span>
-<span id="cb497-10"><a href="statistical-properties.html#cb497-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-11"><a href="statistical-properties.html#cb497-11" aria-hidden="true" tabindex="-1"></a>Sigma_0<span class="fl">.5</span> <span class="ot">=</span> <span class="fu">chol</span>(Sigma) <span class="co"># the Cholesky factorization of the covariance matrix to only get the upper-triangular form </span></span>
-<span id="cb497-12"><a href="statistical-properties.html#cb497-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-13"><a href="statistical-properties.html#cb497-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb497-14"><a href="statistical-properties.html#cb497-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb497-15"><a href="statistical-properties.html#cb497-15" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">=</span> <span class="fu">rnorm</span>(n) <span class="co"># Compute the random variable Z ~ N(mu, I_2)</span></span>
-<span id="cb497-16"><a href="statistical-properties.html#cb497-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb497-17"><a href="statistical-properties.html#cb497-17" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> mu <span class="sc">*</span> Sigma_0<span class="fl">.5</span><span class="sc">%*%</span>Z <span class="co"># Compute X from the of 2 iid standard normal random variables</span></span></code></pre></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="statistical-properties.html#cb491-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># Specify the mu vector </span></span>
+<span id="cb491-2"><a href="statistical-properties.html#cb491-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-3"><a href="statistical-properties.html#cb491-3" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb491-4"><a href="statistical-properties.html#cb491-4" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> <span class="dv">2</span> <span class="co"># Specify both standard deviations </span></span>
+<span id="cb491-5"><a href="statistical-properties.html#cb491-5" aria-hidden="true" tabindex="-1"></a>rho12 <span class="ot">=</span> <span class="fl">0.35</span> <span class="co"># Specify the correlation coefficient</span></span>
+<span id="cb491-6"><a href="statistical-properties.html#cb491-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-7"><a href="statistical-properties.html#cb491-7" aria-hidden="true" tabindex="-1"></a>sigma12 <span class="ot">=</span> sigma1<span class="sc">*</span>sigma2<span class="sc">*</span>rho12 <span class="co"># Define the covariance  </span></span>
+<span id="cb491-8"><a href="statistical-properties.html#cb491-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-9"><a href="statistical-properties.html#cb491-9" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(sigma1<span class="sc">^</span><span class="dv">2</span>, sigma12, sigma12, sigma2<span class="sc">^</span><span class="dv">2</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Create the covariance matrix </span></span>
+<span id="cb491-10"><a href="statistical-properties.html#cb491-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-11"><a href="statistical-properties.html#cb491-11" aria-hidden="true" tabindex="-1"></a>Sigma_0<span class="fl">.5</span> <span class="ot">=</span> <span class="fu">chol</span>(Sigma) <span class="co"># the Cholesky factorization of the covariance matrix to only get the upper-triangular form </span></span>
+<span id="cb491-12"><a href="statistical-properties.html#cb491-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-13"><a href="statistical-properties.html#cb491-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb491-14"><a href="statistical-properties.html#cb491-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb491-15"><a href="statistical-properties.html#cb491-15" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">=</span> <span class="fu">rnorm</span>(n) <span class="co"># Compute the random variable Z ~ N(mu, I_2)</span></span>
+<span id="cb491-16"><a href="statistical-properties.html#cb491-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb491-17"><a href="statistical-properties.html#cb491-17" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> mu <span class="sc">*</span> Sigma_0<span class="fl">.5</span><span class="sc">%*%</span>Z <span class="co"># Compute X from the of 2 iid standard normal random variables</span></span></code></pre></div>
 <p>Now, the vector  stems from a vector of iid standard normal random variables  and has the properties of (is proportional to) <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\scriptstyle\sum\)</span> as first two moments (mean and variance).</p>
 </div>
 </div>

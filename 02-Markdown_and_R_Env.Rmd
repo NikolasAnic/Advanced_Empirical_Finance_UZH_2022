@@ -2,7 +2,7 @@
 
 The first week covers two baseline subjects required to work within the field of empirical financial applications. 
 
-The first topic covers the application environment. Therein, we cover the structure and use of the R Markdown file, on which we will write all of the subjects covered during the Lab sessions. We offer a discussion as how to create a markdown file, what makes these files so special in empirical research, how to organise and shuffle them as well as their connectivity to latex. Especially, we will consider how to write functions, how to add text-based outputs, how to construct and use coding cells as well as how to render the files. 
+The first topic covers the application environment. Therein, we cover the structure and use of the R Markdown file, on which we will write all of the subjects covered during the Lab sessions. We offer a discussion as how to create a markdown file, what makes these files so special in empirical research, how to organise and shuffle them as well as their connectivity to latex. Especially, we will consider how to write functions, how to add text-based outputs, how to construct and use coding cells as well as how to render the files.
 
 ##  Markdown Files
 
@@ -531,7 +531,7 @@ Let's now read in some data:
 
 ```{r}
 # We read in some dataset with 
-read.csv("~/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')
+read.csv("~/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')
 
 # Here: 
 
@@ -555,7 +555,7 @@ We first start with more classical functions.
 
 ```{r}
 # Let's use the dataset from before: 
-df_1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')
+df_1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')
 # We just cut it quickly such that it is better visible
 df_1 <- df_1[,2:7]
 
@@ -1117,7 +1117,7 @@ Plotting time-series objects will be especially important throughout this course
 
 ```{r}
 # Let's load some of the data on the SMI again
-df_2 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')[,c("Date", "ABB", "Adecco", "Nestle_PS", "Roche_Holding")]
+df_2 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')[,c("Date", "ABB", "Adecco", "Nestle_PS", "Roche_Holding")]
 
 # Use a Date column
 df_ts_date <- as.Date(df_2$Date)
@@ -1457,7 +1457,7 @@ Next, we will show you how to **create a time-series object**. We will often wor
 ```{r}
 
 # Load in the dataset with your path
-A1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')
+A1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')
 
 # Look the data set to get a better overview
 head(A1)
@@ -1501,8 +1501,8 @@ Let's show you how to do this:
 ```{r}
 
 # Load two datasets with different dates
-A1 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_01.txt", header = T, sep = "\t")
-A2 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02.txt", header = T, sep = "\t")
+A1 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_01_Ex_Session.txt", header = T, sep = "\t")
+A2 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 
 # Create a time-series as usual and calculate the bond return as usual
 A1_date <- as.Date(A1$Date)

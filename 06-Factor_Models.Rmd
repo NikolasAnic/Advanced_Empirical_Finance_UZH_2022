@@ -119,9 +119,9 @@ First, let's calculate quintile portfolios based on the characteristic
 
 ```{r}
 # Load the datasets
-Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01.txt", header = T, sep = "\t")
-Prices_Unadj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")
-Shares <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_03.txt", header = T, sep = "\t")
+Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01_Ex_Session.txt", header = T, sep = "\t")
+Prices_Unadj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")
+Shares <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_03_Ex_Session.txt", header = T, sep = "\t")
 
 # Create Time-Series objects
 Prices_Adj_ts <- xts(x = Prices_Adj[,-1], order.by = as.Date(dmy(Prices_Adj[,1])))
@@ -315,10 +315,10 @@ Consequently, let's follow two approaches in the subsequent factor creation.
 
 ```{r, warning=FALSE}
 # Load the datasets
-Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01.txt", header = T, sep = "\t")
-Prices_Unadj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")
-Shares <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_03.txt", header = T, sep = "\t")
-Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02.txt", header = T, sep = "\t")
+Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01_Ex_Session.txt", header = T, sep = "\t")
+Prices_Unadj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")
+Shares <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_03_Ex_Session.txt", header = T, sep = "\t")
+Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 
 # Create Time-Series objects
 Prices_Adj_ts <- xts(x = Prices_Adj[,-1], order.by = as.Date(dmy(Prices_Adj[,1])))
@@ -512,14 +512,14 @@ Let's recreate the FM (1973) approach and apply it to the SMB factor.
 
 ```{r, warning = FALSE}
 # Load the risk free rate as well as the Market Index
-rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02.txt", header = T, sep = "\t")
+rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 rf_sub <- subset(rf, (Date >= '1989-12-01') & (Date <= '2019-12-31'))
 rf_ts <- xts(rf_sub[,-1], order.by = as.Date(dmy(Prices_Adj[,1])))
 rf_ts_yearly <- rf_ts$SWISS.CONFEDERATION.BOND.1.YEAR...RED..YIELD / 100
 rf_ts_monthly <- ((1 + rf_ts_yearly)^(1/12) - 1)['1991-01-01/2019-12-01']
 colnames(rf_ts_monthly) <- "rf"
 
-SMI <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_03.txt", header = T, sep = "\t")
+SMI <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_03_Ex_Session.txt", header = T, sep = "\t")
 SMI_sub <- subset(SMI, (Date >= '1989-12-01') & (Date <= '2019-12-31'))
 SMI_ts <- xts(SMI_sub[,2], order.by = as.Date(dmy(Prices_Adj[,1])))
 SMI_ts_ret <- Return.calculate(SMI_ts, method = "discrete")
@@ -1282,7 +1282,7 @@ This is the replication of the Jegadeesh and Titman Momentum factor. Therein, we
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 # Create a wide data frame
@@ -1464,7 +1464,7 @@ df_mom_long %>%
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -1593,7 +1593,7 @@ This is the long-format construction of the size factor based on the data downlo
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -1693,7 +1693,7 @@ This is the long-format construction of the value factor based on the data downl
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -1795,7 +1795,7 @@ This is the long-format construction of the profitability factor based on the da
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -1894,7 +1894,7 @@ This is the long-format construction of the investment factor based on the data 
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -1992,7 +1992,7 @@ CH_data_EW_Ret_Invest %>%
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -2017,7 +2017,7 @@ CH_data_total_monthly_sub_BAB <- CH_data_total_mont %>%
 
 
 # Let's also get the data on the Swiss Market Index as well as the risk free rate 
-rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02.txt", header = T, sep = "\t")
+rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 rf_ts <- rf %>% 
   subset((Date >= '1989-12-01') & (Date <= '2019-12-31')) %>% 
   mutate(rf_annual = SWISS.CONFEDERATION.BOND.1.YEAR...RED..YIELD / 1000,
@@ -2025,7 +2025,7 @@ rf_ts <- rf %>%
   select(Date, rf_monthly)
 
   
-SMI <-  read.csv("~/Desktop/Master UZH/Data/A2_dataset_03.txt", header = T, sep = "\t")
+SMI <-  read.csv("~/Desktop/Master UZH/Data/A2_dataset_03_Ex_Session.txt", header = T, sep = "\t")
 SMI_ts <- SMI %>% 
   subset((Date >= '1989-12-01') & (Date <= '2019-12-31')) %>% 
   mutate(SMI_ret = (SMI - lag(SMI, 1))/lag(SMI, 1),
@@ -2140,7 +2140,7 @@ For the SMB factor, we will use an aggregate of double-sorted portfolios based o
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -2380,7 +2380,7 @@ Having created the SMB factor, let's now replicate the HML, RMW as well as CMA f
 ```{r}
 
 # Load the old dataset for book value
-Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02.txt", header = T, sep = "\t")
+Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 Book_check <- Book %>%
   gather(Ticker,value,NESN:X692395) %>% 
   mutate(Date_t = lubridate::ceiling_date(dmy(Date), "month") - 1) %>% 
@@ -2389,7 +2389,7 @@ Book_check <- Book %>%
 colnames(Book_check) <- c("Ticker", "Total_Eq_Real", "Date_t")
 
 # Only sub select the companies under consideration
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
@@ -2695,7 +2695,7 @@ We will first create the approach of Carharrt (1996).
 
 ```{r}
 # Load the old datasets for check up
-Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01.txt", header = T, sep = "\t")
+Prices_Adj <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_01_Ex_Session.txt", header = T, sep = "\t")
 
 Prices_Unadj_check <- Prices_Adj %>%
   gather(Ticker,value,NESN:X692395) %>% 
@@ -2705,7 +2705,7 @@ Prices_Unadj_check <- Prices_Adj %>%
 colnames(Prices_Unadj_check) <- c("Ticker", "Close_Real", "Date_t")
 
 # Get only selected companies
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
@@ -2814,7 +2814,7 @@ Now, we will replicate the approach of Jegadeesh and Titman (1995).
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -2965,7 +2965,7 @@ df_MOM
 
 ```{r}
 # Let's run the experiment for the reduced data frame 
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")
 CH_data_total_monthly_clean <- CH_data_total_monthly[!duplicated(CH_data_total_monthly[c("Date_t", "Ticker")]),]
@@ -2990,7 +2990,7 @@ CH_data_total_monthly_sub_BAB <- CH_data_total_mont %>%
 
 
 # Let's also get the data on the Swiss Market Index as well as the risk free rate 
-rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02.txt", header = T, sep = "\t")
+rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 rf_ts <- rf %>% 
   subset((Date >= '1989-12-01') & (Date <= '2019-12-31')) %>% 
   mutate(rf_annual = SWISS.CONFEDERATION.BOND.1.YEAR...RED..YIELD / 1000,
@@ -2998,7 +2998,7 @@ rf_ts <- rf %>%
   select(Date, rf_monthly)
 
   
-SMI <-  read.csv("~/Desktop/Master UZH/Data/A2_dataset_03.txt", header = T, sep = "\t")
+SMI <-  read.csv("~/Desktop/Master UZH/Data/A2_dataset_03_Ex_Session.txt", header = T, sep = "\t")
 SMI_ts <- SMI %>% 
   subset((Date >= '1989-12-01') & (Date <= '2019-12-31')) %>% 
   mutate(SMI_ret = (SMI - lag(SMI, 1))/lag(SMI, 1),
@@ -3095,7 +3095,7 @@ To do so, we retrieved data to calculate the Value factor from Thomson Reuters D
 
 ```{r}
 # Load the old dataset for book value
-Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02.txt", header = T, sep = "\t")
+Book <- read.csv("~/Desktop/Master UZH/Data/A4_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 Book_check <- Book %>%
   gather(Ticker,value,NESN:X692395) %>% 
   mutate(Date_t = lubridate::ceiling_date(dmy(Date), "month") - 1) %>% 
@@ -3104,7 +3104,7 @@ Book_check <- Book %>%
 colnames(Book_check) <- c("Ticker", "Total_Eq_Real", "Date_t")
 
 # Only sub select the companies under consideration
-tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04.txt", header = T, sep = "\t")))
+tic_sub <- unique(names(read.csv("~/Desktop/Master UZH/Data/A4_dataset_04_Ex_Session.txt", header = T, sep = "\t")))
 
 # Get 347 companies
 CH_data_total_monthly <- read.csv("~/Desktop/CH_data_total_monthly.csv", header = T, sep = ",")

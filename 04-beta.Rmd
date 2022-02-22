@@ -46,9 +46,9 @@ To understand the intuition behind the SIM, we make use of the co-dependence of 
 
 ```{r}
 # Read in the datasets
-stocks <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_01.txt", header = T, sep = "\t")
-SMI <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_03.txt", header = T, sep = "\t")
-rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02.txt", header = T, sep = "\t")
+stocks <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_01_Ex_Session.txt", header = T, sep = "\t")
+SMI <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_03_Ex_Session.txt", header = T, sep = "\t")
+rf <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_02_Ex_Session.txt", header = T, sep = "\t")
 
 # Select only the columns of interest
 stocks <- stocks %>% 
@@ -749,8 +749,8 @@ We can do this with the following code:
 
 ```{r}
 # Read in the data
-A4 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_04.txt", header = T, sep = "\t")
-A5 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_05.txt", header = T, sep = "\t")
+A4 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_04_Ex_Session.txt", header = T, sep = "\t")
+A5 <- read.csv("~/Desktop/Master UZH/Data/A2_dataset_05_Ex_Session.txt", header = T, sep = "\t")
 
 # Create an xts Time-Series object
 A4_ts <- xts(A4[,-1], order.by = as.Date(A4[,1]))

@@ -28,7 +28,7 @@ In order to use time-series in securitiy analysis, we first need to modify the d
 ```{r}
 
 # Load in the dataset with your path
-A1 <- read.csv("/Users/nikolasanic/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')
+A1 <- read.csv("/Users/nikolasanic/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')
 
 # Look the data set to get a better overview
 head(A1)
@@ -74,7 +74,7 @@ To calculate our first return, load the `return_bigfour` csv file into R.
 A1_bigfour <- read.csv("/Users/nikolasanic/Desktop/Advanced_Empirical_Finance_Documents/Data/Risk_Return/A1_bigfour.csv", header = T, sep = ",",  dec = '.')
 
 # Turn it to an xts file
-date_bf = as.Date(A1_bigfour[,1]) 
+date_bf = as.Date(dmy(A1_bigfour$Date))
 
 # Here, we first assign a date format to the date variable, otherwise the xts package cannot read it. 
 # Other forms of transformation (as.POSIXct etc.) would certainly also work. 
@@ -436,7 +436,7 @@ A4_returns <- A1_bigfour_ret_ts * A4_weights_lagged
 Returns_VW_PF_A4 <- rowSums(A4_returns, na.rm = TRUE)
 
 ## Define another date object
-date_bf_A4 = as.Date(A1_bigfour[-1,1]) 
+date_bf_A4 = as.Date(dmy(A1_bigfour[-1,1]))
 
 ## Create xts object with correct number of dimensions
 bigfour_VW_ret_ts <- xts(Returns_VW_PF_A4, order.by = date_bf_A4)
@@ -542,7 +542,7 @@ To understand how inflation works in our asset management setting, it is importa
 ```{r}
 
 # First, load the consumer price index data
-CPI_data <- read.csv("/Users/nikolasanic/Desktop/Master UZH/Data/A1_dataset_05.txt", header = T, sep = "\t")
+CPI_data <- read.csv("/Users/nikolasanic/Desktop/Master UZH/Data/A1_dataset_05_Ex_Session.txt", header = T, sep = "\t")
 
 # Create a time-series object
 CPI_date <- as.Date(CPI_data[,1])

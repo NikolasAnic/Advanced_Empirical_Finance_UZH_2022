@@ -13,7 +13,7 @@ packs.load <- c("fGarch")
 lapply(packs.inst, require, character.only = TRUE)
 ```
 
-In the previous chapters we focused on the introduction of risk and return properties for individual assets as well as portfolios. Further, we introduced the concept of co-dependence both between individual assets as well between an asset and its underlying market structure. Therein, we derived important notions on the statistical requirements to draw causal conclusions. Within these chapters, we focused exclusively on the relationship between risk and return. Naturally, one definition we made was that risk must be compensated for with an appropriate rate of return. Noted as risk parity hypothesis, we created measures that put both factors into relation to each other and compared these ratios throughout a number of asset classes. In this chapter, we now take the underlying model on asset returns, the ideas on risk and return characteristics of portfolios as well as the statistical properties introduced and combine them to form the basis of empirical portfolio analysis frameworks. Specifically, we present the well-known Mean-Variance portfolio analysis concept for optimal asset allocations, first presented by Henry Markowitz (1959). This theory serves as fundament for most modern asset management classes. The framework uses concepts and assumptions we introduced in previous chapters. As such, it is assumed that the asset returns are normally distributed and investor preferences solely depend on risk and return characteristics. According to the risk parity hypothesis, additional risk must be compensated for by higher returns. Consequently, investors are favorable towards portfolios with high returns and unfavorable towards such with higher variances. As risk and return appear to be positively correlated, investors face a trade-off of these metrics between individual portfolios. Markowitz proposes a framework which quantifies this mean-variance trade off and creates a method to define the optimal portfolio choice. 
+In the previous chapters we focused on the introduction of risk and return properties for individual assets as well as portfolios. Further, we introduced the concept of co-dependence both between individual assets as well between an asset and its underlying market structure. Therein, we derived important notions on the statistical requirements to draw causal conclusions. Within these chapters, we focused exclusively on the relationship between risk and return. Naturally, one definition we made was that risk must be compensated for with an appropriate rate of return. Noted as risk parity hypothesis, we created measures that put both factors into relation to each other and compared these ratios throughout a number of asset classes. In this chapter, we now take the underlying model on asset returns, the ideas on risk and return characteristics of portfolios as well as the statistical properties introduced and combine them to form the basis of fempirical portfolio analysis frameworks. Specifically, we present the well-known Mean-Variance portfolio analysis concept for optimal asset allocations, first presented by Henry Markowitz (1959). This theory serves as fundament for most modern asset management classes. The framework uses concepts and assumptions we introduced in previous chapters. As such, it is assumed that the asset returns are normally distributed and investor preferences solely depend on risk and return characteristics. According to the risk parity hypothesis, additional risk must be compensated for by higher returns. Consequently, investors are favorable towards portfolios with high returns and unfavorable towards such with higher variances. As risk and return appear to be positively correlated, investors face a trade-off of these metrics between individual portfolios. Markowitz proposes a framework which quantifies this mean-variance trade off and creates a method to define the optimal portfolio choice. 
 
 Henceforth, in this chapter we provide the theoretical foundations as well as the practical application to the Markowitz portfolio optimisation framework. Therein, we first cover the case of two risky and one risk-free asset. We will use this setting to facilitate the main notions as well as replicate the major results and implications of Markowitz's ideas, both graphically as well with forms of matrix algebra. Later on, we will generalise the simple model into a setting with multiple risky assets. Building on this, we introduce the concept of short sales contracts and, eventually, give rise to the notion of portfolio risk budgeting.  
 
@@ -951,7 +951,7 @@ $$
 We can now start working with real-world portfolio applications. 
 
 ```{r}
-A1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01.txt", header = T, sep = "\t",  dec = '.')
+A1 <- read.csv("~/Desktop/Master UZH/Data/A1_dataset_01_Ex_Session.txt", header = T, sep = "\t",  dec = '.')
 
 date = as.Date(A1[,1]) 
 
@@ -1778,9 +1778,9 @@ Let's now use the idea and create the FM approach for the BigFour Portfolio
 ```{r}
 # Load Datasets A1 - A3: 
 
-A1 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_01.txt", header = T, sep = "\t")
-A2 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_02.txt", header = T, sep = "\t")
-A3 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_03.txt", header = T, sep = "\t")
+A1 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_01_Ex_Session.txt", header = T, sep = "\t")
+A2 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_02_Ex_Session.txt", header = T, sep = "\t")
+A3 <- read.csv("~/Desktop/Master UZH/Data/A3_dataset_03_Ex_Session.txt", header = T, sep = "\t")
 
 # Again, we define a date to convert the data set into an xts object 
 # First, note that we need to set the date into an appropriate format such that the time series object is able to read it
