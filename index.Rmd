@@ -7,7 +7,7 @@ site: bookdown::bookdown_site
 
 # Introduction to the course objectives and organisation of the course
 
-This is the R Bookdown file used for the course Empirical Finance & Statistical analysis, taught by Prof. Dr. Per Östberg in the Spring Semester of 2022 at the University of Zurich. 
+This is the R Bookdown file used for the course Advanced Empirical Finance taught by Prof. Dr. Per Östberg in the Spring Semester of 2022 at the University of Zurich. 
 
 The course covers a wide range of topics in Finance as well as Financial Economics and Econometrics topics. While Prof. Dr. Östberg is covering the theoretical aspetcs of the subjects, this Bookdown file covers empirical applications of the topics discussed. Especially, the exercise sessions will introduce both the statistical properties of the methods under considerations and simultaneously offer concise empirical application challenges in which students will learn to apply the lecture topics in the R programming language. 
 
