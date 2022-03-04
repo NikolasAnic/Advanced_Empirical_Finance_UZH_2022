@@ -24,7 +24,7 @@
 <meta name="author" content="Nikolas Anic &amp; Lorenz Gassmann" />
 
 
-<meta name="date" content="2022-02-22" />
+<meta name="date" content="2022-03-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1379,7 +1379,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb126-4"><a href="the-programming-environment.html#cb126-4" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>class)) <span class="sc">+</span> <span class="co"># you first define the dataset you want to operate on and assing the tidy sign %&gt;% </span></span>
 <span id="cb126-5"><a href="the-programming-environment.html#cb126-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Then, you call the ggplot() function and define the aesthetics. Those are the values of the x and y variable, if required</span></span>
 <span id="cb126-6"><a href="the-programming-environment.html#cb126-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="co"># Lastly, you call the respective geometry you want for the given display</span></span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>The general way how we constructed a data frame here is:</p>
 <ul>
 <li><p>The data set we wish to use is specified using <code>mpg %&gt;% ...</code></p></li>
@@ -1393,30 +1393,30 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb127-3"><a href="the-programming-environment.html#cb127-3" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cty)) <span class="sc">+</span></span>
 <span id="cb127-4"><a href="the-programming-environment.html#cb127-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p><code>geom_histogram</code> breaks up the distribution of the variable into distinct bins. The default bin size is 30. However, we can change the bin size manually:</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="the-programming-environment.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s analyse the distribution of cty and change the bin size:</span></span>
 <span id="cb129-2"><a href="the-programming-environment.html#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb129-3"><a href="the-programming-environment.html#cb129-3" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cty)) <span class="sc">+</span></span>
 <span id="cb129-4"><a href="the-programming-environment.html#cb129-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 <p>Often, instead of using counts, we want to display the <em>density</em> on the y-axis. In order to calculate the density instead of counts, we simply add the option <code>y=..density..</code> to the <code>aes()</code> list that specifies that the y-axis should be the density.</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="the-programming-environment.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s analyse the distribution of cty and change the bin size and density on the y axis:</span></span>
 <span id="cb130-2"><a href="the-programming-environment.html#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb130-3"><a href="the-programming-environment.html#cb130-3" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y =</span> ..density..)) <span class="sc">+</span></span>
 <span id="cb130-4"><a href="the-programming-environment.html#cb130-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 <p><strong>Scatter Plots</strong></p>
 <p>Scatter Plots are used to portray a relationship between two variables based on two to three attributes.</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="the-programming-environment.html#cb131-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cty, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
 <span id="cb131-2"><a href="the-programming-environment.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>The only difference between histograms / bar charts and scatter plots is that we <strong>need to define a value on the y-axis</strong> as we are <em>plotting a relationship</em>. In our case, this relationship is highly positively correlated.</p>
 <p>If we want to add a further attribute to distinguish the data, we do so by calling the <code>color =</code> argument.</p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="the-programming-environment.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Still add the relationship between hwy and cty, but now we also add a third dimension in form of the colours for easch distinct transmitter object</span></span>
 <span id="cb132-2"><a href="the-programming-environment.html#cb132-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> trans)) <span class="sc">+</span> <span class="co"># Here, just add color</span></span>
 <span id="cb132-3"><a href="the-programming-environment.html#cb132-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.3</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <p><strong>Line Plots</strong></p>
 <p>Line Plots are quite similar to scatterplots, but they just connect the dots with actual lines.</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="the-programming-environment.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s quickly create a line plot with new data</span></span>
@@ -1426,7 +1426,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb133-5"><a href="the-programming-environment.html#cb133-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb133-6"><a href="the-programming-environment.html#cb133-6" aria-hidden="true" tabindex="-1"></a>new_dat_line <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>dose, <span class="at">y =</span> treat)) <span class="sc">+</span></span>
 <span id="cb133-7"><a href="the-programming-environment.html#cb133-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 <p>We can fine-tune the underlying relation then a little</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="the-programming-environment.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s quickly create a line plot and fine tune the relation </span></span>
 <span id="cb134-2"><a href="the-programming-environment.html#cb134-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1434,13 +1434,13 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb134-4"><a href="the-programming-environment.html#cb134-4" aria-hidden="true" tabindex="-1"></a>new_dat_line <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>dose, <span class="at">y =</span> treat)) <span class="sc">+</span></span>
 <span id="cb134-5"><a href="the-programming-environment.html#cb134-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb134-6"><a href="the-programming-environment.html#cb134-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.3</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
 <p><strong>Box Plots</strong></p>
 <p>Box Plots are used to show a categorical variable on the x-axis and continuous on the y-axis.</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="the-programming-environment.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s create a boxplot for each class and define its cty distributional parameters</span></span>
 <span id="cb135-2"><a href="the-programming-environment.html#cb135-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>class, <span class="at">y =</span> cty)) <span class="sc">+</span></span>
 <span id="cb135-3"><a href="the-programming-environment.html#cb135-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 <p>Note again how a boxplot is constructed:</p>
 <ul>
 <li>line below box: show the smallest non-outlier observations</li>
@@ -1459,7 +1459,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb136-5"><a href="the-programming-environment.html#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This creates of the two columns wide format a one column long format which summarises both columns (indicated as value column). Based on this, we have a column that indicates which of the two former columns is assigned to which value, to now be able to plot multiple column density plots.  </span></span>
 <span id="cb136-6"><a href="the-programming-environment.html#cb136-6" aria-hidden="true" tabindex="-1"></a>melt_hwy <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable)) <span class="sc">+</span></span>
 <span id="cb136-7"><a href="the-programming-environment.html#cb136-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 </div>
 <div id="added-geometry-options" class="section level4" number="2.2.8.4">
 <h4><span class="header-section-number">2.2.8.4</span> Added Geometry Options</h4>
@@ -1469,14 +1469,14 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb137-2"><a href="the-programming-environment.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.3</span>) <span class="sc">+</span> </span>
 <span id="cb137-3"><a href="the-programming-environment.html#cb137-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="co"># This is the geom_smmoth option</span></span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>Here, we add a linear model regression line to define the relation between both variables. The grey area around it is the 95% Confidende Interval. Inerestingly, if we would add a third dimension in form of the colour argument, then we could see that R produces mutliple smooth lines for each of the z variable values, if the z variable is categorical</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="the-programming-environment.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s create a smooth line for each unique element of the z variable called &quot;drv&quot;</span></span>
 <span id="cb139-2"><a href="the-programming-environment.html#cb139-2" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy, <span class="at">color =</span> drv)) <span class="sc">+</span></span>
 <span id="cb139-3"><a href="the-programming-environment.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.3</span>) <span class="sc">+</span> </span>
 <span id="cb139-4"><a href="the-programming-environment.html#cb139-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>) <span class="co"># This is the geom_smmoth option</span></span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
 <p><strong>Errorbar</strong></p>
 <p>Error Bars are also a useful feature to determine more about the structure of the underlying data. You can use error bars in the same fashion as you would use a confidence interval band we’ve seen in the <code>geom_smooth</code> example. Just opposed to the smooth example, error bars are not continuous. They basically indicate an upper and lower bar compared to some pre-defined value you set. In order to use error bars, we make use of the <code>geom_errorbar()</code> geometry.</p>
 <p>The most common case to define error bars is to set a mean value and then draw the benchmarks that are <span class="math inline">\(\pm\)</span> 1 standard deviation in proximity to the mean. As such, we mainly use it for further statistical analysis of our underlying variable(s) based on different characteristics.</p>
@@ -1499,7 +1499,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb141-16"><a href="the-programming-environment.html#cb141-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>lwr_cty, <span class="at">ymax=</span>upr_cty)) <span class="sc">+</span> </span>
 <span id="cb141-17"><a href="the-programming-environment.html#cb141-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get the mean points per class</span></span>
 <span id="cb141-18"><a href="the-programming-environment.html#cb141-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean_cty), <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">shape=</span><span class="dv">21</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 </div>
 <div id="plotting-multiple-variables" class="section level4" number="2.2.8.5">
 <h4><span class="header-section-number">2.2.8.5</span> Plotting Multiple Variables</h4>
@@ -1514,12 +1514,12 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb142-5"><a href="the-programming-environment.html#cb142-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This creates of the two columns wide format a one column long format which summarises both columns (indicated as value column). Based on this, we have a column that indicates which of the two former columns is assigned to which value, to now be able to plot multiple column density plots.  </span></span>
 <span id="cb142-6"><a href="the-programming-environment.html#cb142-6" aria-hidden="true" tabindex="-1"></a>melt_hwy_cty <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable)) <span class="sc">+</span></span>
 <span id="cb142-7"><a href="the-programming-environment.html#cb142-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="the-programming-environment.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can also create a histogram from it</span></span>
 <span id="cb143-2"><a href="the-programming-environment.html#cb143-2" aria-hidden="true" tabindex="-1"></a>melt_hwy_cty <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">fill =</span> variable)) <span class="sc">+</span></span>
 <span id="cb143-3"><a href="the-programming-environment.html#cb143-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
 </div>
 <div id="plotting-time-series" class="section level4" number="2.2.8.6">
 <h4><span class="header-section-number">2.2.8.6</span> Plotting Time-Series</h4>
@@ -1555,7 +1555,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb147-5"><a href="the-programming-environment.html#cb147-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 2) y = value (The actual cumulative returns data)</span></span>
 <span id="cb147-6"><a href="the-programming-environment.html#cb147-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">## 3) color = series (The different securities)</span></span>
 <span id="cb147-7"><a href="the-programming-environment.html#cb147-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
 <p>This is a very handy feature to define a ggplot time series. Note the steps that we performed:</p>
 <ul>
 <li>We created a tidy-time-series (TTS). This is, to some extent, a similar format as what we get when using the <code>melt()</code> function.</li>
@@ -1584,7 +1584,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb148-6"><a href="the-programming-environment.html#cb148-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">### (1) the color which defines the density attributes for each stock</span></span>
 <span id="cb148-7"><a href="the-programming-environment.html#cb148-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">### (2) the filling of the density for each security (if you remove the fill command, you just get lines)</span></span>
 <span id="cb148-8"><a href="the-programming-environment.html#cb148-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
 <p>Here, we defined the same set-up as with the line plots, but just had to re-shuffle in order not to use the time-series character of the data.</p>
 <p><strong>Melt and Tidy</strong></p>
 <p>By using this set-up, we are able to draw a time-series relationship of multiple stocks and distinguish them by color. Note that this is <strong>identical to the melt set-up</strong> we used to create two differently coloured histograms or density plots for each of the two variables. In effect, looking at the both datasets, we see their identity:</p>
@@ -1712,7 +1712,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb153-36"><a href="the-programming-environment.html#cb153-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey&quot;</span>)) </span>
 <span id="cb153-37"><a href="the-programming-environment.html#cb153-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb153-38"><a href="the-programming-environment.html#cb153-38" aria-hidden="true" tabindex="-1"></a>figure</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
 </div>
 <div id="facetting-plots" class="section level4" number="2.2.8.8">
 <h4><span class="header-section-number">2.2.8.8</span> Facetting plots</h4>
@@ -1722,14 +1722,14 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb154-3"><a href="the-programming-environment.html#cb154-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb154-4"><a href="the-programming-environment.html#cb154-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here, we define that it should print the same relation just for each year separately</span></span>
 <span id="cb154-5"><a href="the-programming-environment.html#cb154-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(. <span class="sc">~</span> year) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
 <p>The <code>facet_grid()</code> tells ggplot to plot the relationship of hwy and cty twice, for each year separately.</p>
 <p>Note that we can easily extend this relation up to multiple dimensions. Let’s take another variable into the equation.</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="the-programming-environment.html#cb155-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb155-2"><a href="the-programming-environment.html#cb155-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb155-3"><a href="the-programming-environment.html#cb155-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Here, we define that it should print the same relation just for each year separately</span></span>
 <span id="cb155-4"><a href="the-programming-environment.html#cb155-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(drv <span class="sc">~</span> year) </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-105-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 <p>Here, we take the relation between hwy and cty in a scatterplot, but we do this depending on the <strong>combination of two variables</strong> now. The first is the year of construction, the second is the driving gear (four-wheel, rear or forward drive). As such, we introduce another dimension on the facet grid. As such, we can see relations for both the driving gear and the year of production.</p>
 </div>
 <div id="adjusting-scales" class="section level4" number="2.2.8.9">
@@ -1744,7 +1744,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="the-programming-environment.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unadjusted scatterplot</span></span>
 <span id="cb159-2"><a href="the-programming-environment.html#cb159-2" aria-hidden="true" tabindex="-1"></a>ACS <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> Income)) <span class="sc">+</span></span>
 <span id="cb159-3"><a href="the-programming-environment.html#cb159-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 <p>Here, the data is not well structured, as certain values skew the display of the data considerably.</p>
 <p>Consequently, we need two adjustments:</p>
 <ol style="list-style-type: decimal">
@@ -1764,7 +1764,7 @@ var(aX + bY) &amp;= E[(aX + bY - E[aX]E[bY])^2]\\
 <span id="cb160-10"><a href="the-programming-environment.html#cb160-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># to get the e^10 distributional marks </span></span>
 <span id="cb160-11"><a href="the-programming-environment.html#cb160-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Income in 1&#39;000 US Dollars&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Transformation introduced infinite values in continuous y-axis</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
 <p>The handy property of the scaling of the y-axis is that it <strong>directly transforms the values on the y axis</strong> such that they are correctly positioned in the graph. As such, we see that the area between <strong>1 and 10 is the same 10 to 100 and 100 to 1000</strong>. Consequently, we can better show the relations, since they are <strong>proportionally transformed</strong>.</p>
 <p>Note that we also added some minor gridlines in the form of either 1000, 10000 or 100000 for the respective horizontal levels. This is to better distinguish and identify the appropriate salary levels.</p>
 <p><strong>More Transformations</strong></p>
@@ -2155,7 +2155,7 @@ This returns the substring that contains the first until the third letter of the
 <p>And there we are! This may all be a little much if you have never really worked with such formats before. We do not expect you to draw these things on your own, but we still find it very important to have because exactly these structures can save you potentially a lifetime during your projects. This is especially because these functions are massively scalable. If you want to do this for 10000 data frames, no problem. All you have to do is execute the code and wait until R has done the job (and the best part, if you’re getting paid for it you can write the hours it takes R to compute :-) ).</p>
 <p>Now, let’s look at one of the outputs:</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="the-programming-environment.html#cb203-1" aria-hidden="true" tabindex="-1"></a>figure_Cum_Ret_MC_Phys_ts</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
 <p>Great, we now have seen how to use string adjustments to enforce highly scalable data manipulation techniques!</p>
 </div>
 <div id="matching-patterns-with-regular-expressions-regex" class="section level4" number="2.2.10.3">

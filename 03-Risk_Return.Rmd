@@ -71,7 +71,8 @@ To calculate our first return, load the `return_bigfour` csv file into R.
 ```{r}
 
 # Read big four dataset in
-A1_bigfour <- read.csv("/Users/nikolasanic/Desktop/Advanced_Empirical_Finance_Documents/Data/Risk_Return/A1_bigfour.csv", header = T, sep = ",",  dec = '.')
+A1_bigfour <- read.csv("/Users/nikolasanic/Desktop/Advanced_Empirical_Finance_Documents/Data/Risk_Return/A1_bigfour_Ex_real.csv", header = T, sep = ",",  dec = '.')
+
 
 # Turn it to an xts file
 date_bf = as.Date(dmy(A1_bigfour$Date))
@@ -346,7 +347,6 @@ Where $R_{p,t}$ is the portfolio return at time t, $R_{i,t}$ is the security ret
 If we use this approach, we can easily calculate the mean return with the `rowMeans()` function:
 
 ```{r}
-
 # First, the non matrix algebra solution. 
 
 ## We calculate the returns of all variables
@@ -364,6 +364,11 @@ bigfour_EW_ret_ts_mean_annual
 ```
 
 
+```{r}
+A1_bigfour_ret_ts
+```
+
+
 We can derive the same result and be a little faster by using matrix algebra as we have shown in Chapter 1. That is:
 
 $$
@@ -371,7 +376,6 @@ R_p = \textbf{w}^T\textbf{R}
 $$
 
 That is, the overall portfolio return is the matrix multiplication of the weight vector with the individual security returns. To do so, we just use the following:
-
 
 ```{r}
 
@@ -440,7 +444,6 @@ date_bf_A4 = as.Date(dmy(A1_bigfour[-1,1]))
 
 ## Create xts object with correct number of dimensions
 bigfour_VW_ret_ts <- xts(Returns_VW_PF_A4, order.by = date_bf_A4)
-
 ```
 
 To see the comparison of equal and value weighted returns, let's look at the cumulative return structure of both:
@@ -476,6 +479,8 @@ plot.background = element_rect(fill="#f7f7f7", color = "#f7f7f7"),
 axis.title.y = element_text(color="grey26", size=12, margin=margin(0,10,0,10)),
 axis.title.x = element_text(color="grey26", size=12, margin=margin(10,0,10,0)),
 axis.line = element_line(color = "grey")) 
+
+
 
 ```
 
@@ -682,7 +687,7 @@ We start again with the summation case:
 ```{r}
 
 # First we take the Big Four PF but we only take the Roche_Holding and the Nestle_PS columns
-NR_df <- as.data.frame(A1_bigfour_ret_ts[,c(2,7)])
+NR_df <- as.data.frame(A1_bigfour_ret_ts[,c(1,3)])
 
 # Now, we calculate the respective standard deviation and covariance metrics
 NR_df_N_sd <- sd(NR_df$Nestle_PS)
@@ -709,7 +714,7 @@ Note that we deliberately use w instead of x to acknowledge that this is the *we
 ```{r}
 
 # First we take the Big Four PF but we only take the Roche_Holding and the Nestle_PS columns
-NR_df <- as.matrix(A1_bigfour_ret_ts[,c(2,7)])
+NR_df <- as.matrix(A1_bigfour_ret_ts[,c(1,3)])
 
 # Now, we calculate the respective covariance metrics
 NR_df_cov <- cov(NR_df)
@@ -962,7 +967,7 @@ Let's understand how we can transform this idea into our empirical setting. This
 ```{r}
 
 # For this, we will calculate the Variance Ratios for four different periods. I will follow a similar approach by looping. Just now, it is up to you to understand what the loop does in which parts. 
-NR_df <- as.data.frame(A1_bigfour_ret_ts[,c(2,7)])
+NR_df <- as.data.frame(A1_bigfour_ret_ts[,c(1,3)])
 # To understand the VR implications, let's take the return of Nestle and Roche again
 
 ## We define the annual variance through "roll applying" the cumulative product of returns throughout a period of 12, then take the variance of t_i. That is, we:
